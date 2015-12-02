@@ -9,7 +9,7 @@ using UnityEngine;
 • Baisser : flèche du bas
 */
 
-public class Mouvement : MonoBehaviour {
+public class Movement : MonoBehaviour {
     KeyCode SprintButton = KeyCode.RightArrow;
     KeyCode JumpButton = KeyCode.UpArrow;
     KeyCode SlowDownButton = KeyCode.LeftArrow;
