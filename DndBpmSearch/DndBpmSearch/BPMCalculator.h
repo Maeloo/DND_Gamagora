@@ -17,7 +17,7 @@
 
 class BPMCalculator {
 public:
-	float** _spectrum_data;
+	FMOD_DSP_PARAMETER_FFT* _spectrum_data;
 	int*	_spectrum_sizes;
 
 	FMOD::System		*system				= NULL;

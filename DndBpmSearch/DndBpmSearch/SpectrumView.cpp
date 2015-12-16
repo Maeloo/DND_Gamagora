@@ -1,6 +1,6 @@
 #include "SpectrumView.h"
 
-float ** SpectrumView::spectrum;
+FMOD_DSP_PARAMETER_FFT *SpectrumView::spectrum;
 int SpectrumView::spectrumSize;
 
 /*
@@ -8,10 +8,10 @@ int SpectrumView::spectrumSize;
 * spectrum : array 
 * spectrum size : size of spectrum firt dimension
 */
-SpectrumView::SpectrumView(int argc, char ** argv, float ** spectrum_, int spectrumSize_)
+SpectrumView::SpectrumView(int argc, char ** argv, FMOD_DSP_PARAMETER_FFT * spectrum_)
 {
 	spectrum = spectrum_;
-	spectrumSize = spectrumSize_;
+	//spectrumSize = spectrumSize_;
 	glutInitWindowSize(400, 400);
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE);
@@ -61,12 +61,12 @@ void SpectrumView::drawSpectrum()
 	float step = 0.01f;
 	glColor3f(0.9f, 0.9f, 0.9f);
 	
-	for (int i = 0; i < spectrumSize; ++i)
+	for (int channel = 0; channel < spectrum->numchannels; ++channel)
 	{
 		glBegin(GL_LINE_STRIP);
-		for (int j = 0; j < 44200; ++j)
+		for (int bin = 0; bin < spectrum->length; ++bin)
 		{
-			glVertex3f(step * i, spectrum[i][j] * 10.f, 0.f);
+			glVertex3f(step * channel, spectrum->spectrum[channel][bin], 0.f);
 		}
 		glEnd();
 	}

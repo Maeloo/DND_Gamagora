@@ -19,7 +19,7 @@ int main(int argc, char ** argv)
 	//bpmc.calculateSpectrum ( );
 	int size = 0;
 
-	SpectrumView windows(argc, argv, bpmc._spectrum_data, nbEchantillon);
+	SpectrumView windows(argc, argv, bpmc._spectrum_data);
 
 	std::cin.get ( );
 	return 0;

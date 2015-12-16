@@ -1,8 +1,15 @@
 #pragma once
 
+#include "fmod.hpp"
+#include "fmod.h"
+#include "fmod_errors.h"
+#include "fmod_common.h"
+#include "fmod_codec.h"
+#include "fmod_output.h"
+
 #include "Constantes.h"
 #include<iostream>
-#include <glut.h>
+#include <GL/glut.h>
 /*
 * Debug class, singleton,
 * Spectum view
@@ -24,13 +31,13 @@ class SpectrumView
 	* Spectrum tab 
 	* size : spectrumSize, Constante::bytes
 	*/
-	static float ** spectrum;
+	static FMOD_DSP_PARAMETER_FFT * spectrum;
 	static int spectrumSize;
 public:
 	/*
 	* Init spectrum
 	*/
-	SpectrumView(int argc, char ** argv, float * spectrum_[Constantes::bytes], int spectrumSize);
+	SpectrumView(int argc, char ** argv, FMOD_DSP_PARAMETER_FFT * spectrum_);
 	
 };
 
