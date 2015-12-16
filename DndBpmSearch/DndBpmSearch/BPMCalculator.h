@@ -16,6 +16,9 @@
 class BPMCalculator {
 
 public:
+	float** _spectrum_data;
+	int*	_spectrum_sizes;
+
 	FMOD::System		*system				= NULL;
 	FMOD::Sound			*sound				= NULL;
 	FMOD::Channel		*channel			= 0;
@@ -28,7 +31,7 @@ public:
 	void loadSound ( const char *path );
 	void playSound ( );
 
-	void calculateSpectrum ( );
+	void calculateSpectrum(int max_samples);
 
 	void FMODError ( FMOD_RESULT result ) {
 		if ( result != FMOD_OK ) {

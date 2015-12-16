@@ -1,5 +1,5 @@
 #pragma once
-#include <glut.h>
+#include <GL/glut.h>
 
 class SpectrumView
 {

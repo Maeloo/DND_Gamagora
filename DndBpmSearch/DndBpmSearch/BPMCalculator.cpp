@@ -49,7 +49,7 @@ void BPMCalculator::playSound ( ) {
 }
 
 
-void BPMCalculator::calculateSpectrum ( ) {
+void BPMCalculator::calculateSpectrum ( int max_samples ) {
 	clock_t begin = clock ( );
 	clock_t end;
 
@@ -68,6 +68,11 @@ void BPMCalculator::calculateSpectrum ( ) {
 	++maxTime;
 	
 	//channel->setMute ( true );
+
+	_spectrum_data  = new float*[100];
+	_spectrum_sizes = new int[100];
+
+	int idx = 0;
 	do {
 		FMODError ( system->update ( ) );
 
@@ -87,35 +92,42 @@ void BPMCalculator::calculateSpectrum ( ) {
 		FMODError ( fftdsp->getParameterFloat ( FMOD_DSP_FFT_DOMINANT_FREQ, &val, 0, 0 ) );
 		FMODError ( fftdsp->getParameterData ( FMOD_DSP_FFT_SPECTRUMDATA, ( void ** ) &fftparameter, &len, s, 256 ) );
 
-		data = fftparameter->spectrum[0];
+		_spectrum_data[idx]  = fftparameter->spectrum[0];
+		_spectrum_sizes[idx] = len;
+		++idx;
 
-		nyquist = windowsize / 2;
+		//data = fftparameter->spectrum[0];
 
-		for ( chan = 0; chan < 1; chan++ ) {
-			float average = 0.0f;
-			float power = 0.0f;
+		//nyquist = windowsize / 2;
 
-			for ( int i = 0; i < nyquist - 1; ++i ) {
-				float hz = i * ( rate * 0.5f ) / ( nyquist - 1 );
-				int index = i + ( 16384 * chan );
+		//for ( chan = 0; chan < 1; chan++ ) {
+		//	float average = 0.0f;
+		//	float power = 0.0f;
 
-				if ( fftparameter->spectrum[chan][i] > 0.0001f ) // arbitrary cutoff to filter out noise
-				{
-					average += data[index] * hz;
-					power += data[index];
-				}
-			}
+		//	for ( int i = 0; i < nyquist - 1; ++i ) {
+		//		float hz = i * ( rate * 0.5f ) / ( nyquist - 1 );
+		//		int index = i + ( 16384 * chan );
 
-			if ( power > 0.001f ) {
-				freq[chan] = average / power;
-			}
-			else {
-				freq[chan] = 0;
-			}
-		}
-		printf ( "\ndom freq = %d : %.02f %.02f\n", ( int ) val, freq[0], freq[1] );
+		//		if ( fftparameter->spectrum[chan][i] > 0.0001f ) // arbitrary cutoff to filter out noise
+		//		{
+		//			average += data[index] * hz;
+		//			power += data[index];
+		//		}
+		//	}
+
+		//	if ( power > 0.001f ) {
+		//		freq[chan] = average / power;
+		//		
+		//	}
+		//	else {
+		//		freq[chan] = 0;
+		//	}
+		//}
+		//printf ( "\ndom freq = %d : %.02f %.02f\n", ( int ) val, freq[0], freq[1] );
 
 		Sleep ( 10.f );
 		end = clock ( );
-	} while ( double ( end - begin ) / CLOCKS_PER_SEC < maxTime );
+	} while ( idx < max_samples && double ( end - begin ) / CLOCKS_PER_SEC < maxTime );
 }
+
+
