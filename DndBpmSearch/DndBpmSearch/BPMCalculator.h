@@ -18,7 +18,6 @@
 class BPMCalculator {
 public:
 	FMOD_DSP_PARAMETER_FFT* _spectrum_data;
-	int*	_spectrum_sizes;
 
 	FMOD::System		*system				= NULL;
 	FMOD::Sound			*sound				= NULL;
@@ -32,7 +31,7 @@ public:
 	void loadSound ( const char *path );
 	void playSound ( );
 
-	void calculateSpectrum(int max_samples);
+	void calculateSpectrum( );
 
 	void FMODError ( FMOD_RESULT result ) {
 		if ( result != FMOD_OK ) {

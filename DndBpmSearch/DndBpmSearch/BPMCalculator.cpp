@@ -49,7 +49,7 @@ void BPMCalculator::playSound ( ) {
 }
 
 
-void BPMCalculator::calculateSpectrum ( int max_samples ) {
+void BPMCalculator::calculateSpectrum ( ) {
 	clock_t begin = clock ( );
 	clock_t end;
 
@@ -68,9 +68,6 @@ void BPMCalculator::calculateSpectrum ( int max_samples ) {
 	++maxTime;
 	
 	//channel->setMute ( true );
-
-	//_spectrum_data  = new float*[100];
-	//_spectrum_sizes = new int[100];
 
 	int idx = 0;
 	do {
@@ -92,7 +89,7 @@ void BPMCalculator::calculateSpectrum ( int max_samples ) {
 		FMODError ( fftdsp->getParameterFloat ( FMOD_DSP_FFT_DOMINANT_FREQ, &val, 0, 0 ) );
 		FMODError ( fftdsp->getParameterData ( FMOD_DSP_FFT_SPECTRUMDATA, ( void ** ) &fftparameter, &len, s, 256 ) );
 
-		_spectrum_data = fftparameter;// ->spectrum[1];
+		_spectrum_data = fftparameter;
 
 		//data = fftparameter->spectrum[0];
 
