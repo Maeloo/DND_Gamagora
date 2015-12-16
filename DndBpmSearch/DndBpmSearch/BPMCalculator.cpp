@@ -2,19 +2,6 @@
 
 
 BPMCalculator::BPMCalculator ( ) {
-	size = 10;
-	spectrum = new float*[size];
-	for (int i = 0; i < size; ++i)
-	{
-		spectrum[i] = new float[Constantes::bytes];
-	}
-	for (int i = 0; i < size; ++i)
-	{
-		for (int j = 0; j < Constantes::bytes; ++j)
-		{
-			spectrum[i][j] = Global::randf(0.f, 10.f);
-		}
-	}
 	const int maxChannelCount = 32;
 
 	FMODError ( FMOD::System_Create ( &system ) );

@@ -38,7 +38,7 @@ void SpectrumView::reshape(int w, int h)
 	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glOrtho(-20, 20, -20, 20, -10, 10);
+	glOrtho(-0.5, 1.5, -1, 8, -1, 1);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 }
@@ -58,15 +58,16 @@ void SpectrumView::display(void)
 */
 void SpectrumView::drawSpectrum()
 {
-	float step = 0.1f;
-	glColor3f(0.f, 0.f, 0.5f);
-	glBegin(GL_LINE_STRIP);
+	float step = 0.01f;
+	glColor3f(0.9f, 0.9f, 0.9f);
+	
 	for (int i = 0; i < spectrumSize; ++i)
 	{
-		for (int j = 0; j < Constantes::bytes; ++j)
+		glBegin(GL_LINE_STRIP);
+		for (int j = 0; j < 44200; ++j)
 		{
-			glVertex3f(step * i, spectrum[i][j], 0.f);
+			glVertex3f(step * i, spectrum[i][j] * 10.f, 0.f);
 		}
+		glEnd();
 	}
-	glEnd();
 }

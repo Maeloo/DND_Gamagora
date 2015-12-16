@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Constantes.h"
+#include<iostream>
 #include <glut.h>
 /*
 * Debug class, singleton,

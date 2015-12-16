@@ -16,8 +16,6 @@
 
 
 class BPMCalculator {
-	float ** spectrum;
-	int size;
 public:
 	float** _spectrum_data;
 	int*	_spectrum_sizes;
