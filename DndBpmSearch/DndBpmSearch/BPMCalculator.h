@@ -6,6 +6,8 @@
 #include "fmod_common.h"
 #include "fmod_codec.h"
 #include "fmod_output.h"
+#include "Constantes.h"
+#include "Global.h"
 #include <iostream>
 #include <ctime>
 #include <windows.h>
@@ -14,7 +16,8 @@
 
 
 class BPMCalculator {
-
+	float ** spectrum;
+	int size;
 public:
 	FMOD::System		*system				= NULL;
 	FMOD::Sound			*sound				= NULL;
@@ -29,7 +32,7 @@ public:
 	void playSound ( );
 
 	void calculateSpectrum ( );
-
+	float ** getSpectrum(int * size);
 	void FMODError ( FMOD_RESULT result ) {
 		if ( result != FMOD_OK ) {
 			printf ( "FMOD error! (%d) %s\n", result, FMOD_ErrorString ( result ) );
