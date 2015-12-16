@@ -91,7 +91,7 @@ void BPMCalculator::calculateSpectrum ( ) {
 
 		nyquist = windowsize / 2;
 
-		for ( chan = 0; chan < 2; chan++ ) {
+		for ( chan = 0; chan < 1; chan++ ) {
 			float average = 0.0f;
 			float power = 0.0f;
 
