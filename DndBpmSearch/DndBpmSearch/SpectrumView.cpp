@@ -1,15 +1,24 @@
 #include "SpectrumView.h"
 
+float ** SpectrumView::spectrum;
+int SpectrumView::spectrumSize;
 
-
-SpectrumView::SpectrumView(int argc, char ** argv)
+/*
+* argc, argv : entry parameter
+* spectrum : array 
+* spectrum size : size of spectrum firt dimension
+*/
+SpectrumView::SpectrumView(int argc, char ** argv, float ** spectrum_, int spectrumSize_)
 {
+	spectrum = spectrum_;
+	spectrumSize = spectrumSize_;
 	glutInitWindowSize(400, 400);
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE);
 	glutCreateWindow("Spectrum");
 	init();
 	glutReshapeFunc(reshape);
+	glutDisplayFunc(display);
 	glutMainLoop();
 }
 
@@ -44,7 +53,20 @@ void SpectrumView::display(void)
 	glutPostRedisplay();
 }
 
+/*
+* Draw spectrum tab
+*/
 void SpectrumView::drawSpectrum()
 {
-
+	float step = 0.1f;
+	glColor3f(0.f, 0.f, 0.5f);
+	glBegin(GL_LINE_STRIP);
+	for (int i = 0; i < spectrumSize; ++i)
+	{
+		for (int j = 0; j < Constantes::bytes; ++j)
+		{
+			glVertex3f(step * i, spectrum[i][j], 0.f);
+		}
+	}
+	glEnd();
 }

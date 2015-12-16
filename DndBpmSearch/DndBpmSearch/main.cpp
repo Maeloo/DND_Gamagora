@@ -1,10 +1,11 @@
 #include "BPMCalculator.h"
-
+#include "SpectrumView.h"
 int main(int argc, char ** argv)
 {
 	BPMCalculator bpmc = BPMCalculator ( );
 	bpmc.loadSound ( "didjedelik.mp3" );
 	//bpmc.playSound ( );
+
 	bpmc.calculateSpectrum ( 100 );
 
 	for (int i = 0; i < 100; ++i) {
@@ -14,7 +15,12 @@ int main(int argc, char ** argv)
 		}		
 	}
 	
-	std::cin.get ( );
 
+	//bpmc.calculateSpectrum ( );
+	int size = 0;
+
+	SpectrumView windows(argc, argv, bpmc._spectrum_data, bpmc._spectrum_sizes[0]);
+
+	std::cin.get ( );
 	return 0;
 }

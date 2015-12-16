@@ -6,6 +6,8 @@
 #include "fmod_common.h"
 #include "fmod_codec.h"
 #include "fmod_output.h"
+#include "Constantes.h"
+#include "Global.h"
 #include <iostream>
 #include <ctime>
 #include <windows.h>
@@ -14,7 +16,8 @@
 
 
 class BPMCalculator {
-
+	float ** spectrum;
+	int size;
 public:
 	float** _spectrum_data;
 	int*	_spectrum_sizes;
