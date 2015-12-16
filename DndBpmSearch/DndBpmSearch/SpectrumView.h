@@ -10,6 +10,8 @@
 #include "Constantes.h"
 #include<iostream>
 #include <GL/glut.h>
+#include "BPMCalculator.h"
+
 /*
 * Debug class, singleton,
 * Spectum view

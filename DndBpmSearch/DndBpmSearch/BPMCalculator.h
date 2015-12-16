@@ -13,27 +13,39 @@
 #include <windows.h>
 #include <vector>
 #include <array>
+#include <thread>
 
 
-class BPMCalculator {
-public:
-	FMOD_DSP_PARAMETER_FFT* _spectrum_data;
+class BPMCalculator 
+{
+private:
+	void Run();
+	bool thread_starded;
+	bool thread_exit;
+	std::thread *thread;
 
-	FMOD::System		*system				= NULL;
-	FMOD::Sound			*sound				= NULL;
-	FMOD::Channel		*channel			= 0;
-	FMOD::ChannelGroup	*channelGroup		= NULL;
+
+	static FMOD::System		*system;
+	FMOD::Sound			*sound = NULL;
+	FMOD::Channel		*channel = 0;
+	FMOD::ChannelGroup	*channelGroup = NULL;
 	FMOD::ChannelGroup	*masterChannelGroup = NULL;
-	FMOD::DSP			*fftdsp;
+	static FMOD::DSP			*fftdsp;
+
+	static clock_t end, begin;
+public:
+	static FMOD_DSP_PARAMETER_FFT* _spectrum_data;
 
 	BPMCalculator (  );
 
 	void loadSound ( const char *path );
 	void playSound ( );
 
-	void calculateSpectrum( );
+	void calculateSpectrum();
 
-	void FMODError ( FMOD_RESULT result ) {
+	void StartThread();
+
+	static void FMODError ( FMOD_RESULT result ) {
 		if ( result != FMOD_OK ) {
 			printf ( "FMOD error! (%d) %s\n", result, FMOD_ErrorString ( result ) );
 			std::getchar ( );

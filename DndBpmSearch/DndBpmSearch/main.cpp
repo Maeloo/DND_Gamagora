@@ -5,7 +5,7 @@ int main(int argc, char ** argv)
 	BPMCalculator bpmc = BPMCalculator ( );
 	bpmc.loadSound ( "didjedelik.mp3" );
 
-	bpmc.calculateSpectrum ( );
+	bpmc.StartThread();
 
 	SpectrumView windows(argc, argv, bpmc._spectrum_data);
 

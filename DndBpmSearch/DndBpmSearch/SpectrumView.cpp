@@ -1,6 +1,7 @@
 #include "SpectrumView.h"
 
 FMOD_DSP_PARAMETER_FFT *SpectrumView::spectrum;
+
 int SpectrumView::spectrumSize;
 
 /*
@@ -60,6 +61,8 @@ void SpectrumView::drawSpectrum()
 {
 	float step = 0.01f;
 	glColor3f(0.9f, 0.9f, 0.9f);
+
+	spectrum = BPMCalculator::_spectrum_data;
 	
 	for (int channel = 0; channel < spectrum->numchannels; ++channel)
 	{

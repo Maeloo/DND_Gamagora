@@ -1,7 +1,13 @@
 #include "BPMCalculator.h"
 
+FMOD_DSP_PARAMETER_FFT* BPMCalculator::_spectrum_data;
+FMOD::System		* BPMCalculator::system = NULL;
+FMOD::DSP			* BPMCalculator::fftdsp = NULL;
+clock_t BPMCalculator::end = NULL;
+clock_t  BPMCalculator::begin = NULL;
 
-BPMCalculator::BPMCalculator ( ) {
+BPMCalculator::BPMCalculator()  : thread_starded(false), thread_exit(false)
+{
 	const int maxChannelCount = 32;
 
 	FMODError ( FMOD::System_Create ( &system ) );
@@ -18,7 +24,9 @@ BPMCalculator::BPMCalculator ( ) {
 	FMODError ( system->createChannelGroup ( NULL, &channelGroup ) );
 }
 
-BPMCalculator::~BPMCalculator ( ) {
+BPMCalculator::~BPMCalculator ( ) 
+{
+	thread_exit = true;
 	FMODError ( sound->release ( ) );
 
 	sound = NULL;
@@ -44,33 +52,57 @@ void BPMCalculator::loadSound ( const char *path ) {
 }
 
 
-void BPMCalculator::playSound ( ) {
+void BPMCalculator::playSound ( ) 
+{
 	FMODError ( system->playSound ( sound, channelGroup, false, &channel ) );		
 }
 
+void BPMCalculator::StartThread()
+{
+	if (!thread_starded)
+	{
+		clock_t begin = clock();
+		clock_t end;
 
-void BPMCalculator::calculateSpectrum ( ) {
-	clock_t begin = clock ( );
-	clock_t end;
+		FMODError(system->playSound(sound, 0, false, &channel));
+		FMODError(system->getMasterChannelGroup(&masterChannelGroup));
+		FMODError(system->createDSPByType(FMOD_DSP_TYPE_FFT, &fftdsp));
 
-	FMODError ( system->playSound ( sound, 0, false, &channel ) );
-	FMODError ( system->getMasterChannelGroup ( &masterChannelGroup ) );
-	FMODError ( system->createDSPByType ( FMOD_DSP_TYPE_FFT, &fftdsp ) );
-	
-	FMODError ( masterChannelGroup->addDSP ( 0, fftdsp ) );
-	
-	FMODError ( fftdsp->setBypass ( false ) );
-	FMODError ( fftdsp->setActive ( true ) );
+		FMODError(masterChannelGroup->addDSP(0, fftdsp));
 
-	unsigned int maxTime;
-	sound->getLength ( &maxTime, FMOD_TIMEUNIT_MS );
-	maxTime /= 1000;
-	++maxTime;
+		FMODError(fftdsp->setBypass(false));
+		FMODError(fftdsp->setActive(true));
+
+		unsigned int maxTime;
+		sound->getLength(&maxTime, FMOD_TIMEUNIT_MS);
+		maxTime /= 1000;
+		++maxTime;
+
+		thread = new std::thread(&BPMCalculator::Run, this);
+		thread_starded = true;
+		//thread->join();
+	}
+}
+
+void BPMCalculator::Run()
+{
+	while (!thread_exit)
+	{
+		calculateSpectrum();
+		Sleep(10.f);
+	}
+}
+
+
+
+void BPMCalculator::calculateSpectrum()
+{
+
 	
 	//channel->setMute ( true );
 
 	int idx = 0;
-	do {
+	//do {
 		FMODError ( system->update ( ) );
 
 		FMOD_DSP_PARAMETER_FFT *fftparameter;
@@ -120,8 +152,8 @@ void BPMCalculator::calculateSpectrum ( ) {
 		//}
 		//printf ( "\ndom freq = %d : %.02f %.02f\n", ( int ) val, freq[0], freq[1] );
 
-		Sleep ( 10.f );
+		//Sleep ( 10.f );
 		end = clock ( );
-	} while ( double ( end - begin ) / CLOCKS_PER_SEC < maxTime );
+	//} while ( double ( end - begin ) / CLOCKS_PER_SEC < maxTime );
 }
 
