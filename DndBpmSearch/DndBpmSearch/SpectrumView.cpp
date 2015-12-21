@@ -59,8 +59,9 @@ void SpectrumView::display(void)
 */
 void SpectrumView::drawSpectrum()
 {
-	float step_x = 0.0003f;
-	float step_y = 20.f;
+	float step_x = 0.02f;
+	float step_y = 50.f;
+	float output_rate = 24000.f;
 	glColor3f(0.9f, 0.9f, 0.9f);
 
 	spectrum = BPMCalculator::_spectrum_data;
@@ -68,8 +69,9 @@ void SpectrumView::drawSpectrum()
 	for (int channel = 0; channel < spectrum->numchannels; ++channel)
 	{
 		glBegin(GL_LINE_STRIP);
-		for (int bin = 0; bin < spectrum->length; ++bin)
+		for (int bin = 0; bin < spectrum->length * 0.1f; ++bin)
 		{
+			float hz = bin * output_rate / (spectrum->length * 0.5f - 1.f);
 			glVertex3f(step_x * channel + bin * step_x, step_y * spectrum->spectrum[channel][bin], 0.f);
 		}
 		glEnd();

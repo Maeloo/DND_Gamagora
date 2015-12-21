@@ -110,7 +110,7 @@ void BPMCalculator::calculateSpectrum()
 		float *data = 0;
 		float freq[32];
 		int rate, chan, nyquist;
-		int windowsize = 4096;
+		int windowsize = 512;
 
 		FMODError ( system->getSoftwareFormat ( &rate, 0, 0 ) );
 
