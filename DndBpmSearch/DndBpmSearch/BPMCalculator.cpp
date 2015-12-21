@@ -97,8 +97,6 @@ void BPMCalculator::Run()
 
 void BPMCalculator::calculateSpectrum()
 {
-
-	
 	//channel->setMute ( true );
 
 	int idx = 0;
@@ -153,7 +151,7 @@ void BPMCalculator::calculateSpectrum()
 		//printf ( "\ndom freq = %d : %.02f %.02f\n", ( int ) val, freq[0], freq[1] );
 
 		//Sleep ( 10.f );
-		end = clock ( );
+		end = clock();
 	//} while ( double ( end - begin ) / CLOCKS_PER_SEC < maxTime );
 }
 

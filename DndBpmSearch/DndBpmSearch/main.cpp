@@ -3,7 +3,7 @@
 int main(int argc, char ** argv)
 {
 	BPMCalculator bpmc = BPMCalculator ( );
-	bpmc.loadSound ( "didjedelik.mp3" );
+	bpmc.loadSound ( "Inception_Time_PianoSolo.mp3" );
 
 	bpmc.StartThread();
 
