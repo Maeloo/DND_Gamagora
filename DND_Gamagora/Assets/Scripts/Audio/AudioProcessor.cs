@@ -244,7 +244,7 @@ public class AudioProcessor : MonoBehaviour
         //Debug.Log(r + "," + g + "," + b);
         Color color = new Color(r, g, b);
 
-        GetComponent<Camera>().clearFlags = CameraClearFlags.Color;
+        Camera.main.clearFlags = CameraClearFlags.Color;
         Camera.main.backgroundColor = color;
 
         //camera.backgroundColor = color;

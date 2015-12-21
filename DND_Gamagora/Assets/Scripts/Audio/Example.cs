@@ -22,12 +22,12 @@ using System;
  */
 public class Example : MonoBehaviour, AudioProcessor.AudioCallbacks
 {
-    
+    private AudioProcessor processor;
     void Start()
     {
         //Select the instance of AudioProcessor and pass a reference
         //to this object
-        AudioProcessor processor = FindObjectOfType<AudioProcessor>();
+        processor = FindObjectOfType<AudioProcessor>();
         processor.addAudioCallback(this);
     }
 
@@ -42,7 +42,8 @@ public class Example : MonoBehaviour, AudioProcessor.AudioCallbacks
     //to adjust the sensitivity
     public void onOnbeatDetected()
     {
-        Camera.main.backgroundColor = new Color ( UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value );
+        processor.changeCameraColor();
+        //Camera.main.backgroundColor = new Color ( UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value );
         Debug.Log("Beat!!!");
     }
 
@@ -54,9 +55,9 @@ public class Example : MonoBehaviour, AudioProcessor.AudioCallbacks
 
         for (int i = 0; i < spectrum.Length; ++i)
         {
-            Vector3 start = new Vector3(i, 0, 0);
-            Vector3 end = new Vector3(i, spectrum[i], 0);
-            Debug.DrawLine(start, end);
+            Vector3 start = new Vector3(i * 0.01f, 0, 0);
+            Vector3 end = new Vector3(i * 0.01f, 100f * spectrum[i], 0);
+            Debug.DrawLine(start, end, Color.yellow);
         }
     }
 }
