@@ -20,7 +20,7 @@ using System;
 /*
  * Make your class implement the interface AudioProcessor.AudioCallbaks
  */
-public class Example : MonoBehaviour, AudioProcessor.AudioCallbacks
+public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
 {
     private AudioProcessor processor;
     void Start()
@@ -43,8 +43,6 @@ public class Example : MonoBehaviour, AudioProcessor.AudioCallbacks
     public void onOnbeatDetected()
     {
         processor.changeCameraColor();
-        //Camera.main.backgroundColor = new Color ( UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value );
-        Debug.Log("Beat!!!");
     }
 
     //This event will be called every frame while music is playing

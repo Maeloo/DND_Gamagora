@@ -5,11 +5,7 @@ public class InputManager : Singleton<InputManager>
 {
     public bool IsRunning { get; private set; }
     public bool IsJumping { get; private set; }
-
-    public bool IsMoveDown { get; private set; }
-    public bool IsMoveUp { get; private set; }
-    public bool IsMoveRight { get; private set; }
-    public bool IsMoveLeft { get; private set; }
+    public bool IsCrunching { get; private set; }
 
     // Guarantee this will be always a singleton only - can't use the constructor!
     protected InputManager() { }
@@ -23,12 +19,13 @@ public class InputManager : Singleton<InputManager>
 	// Update is called once per frame
 	void Update()
     {
-        IsRunning = Input.GetKey(Constants.RunButton);
-        IsJumping = Input.GetKeyDown(Constants.JumpButton);
+        IsRunning = Input.GetButton("Run");
+        IsJumping = Input.GetButtonDown("Jump");
+        IsCrunching = Input.GetButton("Crouch");
+    }
 
-        IsMoveDown = Input.GetKey(Constants.CrouchButton);
-        IsMoveUp = Input.GetKey(Constants.MoveUpButton);
-        IsMoveRight = Input.GetKey(Constants.MoveRightButton);
-        IsMoveLeft = Input.GetKey(Constants.MoveLeftButton);
+    public float GetHorizontalAxis()
+    {
+        return Input.GetAxis("Horizontal");
     }
 }

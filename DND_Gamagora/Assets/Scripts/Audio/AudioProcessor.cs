@@ -55,6 +55,8 @@ public class AudioProcessor : MonoBehaviour
 
     private float alph; // trade-off constant between tempo deviation penalty and onset strength
 
+    private AudioSource audioSrc;
+
     //////////////////////////////////
     private long getCurrentTimeMillis()
     {
@@ -87,6 +89,8 @@ public class AudioProcessor : MonoBehaviour
         auco = new Autoco(maxlag, decay, framePeriod, getBandWidth());
 
         lastT = getCurrentTimeMillis();
+
+        audioSrc = GetComponent<AudioSource>();
     }
 
     public void tapTempo()
@@ -117,10 +121,10 @@ public class AudioProcessor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<AudioSource>().isPlaying)
+        if (audioSrc.isPlaying)
         {
             float[] spectrum = new float[bufferSize];
-            GetComponent<AudioSource>().GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
+            audioSrc.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
             float[] averages = computeAverages(spectrum);
 
             if (callbacks != null)
