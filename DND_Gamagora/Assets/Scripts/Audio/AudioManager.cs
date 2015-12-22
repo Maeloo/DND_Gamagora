@@ -23,12 +23,16 @@ using System;
 public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
 {
     private AudioProcessor processor;
-    void Start()
+    private EnemyManager enemiesSpawner;
+    private Vector3 currentPos;
+
+    void Awake()
     {
-        //Select the instance of AudioProcessor and pass a reference
-        //to this object
         processor = FindObjectOfType<AudioProcessor>();
         processor.addAudioCallback(this);
+
+        enemiesSpawner = EnemyManager.Instance;
+        currentPos = Camera.main.transform.position;
     }
 
     
@@ -37,25 +41,25 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         
     }
 
-    //this event will be called every time a beat is detected.
-    //Change the threshold parameter in the inspector
-    //to adjust the sensitivity
+    // This event will be called every time a beat is detected.
+    // Change the threshold parameter in the inspector to adjust the sensitivity
     public void onOnbeatDetected()
     {
         processor.changeCameraColor();
     }
 
-    //This event will be called every frame while music is playing
-    public void onSpectrum(float[] spectrum)
+    // This event will be called every frame while music is playing
+    public void onData(float[] spectrum, float[] data)
     {
-        //The spectrum is logarithmically averaged
-        //to 12 bands
-
         for (int i = 0; i < spectrum.Length; ++i)
         {
-            Vector3 start = new Vector3(i * 0.01f, 0, 0);
-            Vector3 end = new Vector3(i * 0.01f, 100f * spectrum[i], 0);
+            Vector3 start = new Vector3(i * 0.1f, -1f, 0);
+            Vector3 end = new Vector3(i * 0.1f, -1f + 50f * spectrum[i], 0);
             Debug.DrawLine(start, end, Color.yellow);
+
+            start = new Vector3(i * 0.01f, 1f, 0);
+            end = new Vector3(i * 0.01f, 1f + 10f * data[i], 0);
+            Debug.DrawLine(start, end, Color.red);
         }
     }
 }
