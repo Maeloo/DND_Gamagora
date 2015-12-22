@@ -25,6 +25,11 @@ public class AudioProcessor : MonoBehaviour
     public int Samples = 1024;  // Array size
     public float RefValue = 0.1f; // RMS value for 0 dB
     public float Threshold = 0.02f; // Minimum amplitude to extract pitch
+    public float A = 0.44307692307f;
+    public float B = 1.6f;
+    public float VarianceMin = 0.0f; // 150f
+    // Constant C
+    public float C = 20f; // 250f
 
     public float RmsValue { get; private set; }   // sound level - RMS
     public float DbValue { get; private set; }    // sound level - dB
@@ -34,11 +39,7 @@ public class AudioProcessor : MonoBehaviour
     
     private const int EnergiesLength = 43; // Energies array size
     private const int FftSamples = 64; // Buffer subbands
-    private const float A = 0.44307692307f;
-    private const float B = 1.6f;
-    private const float VarianceMin = 0.0f; // 150f
-    // Constant C
-    private const float C = 20f; // 250f
+    
 
     private float[] samples; // audio samples
     private float[] spectrum; // audio spectrum
@@ -241,7 +242,7 @@ public class AudioProcessor : MonoBehaviour
                 sum += amplitudes[(int)wk];
             }
      
-            energies_s[i] = sum * wi ;
+            energies_s[i] = sum * wi * (1f / Samples);
         }
     }
 
