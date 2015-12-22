@@ -135,15 +135,18 @@ public class AudioProcessor : MonoBehaviour
         ComputeEnergySubband(fft);
 
         float[] list_energy = new float[FftSamples];
+        float[] list_variance = new float[FftSamples];
 
         for (i = 0; i < FftSamples; i++)
         {
             float energy_i = GetAverageEnergyForBand(i);
             list_energy[i] = energy_i;
+
             ShiftEnergyForBand(i);
             energies[i][0] = energies_s[i];
 
             float variance = GetVarianceForBand(i, energy_i);
+            list_variance[i] = variance;
 
             if (energies_s[i] > C * energy_i && variance > VarianceMin)
             {
@@ -182,7 +185,7 @@ public class AudioProcessor : MonoBehaviour
         {
             foreach (AudioCallbacks callback in callbacks)
             {
-                callback.onData(spectrum, energies_s, list_energy);
+                callback.onData(spectrum, energies_s, list_energy, list_variance);
             }
         }
     }
@@ -303,7 +306,7 @@ public class AudioProcessor : MonoBehaviour
     public interface AudioCallbacks
     {
         void onOnbeatDetected();
-        void onData(float[] spectrum, float[] data, float[] data2);
+        void onData(float[] spectrum, float[] data, float[] data2, float[] data3);
     }
 }
 
