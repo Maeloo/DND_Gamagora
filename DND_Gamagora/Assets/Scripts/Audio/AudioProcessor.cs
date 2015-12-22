@@ -30,6 +30,7 @@ public class AudioProcessor : MonoBehaviour
     public float VarianceMin = 0.0f; // 150f
     // Constant C
     public float C = 20f; // 250f
+    public int FftSamples = 64; // Buffer subbands
 
     public float RmsValue { get; private set; }   // sound level - RMS
     public float DbValue { get; private set; }    // sound level - dB
@@ -38,7 +39,7 @@ public class AudioProcessor : MonoBehaviour
     public float Variance { get; private set; } // Variance of energies
     
     private const int EnergiesLength = 43; // Energies array size
-    private const int FftSamples = 64; // Buffer subbands
+
     
 
     private float[] samples; // audio samples
@@ -128,15 +129,17 @@ public class AudioProcessor : MonoBehaviour
             DbValue = -160; // Clamp it to -160dB min
         
         // Get sound spectrum
-        audioSrc.GetSpectrumData(spectrum, 0 | 1, FFTWindow.BlackmanHarris);
+        audioSrc.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
 
         float[] fft = GetFftAmplitudes();
         ComputeEnergySubband(fft);
 
+        float[] list_energy = new float[FftSamples];
+
         for (i = 0; i < FftSamples; i++)
         {
             float energy_i = GetAverageEnergyForBand(i);
-            
+            list_energy[i] = energy_i;
             ShiftEnergyForBand(i);
             energies[i][0] = energies_s[i];
 
@@ -179,7 +182,7 @@ public class AudioProcessor : MonoBehaviour
         {
             foreach (AudioCallbacks callback in callbacks)
             {
-                callback.onData(spectrum, samples);
+                callback.onData(spectrum, energies_s, list_energy);
             }
         }
     }
@@ -237,7 +240,7 @@ public class AudioProcessor : MonoBehaviour
                 wj += GetW(j);
             }
 
-            for(float wk = wj; wk <= (wj + wi); wk++)
+            for(float wk = wj; wk < (wj + wi); wk++)
             {
                 sum += amplitudes[(int)wk];
             }
@@ -300,7 +303,7 @@ public class AudioProcessor : MonoBehaviour
     public interface AudioCallbacks
     {
         void onOnbeatDetected();
-        void onData(float[] spectrum, float[] data);
+        void onData(float[] spectrum, float[] data, float[] data2);
     }
 }
 

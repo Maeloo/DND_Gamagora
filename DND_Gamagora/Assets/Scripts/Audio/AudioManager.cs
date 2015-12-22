@@ -49,16 +49,26 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
     }
 
     // This event will be called every frame while music is playing
-    public void onData(float[] spectrum, float[] data)
+    public void onData(float[] spectrum, float[] data, float[] data2)
     {
         for (int i = 0; i < spectrum.Length; ++i)
         {
-            Vector3 start = new Vector3(i * 0.1f, -1f, 0);
-            Vector3 end = new Vector3(i * 0.1f, -1f + 50f * spectrum[i], 0);
+            Vector3 start = new Vector3(i * 0.015f, -1f, 0);
+            Vector3 end = new Vector3(i * 0.015f, -1f + 20f * spectrum[i], 0);
             Debug.DrawLine(start, end, Color.yellow);
+        }
 
-            start = new Vector3(i * 0.01f, 1f, 0);
-            end = new Vector3(i * 0.01f, 1f + 10f * data[i], 0);
+        for (int i = 0; i < data.Length; ++i)
+        {
+            Vector3 start = new Vector3(i * 0.065f, 2f, 0);
+            Vector3 end = new Vector3(i * 0.065f, 2f + 50000f * data[i], 0);
+            Debug.DrawLine(start, end, Color.red);
+        }
+
+        for (int i = 0; i < data2.Length; ++i)
+        {
+            Vector3 start = new Vector3(i * 0.065f, 0.5f, 0);
+            Vector3 end = new Vector3(i * 0.065f, 0.5f + 50000f * data2[i], 0);
             Debug.DrawLine(start, end, Color.red);
         }
     }
