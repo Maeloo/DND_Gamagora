@@ -19,8 +19,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class AudioProcessor : MonoBehaviour
+public class AudioProcessor : Singleton<AudioProcessor>
 {
+    protected AudioProcessor() { }
+
     public float C = 2f; // Constant for average sensibility
     public float VarianceMin = 1.0f; // Variance minimum to detect a beat
     public float AmplitudeMultiplier = 500f; // Multiplier for FFT amplitude computing
@@ -29,7 +31,7 @@ public class AudioProcessor : MonoBehaviour
     public int Samples = 1024;  // Spectrum array size
     public int FftSamples = 64; // Buffer subbands
     // Constants based on Samples and FftSamples for w computing
-    // w1 = A + B
+    // w1 = A + B (~= 2)
     // FftSamples * B + A * FftSamples * (FftSamples - 1) * 0.5 = Samples
     public float A = 0.44307692307f;
     public float B = 1.6f;
