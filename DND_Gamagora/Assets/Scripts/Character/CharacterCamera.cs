@@ -34,7 +34,6 @@ public class CharacterCamera : MonoBehaviour
             speed = Mathf.Clamp(s, MinSpeed, MaxSpeed);
         }
             
-        Debug.Log(speed);
         // Compute camera new position and smooth translate
         Vector3 new_pos = transform.position + new Vector3(speed, 0f, 0f);
         //float smooth = Mathf.SmoothDamp(speed);

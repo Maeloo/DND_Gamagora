@@ -38,14 +38,29 @@ public class Platform : MonoBehaviour, Poolable<Platform> {
     public void Duplicate ( Platform a_template ) {
         foreach(Transform child in a_template.transform)
         {
-            GameObject obj = Instantiate(child.gameObject, Vector3.zero, Quaternion.identity) as GameObject;
+            GameObject obj = Instantiate(child.gameObject) as GameObject;
             obj.transform.SetParent(transform);
         }
+
+        transform.position = new Vector3(1000, 1000, 3);
     }
 
 
     public void Release ( ) {
         _pool.onRelease ( this );
+    }
+
+
+    public void SetPosition(Vector3 position)
+    {
+        transform.position = position;
+    }
+
+
+    void Update()
+    {
+        if (Camera.main.transform.position.x - transform.position.x > Screen.width)
+            Release();
     }
 
 }
