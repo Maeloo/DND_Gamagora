@@ -17,34 +17,40 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class AudioProcessor : MonoBehaviour
 {
-    // Constant C
-    public float C = 2f; // 250f
-    public float VarianceMin = 1.0f; // 150f
-    public float AmplitudeMultiplier = 500f;
+    public float C = 2f; // Constant for average sensibility
+    public float VarianceMin = 1.0f; // Variance minimum to detect a beat
+    public float AmplitudeMultiplier = 500f; // Multiplier for FFT amplitude computing
     public float RefValue = 0.1f; // RMS value for 0 dB
     public float Threshold = 0.02f; // Minimum amplitude to extract pitch
-    public int Samples = 1024;  // Array size
+    public int Samples = 1024;  // Spectrum array size
     public int FftSamples = 64; // Buffer subbands
+    // Constants based on Samples and FftSamples for w computing
+    // w1 = A + B
+    // FftSamples * B + A * FftSamples * (FftSamples - 1) * 0.5 = Samples
     public float A = 0.44307692307f;
     public float B = 1.6f;
-    
+
     public float RmsValue { get; private set; } // Sound level - RMS
     public float DbValue { get; private set; } // Sound level - dB
     public float PitchValue { get; private set; } // Sound pitch - Hz
     public float InstantEnergy { get; private set; } // Instant sound energy
+    [Obsolete]
     public float Variance { get; private set; } // Variance of energies
     
     private const int EnergiesLength = 43; // Energies array size
 
+    
     private float[] samples; // Audio samples
     private float[] spectrum; // Audio spectrum
-    private float[] energies_a; // Energies history
-    private float[] energies_s; // Energy sudband
-    private List<float[]> energies; // Average energy subband history
-    private int fSample;
+    private float[] energies_s; // Current energies for all subbands
+    private List<float[]> energies; // Energy subband history
+    [Obsolete]
+    private float[] energies_a; // Local energies history
+    private int fSample; // Sampling rate (22.05, 44.1 kHz...)
 
     private List<AudioCallbacks> callbacks;
     private AudioSource audioSrc;
@@ -57,9 +63,10 @@ public class AudioProcessor : MonoBehaviour
         spectrum = new float[Samples];
         fSample = AudioSettings.outputSampleRate;
 
-        energies_a = new float[EnergiesLength];
-        for (int i = 0; i < EnergiesLength; i++)
-            energies_a[i] = 0f;
+        // === Old algorithm ===
+        //energies_a = new float[EnergiesLength];
+        //for (int i = 0; i < EnergiesLength; i++)
+        //    energies_a[i] = 0f;
 
         energies_s = new float[FftSamples];
         for (int i = 0; i < FftSamples; i++)
@@ -71,8 +78,7 @@ public class AudioProcessor : MonoBehaviour
             energies.Add(new float[EnergiesLength]);
             for (int j = 0; j < EnergiesLength; j++)
                 energies[i][j] = 0f;
-        }
-            
+        } 
     }
 
     // Update is called once per frame
@@ -89,16 +95,13 @@ public class AudioProcessor : MonoBehaviour
 
     public void changeCameraColor()
     {
-        //Debug.Log("camera");
-        float r = Random.Range(0f, 1f);
-        float g = Random.Range(0f, 1f);
-        float b = Random.Range(0f, 1f);
+        float r = UnityEngine.Random.Range(0f, 1f);
+        float g = UnityEngine.Random.Range(0f, 1f);
+        float b = UnityEngine.Random.Range(0f, 1f);
         Color color = new Color(r, g, b);
 
         Camera.main.clearFlags = CameraClearFlags.Color;
         Camera.main.backgroundColor = color;
-
-        //camera.backgroundColor = color;
     }
 
     void AnalyzeSound()
@@ -114,6 +117,7 @@ public class AudioProcessor : MonoBehaviour
 
         InstantEnergy = sum;
 
+        // === Old algorithm ===
         //float localEnergy = GetAverageLocalEnergy();
         //Variance = GetVariance(localEnergy);
         //C = (-0.0025714f * Variance) + 1.5142857f;
@@ -129,23 +133,31 @@ public class AudioProcessor : MonoBehaviour
         // Get sound spectrum
         audioSrc.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
 
+        // Get amplitudes
         float[] fft = GetFftAmplitudes();
+        // FFT sampling
         ComputeEnergySubband(fft);
 
         float[] list_energy = new float[FftSamples];
         float[] list_variance = new float[FftSamples];
 
+        // For each samples
         for (i = 0; i < FftSamples; i++)
         {
+            // Average energy for a frequency band (based on last 43 energies)
             float energy_i = GetAverageEnergyForBand(i);
             list_energy[i] = energy_i;
 
+            // Shift energy history on the right
             ShiftEnergyForBand(i);
+            // New energy in first position
             energies[i][0] = energies_s[i];
 
+            // Current variance for a band
             float variance = GetVarianceForBand(i, energy_i);
             list_variance[i] = variance;
 
+            // Check for a beat
             if (energies_s[i] > C * energy_i && variance > VarianceMin)
             {
                 if (callbacks != null)
@@ -171,14 +183,17 @@ public class AudioProcessor : MonoBehaviour
         }
 
         float freqN = maxN; // Pass the index to a float variable
+
         if (maxN > 0 && maxN < Samples - 1) // Interpolate index using neighbours
         { 
             var dL = spectrum[maxN - 1] / spectrum[maxN];
             var dR = spectrum[maxN + 1] / spectrum[maxN];
             freqN += 0.5f * (dR * dR - dL * dL);
         }
+
         PitchValue = freqN * (fSample * 0.5f) * (1f / Samples); // Convert index to frequency
 
+        // Callback on datas
         if (callbacks != null)
         {
             foreach (AudioCallbacks callback in callbacks)
@@ -188,6 +203,7 @@ public class AudioProcessor : MonoBehaviour
         }
     }
 
+    [Obsolete("GetAverageLocalEnergy is deprecated, please use GetAverageEnergyForBand instead.")]
     public float GetAverageLocalEnergy()
     {
         float e = 0f;
@@ -200,6 +216,7 @@ public class AudioProcessor : MonoBehaviour
         return e / EnergiesLength;
     }
 
+    [Obsolete("GetVariance is deprecated, please use GetVarianceForBand instead.")]
     private float GetVariance(float local_energy)
     {
         float v = 0f;
@@ -212,6 +229,7 @@ public class AudioProcessor : MonoBehaviour
         return v / EnergiesLength;
     }
 
+    [Obsolete("ShiftEnergies is deprecated, please use ShiftEnergyForBand instead.")]
     private void ShiftEnergies()
     {
         for (int i = EnergiesLength - 1; i >= 1; i--)
