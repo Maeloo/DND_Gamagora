@@ -95,15 +95,10 @@ public class AudioProcessor : Singleton<AudioProcessor>
         }
     }
 
-    public void changeCameraColor()
+    public void changeCameraColor(Color c)
     {
-        float r = UnityEngine.Random.Range(0f, 1f);
-        float g = UnityEngine.Random.Range(0f, 1f);
-        float b = UnityEngine.Random.Range(0f, 1f);
-        Color color = new Color(r, g, b);
-
         Camera.main.clearFlags = CameraClearFlags.Color;
-        Camera.main.backgroundColor = color;
+        Camera.main.backgroundColor = c;
     }
 
     void AnalyzeSound()
@@ -140,15 +135,18 @@ public class AudioProcessor : Singleton<AudioProcessor>
         // FFT sampling
         ComputeEnergySubband(fft);
 
-        float[] list_energy = new float[FftSamples];
+        float[] average_energy = new float[FftSamples];
         float[] list_variance = new float[FftSamples];
 
+        int wi = 0;
+        int w = 1;
+        int counter = 0;
         // For each samples
         for (i = 0; i < FftSamples; i++)
         {
             // Average energy for a frequency band (based on last 43 energies)
             float energy_i = GetAverageEnergyForBand(i);
-            list_energy[i] = energy_i;
+            average_energy[i] = energy_i;
 
             // Shift energy history on the right
             ShiftEnergyForBand(i);
@@ -159,6 +157,13 @@ public class AudioProcessor : Singleton<AudioProcessor>
             float variance = GetVarianceForBand(i, energy_i);
             list_variance[i] = variance;
 
+            if (w == 1)
+            {
+                wi = (int)GetW(i + 1);
+                w = wi;
+                counter++;
+            }
+
             // Check for a beat
             if (energies_s[i] > C * energy_i && variance > VarianceMin)
             {
@@ -166,10 +171,31 @@ public class AudioProcessor : Singleton<AudioProcessor>
                 {
                     foreach (AudioCallbacks callback in callbacks)
                     {
-                        callback.onOnbeatDetected();
+                        callback.onBeatDetected();
+
+                        if(counter == 1)
+                            callback.onBeatLow1(energies_s[i], energy_i, variance, wi);
+                        else if (counter == 2)
+                            callback.onBeatLow2(energies_s[i], energy_i, variance, wi);
+                        else if (counter == 3)
+                            callback.onBeatLow3(energies_s[i], energy_i, variance, wi);
+                        else if (counter == 4)
+                            callback.onBeatLow4(energies_s[i], energy_i, variance, wi);
+                        else if (counter == 5)
+                            callback.onBeatMedium1(energies_s[i], energy_i, variance, wi);
+                        else if (counter == 6)
+                            callback.onBeatMedium2(energies_s[i], energy_i, variance, wi);
+                        else if (counter == 7)
+                            callback.onBeatMedium3(energies_s[i], energy_i, variance, wi);
+                        else if (counter == 8)
+                            callback.onBeatHigh1(energies_s[i], energy_i, variance, wi);
+                        else if (counter == 9)
+                            callback.onBeatHigh2(energies_s[i], energy_i, variance, wi);
                     }
                 }
             }
+
+            w--;
         }
 
         float maxV = 0f;
@@ -200,7 +226,7 @@ public class AudioProcessor : Singleton<AudioProcessor>
         {
             foreach (AudioCallbacks callback in callbacks)
             {
-                callback.onData(spectrum, energies_s, list_energy, list_variance);
+                callback.onData(spectrum, energies_s, average_energy, list_variance);
             }
         }
     }
@@ -323,8 +349,17 @@ public class AudioProcessor : Singleton<AudioProcessor>
 
     public interface AudioCallbacks
     {
-        void onOnbeatDetected();
-        void onData(float[] spectrum, float[] data, float[] data2, float[] data3);
+        void onBeatLow1(float energy, float average_energy, float radiance, int frequency_size);
+        void onBeatLow2(float energy, float average_energy, float radiance, int frequency_size);
+        void onBeatLow3(float energy, float average_energy, float radiance, int frequency_size);
+        void onBeatLow4(float energy, float average_energy, float radiance, int frequency_size);
+        void onBeatMedium1(float energy, float average_energy, float radiance, int frequency_size);
+        void onBeatMedium2(float energy, float average_energy, float radiance, int frequency_size);
+        void onBeatMedium3(float energy, float average_energy, float radiance, int frequency_size);
+        void onBeatHigh1(float energy, float average_energy, float radiance, int frequency_size);
+        void onBeatHigh2(float energy, float average_energy, float radiance, int frequency_size);
+        void onBeatDetected();
+        void onData(float[] spectrum, float[] energy, float[] average_energy, float[] variance);
     }
 }
 

@@ -16,12 +16,23 @@
 
 using UnityEngine;
 using System;
+using System.Collections;
 
 /*
  * Make your class implement the interface AudioProcessor.AudioCallbaks
  */
 public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
 {
+    public GameObject box1;
+    public GameObject box2;
+    public GameObject box3;
+    public GameObject box4;
+    public GameObject box5;
+    public GameObject box6;
+    public GameObject box7;
+    public GameObject box8;
+    public GameObject box9;
+
     private AudioProcessor processor;
     private EnemyManager enemiesSpawner;
     private Vector3 currentPos;
@@ -34,7 +45,6 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         enemiesSpawner = EnemyManager.Instance;
         currentPos = Camera.main.transform.position;
     }
-
     
     void Update()
     {
@@ -43,40 +53,104 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
 
     // This event will be called every time a beat is detected.
     // Change the threshold parameter in the inspector to adjust the sensitivity
-    public void onOnbeatDetected()
+    public void onBeatDetected()
     {
-        processor.changeCameraColor();
+        //float r = UnityEngine.Random.Range(0f, 1f);
+        //float g = UnityEngine.Random.Range(0f, 1f);
+        //float b = UnityEngine.Random.Range(0f, 1f);
+        //Color color = new Color(r, g, b);
+        //processor.changeCameraColor(color);
     }
 
     // This event will be called every frame while music is playing
-    public void onData(float[] spectrum, float[] data, float[] data2, float[] data3)
+    public void onData(float[] spectrum, float[] energy, float[] average_energy, float[] variance)
     {
         for (int i = 0; i < spectrum.Length; ++i)
         {
-            Vector3 start = new Vector3(i * 0.015f, -1f, 0);
-            Vector3 end = new Vector3(i * 0.015f, -1f + 20f * spectrum[i], 0);
+            Vector3 start = new Vector3(i * 0.015f + 4f, 0f, 0);
+            Vector3 end = new Vector3(i * 0.015f + 4f, 20f * spectrum[i], 0);
             Debug.DrawLine(start, end, Color.yellow);
         }
 
-        for (int i = 0; i < data.Length; ++i)
+        for (int i = 0; i < energy.Length; ++i)
         {
-            Vector3 start = new Vector3(i * 0.065f, 0.5f, 0);
-            Vector3 end = new Vector3(i * 0.065f, 0.5f + 0.1f * data[i], 0);
+            Vector3 start = new Vector3(i * 0.065f - 10f, 0f, 0);
+            Vector3 end = new Vector3(i * 0.065f - 10f, 0.1f * energy[i], 0);
             Debug.DrawLine(start, end, Color.red);
         }
 
-        for (int i = 0; i < data2.Length; ++i)
+        for (int i = 0; i < average_energy.Length; ++i)
         {
-            Vector3 start = new Vector3(i * 0.065f, 2f, 0);
-            Vector3 end = new Vector3(i * 0.065f, 2f + 0.1f * data2[i], 0);
+            Vector3 start = new Vector3(i * 0.065f - 5f, 0f, 0);
+            Vector3 end = new Vector3(i * 0.065f - 5f, 0.1f * average_energy[i], 0);
             Debug.DrawLine(start, end, Color.red);
         }
 
-        for (int i = 0; i < data3.Length; ++i)
+        for (int i = 0; i < variance.Length; ++i)
         {
-            Vector3 start = new Vector3(i * 0.065f, -3f, 0);
-            Vector3 end = new Vector3(i * 0.065f, -3f + 0.1f * data3[i], 0);
+            Vector3 start = new Vector3(i * 0.065f, 0f, 0);
+            Vector3 end = new Vector3(i * 0.065f, 0.0005f * variance[i], 0);
             Debug.DrawLine(start, end, Color.yellow);
         }
+    }
+
+    public void onBeatLow1(float energy, float average_energy, float radiance, int frequency_size)
+    {
+        box1.GetComponent<Renderer>().material.color = Color.red;
+        StartCoroutine(StopColor(box1));
+    }
+
+    public void onBeatLow2(float energy, float average_energy, float radiance, int frequency_size)
+    {
+        box2.GetComponent<Renderer>().material.color = Color.yellow;
+        StartCoroutine(StopColor(box2));
+    }
+
+    public void onBeatLow3(float energy, float average_energy, float radiance, int frequency_size)
+    {
+        box3.GetComponent<Renderer>().material.color = Color.blue;
+        StartCoroutine(StopColor(box3));
+    }
+
+    public void onBeatLow4(float energy, float average_energy, float radiance, int frequency_size)
+    {
+        box4.GetComponent<Renderer>().material.color = Color.green;
+        StartCoroutine(StopColor(box4));
+    }
+
+    public void onBeatMedium1(float energy, float average_energy, float radiance, int frequency_size)
+    {
+        box5.GetComponent<Renderer>().material.color = Color.black;
+        StartCoroutine(StopColor(box5));
+    }
+
+    public void onBeatMedium2(float energy, float average_energy, float radiance, int frequency_size)
+    {
+        box6.GetComponent<Renderer>().material.color = Color.cyan;
+        StartCoroutine(StopColor(box6));
+    }
+
+    public void onBeatMedium3(float energy, float average_energy, float radiance, int frequency_size)
+    {
+        box7.GetComponent<Renderer>().material.color = Color.magenta;
+        StartCoroutine(StopColor(box7));
+    }
+
+    public void onBeatHigh1(float energy, float average_energy, float radiance, int frequency_size)
+    {
+        box8.GetComponent<Renderer>().material.color = (Color.red + Color.green) * 0.5f;
+        StartCoroutine(StopColor(box8));
+    }
+
+    public void onBeatHigh2(float energy, float average_energy, float radiance, int frequency_size)
+    {
+        box9.GetComponent<Renderer>().material.color = Color.white;
+        StartCoroutine(StopColor(box9));
+    }
+
+    public IEnumerator StopColor(GameObject obj)
+    {
+        yield return new WaitForSeconds(0.1f);
+        obj.GetComponent<Renderer>().material.color = Color.grey;
     }
 }
