@@ -3,14 +3,16 @@ using System.Collections;
 
 public class CharacterCamera : MonoBehaviour
 {
-    public float MinSpeed = 3f;
-    public float MaxSpeed = 10f;
-    public float LerpTime = 0.01f;
-    public float PitchInfluence = 1f;
-    public float PitchThreshold = 2f;
+    public float MinSpeed;
+    public float MaxSpeed;
+    public float LerpTime;
+    public float PitchInfluence;
+    public float PitchThreshold;
 
     private float speed;
+    private float targetSpeed;
     private float oldPitch;
+    private float currentVelocity;
     private AudioProcessor audioProcess;
 
 	// Use this for initialization
@@ -18,6 +20,7 @@ public class CharacterCamera : MonoBehaviour
     {
         audioProcess = AudioProcessor.Instance;
         speed = MinSpeed;
+        targetSpeed = speed;
         oldPitch = audioProcess.PitchValue;
     }
 	
@@ -31,14 +34,15 @@ public class CharacterCamera : MonoBehaviour
         if (Mathf.Abs(delta) > PitchThreshold)
         {
             float s = speed + delta * PitchInfluence;
-            speed = Mathf.Clamp(s, MinSpeed, MaxSpeed);
+            targetSpeed = Mathf.Clamp(s, MinSpeed, MaxSpeed);
         }
-            
-        Debug.Log(speed);
+
+        speed = Mathf.SmoothDamp(speed, targetSpeed, ref currentVelocity, Time.deltaTime * LerpTime);
+
         // Compute camera new position and smooth translate
         Vector3 new_pos = transform.position + new Vector3(speed, 0f, 0f);
-        //float smooth = Mathf.SmoothDamp(speed);
-        transform.position = Vector3.Lerp(transform.position, new_pos, Time.deltaTime * LerpTime);
+        transform.position = new_pos;
+        // Vector3.Lerp(transform.position, new_pos, Time.deltaTime * LerpTime);
 
         oldPitch = pitch;
     }

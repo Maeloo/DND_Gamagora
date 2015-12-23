@@ -23,18 +23,18 @@ public class AudioProcessor : Singleton<AudioProcessor>
 {
     protected AudioProcessor() { }
 
-    public float C = 2f; // Constant for average sensibility
-    public float VarianceMin = 1.0f; // Variance minimum to detect a beat
-    public float AmplitudeMultiplier = 500f; // Multiplier for FFT amplitude computing
-    public float RefValue = 0.1f; // RMS value for 0 dB
-    public float Threshold = 0.02f; // Minimum amplitude to extract pitch
-    public int Samples = 1024;  // Spectrum array size
-    public int FftSamples = 64; // Buffer subbands
+    public float C; // Constant for average sensibility
+    public float VarianceMin; // Variance minimum to detect a beat
+    public float AmplitudeMultiplier; // Multiplier for FFT amplitude computing
+    public float RefValue; // RMS value for 0 dB
+    public float Threshold; // Minimum amplitude to extract pitch
+    public int Samples;  // Spectrum array size
+    public int FftSamples; // Buffer subbands
     // Constants based on Samples and FftSamples for w computing
     // w1 = A + B (~= 2)
     // FftSamples * B + A * FftSamples * (FftSamples - 1) * 0.5 = Samples
-    public float A = 0.44307692307f;
-    public float B = 1.6f;
+    public float A; // 0.44307692307f
+    public float B; // 1.6f
 
     public float RmsValue { get; private set; } // Sound level - RMS
     public float DbValue { get; private set; } // Sound level - dB
