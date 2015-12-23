@@ -20,35 +20,33 @@ using System.Collections.Generic;
 
 public class AudioProcessor : MonoBehaviour
 {
-    private List<AudioCallbacks> callbacks;
-
-    public int Samples = 1024;  // Array size
+    // Constant C
+    public float C = 2f; // 250f
+    public float VarianceMin = 1.0f; // 150f
+    public float AmplitudeMultiplier = 500f;
     public float RefValue = 0.1f; // RMS value for 0 dB
     public float Threshold = 0.02f; // Minimum amplitude to extract pitch
+    public int Samples = 1024;  // Array size
+    public int FftSamples = 64; // Buffer subbands
     public float A = 0.44307692307f;
     public float B = 1.6f;
-    public float VarianceMin = 0.0f; // 150f
-    // Constant C
-    public float C = 20f; // 250f
-    public int FftSamples = 64; // Buffer subbands
-
-    public float RmsValue { get; private set; }   // sound level - RMS
-    public float DbValue { get; private set; }    // sound level - dB
-    public float PitchValue { get; private set; } // sound pitch - Hz
+    
+    public float RmsValue { get; private set; } // Sound level - RMS
+    public float DbValue { get; private set; } // Sound level - dB
+    public float PitchValue { get; private set; } // Sound pitch - Hz
     public float InstantEnergy { get; private set; } // Instant sound energy
     public float Variance { get; private set; } // Variance of energies
     
     private const int EnergiesLength = 43; // Energies array size
 
-    
-
-    private float[] samples; // audio samples
-    private float[] spectrum; // audio spectrum
+    private float[] samples; // Audio samples
+    private float[] spectrum; // Audio spectrum
     private float[] energies_a; // Energies history
     private float[] energies_s; // Energy sudband
     private List<float[]> energies; // Average energy subband history
     private int fSample;
 
+    private List<AudioCallbacks> callbacks;
     private AudioSource audioSrc;
 
     // Use this for initialization
@@ -225,7 +223,7 @@ public class AudioProcessor : MonoBehaviour
         float[] fft = new float[Samples];
 
         for (int i = 0; i < Samples; i++)
-            fft[i] = spectrum[i] * spectrum[i]; 
+            fft[i] = spectrum[i] * AmplitudeMultiplier * spectrum[i] * AmplitudeMultiplier;
 
         return fft;
     }

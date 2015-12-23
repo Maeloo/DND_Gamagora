@@ -60,22 +60,22 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
 
         for (int i = 0; i < data.Length; ++i)
         {
-            Vector3 start = new Vector3(i * 0.065f, 2f, 0);
-            Vector3 end = new Vector3(i * 0.065f, 2f + 50000f * data[i], 0);
+            Vector3 start = new Vector3(i * 0.065f, 0.5f, 0);
+            Vector3 end = new Vector3(i * 0.065f, 0.5f + 0.1f * data[i], 0);
             Debug.DrawLine(start, end, Color.red);
         }
 
         for (int i = 0; i < data2.Length; ++i)
         {
-            Vector3 start = new Vector3(i * 0.065f, 0.5f, 0);
-            Vector3 end = new Vector3(i * 0.065f, 0.5f + 50000f * data2[i], 0);
+            Vector3 start = new Vector3(i * 0.065f, 2f, 0);
+            Vector3 end = new Vector3(i * 0.065f, 2f + 0.1f * data2[i], 0); // 50000f * 
             Debug.DrawLine(start, end, Color.red);
         }
 
         for (int i = 0; i < data3.Length; ++i)
         {
             Vector3 start = new Vector3(i * 0.065f, -3f, 0);
-            Vector3 end = new Vector3(i * 0.065f, -3f + 5000000000f * data3[i], 0);
+            Vector3 end = new Vector3(i * 0.065f, -3f + 0.1f * data3[i], 0); // 5000000000f *
             Debug.DrawLine(start, end, Color.yellow);
         }
     }
