@@ -30,6 +30,6 @@ public class Spin : MonoBehaviour {
         center /= mf.mesh.vertexCount;
 
         aroundCenter = true;
-        angle = Random.RandomRange ( -.2f, .2f );
+        angle = Random.Range(-.2f, .2f);
     }
 }
