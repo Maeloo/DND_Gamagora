@@ -150,7 +150,7 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
 
     public IEnumerator StopColor(GameObject obj)
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         obj.GetComponent<Renderer>().material.color = Color.grey;
     }
 }

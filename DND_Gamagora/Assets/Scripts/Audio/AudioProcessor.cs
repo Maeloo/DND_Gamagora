@@ -163,6 +163,8 @@ public class AudioProcessor : Singleton<AudioProcessor>
                 w = wi;
                 counter++;
             }
+            else
+                w--;
 
             // Check for a beat
             if (energies_s[i] > C * energy_i && variance > VarianceMin)
@@ -194,8 +196,6 @@ public class AudioProcessor : Singleton<AudioProcessor>
                     }
                 }
             }
-
-            w--;
         }
 
         float maxV = 0f;
