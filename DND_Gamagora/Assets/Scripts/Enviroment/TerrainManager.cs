@@ -13,30 +13,40 @@ public class TerrainManager : Singleton<TerrainManager> {
     protected TerrainManager ( ) { }
 
     protected float classic_width;
-    protected float last_cam_x;
 
     protected Dictionary<Type_Platform, Pool<Platform>> pools;
+
+    public Transform firstPlatform;
+    public float spawnTime = .2f;
+
+    private float _lastSpawn;
+    private Vector3 _lastPos;
 
 
     void Awake()
     {
         pools = new Dictionary<Type_Platform, Pool<Platform>>();
 
-        pools.Add(Type_Platform.Classic, new Pool<Platform>(ClassicPlatform, 10, 20));
+        pools.Add(Type_Platform.Classic, new Pool<Platform>(ClassicPlatform, 10, 12));
         pools.Add(Type_Platform.Bouncy, new Pool<Platform>(BouncyPlatform, 5, 10));
 
+        pools[0].automaticReuseUnavailable = true;
+
         classic_width = ClassicPlatform.GetComponentInChildren<SpriteRenderer>().bounds.size.x;
-        last_cam_x = Camera.main.transform.position.x;
+
+        _lastPos = firstPlatform.position;
+
+        _lastSpawn = Time.time;
     }
 
 
     void Update()
     {
-        if(Camera.main.transform.position.x - last_cam_x > classic_width)
+        if (Time.time - _lastSpawn > spawnTime)
         {
             SpawnPlatform(Type_Platform.Classic);
 
-            last_cam_x = Camera.main.transform.position.x;
+            _lastSpawn = Time.time;
         }
     }
 
@@ -45,14 +55,14 @@ public class TerrainManager : Singleton<TerrainManager> {
     {
         Platform pf;
 
-        if(pools[type].GetAvailable(true, out pf))
+        if(pools[type].GetAvailable(false, out pf))
         {
-            Vector3 tar = new Vector3(Screen.width, .0f, .0f);
-            Vector3 pos = Camera.main.ScreenToWorldPoint(tar);
-            pos.z =  .0f;
-            pos.y = -3.0f;
+            Vector3 pos = _lastPos;
+            pos.x += classic_width;
 
             pf.SetPosition(pos);
+
+            _lastPos = pos;
         }
     }
 

@@ -10,6 +10,7 @@ public class Pool<T> : UnityEngine.Object where T : Poolable<T>, new ( ) {
                 availableObjects;
 
     public uint sizeMax = 5;
+    public bool automaticReuseUnavailable = false;
 
     private uint size = 0;
 
@@ -30,20 +31,36 @@ public class Pool<T> : UnityEngine.Object where T : Poolable<T>, new ( ) {
     }
 
     public bool GetAvailable ( bool a_forceExpand, out T obj ) {
-        if ( availableObjects.Count > 0 ) {
+        if (availableObjects.Count > 0) {
             obj = availableObjects[availableObjects.Count - 1];
-            availableObjects.Remove ( obj );
-            unavailableObjects.Add ( obj );
-        } else {
-            if ( ( size < sizeMax ) || a_forceExpand ) {
-                obj = new T ( );
-                obj = obj.Create ( );
-                obj.Register ( this );
-                obj.Duplicate ( template );
-                unavailableObjects.Add ( obj );
+            availableObjects.Remove(obj);
+            unavailableObjects.Add(obj);
+        }
+        else if (automaticReuseUnavailable)
+        {
+            for(int i = unavailableObjects.Count - 1; i >=0; i--)
+            {
+                obj = unavailableObjects[i];
+                unavailableObjects.Remove(obj);
+                availableObjects.Add(obj);
+            }
+
+            obj = availableObjects[availableObjects.Count - 1];
+            availableObjects.Remove(obj);
+            unavailableObjects.Add(obj);
+        }
+        else {
+            if ((size < sizeMax) || a_forceExpand)
+            {
+                obj = new T();
+                obj = obj.Create();
+                obj.Register(this);
+                obj.Duplicate(template);
+                unavailableObjects.Add(obj);
                 ++size;
-            } else {
-                obj = new T ( );
+            }
+            else {
+                obj = new T();
                 return false;
             }
         }
