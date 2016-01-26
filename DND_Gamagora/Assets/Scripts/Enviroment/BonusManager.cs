@@ -26,7 +26,7 @@ public class BonusManager : Singleton<BonusManager>
     {
         Bonus bonus;
         
-        if(pools[type].GetAvailable(true, out bonus))
+        if(pools[type].GetAvailable(false, out bonus))
         {
             if(type == Type_Bonus.Note)
             {
@@ -42,6 +42,9 @@ public class BonusManager : Singleton<BonusManager>
 
     public void RemoveBonus(Bonus obj, Type_Bonus type)
     {
+        if (obj == null)
+            Debug.Log("fuck"); ;
+
         for(int i = 0; i <  pools[type].usedObjects.Count; i++)
         {
             if(pools[type].usedObjects[i] == obj)
