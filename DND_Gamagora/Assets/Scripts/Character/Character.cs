@@ -42,6 +42,8 @@ public class Character : MonoBehaviour
     private float lastAttack;
     private bool falling;
 
+    private CharacterCamera cam;
+
     private Pool<Bullet> kamehamehas;
 
     private void Awake()
@@ -56,6 +58,8 @@ public class Character : MonoBehaviour
         lastAttack = Time.time;
         kamehamehas = new Pool<Bullet>(kamehameha, 8, 16);
         kamehamehas.automaticReuseUnavailables = true;
+
+        cam = Camera.main.GetComponent<CharacterCamera>();
     }
 
 
@@ -138,6 +142,11 @@ public class Character : MonoBehaviour
             falling = true;
 
             anim.SetBool("Fall", true);
+
+            if (cam != null)
+            {
+                cam.ResetCamToCheckPoint(lastCheckpointPos);
+            }
 
             Invoke("MoveToLastCheckPoint", 1.0f);
             //MoveToLastCheckPoint();
