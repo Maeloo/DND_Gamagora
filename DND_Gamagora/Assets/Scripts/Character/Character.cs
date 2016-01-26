@@ -21,7 +21,7 @@ public class Character : MonoBehaviour
     private bool AirControl = false;                 // Whether or not a player can steer while jumping;
     [SerializeField]
     private LayerMask WhatIsGround;                  // A mask determining what is ground to the character
-
+    public GameObject[] LifeUI;
     private Transform groundCheck;    // A position marking where to check if the player is grounded.
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool grounded;            // Whether or not the player is grounded.
@@ -149,7 +149,12 @@ public class Character : MonoBehaviour
 
     private void Hit(int power)
     {
+        int oldLife = life;
         life -= power;
+        for(int i = life; i < oldLife; ++i)
+        {
+            LifeUI[i].SetActive(false);
+        }
         //if(life <= 0)
         // Die();
     }
