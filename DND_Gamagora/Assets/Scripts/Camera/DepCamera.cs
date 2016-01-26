@@ -54,7 +54,7 @@ public class DepCamera : MonoBehaviour {
         }
         else if (distX != 0 || posVoulu != this.transform.position) //si l'objet ne bouge plus, on déplace quand même la caméra progressivement vers la destination voulue
         {
-            Debug.Log("c'est arrêté");
+            //Debug.Log("c'est arrêté");
             posVoulu = vue + obj.transform.position;
             //print(distZ + " / " + Vector3.SqrMagnitude(this.transform.position - posVoulu));
             if (Vector3.SqrMagnitude(this.transform.position - posVoulu) < 0.0001f)

@@ -9,10 +9,16 @@ public class Pool<T> : UnityEngine.Object where T : Poolable<T>, new ( ) {
     List<T>     unavailableObjects,
                 availableObjects;
 
+    public List<T> usedObjects
+    {
+        get { return unavailableObjects;  }
+    }
+
     public uint sizeMax = 5;
-    public bool automaticReuseUnavailable = false;
+    public bool automaticReuseUnavailables = false;
 
     private uint size = 0;
+
 
     public Pool ( T a_template, uint a_sizeInit, uint a_sizeMax ) {
         template            = a_template;
@@ -36,7 +42,7 @@ public class Pool<T> : UnityEngine.Object where T : Poolable<T>, new ( ) {
             availableObjects.Remove(obj);
             unavailableObjects.Add(obj);
         }
-        else if (automaticReuseUnavailable)
+        else if (automaticReuseUnavailables)
         {
             for(int i = unavailableObjects.Count - 1; i >=0; i--)
             {

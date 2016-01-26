@@ -8,6 +8,7 @@ public class TerrainManager : Singleton<TerrainManager> {
 
     [SerializeField] Platform ClassicPlatform;
     [SerializeField] Platform BouncyPlatform;
+    [SerializeField] GameObject Player;
 
 
     protected TerrainManager ( ) { }
@@ -27,12 +28,15 @@ public class TerrainManager : Singleton<TerrainManager> {
     {
         pools = new Dictionary<Type_Platform, Pool<Platform>>();
 
-        pools.Add(Type_Platform.Classic, new Pool<Platform>(ClassicPlatform, 10, 12));
-        pools.Add(Type_Platform.Bouncy, new Pool<Platform>(BouncyPlatform, 5, 10));
+        Pool<Platform> classicPool = new Pool<Platform>(ClassicPlatform, 64, 128);
+        classicPool.automaticReuseUnavailables = true;
+        pools.Add(Type_Platform.Classic, classicPool);        
 
-        pools[0].automaticReuseUnavailable = true;
+        Pool<Platform> bouncyPool = new Pool<Platform>(BouncyPlatform, 8, 16);
+        bouncyPool.automaticReuseUnavailables = true;
+        pools.Add(Type_Platform.Bouncy, bouncyPool);                
 
-        classic_width = ClassicPlatform.GetComponentInChildren<SpriteRenderer>().bounds.size.x;
+        classic_width = ClassicPlatform.GetComponentInChildren<SpriteRenderer>().bounds.size.x + 0.02f;
 
         _lastPos = firstPlatform.position;
 
@@ -51,6 +55,24 @@ public class TerrainManager : Singleton<TerrainManager> {
     }
 
 
+    // Offset à 0 = platform actuelle, Offset à 3 = 3 platform en avance .. etc
+    bool getClassicPlatform(ref Platform platform, int offset = 0)
+    {
+        for (int i = 0; i < pools[0].usedObjects.Count; i++)
+        {
+            Vector3 pos_pf = pools[0].usedObjects[i].transform.position;
+            if (Player.transform.position.x + offset * classic_width > pos_pf.x && 
+                Player.transform.position.x + offset * classic_width < pos_pf.x + classic_width)
+            {
+                platform = pools[0].usedObjects[i];
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
     void SpawnPlatform(Type_Platform type)
     {
         Platform pf;
@@ -64,6 +86,20 @@ public class TerrainManager : Singleton<TerrainManager> {
 
             _lastPos = pos;
         }
+    }
+
+
+    /******* Public methods ********/
+
+    public bool makeCurrentClassicPlatformFall()
+    {
+        Platform pf = null;
+        if(getClassicPlatform(ref pf, 2))
+        {
+            return pf.makeFall(10.0f, .3f);
+        }
+
+        return false;
     }
 
 }

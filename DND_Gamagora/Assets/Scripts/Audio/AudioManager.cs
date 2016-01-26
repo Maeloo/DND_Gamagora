@@ -94,16 +94,58 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         }
     }
 
+    protected int minSkipBeatLow1 = 20; // Reglage Higklight Tribe
+    protected int countTimeBeatLow1 = 0;
     public void onBeatLow1(float energy, float average_energy, float radiance, int frequency_size)
     {
         box1.GetComponent<Renderer>().material.color = Color.red;
         StartCoroutine(StopColor(box1));
+
+        countTimeBeatLow1++;
+        if (countTimeBeatLow1 >= minSkipBeatLow1)
+        {
+            if (TerrainManager.Instance.makeCurrentClassicPlatformFall())
+                countTimeBeatLow1 = 0;
+
+            for (int i = 0; i < EnemyManager.Instance.fireballs.Count; i++)
+            {
+                iTween.Stop(EnemyManager.Instance.fireballs[i].gameObject);
+
+                iTween.ScaleTo(EnemyManager.Instance.fireballs[i].gameObject, iTween.Hash(
+                    "time", 1.0f,
+                    "scale", new Vector3(2.0f + energy * .005f, 2.0f + energy * .005f, 2.0f + energy * .005f),
+                    "easetype", iTween.EaseType.easeInOutExpo));
+
+                iTween.ScaleTo(EnemyManager.Instance.fireballs[i].gameObject, iTween.Hash(
+                    "delay", 1.0f,
+                    "time", .5f,
+                    "scale", new Vector3(3.0f, 3.0f, 3.0f),
+                    "easetype", iTween.EaseType.easeInOutExpo));
+            }
+        }       
     }
 
+    
     public void onBeatLow2(float energy, float average_energy, float radiance, int frequency_size)
     {
         box2.GetComponent<Renderer>().material.color = Color.yellow;
         StartCoroutine(StopColor(box2));
+
+        for (int i = 0; i < EnemyManager.Instance.fireballs.Count; i++)
+        {
+            iTween.Stop(EnemyManager.Instance.fireballs[i].gameObject);
+
+            iTween.ScaleTo(EnemyManager.Instance.fireballs[i].gameObject, iTween.Hash(
+                "time", .1f,
+                "scale", new Vector3(2.0f + energy * .004f, 2.0f + energy * .004f, 2.0f + energy * .004f),
+                "easetype", iTween.EaseType.easeInOutExpo));
+
+            iTween.ScaleTo(EnemyManager.Instance.fireballs[i].gameObject, iTween.Hash(
+                "delay", .1f,
+                "time", .2f,
+                "scale", new Vector3(2.0f, 2.0f, 2.0f),
+                "easetype", iTween.EaseType.easeInOutExpo));
+        }
     }
 
     public void onBeatLow3(float energy, float average_energy, float radiance, int frequency_size)

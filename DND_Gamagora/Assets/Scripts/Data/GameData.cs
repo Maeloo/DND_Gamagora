@@ -5,4 +5,10 @@
         Classic,
         Bouncy
     }
+
+
+    public enum Type_Enemy
+    {
+        CrazyFireball
+    }
 }
