@@ -11,4 +11,9 @@
     {
         CrazyFireball
     }
+
+    public enum Type_Bonus
+    {
+        Note
+    }
 }

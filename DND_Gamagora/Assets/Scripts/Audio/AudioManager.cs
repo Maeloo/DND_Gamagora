@@ -17,7 +17,7 @@
 using UnityEngine;
 using System;
 using System.Collections;
-
+using Game;
 /*
  * Make your class implement the interface AudioProcessor.AudioCallbaks
  */
@@ -164,6 +164,7 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
     {
         box5.GetComponent<Renderer>().material.color = Color.black;
         StartCoroutine(StopColor(box5));
+
     }
 
     public void onBeatMedium2(float energy, float average_energy, float radiance, int frequency_size)
@@ -180,12 +181,16 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
 
     public void onBeatHigh1(float energy, float average_energy, float radiance, int frequency_size)
     {
+
+        BonusManager.Instance.SpawnBonus(Type_Bonus.Note);
         box8.GetComponent<Renderer>().material.color = (Color.red + Color.green) * 0.5f;
         StartCoroutine(StopColor(box8));
+
     }
 
     public void onBeatHigh2(float energy, float average_energy, float radiance, int frequency_size)
     {
+
         box9.GetComponent<Renderer>().material.color = Color.white;
         StartCoroutine(StopColor(box9));
     }

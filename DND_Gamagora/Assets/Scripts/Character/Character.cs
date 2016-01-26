@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using Game;
 
@@ -31,8 +32,11 @@ public class Character : MonoBehaviour
     private Rigidbody2D rb;
     private bool facingRight = true;  // For determining which way the player is currently facing.
     internal Vector3 lastCheckpointPos;
+    private int noteCount;
+    public Text noteText;
     private void Awake()
     {
+        noteCount = 0;
         // Setting up references.
         groundCheck = transform.Find("GroundCheck");
         ceilingCheck = transform.Find("CeilingCheck");
@@ -157,5 +161,11 @@ public class Character : MonoBehaviour
         }
         //if(life <= 0)
         // Die();
+    }
+
+    public void AddNote()
+    {
+        ++noteCount;
+        noteText.text = " x " + noteCount;
     }
 }
