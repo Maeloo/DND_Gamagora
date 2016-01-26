@@ -9,11 +9,13 @@ public class TerrainManager : Singleton<TerrainManager> {
     [SerializeField] Platform ClassicPlatform;
     [SerializeField] Platform BouncyPlatform;
     [SerializeField] GameObject Player;
-
-
+    [SerializeField] GameObject Checkpoint;
+    [SerializeField] int platformCountBeforeCheckpoint = 100;
+    [SerializeField] float offsetYCheckpoint = 1f;
+    internal float offsetXPlatform;
     protected TerrainManager ( ) { }
 
-    protected float classic_width;
+    internal float classic_width;
 
     protected Dictionary<Type_Platform, Pool<Platform>> pools;
 
@@ -21,11 +23,11 @@ public class TerrainManager : Singleton<TerrainManager> {
     public float spawnTime = .2f;
 
     private float _lastSpawn;
-    private Vector3 _lastPos;
-
-
+    internal Vector3 _lastPos;
+    private int platformCount = 0;
     void Awake()
     {
+        Checkpoint.transform.position = new Vector3(-1000, -1000, -1000);
         pools = new Dictionary<Type_Platform, Pool<Platform>>();
 
         Pool<Platform> classicPool = new Pool<Platform>(ClassicPlatform, 64, 128);
@@ -46,11 +48,17 @@ public class TerrainManager : Singleton<TerrainManager> {
 
     void Update()
     {
+
         if (Time.time - _lastSpawn > spawnTime)
         {
             SpawnPlatform(Type_Platform.Classic);
-
+            
             _lastSpawn = Time.time;
+            if (platformCount > platformCountBeforeCheckpoint)
+            {
+                Checkpoint.transform.position = _lastPos + new Vector3(0f, offsetYCheckpoint, 0f);
+                platformCount = 0;
+            }
         }
     }
 
@@ -73,7 +81,7 @@ public class TerrainManager : Singleton<TerrainManager> {
     }
 
 
-    void SpawnPlatform(Type_Platform type)
+    internal void SpawnPlatform(Type_Platform type)
     {
         Platform pf;
 
@@ -86,9 +94,17 @@ public class TerrainManager : Singleton<TerrainManager> {
 
             _lastPos = pos;
         }
+        ++platformCount;
     }
 
-
+    public void ErasePlatform()
+    {
+        for (int i = 0; i < pools[Type_Platform.Classic].usedObjects.Count; i++)
+        {
+            pools[Type_Platform.Classic].usedObjects[i].Release();
+            --i;
+        }
+    }
     /******* Public methods ********/
 
     public bool makeCurrentClassicPlatformFall()
