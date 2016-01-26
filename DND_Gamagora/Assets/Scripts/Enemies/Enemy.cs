@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Enemy : MonoBehaviour, Poolable<Enemy>
 {
@@ -22,7 +23,7 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
     protected Pool<Enemy> _pool;
 
     public Game.Type_Enemy type;
-    public bool _3D;
+    public bool Copy3D;
 
 
     public Enemy Create()
@@ -39,22 +40,41 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
 
     public bool IsReady()
     {
-        return !GetComponent<Renderer>().IsVisibleFrom(Camera.main);
+        throw new NotImplementedException();
     }
 
 
     public void Duplicate(Enemy a_template)
     {
-        if (a_template._3D)
+        type = a_template.type;
+
+        foreach (Transform child in a_template.transform)
+        {
+            GameObject obj = Instantiate<GameObject>(child.gameObject);
+            obj.transform.SetParent(transform);
+
+            obj.transform.localPosition = child.localPosition;
+            obj.transform.localRotation = child.localRotation;
+            obj.transform.localScale = child.localScale;
+        }
+
+        if (a_template.Copy3D)
         {
             gameObject.AddComponent<MeshFilter>().mesh = a_template.GetComponent<MeshFilter>().mesh;
-            gameObject.AddComponent<MeshRenderer>().materials = a_template.GetComponent<MeshRenderer>().materials;
+            gameObject.AddComponent<MeshRenderer>().materials = a_template.GetComponent<MeshRenderer>().materials;  
+        }
 
-            if (type == Game.Type_Enemy.CrazyFireball)
-            {
+        switch(type) 
+        {
+            case Game.Type_Enemy.CrazyFireball:
                 gameObject.AddComponent<ExplosionMat>();
                 gameObject.AddComponent<CrazyFireball>();
-            }
+                break;
+
+            case Game.Type_Enemy.Shooter:
+                gameObject.AddComponent<Shooter>().bulletPrefab = a_template.GetComponent<Shooter>().bulletPrefab;
+
+                break;
         }
     }
 
@@ -65,11 +85,23 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
     }
 
 
-    public void spawn(Vector3 position)
+    public void spawn(Vector3 position, Transform player)
     {
-        if (type == Game.Type_Enemy.CrazyFireball)
+        switch (type)
         {
-            gameObject.GetComponent<CrazyFireball>().spawn(position);
+            case Game.Type_Enemy.CrazyFireball:
+                gameObject.GetComponent<CrazyFireball>().spawn(position);
+                break;
+
+            case Game.Type_Enemy.Shooter:
+                gameObject.GetComponent<Shooter>().init(position, player);
+                break;
         }
+    }
+
+
+    public void shoot()
+    {
+        gameObject.GetComponent<Shooter>().shoot();
     }
 }

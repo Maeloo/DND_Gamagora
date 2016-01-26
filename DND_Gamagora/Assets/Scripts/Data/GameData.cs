@@ -9,6 +9,7 @@
 
     public enum Type_Enemy
     {
-        CrazyFireball
+        CrazyFireball,
+        Shooter
     }
 }
