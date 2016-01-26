@@ -186,12 +186,16 @@ public class Character : MonoBehaviour
         int oldLife = life;
         life -= power;
         life = life < 0 ? 0 : life;
+
         for(int i = life; i < oldLife; ++i)
         {
             LifeUI[i].SetActive(false);
         }
+
         //if(life <= 0)
         // Die();
+
+        StartCoroutine(startInvulnerability());
     }
 
     public void AddNote()
@@ -199,4 +203,58 @@ public class Character : MonoBehaviour
         ++noteCount;
         noteText.text = " x " + noteCount;
     }
+
+    IEnumerator startInvulnerability(float time = 1.0f)
+    {
+        Collider2D[] cs = GetComponents<Collider2D>();
+
+        foreach(Collider2D c in cs)
+        {
+            if (c.isTrigger)
+                c.enabled = false;
+        }
+
+        fade(.3f, .35f);
+        yield return new WaitForSeconds(.3f);
+                                        
+        fade(.3f, 1.0f);                 
+        yield return new WaitForSeconds(.3f);
+                                        
+        fade(.3f, .35f);                  
+        yield return new WaitForSeconds(.3f);
+                                        
+        fade(.3f, 1f);                   
+        yield return new WaitForSeconds(.3f);
+                                        
+        fade(.3f, .35f);                 
+        yield return new WaitForSeconds(.3f);
+                                        
+        fade(.3f, 1f);                  
+        yield return new WaitForSeconds(.3f);
+
+        foreach (Collider2D c in cs)
+        {
+            if (c.isTrigger)
+                c.enabled = true;
+        }
+    }
+
+
+    private void fade(float time, float alpha)
+    {
+        iTween.ValueTo(gameObject, iTween.Hash(
+            "time", time,
+            "from", GetComponent<SpriteRenderer>().color.a,
+            "to", alpha,
+            "onupdate", "onAlphaChange"));
+    }
+
+
+    public void onAlphaChange(float value)
+    {
+        Color tmp = GetComponent<SpriteRenderer>().color;
+        tmp.a = value;
+        GetComponent<SpriteRenderer>().color = tmp;
+    }
 }
+
