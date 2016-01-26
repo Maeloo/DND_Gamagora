@@ -34,6 +34,7 @@ public class Character : MonoBehaviour
     private bool facingRight = true;  // For determining which way the player is currently facing.
     internal Vector3 lastCheckpointPos;
     private float lastAttack;
+    private bool falling;
 
     private void Awake()
     {
@@ -121,8 +122,15 @@ public class Character : MonoBehaviour
                 str *= RunSpeed;
             rb.AddForce(new Vector2(0f, str));
         }
-        if (IsFalled())
-            MoveToLastCheckPoint();
+        if (IsFalled() && !falling)
+        {
+            falling = true;
+
+            anim.SetBool("Fall", true);
+
+            Invoke("MoveToLastCheckPoint", 1.0f);
+            //MoveToLastCheckPoint();
+        }            
     }
 
     public void Attack()
@@ -151,20 +159,28 @@ public class Character : MonoBehaviour
         return transform.position.y < yMin;    
     }
 
+
     private void MoveToLastCheckPoint()
     {
+        GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
+        anim.SetBool("Fall", false);
+        
         TerrainManager.Instance.ErasePlatform();
         TerrainManager.Instance._lastPos = new Vector3(lastCheckpointPos.x - TerrainManager.Instance.classic_width, TerrainManager.Instance._lastPos.y, TerrainManager.Instance._lastPos.z);
         TerrainManager.Instance.SpawnPlatform(Type_Platform.Classic);
 
         Hit(1);
         transform.position = lastCheckpointPos;
+
+        falling = false;
     }
 
-    private void Hit(int power)
+    public void Hit(int power)
     {
         int oldLife = life;
         life -= power;
+        life = life < 0 ? 0 : life;
         for(int i = life; i < oldLife; ++i)
         {
             LifeUI[i].SetActive(false);
