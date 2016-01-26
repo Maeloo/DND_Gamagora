@@ -3,7 +3,8 @@
     public enum Type_Platform
     {
         Classic,
-        Bouncy
+        Bouncy,
+        Hight
     }
 
 

@@ -5,7 +5,7 @@ public class InputManager : Singleton<InputManager>
 {
     public bool IsRunning { get; private set; }
     public bool IsJumping { get; private set; }
-    public bool IsCrunching { get; private set; }
+    public bool IsSliding { get; private set; }
     public bool IsAttacking { get; private set; }
 
     // Guarantee this will be always a singleton only - can't use the constructor!
@@ -22,7 +22,7 @@ public class InputManager : Singleton<InputManager>
     {
         IsRunning = Input.GetButton("Run");
         IsJumping = Input.GetButtonDown("Jump");
-        IsCrunching = Input.GetButton("Crouch");
+        IsSliding = Input.GetButton("Slide");
         IsAttacking = Input.GetButton("Attack");
     }
 

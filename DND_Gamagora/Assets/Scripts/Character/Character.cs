@@ -37,6 +37,14 @@ public class Character : MonoBehaviour
     private bool facingRight = true;  // For determining which way the player is currently facing.
     internal Vector3 lastCheckpointPos;
 
+    //List Collider Slide and Run
+    public BoxCollider2D RunBox;
+    public BoxCollider2D RunTopBox;
+    public CircleCollider2D RunCircle;
+    public BoxCollider2D SlideBox;
+    public BoxCollider2D SlideTopBox;
+    public CircleCollider2D SlideCircle;
+
     private int noteCount;
     public Text noteText;
     private float lastAttack;
@@ -82,27 +90,28 @@ public class Character : MonoBehaviour
     }
 
 
-    public void Move(float move, bool crouch, bool jump, bool run)
+    public void Move(float move, bool slide, bool jump, bool run)
     {
         // If crouching, check to see if the character can stand up
-        if (!crouch && anim.GetBool("Crouch"))
+        if (!slide && anim.GetBool("Slide"))
         {
             // If the character has a ceiling preventing them from standing up, keep them crouching
             if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, WhatIsGround))
             {
-                crouch = true;
+                slide = true;
             }
         }
+        SlideCollider(slide);
 
         // Set whether or not the character is crouching in the animator
-        anim.SetBool("Crouch", crouch);
+        anim.SetBool("Slide", slide);
         //anim.SetBool("Run", !crouch && run);
 
         //only control the player if grounded or airControl is turned on
         if (grounded || AirControl)
         {
             // Reduce the speed if crouching by the crouchSpeed multiplier
-            if (crouch)
+            if (slide)
                 move *= CrouchSpeed;
             else if (run)
                 move *= RunSpeed;
@@ -151,6 +160,28 @@ public class Character : MonoBehaviour
             Invoke("MoveToLastCheckPoint", 1.0f);
             //MoveToLastCheckPoint();
         }            
+    }
+
+    public void SlideCollider(bool slide)
+    {
+        if (slide)
+        {
+            RunBox.enabled = false;
+            RunTopBox.enabled = false;
+            RunCircle.enabled = false;
+            SlideBox.enabled = true;
+            SlideTopBox.enabled = true;
+            SlideCircle.enabled = true;
+        }
+        else
+        {
+            RunBox.enabled = true;
+            RunTopBox.enabled = true;
+            RunCircle.enabled = true;
+            SlideBox.enabled = false;
+            SlideTopBox.enabled = false;
+            SlideCircle.enabled = false;
+        }
     }
 
     public void Attack()
