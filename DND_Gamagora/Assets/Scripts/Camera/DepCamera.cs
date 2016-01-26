@@ -39,14 +39,15 @@ public class DepCamera : MonoBehaviour {
             distX /= 100;   //évite les effets de vibration déplaisant avec un déplacement progressif.
 
             posVoulu = vue + obj.transform.position;
-            posVoulu.z += Mathf.Abs(distX) * zReculMult;    posVoulu.x += distX * xAvantMult;  //demande de placer la caméra pas directement sur l'objet mais un peu en avant et avec un peu de recul en fonction de la vitesse.
+            posVoulu.z += Mathf.Abs(distX) * zReculMult;
+            posVoulu.x += distX * xAvantMult;  //demande de placer la caméra pas directement sur l'objet mais un peu en avant et avec un peu de recul en fonction de la vitesse.
 
 
             this.transform.position = Vector3.Lerp(this.transform.position, posVoulu, speedCam * Time.deltaTime);   //on déplace la caméra progressivement
 
             Vector3 at = obj.transform.position;
             at.x += distX * xAvantMult; //on dirige la caméra un peu en avant vers la direction où l'objet va. 
-            this.transform.LookAt(at);
+            //this.transform.LookAt(at);
 
 
             ancienPos = obj.transform.position;
@@ -65,14 +66,14 @@ public class DepCamera : MonoBehaviour {
             if (Mathf.Abs(distX) < 0.001f)
             {
                 distX = 0;
-                this.transform.LookAt(obj.transform.position);
+                //this.transform.LookAt(obj.transform.position);
             }
             else
             {
                 distX *= 0.99f;
                 Vector3 at = obj.transform.position;
                 at.x += distX* xAvantMult;
-                this.transform.LookAt(at);
+                //this.transform.LookAt(at);
             }
             distAncien = distX;
         }
