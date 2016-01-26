@@ -1,8 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Game;
 
 public class Character : MonoBehaviour
 {
+    [SerializeField]
+    private int life = 4;
+    [SerializeField]
+    private float yMin = -10f;
     [SerializeField]
     private float MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
     [SerializeField]
@@ -25,7 +30,7 @@ public class Character : MonoBehaviour
     private Animator anim;            // Reference to the player's animator component.
     private Rigidbody2D rb;
     private bool facingRight = true;  // For determining which way the player is currently facing.
-
+    internal Vector3 lastCheckpointPos;
     private void Awake()
     {
         // Setting up references.
@@ -33,6 +38,7 @@ public class Character : MonoBehaviour
         ceilingCheck = transform.Find("CeilingCheck");
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        lastCheckpointPos = transform.position;
     }
 
 
@@ -110,6 +116,8 @@ public class Character : MonoBehaviour
                 str *= RunSpeed;
             rb.AddForce(new Vector2(0f, str));
         }
+        if (IsFalled())
+            MoveToLastCheckPoint();
     }
 
 
@@ -122,5 +130,27 @@ public class Character : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    private bool IsFalled()
+    {
+        return transform.position.y < yMin;    
+    }
+
+    private void MoveToLastCheckPoint()
+    {
+        TerrainManager.Instance.ErasePlatform();
+        TerrainManager.Instance._lastPos = new Vector3(lastCheckpointPos.x - TerrainManager.Instance.classic_width, TerrainManager.Instance._lastPos.y, TerrainManager.Instance._lastPos.z);
+        TerrainManager.Instance.SpawnPlatform(Type_Platform.Classic);
+
+        Hit(1);
+        transform.position = lastCheckpointPos;
+    }
+
+    private void Hit(int power)
+    {
+        life -= power;
+        //if(life <= 0)
+        // Die();
     }
 }
