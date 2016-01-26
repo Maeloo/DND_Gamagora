@@ -54,12 +54,15 @@ public class Platform : MonoBehaviour, Poolable<Platform> {
         }
 
         transform.position = new Vector3(1000, 1000, 3);
+        //this.gameObject.SetActive(false); //si on SetActive(false) ici, _body est à null (bizarrement) et ça crée un warning dans SetPosition qui ne plante pas, mais empêche de créer les platforms.
     }
 
 
     public void Release ( ) {
         _pool.onRelease ( this );
+        //this.gameObject.SetActive(false);
         transform.position = new Vector3(- 1000f, - 1000f, - 1000f);
+        this.gameObject.SetActive(false);
     }
 
 
@@ -89,7 +92,8 @@ public class Platform : MonoBehaviour, Poolable<Platform> {
     public void SetPosition(Vector3 position)
     {
         transform.position = position;
-
+        
+        this.gameObject.SetActive(true);
         Rigidbody2D rb = _body.GetComponent<Rigidbody2D>();
         if (rb)
         {
@@ -97,7 +101,7 @@ public class Platform : MonoBehaviour, Poolable<Platform> {
             rb.isKinematic = true;
             _body.transform.localPosition = _bodyOriginalPos;
             _body.transform.localRotation = _bodyOriginalRot;
-        }        
+        }
     }
 
 

@@ -75,12 +75,14 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
                 gameObject.AddComponent<Shooter>().bulletPrefab = a_template.GetComponent<Shooter>().bulletPrefab;
                 break;
         }
+        this.gameObject.SetActive(false);
     }
 
 
     public void Release()
     {
         _pool.onRelease(this);
+        this.gameObject.SetActive(false);
     }
 
 
@@ -96,6 +98,8 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
                 gameObject.GetComponent<Shooter>().init(position, player);
                 break;
         }
+
+        this.gameObject.SetActive(true);
     }
 
 

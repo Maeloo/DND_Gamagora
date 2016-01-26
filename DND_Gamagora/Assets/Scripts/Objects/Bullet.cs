@@ -32,6 +32,9 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
     protected Vector3 _direction;
 
+    protected float timeDestroyInit = 5f;
+    protected float timeDestroy;
+
 
     public Bullet Create()
     {
@@ -55,6 +58,7 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
         speed = a_template.GetComponent<Bullet>().speed;
 
         transform.position = new Vector3(9999f, 9999f, 9999f);
+        this.gameObject.SetActive(false);
     }
 
     public bool IsReady()
@@ -73,6 +77,7 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
         transform.position = new Vector3(9999f, 9999f, 3.0f);
 
+        this.gameObject.SetActive(false);
         _pool.onRelease(this);
     }
 
@@ -87,14 +92,22 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
         transform.right = _direction;
 
         shooted = true;
+        timeDestroy = timeDestroyInit;
+        this.gameObject.SetActive(true);
     }
 
     void Update()
     {
-        if(shooted)
+        if(timeDestroy < 0)
+        {
+            shooted = false;
+            Release();
+        }
+        else if(shooted)
         {
             Vector3 newPosition = transform.position + speed * _direction;
             transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime);
+            timeDestroy -= Time.deltaTime;
         }        
     }
 
