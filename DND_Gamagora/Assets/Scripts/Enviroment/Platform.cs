@@ -59,6 +59,7 @@ public class Platform : MonoBehaviour, Poolable<Platform> {
 
     public void Release ( ) {
         _pool.onRelease ( this );
+        transform.position = new Vector3(- 1000f, - 1000f, - 1000f);
     }
 
 

@@ -15,11 +15,15 @@ public class DepCamera : MonoBehaviour {
     
     private Vector3 posVoulu;
 
+    private float y_start;
+
 	void Start()
     {
         ancienPos = obj.transform.position;
         posVoulu = ancienPos + vue;
         this.transform.position = posVoulu;
+        y_start = transform.position.y;
+
     }
 	// Update is called once per frame
 	void Update ()
@@ -77,6 +81,8 @@ public class DepCamera : MonoBehaviour {
             }
             distAncien = distX;
         }
+
+        transform.position = new Vector3(transform.position.x, y_start, transform.position.z);
 	}
 }
 

@@ -1,0 +1,381 @@
+fileFormatVersion: 2
+guid: 6d74f9163a87d9d47bc7ab70a5c8fb41
+timeCreated: 1453811662
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Nintendo 64 - Banjo-Kazooie - Music Note_0
+    21300002: Nintendo 64 - Banjo-Kazooie - Music Note_1
+    21300004: Nintendo 64 - Banjo-Kazooie - Music Note_2
+    21300006: Nintendo 64 - Banjo-Kazooie - Music Note_3
+    21300008: Nintendo 64 - Banjo-Kazooie - Music Note_4
+    21300010: Nintendo 64 - Banjo-Kazooie - Music Note_5
+    21300012: Nintendo 64 - Banjo-Kazooie - Music Note_6
+    21300014: Nintendo 64 - Banjo-Kazooie - Music Note_7
+    21300016: Nintendo 64 - Banjo-Kazooie - Music Note_8
+    21300018: Nintendo 64 - Banjo-Kazooie - Music Note_9
+    21300020: Nintendo 64 - Banjo-Kazooie - Music Note_10
+    21300022: Nintendo 64 - Banjo-Kazooie - Music Note_11
+    21300024: Nintendo 64 - Banjo-Kazooie - Music Note_12
+    21300026: Nintendo 64 - Banjo-Kazooie - Music Note_13
+    21300028: Nintendo 64 - Banjo-Kazooie - Music Note_14
+    21300030: Nintendo 64 - Banjo-Kazooie - Music Note_15
+    21300032: Nintendo 64 - Banjo-Kazooie - Music Note_16
+    21300034: Nintendo 64 - Banjo-Kazooie - Music Note_17
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3
+        width: 10
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 3
+        width: 22
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_2
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 3
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 25}
+        - {x: -16, y: 25}
+        - {x: -16, y: -23}
+        - {x: -14, y: -25}
+        - {x: 16, y: -25}
+        - {x: 16, y: 18}
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 2
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.5, y: 0.5}
+        - {x: 10.5, y: 24.5}
+        - {x: -19.5, y: 24.5}
+        - {x: -19.5, y: -24.5}
+        - {x: 19.5, y: -24.5}
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_4
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 2
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.5, y: 24}
+        - {x: -20.5, y: 24}
+        - {x: -20.5, y: -18}
+        - {x: -17.5, y: -22}
+        - {x: -5.5, y: -24}
+        - {x: -4.5, y: -24}
+        - {x: -0.5, y: -18}
+        - {x: 0.5, y: -14}
+        - {x: 1.5, y: -18}
+        - {x: 5.5, y: -24}
+        - {x: 20.5, y: -24}
+        - {x: 20.5, y: 1}
+        - {x: 11.5, y: 23}
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_5
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 2
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 24}
+        - {x: -20.5, y: -16}
+        - {x: -18.5, y: -19}
+        - {x: -6.5, y: -21}
+        - {x: -1.5, y: -16}
+        - {x: -0.5, y: -13}
+        - {x: -0.5, y: -10}
+        - {x: -1.5, y: -7}
+        - {x: -9.5, y: -1}
+        - {x: -0.5, y: 4}
+        - {x: -0.5, y: -19}
+        - {x: 4.5, y: -24}
+        - {x: 20.5, y: -24}
+        - {x: 20.5, y: 14}
+        - {x: 17.5, y: 24}
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 2
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: -24}
+        - {x: 19.5, y: -24}
+        - {x: 19.5, y: 8}
+        - {x: 14.5, y: 24}
+        - {x: -19.5, y: 24}
+        - {x: -19.5, y: -17}
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_7
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 2
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 23.5}
+        - {x: -16.5, y: -11.5}
+        - {x: -11.5, y: -16.5}
+        - {x: -3.5, y: -23.5}
+        - {x: 16.5, y: -23.5}
+        - {x: 16.5, y: -5.5}
+        - {x: 7.5, y: 23.5}
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_8
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 2
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_9
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 2
+        width: 10
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_10
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 2
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_11
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 2
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 23.5}
+        - {x: -7.5, y: 21.5}
+        - {x: -16.5, y: -5.5}
+        - {x: -16.5, y: -23.5}
+        - {x: 3.5, y: -23.5}
+        - {x: 12.5, y: -17.5}
+        - {x: 16.5, y: -12.5}
+        - {x: 16.5, y: 23.5}
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_12
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 2
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 24}
+        - {x: -19.5, y: 9}
+        - {x: -19.5, y: -24}
+        - {x: 8.5, y: -24}
+        - {x: 13.5, y: -23}
+        - {x: 19.5, y: -15}
+        - {x: 19.5, y: 24}
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_13
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 2
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.5, y: 0}
+        - {x: 0.5, y: -13}
+        - {x: 1.5, y: -16}
+        - {x: 7.5, y: -21}
+        - {x: 13.5, y: -21}
+        - {x: 20.5, y: -16}
+        - {x: 20.5, y: 24}
+        - {x: -12.5, y: 24}
+        - {x: -20.5, y: 6}
+        - {x: -20.5, y: -24}
+        - {x: -3.5, y: -24}
+        - {x: 4.5, y: -21}
+        - {x: 0.5, y: -15}
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_14
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 2
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.5, y: -19}
+        - {x: 4.5, y: -24}
+        - {x: 6.5, y: -24}
+        - {x: 18.5, y: -22}
+        - {x: 20.5, y: -18}
+        - {x: 20.5, y: 24}
+        - {x: 7.5, y: 24}
+        - {x: 0.5, y: 22}
+        - {x: -3.5, y: 21}
+        - {x: -10.5, y: 18}
+        - {x: -20.5, y: -5}
+        - {x: -20.5, y: -24}
+        - {x: -5.5, y: -24}
+        - {x: -1.5, y: -18}
+        - {x: -1.5, y: 8}
+        - {x: -1.5, y: -14}
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_15
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 2
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: -3.5}
+        - {x: -19.5, y: -24.5}
+        - {x: 19.5, y: -24.5}
+        - {x: 19.5, y: 24.5}
+        - {x: 2.5, y: 24.5}
+        - {x: -14.5, y: 18.5}
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_16
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 3
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 25}
+        - {x: -12, y: 15}
+        - {x: -16, y: 1}
+        - {x: -16, y: -25}
+        - {x: 16, y: -25}
+        - {x: 16, y: 25}
+    - name: Nintendo 64 - Banjo-Kazooie - Music Note_17
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 3
+        width: 22
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
