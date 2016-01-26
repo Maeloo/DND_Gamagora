@@ -24,6 +24,8 @@ public class Character : MonoBehaviour
     private bool AirControl = false;                 // Whether or not a player can steer while jumping;
     [SerializeField]
     private LayerMask WhatIsGround;                  // A mask determining what is ground to the character
+    [SerializeField]
+    private Bullet kamehameha;
     public GameObject[] LifeUI;
     private Transform groundCheck;    // A position marking where to check if the player is grounded.
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -40,6 +42,8 @@ public class Character : MonoBehaviour
     private float lastAttack;
     private bool falling;
 
+    private Pool<Bullet> kamehamehas;
+
     private void Awake()
     {
         noteCount = 0;
@@ -50,6 +54,8 @@ public class Character : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         lastCheckpointPos = transform.position;
         lastAttack = Time.time;
+        kamehamehas = new Pool<Bullet>(kamehameha, 8, 16);
+        kamehamehas.automaticReuseUnavailables = true;
     }
 
 
@@ -144,6 +150,12 @@ public class Character : MonoBehaviour
         {
             anim.SetTrigger("Attack");
             lastAttack = Time.time;
+
+            Bullet b;
+            if(kamehamehas.GetAvailable(false, out b))
+            {
+                b.shoot(transform.position, Vector3.right);
+            }
         }
     }
 

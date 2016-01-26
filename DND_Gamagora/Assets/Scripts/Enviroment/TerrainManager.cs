@@ -65,13 +65,13 @@ public class TerrainManager : Singleton<TerrainManager> {
     // Offset à 0 = platform actuelle, Offset à 3 = 3 platform en avance .. etc
     bool getClassicPlatform(ref Platform platform, int offset = 0)
     {
-        for (int i = 0; i < pools[0].usedObjects.Count; i++)
+        for (int i = 0; i < pools[Type_Platform.Classic].usedObjects.Count; i++)
         {
-            Vector3 pos_pf = pools[0].usedObjects[i].transform.position;
+            Vector3 pos_pf = pools[Type_Platform.Classic].usedObjects[i].transform.position;
             if (Player.transform.position.x + offset * classic_width > pos_pf.x && 
                 Player.transform.position.x + offset * classic_width < pos_pf.x + classic_width)
             {
-                platform = pools[0].usedObjects[i];
+                platform = pools[Type_Platform.Classic].usedObjects[i];
                 return true;
             }
         }

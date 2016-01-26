@@ -17,4 +17,10 @@
     {
         Note
     }
+
+    public enum Type_Bullet
+    {
+        Enemy,
+        Player
+    }
 }

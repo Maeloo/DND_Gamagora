@@ -22,10 +22,13 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
     protected Pool<Bullet> _pool;
 
+    public Game.Type_Bullet type;
     public float damage;
     public float speed;
 
     protected bool shooted;
+
+    protected Vector3 scale;
 
     protected Vector3 _direction;
 
@@ -37,11 +40,15 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
     public void Duplicate(Bullet a_template)
     {
+        type = a_template.type;
 
         gameObject.AddComponent<SpriteRenderer>().sprite = a_template.GetComponent<SpriteRenderer>().sprite;
         gameObject.GetComponent<SpriteRenderer>().flipX = a_template.GetComponent<SpriteRenderer>().flipX;
+        gameObject.GetComponent<SpriteRenderer>().color = a_template.GetComponent<SpriteRenderer>().color;
 
-        gameObject.AddComponent<PolygonCollider2D>();
+        scale = a_template.transform.localScale;
+
+        gameObject.AddComponent<PolygonCollider2D>().isTrigger = a_template.GetComponent<Collider2D>().isTrigger;
         gameObject.AddComponent<Rigidbody2D>().isKinematic = true;
 
         damage = a_template.GetComponent<Bullet>().damage;
@@ -74,7 +81,7 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
         transform.localScale = Vector3.zero;
         transform.position = position;
 
-        iTween.ScaleTo(gameObject, Vector3.one, .3f);
+        iTween.ScaleTo(gameObject, scale, .3f);
 
         _direction = direction;
         transform.right = _direction;
@@ -91,15 +98,23 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
         }        
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    protected void OnTriggerEnter2D(Collider2D col)
     {
-        Character player = col.GetComponent<Character>();
-
-        if(player != null)
+        if(type == Game.Type_Bullet.Enemy)
         {
-            player.Hit(1);
+            Character player = col.GetComponent<Character>();
 
-            Release();
+            if (player != null)
+            {
+                player.Hit(1);
+
+                Release();
+            }
+        }
+
+        if (type == Game.Type_Bullet.Player)
+        {
+            // TODO
         }
     }
 
