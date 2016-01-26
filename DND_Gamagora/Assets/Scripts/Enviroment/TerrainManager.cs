@@ -48,7 +48,6 @@ public class TerrainManager : Singleton<TerrainManager> {
 
     void Update()
     {
-
         if (Time.time - _lastSpawn > spawnTime)
         {
             SpawnPlatform(Type_Platform.Classic);

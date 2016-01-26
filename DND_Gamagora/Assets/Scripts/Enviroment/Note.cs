@@ -9,7 +9,7 @@ public class Note : MonoBehaviour {
         if (player != null)
         {
             player.AddNote();
-            BonusManager.Instance.RemoveBonus(transform.parent.gameObject.GetComponent<Bonus>(), Type_Bonus.Note);
+            BonusManager.Instance.RemoveBonus(GetComponentInParent<Bonus>(), Type_Bonus.Note);
             
         }
     }
