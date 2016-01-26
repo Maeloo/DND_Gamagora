@@ -30,10 +30,16 @@ public class UserControl : MonoBehaviour
         // Read the inputs.
         bool crouch = inputs.IsCrunching;
         bool run = inputs.IsRunning;
+        bool attack = inputs.IsAttacking;
 
         float h = inputs.GetHorizontalAxis(); 
+        
         // Pass all parameters to the character control script.
         character.Move(h, crouch, jump, run);
+
+        if (attack)
+            character.Attack();
+
         jump = false;
     }
 }

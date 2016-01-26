@@ -33,6 +33,9 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
     public GameObject box8;
     public GameObject box9;
 
+    [SerializeField]
+    Transform player;
+
     private AudioProcessor processor;
     private EnemyManager enemiesSpawner;
     private Vector3 currentPos;
@@ -106,22 +109,6 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         {
             if (TerrainManager.Instance.makeCurrentClassicPlatformFall())
                 countTimeBeatLow1 = 0;
-
-            for (int i = 0; i < EnemyManager.Instance.fireballs.Count; i++)
-            {
-                iTween.Stop(EnemyManager.Instance.fireballs[i].gameObject);
-
-                iTween.ScaleTo(EnemyManager.Instance.fireballs[i].gameObject, iTween.Hash(
-                    "time", 1.0f,
-                    "scale", new Vector3(2.0f + energy * .005f, 2.0f + energy * .005f, 2.0f + energy * .005f),
-                    "easetype", iTween.EaseType.easeInOutExpo));
-
-                iTween.ScaleTo(EnemyManager.Instance.fireballs[i].gameObject, iTween.Hash(
-                    "delay", 1.0f,
-                    "time", .5f,
-                    "scale", new Vector3(3.0f, 3.0f, 3.0f),
-                    "easetype", iTween.EaseType.easeInOutExpo));
-            }
         }       
     }
 
@@ -131,16 +118,16 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         box2.GetComponent<Renderer>().material.color = Color.yellow;
         StartCoroutine(StopColor(box2));
 
-        for (int i = 0; i < EnemyManager.Instance.fireballs.Count; i++)
+        for (int i = 0; i < enemiesSpawner.fireballs.Count; i++)
         {
-            iTween.Stop(EnemyManager.Instance.fireballs[i].gameObject);
+            iTween.Stop(enemiesSpawner.fireballs[i].gameObject);
 
-            iTween.ScaleTo(EnemyManager.Instance.fireballs[i].gameObject, iTween.Hash(
+            iTween.ScaleTo(enemiesSpawner.fireballs[i].gameObject, iTween.Hash(
                 "time", .1f,
                 "scale", new Vector3(2.0f + energy * .004f, 2.0f + energy * .004f, 2.0f + energy * .004f),
                 "easetype", iTween.EaseType.easeInOutExpo));
 
-            iTween.ScaleTo(EnemyManager.Instance.fireballs[i].gameObject, iTween.Hash(
+            iTween.ScaleTo(enemiesSpawner.fireballs[i].gameObject, iTween.Hash(
                 "delay", .1f,
                 "time", .2f,
                 "scale", new Vector3(2.0f, 2.0f, 2.0f),
@@ -148,10 +135,27 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         }
     }
 
+    protected int minSkipBeatLow3 = 20; // Reglage Higklight Tribe
+    protected int countTimeBeatLow3 = 0;
     public void onBeatLow3(float energy, float average_energy, float radiance, int frequency_size)
     {
         box3.GetComponent<Renderer>().material.color = Color.blue;
         StartCoroutine(StopColor(box3));
+
+        countTimeBeatLow3++;
+        if (countTimeBeatLow3 >= minSkipBeatLow3)
+        {
+            for (int i = 0; i < enemiesSpawner.Shooters.Count; i++)
+            {
+                if (enemiesSpawner.Shooters[i].transform.position.x > player.position.x)
+                {
+                    enemiesSpawner.Shooters[i].shoot();
+                }
+            }
+
+            countTimeBeatLow3 = 0;
+        }
+         
     }
 
     public void onBeatLow4(float energy, float average_energy, float radiance, int frequency_size)

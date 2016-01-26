@@ -7,6 +7,8 @@ public class EnemyManager : Singleton<EnemyManager>
 {
     [SerializeField]
     Enemy fireball;
+    [SerializeField]
+    Enemy shooter;
 
     [SerializeField]
     GameObject Player;
@@ -18,9 +20,17 @@ public class EnemyManager : Singleton<EnemyManager>
     private float _lastFireball;
     private float _nextFireball;
 
+    private float _lastShooter;
+    private float _nextShooter;
+
     public List<Enemy> fireballs
     {
         get { return pools[Type_Enemy.CrazyFireball].usedObjects; }
+    }
+
+    public List<Enemy> Shooters
+    {
+        get { return pools[Type_Enemy.Shooter].usedObjects; }
     }
 
 
@@ -28,6 +38,7 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         pools = new Dictionary<Type_Enemy, Pool<Enemy>>();
 
+        //Init fireballs
         Pool<Enemy> poolFireballs = new Pool<Enemy>(fireball, 8, 16);
         poolFireballs.automaticReuseUnavailables = true;
 
@@ -35,6 +46,15 @@ public class EnemyManager : Singleton<EnemyManager>
 
         _lastFireball = Time.time;
         _nextFireball = 3.0f + Random.value * 3.0f;
+
+        //Init shooters
+        Pool<Enemy> poolShooter = new Pool<Enemy>(shooter, 8, 16);
+        poolShooter.automaticReuseUnavailables = true;
+
+        pools.Add(Type_Enemy.Shooter, poolShooter);
+
+        _lastShooter = Time.time;
+        _nextShooter = 4.0f + Random.value * 4.0f;
     }
 	
     
@@ -43,7 +63,7 @@ public class EnemyManager : Singleton<EnemyManager>
         Enemy enemy;
         if(pools[type].GetAvailable(false, out enemy))
         {
-            enemy.spawn(position);
+            enemy.spawn(position, Player.transform);
         }
         return false;
     }
@@ -57,6 +77,14 @@ public class EnemyManager : Singleton<EnemyManager>
 
             _lastFireball = Time.time;
             _nextFireball = 3.0f + Random.value * 3.0f;
+        }
+
+        if (Time.time - _lastShooter > _nextShooter)
+        {
+            spawnEnemy(Type_Enemy.Shooter, new Vector3(Player.transform.position.x + 20.0f, Random.Range(-1.0f, 1.0f), 3.0f));
+
+            _lastShooter = Time.time;
+            _nextShooter = 4.0f + Random.value * 4.0f;
         }
     }
 }
