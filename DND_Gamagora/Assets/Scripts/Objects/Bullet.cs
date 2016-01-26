@@ -114,7 +114,12 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
         if (type == Game.Type_Bullet.Player)
         {
-            // TODO
+            Enemy e = col.GetComponent<Enemy>();
+
+            if(e != null && e.type == Game.Type_Enemy.Shooter)
+            {
+                e.onHit();
+            }
         }
     }
 

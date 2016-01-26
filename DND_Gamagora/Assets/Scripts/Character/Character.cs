@@ -44,6 +44,8 @@ public class Character : MonoBehaviour
 
     private Pool<Bullet> kamehamehas;
 
+    private Vector3 direction = Vector3.right;
+
     private void Awake()
     {
         noteCount = 0;
@@ -114,12 +116,14 @@ public class Character : MonoBehaviour
             {
                 // ... flip the player.
                 Flip();
+                direction *= -1;
             }
             // Otherwise if the input is moving the player left and the player is facing right...
             else if (move < 0 && facingRight)
             {
                 // ... flip the player.
                 Flip();
+                direction *= -1;
             }
         }
         // If the player should jump...
@@ -154,7 +158,7 @@ public class Character : MonoBehaviour
             Bullet b;
             if(kamehamehas.GetAvailable(false, out b))
             {
-                b.shoot(transform.position, Vector3.right);
+                b.shoot(transform.position, direction);
             }
         }
     }

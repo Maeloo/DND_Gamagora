@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
 
     public Game.Type_Enemy type;
     public bool Copy3D;
+    public bool Copy2D;
+    public GameObject death_fx;
 
 
     public Enemy Create()
@@ -47,6 +49,7 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
     public void Duplicate(Enemy a_template)
     {
         type = a_template.type;
+        death_fx = a_template.death_fx;
 
         foreach (Transform child in a_template.transform)
         {
@@ -64,7 +67,12 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
             gameObject.AddComponent<MeshRenderer>().materials = a_template.GetComponent<MeshRenderer>().materials;  
         }
 
-        switch(type) 
+        if (a_template.Copy2D)
+        {
+            gameObject.AddComponent<SpriteRenderer>().sprite = a_template.GetComponent<SpriteRenderer>().sprite;
+        }
+
+        switch (type) 
         {
             case Game.Type_Enemy.CrazyFireball:
                 gameObject.AddComponent<ExplosionMat>();
@@ -73,13 +81,24 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
 
             case Game.Type_Enemy.Shooter:
                 gameObject.AddComponent<Shooter>().bulletPrefab = a_template.GetComponent<Shooter>().bulletPrefab;
+                gameObject.AddComponent<BoxCollider2D>().isTrigger = true;
+                break;
+
+            case Game.Type_Enemy.Meteor:
+                gameObject.AddComponent<Meteor>();
+                gameObject.AddComponent<CircleCollider2D>();
+                gameObject.AddComponent<Rigidbody2D>().useAutoMass = true;
+                gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
                 break;
         }
+
+        transform.position = new Vector3(9999, 9999, 9999);
     }
 
 
     public void Release()
     {
+        transform.position = new Vector3(9999, 9999, 9999);
         _pool.onRelease(this);
     }
 
@@ -93,7 +112,11 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
                 break;
 
             case Game.Type_Enemy.Shooter:
-                gameObject.GetComponent<Shooter>().init(position, player);
+                gameObject.GetComponent<Shooter>().spawn(position, player);
+                break;
+
+            case Game.Type_Enemy.Meteor:
+                gameObject.GetComponent<Meteor>().spawn(position);
                 break;
         }
     }
@@ -102,5 +125,12 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
     public void shoot()
     {
         gameObject.GetComponent<Shooter>().shoot();
+    }
+
+
+    public void onHit()
+    {
+        Instantiate(death_fx, transform.position, Quaternion.identity);
+        Release();
     }
 }

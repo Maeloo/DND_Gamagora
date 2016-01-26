@@ -11,7 +11,7 @@ public class Shooter : MonoBehaviour {
     protected Transform _player;
 
 
-    public void init(Vector3 position, Transform player)
+    public void spawn(Vector3 position, Transform player)
     {
         if (_bullets == null)
             _bullets = new Pool<Bullet>(bulletPrefab, 8, 16);

@@ -9,6 +9,8 @@ public class EnemyManager : Singleton<EnemyManager>
     Enemy fireball;
     [SerializeField]
     Enemy shooter;
+    [SerializeField]
+    Enemy meteor;
 
     [SerializeField]
     GameObject Player;
@@ -22,6 +24,9 @@ public class EnemyManager : Singleton<EnemyManager>
 
     private float _lastShooter;
     private float _nextShooter;
+
+    private float _lastMeteor;
+    private float _nextMeteor;
 
     public List<Enemy> fireballs
     {
@@ -55,6 +60,16 @@ public class EnemyManager : Singleton<EnemyManager>
 
         _lastShooter = Time.time;
         _nextShooter = 4.0f + Random.value * 4.0f;
+
+
+        //Init shooters
+        Pool<Enemy> poolMeteor = new Pool<Enemy>(meteor, 4, 8);
+        poolMeteor.automaticReuseUnavailables = true;
+
+        pools.Add(Type_Enemy.Meteor, poolMeteor);
+
+        _lastMeteor = Time.time;
+        _nextMeteor = 10.0f + Random.value * 10.0f;
     }
 	
     
@@ -81,10 +96,18 @@ public class EnemyManager : Singleton<EnemyManager>
 
         if (Time.time - _lastShooter > _nextShooter)
         {
-            spawnEnemy(Type_Enemy.Shooter, new Vector3(Player.transform.position.x + 20.0f, Random.Range(-1.0f, 1.0f), 3.0f));
+            spawnEnemy(Type_Enemy.Shooter, new Vector3(Player.transform.position.x + 20.0f, Random.Range(.0f, 2.0f), 3.0f));
 
             _lastShooter = Time.time;
             _nextShooter = 4.0f + Random.value * 4.0f;
+        }
+
+        if (Time.time - _lastMeteor > _nextMeteor)
+        {
+            spawnEnemy(Type_Enemy.Meteor, new Vector3(Player.transform.position.x + 20.0f, 22.0f, 3.0f));
+
+            _lastMeteor = Time.time;
+            _nextMeteor = 10.0f + Random.value * 10.0f;
         }
     }
 }

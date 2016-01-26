@@ -1,0 +1,1941 @@
+fileFormatVersion: 2
+guid: fbfdbaac3c873d84ca4d1123d1546a0f
+timeCreated: 1453838641
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: crystal_ahead_0
+    21300002: crystal_ahead_1
+    21300004: crystal_ahead_2
+    21300006: crystal_ahead_3
+    21300008: crystal_ahead_4
+    21300010: crystal_ahead_5
+    21300012: crystal_ahead_6
+    21300014: crystal_ahead_7
+    21300016: crystal_ahead_8
+    21300018: crystal_ahead_9
+    21300020: crystal_ahead_10
+    21300022: crystal_ahead_11
+    21300024: crystal_ahead_12
+    21300026: crystal_ahead_13
+    21300028: crystal_ahead_14
+    21300030: crystal_ahead_15
+    21300032: crystal_ahead_16
+    21300034: crystal_ahead_17
+    21300036: crystal_ahead_18
+    21300038: crystal_ahead_19
+    21300040: crystal_ahead_20
+    21300042: crystal_ahead_21
+    21300044: crystal_ahead_22
+    21300046: crystal_ahead_23
+    21300048: crystal_ahead_24
+    21300050: crystal_ahead_25
+    21300052: crystal_ahead_26
+    21300054: crystal_ahead_27
+    21300056: crystal_ahead_28
+    21300058: crystal_ahead_29
+    21300060: crystal_ahead_30
+    21300062: crystal_ahead_31
+    21300064: crystal_ahead_32
+    21300066: crystal_ahead_33
+    21300068: crystal_ahead_34
+    21300070: crystal_ahead_35
+    21300072: crystal_ahead_36
+    21300074: crystal_ahead_37
+    21300076: crystal_ahead_38
+    21300078: crystal_ahead_39
+    21300080: crystal_ahead_40
+    21300082: crystal_ahead_41
+    21300084: crystal_ahead_42
+    21300086: crystal_ahead_43
+    21300088: crystal_ahead_44
+    21300090: crystal_ahead_45
+    21300092: crystal_ahead_46
+    21300094: crystal_ahead_47
+    21300096: crystal_ahead_48
+    21300098: crystal_ahead_49
+    21300100: crystal_ahead_50
+    21300102: crystal_ahead_51
+    21300104: crystal_ahead_52
+    21300106: crystal_ahead_53
+    21300108: crystal_ahead_54
+    21300110: crystal_ahead_55
+    21300112: crystal_ahead_56
+    21300114: crystal_ahead_57
+    21300116: crystal_ahead_58
+    21300118: crystal_ahead_59
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: crystal_ahead_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 906
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -31, y: 16}
+        - {x: -31, y: -17}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: -47, y: -16}
+        - {x: -53, y: -18}
+        - {x: -53, y: -39}
+        - {x: -46, y: -43}
+        - {x: -34, y: -43}
+        - {x: -31, y: -38}
+        - {x: -31, y: -23}
+        - {x: -33, y: -16}
+      - - {x: 42, y: 12}
+        - {x: 32, y: 6}
+        - {x: 32, y: -12}
+        - {x: 43, y: -12}
+        - {x: 55, y: -1}
+        - {x: 55, y: 6}
+        - {x: 53, y: 12}
+      - - {x: 12, y: 40}
+        - {x: 10, y: 36}
+        - {x: 10, y: 29}
+        - {x: 14, y: 27}
+        - {x: 19, y: 27}
+        - {x: 22, y: 31}
+        - {x: 22, y: 36}
+        - {x: 18, y: 40}
+    - name: crystal_ahead_1
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 906
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -31, y: 16}
+        - {x: -31, y: -17}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: -46, y: -16}
+        - {x: -52, y: -18}
+        - {x: -52, y: -39}
+        - {x: -45, y: -43}
+        - {x: -33, y: -43}
+        - {x: -30, y: -38}
+        - {x: -30, y: -23}
+        - {x: -32, y: -16}
+      - - {x: 40, y: 12}
+        - {x: 31, y: 5}
+        - {x: 31, y: -8}
+        - {x: 32, y: -12}
+        - {x: 47, y: -12}
+        - {x: 54, y: 1}
+        - {x: 54, y: 9}
+        - {x: 50, y: 12}
+      - - {x: 14, y: 40}
+        - {x: 10, y: 36}
+        - {x: 10, y: 32}
+        - {x: 15, y: 27}
+        - {x: 17, y: 27}
+        - {x: 21, y: 31}
+        - {x: 21, y: 36}
+        - {x: 17, y: 40}
+    - name: crystal_ahead_2
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 906
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -31, y: 16}
+        - {x: -31, y: -17}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: -50, y: -16}
+        - {x: -51, y: -21}
+        - {x: -51, y: -39}
+        - {x: -44, y: -43}
+        - {x: -37, y: -43}
+        - {x: -28, y: -39}
+        - {x: -28, y: -17}
+        - {x: -31, y: -16}
+      - - {x: 35, y: 12}
+        - {x: 30, y: 1}
+        - {x: 30, y: -11}
+        - {x: 34, y: -12}
+        - {x: 41, y: -12}
+        - {x: 53, y: -4}
+        - {x: 53, y: 7}
+        - {x: 52, y: 12}
+      - - {x: 13, y: 40}
+        - {x: 10, y: 37}
+        - {x: 10, y: 30}
+        - {x: 14, y: 27}
+        - {x: 20, y: 27}
+        - {x: 21, y: 30}
+        - {x: 21, y: 38}
+        - {x: 17, y: 40}
+    - name: crystal_ahead_3
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 906
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -31, y: 16}
+        - {x: -31, y: -17}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: -49, y: -16}
+        - {x: -50, y: -21}
+        - {x: -50, y: -39}
+        - {x: -43, y: -43}
+        - {x: -36, y: -43}
+        - {x: -27, y: -39}
+        - {x: -27, y: -17}
+        - {x: -30, y: -16}
+      - - {x: 40, y: 12}
+        - {x: 30, y: 6}
+        - {x: 30, y: -12}
+        - {x: 41, y: -12}
+        - {x: 53, y: -1}
+        - {x: 53, y: 6}
+        - {x: 51, y: 12}
+      - - {x: 9, y: 36}
+        - {x: 9, y: 32}
+        - {x: 12, y: 27}
+        - {x: 16, y: 27}
+        - {x: 20, y: 29}
+        - {x: 20, y: 36}
+        - {x: 17, y: 40}
+        - {x: 13, y: 40}
+    - name: crystal_ahead_4
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 906
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -31, y: 16}
+        - {x: -31, y: -17}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: -44, y: -16}
+        - {x: -49, y: -18}
+        - {x: -49, y: -36}
+        - {x: -44, y: -43}
+        - {x: -33, y: -43}
+        - {x: -26, y: -40}
+        - {x: -26, y: -22}
+        - {x: -29, y: -16}
+      - - {x: 38, y: 12}
+        - {x: 29, y: 5}
+        - {x: 29, y: -8}
+        - {x: 30, y: -12}
+        - {x: 45, y: -12}
+        - {x: 52, y: 1}
+        - {x: 52, y: 9}
+        - {x: 48, y: 12}
+      - - {x: 13, y: 40}
+        - {x: 9, y: 36}
+        - {x: 9, y: 32}
+        - {x: 14, y: 27}
+        - {x: 16, y: 27}
+        - {x: 20, y: 31}
+        - {x: 20, y: 36}
+        - {x: 16, y: 40}
+    - name: crystal_ahead_5
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 906
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -31, y: 16}
+        - {x: -31, y: -17}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: -43, y: -16}
+        - {x: -48, y: -18}
+        - {x: -48, y: -36}
+        - {x: -43, y: -43}
+        - {x: -32, y: -43}
+        - {x: -25, y: -40}
+        - {x: -25, y: -22}
+        - {x: -28, y: -16}
+      - - {x: 33, y: 12}
+        - {x: 28, y: 1}
+        - {x: 28, y: -11}
+        - {x: 32, y: -12}
+        - {x: 39, y: -12}
+        - {x: 51, y: -4}
+        - {x: 51, y: 7}
+        - {x: 50, y: 12}
+      - - {x: 12, y: 40}
+        - {x: 8, y: 36}
+        - {x: 8, y: 30}
+        - {x: 13, y: 27}
+        - {x: 17, y: 27}
+        - {x: 20, y: 31}
+        - {x: 20, y: 36}
+        - {x: 16, y: 40}
+    - name: crystal_ahead_6
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 906
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 53}
+        - {x: -34, y: 23}
+        - {x: -47, y: -14}
+        - {x: -47, y: -41}
+        - {x: -22, y: -52}
+        - {x: 12, y: -52}
+        - {x: 21, y: -20}
+        - {x: 21, y: 9}
+        - {x: 1, y: 53}
+      - - {x: 45, y: 12}
+        - {x: 39, y: 12}
+        - {x: 28, y: 1}
+        - {x: 28, y: -10}
+        - {x: 33, y: -12}
+        - {x: 40, y: -12}
+        - {x: 51, y: 1}
+        - {x: 51, y: 6}
+      - - {x: 8, y: 36}
+        - {x: 8, y: 32}
+        - {x: 11, y: 27}
+        - {x: 15, y: 27}
+        - {x: 19, y: 29}
+        - {x: 19, y: 36}
+        - {x: 16, y: 40}
+        - {x: 12, y: 40}
+    - name: crystal_ahead_7
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 906
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 53}
+        - {x: -12, y: 52}
+        - {x: -33, y: 23}
+        - {x: -46, y: -11}
+        - {x: -46, y: -42}
+        - {x: -20, y: -50}
+        - {x: -8, y: -52}
+        - {x: 12, y: -52}
+        - {x: 21, y: -21}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: 37, y: 12}
+        - {x: 27, y: 6}
+        - {x: 27, y: -12}
+        - {x: 38, y: -12}
+        - {x: 50, y: -1}
+        - {x: 50, y: 6}
+        - {x: 48, y: 12}
+      - - {x: 11, y: 40}
+        - {x: 8, y: 37}
+        - {x: 8, y: 30}
+        - {x: 12, y: 27}
+        - {x: 18, y: 27}
+        - {x: 19, y: 30}
+        - {x: 19, y: 38}
+        - {x: 15, y: 40}
+    - name: crystal_ahead_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 788
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 53}
+        - {x: -45, y: 0}
+        - {x: -45, y: -36}
+        - {x: -38, y: -47}
+        - {x: -6, y: -52}
+        - {x: 13, y: -52}
+        - {x: 21, y: -21}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: 31, y: 12}
+        - {x: 26, y: 1}
+        - {x: 26, y: -11}
+        - {x: 30, y: -12}
+        - {x: 37, y: -12}
+        - {x: 49, y: -4}
+        - {x: 49, y: 7}
+        - {x: 48, y: 12}
+      - - {x: 11, y: 40}
+        - {x: 7, y: 36}
+        - {x: 7, y: 30}
+        - {x: 12, y: 27}
+        - {x: 16, y: 27}
+        - {x: 19, y: 31}
+        - {x: 19, y: 36}
+        - {x: 15, y: 40}
+    - name: crystal_ahead_9
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 788
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 53}
+        - {x: -36, y: 24}
+        - {x: -44, y: -21}
+        - {x: -44, y: -37}
+        - {x: -36, y: -43}
+        - {x: -30, y: -43}
+        - {x: -23, y: -39}
+        - {x: -21, y: -37}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 9}
+        - {x: 1, y: 53}
+      - - {x: 43, y: 12}
+        - {x: 37, y: 12}
+        - {x: 26, y: 1}
+        - {x: 26, y: -10}
+        - {x: 31, y: -12}
+        - {x: 38, y: -12}
+        - {x: 49, y: 1}
+        - {x: 49, y: 6}
+      - - {x: 11, y: 40}
+        - {x: 7, y: 36}
+        - {x: 7, y: 32}
+        - {x: 12, y: 27}
+        - {x: 14, y: 27}
+        - {x: 18, y: 31}
+        - {x: 18, y: 36}
+        - {x: 14, y: 40}
+    - name: crystal_ahead_10
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 788
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -43, y: -4}
+        - {x: -43, y: -35}
+        - {x: -34, y: -43}
+        - {x: -28, y: -43}
+        - {x: -20, y: -38}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: 35, y: 12}
+        - {x: 25, y: 6}
+        - {x: 25, y: -12}
+        - {x: 36, y: -12}
+        - {x: 48, y: -1}
+        - {x: 48, y: 6}
+        - {x: 46, y: 12}
+      - - {x: 10, y: 40}
+        - {x: 7, y: 37}
+        - {x: 7, y: 30}
+        - {x: 11, y: 27}
+        - {x: 17, y: 27}
+        - {x: 18, y: 30}
+        - {x: 18, y: 38}
+        - {x: 14, y: 40}
+    - name: crystal_ahead_11
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 788
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 53}
+        - {x: -42, y: -4}
+        - {x: -42, y: -42}
+        - {x: -33, y: -43}
+        - {x: -27, y: -43}
+        - {x: -19, y: -38}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: 33, y: 12}
+        - {x: 24, y: 5}
+        - {x: 24, y: -8}
+        - {x: 25, y: -12}
+        - {x: 40, y: -12}
+        - {x: 47, y: 1}
+        - {x: 47, y: 9}
+        - {x: 43, y: 12}
+      - - {x: 6, y: 36}
+        - {x: 6, y: 32}
+        - {x: 9, y: 27}
+        - {x: 13, y: 27}
+        - {x: 17, y: 29}
+        - {x: 17, y: 36}
+        - {x: 14, y: 40}
+        - {x: 10, y: 40}
+    - name: crystal_ahead_12
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 788
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -41, y: -3}
+        - {x: -41, y: -35}
+        - {x: -32, y: -43}
+        - {x: -26, y: -43}
+        - {x: -18, y: -38}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: 41, y: 12}
+        - {x: 35, y: 12}
+        - {x: 24, y: 1}
+        - {x: 24, y: -10}
+        - {x: 29, y: -12}
+        - {x: 36, y: -12}
+        - {x: 47, y: 1}
+        - {x: 47, y: 6}
+      - - {x: 10, y: 40}
+        - {x: 6, y: 36}
+        - {x: 6, y: 32}
+        - {x: 11, y: 27}
+        - {x: 13, y: 27}
+        - {x: 17, y: 31}
+        - {x: 17, y: 36}
+        - {x: 13, y: 40}
+    - name: crystal_ahead_13
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 788
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -39, y: -2}
+        - {x: -39, y: -35}
+        - {x: -31, y: -43}
+        - {x: -25, y: -43}
+        - {x: -17, y: -38}
+        - {x: 5, y: -52}
+        - {x: 19, y: -52}
+        - {x: 21, y: -34}
+        - {x: 21, y: 53}
+      - - {x: 33, y: 12}
+        - {x: 23, y: 6}
+        - {x: 23, y: -12}
+        - {x: 34, y: -12}
+        - {x: 46, y: -1}
+        - {x: 46, y: 6}
+        - {x: 44, y: 12}
+    - name: crystal_ahead_14
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 788
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 53}
+        - {x: -34, y: 23}
+        - {x: -38, y: -14}
+        - {x: -38, y: -41}
+        - {x: -33, y: -52}
+        - {x: 14, y: -52}
+        - {x: 21, y: -8}
+        - {x: 21, y: 46}
+        - {x: 8, y: 53}
+      - - {x: 31, y: 12}
+        - {x: 22, y: 5}
+        - {x: 22, y: -8}
+        - {x: 23, y: -12}
+        - {x: 38, y: -12}
+        - {x: 45, y: 1}
+        - {x: 45, y: 9}
+        - {x: 41, y: 12}
+    - name: crystal_ahead_15
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 788
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 17}
+        - {x: -37, y: -50}
+        - {x: -32, y: -52}
+        - {x: 11, y: -52}
+        - {x: 21, y: -14}
+        - {x: 21, y: 32}
+        - {x: 20, y: 38}
+        - {x: 3, y: 53}
+        - {x: -11, y: 53}
+        - {x: -35, y: 24}
+      - - {x: 26, y: 12}
+        - {x: 21, y: 1}
+        - {x: 21, y: -11}
+        - {x: 25, y: -12}
+        - {x: 32, y: -12}
+        - {x: 44, y: -4}
+        - {x: 44, y: 7}
+        - {x: 43, y: 12}
+    - name: crystal_ahead_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 670
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: -52}
+        - {x: 9, y: -52}
+        - {x: 21, y: -14}
+        - {x: 21, y: 35}
+        - {x: 18, y: 50}
+        - {x: 1, y: 53}
+        - {x: -16, y: 53}
+        - {x: -36, y: 24}
+      - - {x: 31, y: 12}
+        - {x: 21, y: 6}
+        - {x: 21, y: -12}
+        - {x: 32, y: -12}
+        - {x: 44, y: -1}
+        - {x: 44, y: 6}
+        - {x: 42, y: 12}
+    - name: crystal_ahead_17
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 670
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 53}
+        - {x: -20, y: 53}
+        - {x: -35, y: 44}
+        - {x: -35, y: -52}
+        - {x: 10, y: -52}
+        - {x: 21, y: -22}
+        - {x: 21, y: 37}
+        - {x: 19, y: 49}
+      - - {x: 29, y: 12}
+        - {x: 20, y: 5}
+        - {x: 20, y: -8}
+        - {x: 21, y: -12}
+        - {x: 36, y: -12}
+        - {x: 43, y: 1}
+        - {x: 43, y: 9}
+        - {x: 39, y: 12}
+    - name: crystal_ahead_18
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 670
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 53}
+        - {x: -34, y: 28}
+        - {x: -34, y: -39}
+        - {x: -12, y: -52}
+        - {x: 14, y: -52}
+        - {x: 36, y: -19}
+        - {x: 42, y: -6}
+        - {x: 42, y: 16}
+        - {x: 3, y: 53}
+    - name: crystal_ahead_19
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 670
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 53}
+        - {x: -11, y: 53}
+        - {x: -12, y: 52}
+        - {x: -29, y: 22}
+        - {x: -33, y: 9}
+        - {x: -33, y: -47}
+        - {x: -22, y: -52}
+        - {x: 13, y: -52}
+        - {x: 42, y: -5}
+        - {x: 42, y: 6}
+        - {x: 38, y: 15}
+        - {x: 30, y: 12}
+        - {x: 21, y: 39}
+    - name: crystal_ahead_20
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 670
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 53}
+        - {x: -11, y: 53}
+        - {x: -12, y: 52}
+        - {x: -30, y: 22}
+        - {x: -32, y: 10}
+        - {x: -32, y: -42}
+        - {x: -6, y: -52}
+        - {x: 17, y: -52}
+        - {x: 41, y: -17}
+        - {x: 41, y: 31}
+        - {x: 27, y: 47}
+    - name: crystal_ahead_21
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 670
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 40, y: 8}
+        - {x: 36, y: 13}
+        - {x: 27, y: 13}
+        - {x: 14, y: 36}
+        - {x: 10, y: 40}
+        - {x: 6, y: 40}
+        - {x: -5, y: 53}
+        - {x: -10, y: 53}
+        - {x: -12, y: 52}
+        - {x: -28, y: 21}
+        - {x: -31, y: 7}
+        - {x: -31, y: -36}
+        - {x: -23, y: -43}
+        - {x: -17, y: -43}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 13, y: -32}
+        - {x: 40, y: -2}
+    - name: crystal_ahead_22
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 670
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 9}
+        - {x: -31, y: -42}
+        - {x: -13, y: -52}
+        - {x: 14, y: -52}
+        - {x: 40, y: -22}
+        - {x: 40, y: 34}
+        - {x: 31, y: 53}
+        - {x: -15, y: 53}
+        - {x: -29, y: 21}
+    - name: crystal_ahead_23
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 670
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 53}
+        - {x: -24, y: 53}
+        - {x: -31, y: 24}
+        - {x: -31, y: -45}
+        - {x: 4, y: -52}
+        - {x: 12, y: -52}
+        - {x: 39, y: -2}
+        - {x: 39, y: 16}
+        - {x: 12, y: 51}
+    - name: crystal_ahead_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 552
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 53}
+        - {x: -31, y: 41}
+        - {x: -31, y: -40}
+        - {x: -28, y: -52}
+        - {x: 11, y: -52}
+        - {x: 38, y: -21}
+        - {x: 38, y: 24}
+        - {x: 24, y: 53}
+    - name: crystal_ahead_25
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 552
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 53}
+        - {x: -31, y: 21}
+        - {x: -31, y: -37}
+        - {x: -11, y: -52}
+        - {x: 14, y: -52}
+        - {x: 38, y: -13}
+        - {x: 38, y: 10}
+        - {x: 34, y: 15}
+        - {x: 1, y: 53}
+    - name: crystal_ahead_26
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 552
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: -52}
+        - {x: 16, y: -52}
+        - {x: 37, y: -16}
+        - {x: 37, y: 21}
+        - {x: 0, y: 53}
+        - {x: -26, y: 53}
+        - {x: -31, y: 31}
+    - name: crystal_ahead_27
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 552
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 13}
+        - {x: 10, y: 42}
+        - {x: -3, y: 53}
+        - {x: -21, y: 53}
+        - {x: -31, y: 18}
+        - {x: -31, y: -29}
+        - {x: -25, y: -35}
+        - {x: -16, y: -43}
+        - {x: -10, y: -43}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 36, y: -6}
+        - {x: 36, y: 6}
+        - {x: 31, y: 13}
+    - name: crystal_ahead_28
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 552
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: -37}
+        - {x: -5, y: -52}
+        - {x: 9, y: -52}
+        - {x: 36, y: -2}
+        - {x: 36, y: 13}
+        - {x: 3, y: 53}
+        - {x: -11, y: 53}
+        - {x: -31, y: 23}
+        - {x: -31, y: -22}
+    - name: crystal_ahead_29
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 552
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 53}
+        - {x: -11, y: 53}
+        - {x: -31, y: 34}
+        - {x: -31, y: -29}
+        - {x: -29, y: -39}
+        - {x: -14, y: -43}
+        - {x: -8, y: -43}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 35, y: -16}
+        - {x: 35, y: 20}
+        - {x: 16, y: 51}
+    - name: crystal_ahead_30
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 552
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: -52}
+        - {x: 10, y: -52}
+        - {x: 36, y: -17}
+        - {x: 36, y: 19}
+        - {x: 16, y: 50}
+        - {x: 11, y: 53}
+        - {x: -27, y: 53}
+        - {x: -31, y: 36}
+    - name: crystal_ahead_31
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 552
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 13}
+        - {x: 10, y: 42}
+        - {x: 1, y: 53}
+        - {x: -11, y: 53}
+        - {x: -31, y: 28}
+        - {x: -31, y: -36}
+        - {x: -12, y: -52}
+        - {x: 13, y: -52}
+        - {x: 36, y: -6}
+        - {x: 36, y: 6}
+        - {x: 31, y: 13}
+    - name: crystal_ahead_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 434
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: -52}
+        - {x: 16, y: -52}
+        - {x: 37, y: -15}
+        - {x: 37, y: 22}
+        - {x: 3, y: 53}
+        - {x: -14, y: 53}
+        - {x: -31, y: 39}
+        - {x: -31, y: -39}
+    - name: crystal_ahead_33
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 434
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 53}
+        - {x: -31, y: 21}
+        - {x: -31, y: -37}
+        - {x: -11, y: -52}
+        - {x: 14, y: -52}
+        - {x: 38, y: -13}
+        - {x: 38, y: 10}
+        - {x: 34, y: 15}
+        - {x: 1, y: 53}
+    - name: crystal_ahead_34
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 434
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 53}
+        - {x: -31, y: 44}
+        - {x: -31, y: -52}
+        - {x: 7, y: -52}
+        - {x: 16, y: -41}
+        - {x: 38, y: -7}
+        - {x: 38, y: 18}
+        - {x: 5, y: 53}
+    - name: crystal_ahead_35
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 434
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 51}
+        - {x: 0, y: 53}
+        - {x: -15, y: 53}
+        - {x: -29, y: 21}
+        - {x: -31, y: 2}
+        - {x: -31, y: -40}
+        - {x: -1, y: -52}
+        - {x: 12, y: -52}
+        - {x: 39, y: 1}
+        - {x: 39, y: 10}
+        - {x: 34, y: 13}
+    - name: crystal_ahead_36
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 434
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28, y: 12}
+        - {x: 20, y: 38}
+        - {x: 4, y: 53}
+        - {x: -11, y: 53}
+        - {x: -31, y: 23}
+        - {x: -31, y: -40}
+        - {x: -5, y: -52}
+        - {x: 8, y: -52}
+        - {x: 30, y: -17}
+        - {x: 40, y: 1}
+        - {x: 40, y: 10}
+        - {x: 34, y: 12}
+    - name: crystal_ahead_37
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 434
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: -52}
+        - {x: 40, y: -12}
+        - {x: 40, y: 19}
+        - {x: 4, y: 53}
+        - {x: -19, y: 53}
+        - {x: -31, y: 45}
+        - {x: -31, y: -52}
+    - name: crystal_ahead_38
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 434
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: -37}
+        - {x: -23, y: -45}
+        - {x: -11, y: -52}
+        - {x: 12, y: -52}
+        - {x: 41, y: -15}
+        - {x: 41, y: 20}
+        - {x: 8, y: 53}
+        - {x: -17, y: 53}
+        - {x: -32, y: 31}
+    - name: crystal_ahead_39
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 434
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 53}
+        - {x: -11, y: 53}
+        - {x: -31, y: 22}
+        - {x: -33, y: -16}
+        - {x: -33, y: -36}
+        - {x: -24, y: -43}
+        - {x: -18, y: -43}
+        - {x: -8, y: -52}
+        - {x: 11, y: -52}
+        - {x: 42, y: -16}
+        - {x: 42, y: 11}
+        - {x: 38, y: 15}
+        - {x: 30, y: 12}
+        - {x: 21, y: 39}
+    - name: crystal_ahead_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: -39}
+        - {x: -5, y: -52}
+        - {x: 8, y: -52}
+        - {x: 42, y: -8}
+        - {x: 42, y: 21}
+        - {x: 14, y: 46}
+        - {x: 4, y: 53}
+        - {x: -12, y: 53}
+        - {x: -34, y: 25}
+    - name: crystal_ahead_41
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 316
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 53}
+        - {x: -20, y: 53}
+        - {x: -35, y: 44}
+        - {x: -35, y: -52}
+        - {x: 10, y: -52}
+        - {x: 21, y: -22}
+        - {x: 21, y: 37}
+        - {x: 19, y: 49}
+      - - {x: 30, y: 12}
+        - {x: 20, y: 6}
+        - {x: 20, y: -12}
+        - {x: 31, y: -12}
+        - {x: 43, y: -1}
+        - {x: 43, y: 6}
+        - {x: 41, y: 12}
+    - name: crystal_ahead_42
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 316
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 53}
+        - {x: -36, y: 34}
+        - {x: -36, y: -52}
+        - {x: 8, y: -52}
+        - {x: 21, y: -12}
+        - {x: 21, y: 41}
+        - {x: 5, y: 53}
+      - - {x: 38, y: 12}
+        - {x: 32, y: 12}
+        - {x: 21, y: 1}
+        - {x: 21, y: -10}
+        - {x: 26, y: -12}
+        - {x: 33, y: -12}
+        - {x: 44, y: 1}
+        - {x: 44, y: 6}
+    - name: crystal_ahead_43
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 316
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: -52}
+        - {x: 8, y: -52}
+        - {x: 21, y: -18}
+        - {x: 21, y: 35}
+        - {x: 20, y: 38}
+        - {x: -3, y: 53}
+        - {x: -10, y: 53}
+        - {x: -37, y: 39}
+      - - {x: 30, y: 12}
+        - {x: 21, y: 5}
+        - {x: 21, y: -8}
+        - {x: 22, y: -12}
+        - {x: 37, y: -12}
+        - {x: 44, y: 1}
+        - {x: 44, y: 9}
+        - {x: 40, y: 12}
+    - name: crystal_ahead_44
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 316
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 53}
+        - {x: -18, y: 53}
+        - {x: -38, y: -4}
+        - {x: -38, y: -44}
+        - {x: -22, y: -50}
+        - {x: 4, y: -52}
+        - {x: 10, y: -52}
+        - {x: 21, y: -14}
+        - {x: 21, y: 18}
+        - {x: 17, y: 46}
+      - - {x: 32, y: 12}
+        - {x: 22, y: 6}
+        - {x: 22, y: -12}
+        - {x: 33, y: -12}
+        - {x: 45, y: -1}
+        - {x: 45, y: 6}
+        - {x: 43, y: 12}
+    - name: crystal_ahead_45
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 316
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 53}
+        - {x: -32, y: 23}
+        - {x: -39, y: -11}
+        - {x: -39, y: -39}
+        - {x: -23, y: -48}
+        - {x: -3, y: -52}
+        - {x: 13, y: -52}
+        - {x: 21, y: -5}
+        - {x: 21, y: 46}
+        - {x: 9, y: 53}
+      - - {x: 40, y: 12}
+        - {x: 34, y: 12}
+        - {x: 23, y: 1}
+        - {x: 23, y: -10}
+        - {x: 28, y: -12}
+        - {x: 35, y: -12}
+        - {x: 46, y: 1}
+        - {x: 46, y: 6}
+    - name: crystal_ahead_46
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 316
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -40, y: -8}
+        - {x: -40, y: -44}
+        - {x: -25, y: -50}
+        - {x: 4, y: -52}
+        - {x: 10, y: -52}
+        - {x: 21, y: -18}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: 32, y: 12}
+        - {x: 23, y: 5}
+        - {x: 23, y: -8}
+        - {x: 24, y: -12}
+        - {x: 39, y: -12}
+        - {x: 46, y: 1}
+        - {x: 46, y: 9}
+        - {x: 42, y: 12}
+      - - {x: 9, y: 40}
+        - {x: 6, y: 37}
+        - {x: 6, y: 30}
+        - {x: 10, y: 27}
+        - {x: 16, y: 27}
+        - {x: 17, y: 30}
+        - {x: 17, y: 38}
+        - {x: 13, y: 40}
+    - name: crystal_ahead_47
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 316
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -41, y: -9}
+        - {x: -41, y: -43}
+        - {x: -25, y: -48}
+        - {x: -18, y: -37}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: 34, y: 12}
+        - {x: 24, y: 6}
+        - {x: 24, y: -12}
+        - {x: 35, y: -12}
+        - {x: 47, y: -1}
+        - {x: 47, y: 6}
+        - {x: 45, y: 12}
+      - - {x: 10, y: 40}
+        - {x: 6, y: 36}
+        - {x: 6, y: 32}
+        - {x: 11, y: 27}
+        - {x: 13, y: 27}
+        - {x: 17, y: 31}
+        - {x: 17, y: 36}
+        - {x: 13, y: 40}
+    - name: crystal_ahead_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 198
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 53}
+        - {x: -42, y: 6}
+        - {x: -42, y: -51}
+        - {x: -37, y: -52}
+        - {x: 21, y: -52}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: 42, y: 12}
+        - {x: 36, y: 12}
+        - {x: 25, y: 1}
+        - {x: 25, y: -10}
+        - {x: 30, y: -12}
+        - {x: 37, y: -12}
+        - {x: 48, y: 1}
+        - {x: 48, y: 6}
+      - - {x: 10, y: 40}
+        - {x: 6, y: 36}
+        - {x: 6, y: 30}
+        - {x: 11, y: 27}
+        - {x: 15, y: 27}
+        - {x: 18, y: 31}
+        - {x: 18, y: 36}
+        - {x: 14, y: 40}
+    - name: crystal_ahead_49
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 198
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 53}
+        - {x: -12, y: 52}
+        - {x: -43, y: -2}
+        - {x: -43, y: -50}
+        - {x: -36, y: -52}
+        - {x: 21, y: -52}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: 34, y: 12}
+        - {x: 25, y: 5}
+        - {x: 25, y: -8}
+        - {x: 26, y: -12}
+        - {x: 41, y: -12}
+        - {x: 48, y: 1}
+        - {x: 48, y: 9}
+        - {x: 44, y: 12}
+      - - {x: 10, y: 40}
+        - {x: 7, y: 37}
+        - {x: 7, y: 30}
+        - {x: 11, y: 27}
+        - {x: 17, y: 27}
+        - {x: 18, y: 30}
+        - {x: 18, y: 38}
+        - {x: 14, y: 40}
+    - name: crystal_ahead_50
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 198
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 53}
+        - {x: -36, y: 24}
+        - {x: -44, y: -21}
+        - {x: -44, y: -37}
+        - {x: -36, y: -43}
+        - {x: -30, y: -43}
+        - {x: -23, y: -39}
+        - {x: -21, y: -37}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 9}
+        - {x: 1, y: 53}
+      - - {x: 36, y: 12}
+        - {x: 26, y: 6}
+        - {x: 26, y: -12}
+        - {x: 37, y: -12}
+        - {x: 49, y: -1}
+        - {x: 49, y: 6}
+        - {x: 47, y: 12}
+      - - {x: 7, y: 36}
+        - {x: 7, y: 32}
+        - {x: 10, y: 27}
+        - {x: 14, y: 27}
+        - {x: 18, y: 29}
+        - {x: 18, y: 36}
+        - {x: 15, y: 40}
+        - {x: 11, y: 40}
+    - name: crystal_ahead_51
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 198
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 53}
+        - {x: -45, y: 0}
+        - {x: -45, y: -36}
+        - {x: -38, y: -47}
+        - {x: -6, y: -52}
+        - {x: 13, y: -52}
+        - {x: 21, y: -21}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: 44, y: 12}
+        - {x: 38, y: 12}
+        - {x: 27, y: 1}
+        - {x: 27, y: -10}
+        - {x: 32, y: -12}
+        - {x: 39, y: -12}
+        - {x: 50, y: 1}
+        - {x: 50, y: 6}
+      - - {x: 11, y: 40}
+        - {x: 7, y: 36}
+        - {x: 7, y: 30}
+        - {x: 12, y: 27}
+        - {x: 16, y: 27}
+        - {x: 19, y: 31}
+        - {x: 19, y: 36}
+        - {x: 15, y: 40}
+    - name: crystal_ahead_52
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 198
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 53}
+        - {x: -12, y: 52}
+        - {x: -33, y: 23}
+        - {x: -46, y: -11}
+        - {x: -46, y: -42}
+        - {x: -20, y: -50}
+        - {x: -8, y: -52}
+        - {x: 12, y: -52}
+        - {x: 21, y: -21}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: 36, y: 12}
+        - {x: 27, y: 5}
+        - {x: 27, y: -8}
+        - {x: 28, y: -12}
+        - {x: 43, y: -12}
+        - {x: 50, y: 1}
+        - {x: 50, y: 9}
+        - {x: 46, y: 12}
+      - - {x: 12, y: 40}
+        - {x: 8, y: 36}
+        - {x: 8, y: 32}
+        - {x: 13, y: 27}
+        - {x: 15, y: 27}
+        - {x: 19, y: 31}
+        - {x: 19, y: 36}
+        - {x: 15, y: 40}
+    - name: crystal_ahead_53
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 198
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 53}
+        - {x: -34, y: 23}
+        - {x: -47, y: -14}
+        - {x: -47, y: -41}
+        - {x: -22, y: -52}
+        - {x: 12, y: -52}
+        - {x: 21, y: -20}
+        - {x: 21, y: 9}
+        - {x: 1, y: 53}
+      - - {x: 38, y: 12}
+        - {x: 28, y: 6}
+        - {x: 28, y: -12}
+        - {x: 39, y: -12}
+        - {x: 51, y: -1}
+        - {x: 51, y: 6}
+        - {x: 49, y: 12}
+      - - {x: 8, y: 36}
+        - {x: 8, y: 32}
+        - {x: 11, y: 27}
+        - {x: 15, y: 27}
+        - {x: 19, y: 29}
+        - {x: 19, y: 36}
+        - {x: 16, y: 40}
+        - {x: 12, y: 40}
+    - name: crystal_ahead_54
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 198
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -31, y: 16}
+        - {x: -31, y: -17}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: -43, y: -16}
+        - {x: -48, y: -18}
+        - {x: -48, y: -36}
+        - {x: -43, y: -43}
+        - {x: -32, y: -43}
+        - {x: -25, y: -40}
+        - {x: -25, y: -22}
+        - {x: -28, y: -16}
+      - - {x: 46, y: 12}
+        - {x: 40, y: 12}
+        - {x: 29, y: 1}
+        - {x: 29, y: -10}
+        - {x: 34, y: -12}
+        - {x: 41, y: -12}
+        - {x: 52, y: 1}
+        - {x: 52, y: 6}
+      - - {x: 12, y: 40}
+        - {x: 9, y: 37}
+        - {x: 9, y: 30}
+        - {x: 13, y: 27}
+        - {x: 19, y: 27}
+        - {x: 20, y: 30}
+        - {x: 20, y: 38}
+        - {x: 16, y: 40}
+    - name: crystal_ahead_55
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 198
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -31, y: 16}
+        - {x: -31, y: -17}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: -44, y: -16}
+        - {x: -49, y: -18}
+        - {x: -49, y: -36}
+        - {x: -44, y: -43}
+        - {x: -33, y: -43}
+        - {x: -26, y: -40}
+        - {x: -26, y: -22}
+        - {x: -29, y: -16}
+      - - {x: 38, y: 12}
+        - {x: 29, y: 5}
+        - {x: 29, y: -8}
+        - {x: 30, y: -12}
+        - {x: 45, y: -12}
+        - {x: 52, y: 1}
+        - {x: 52, y: 9}
+        - {x: 48, y: 12}
+      - - {x: 13, y: 40}
+        - {x: 9, y: 36}
+        - {x: 9, y: 32}
+        - {x: 14, y: 27}
+        - {x: 16, y: 27}
+        - {x: 20, y: 31}
+        - {x: 20, y: 36}
+        - {x: 16, y: 40}
+    - name: crystal_ahead_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -31, y: 16}
+        - {x: -31, y: -17}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: -50, y: -35}
+        - {x: -45, y: -43}
+        - {x: -36, y: -43}
+        - {x: -28, y: -40}
+        - {x: -28, y: -23}
+        - {x: -30, y: -16}
+        - {x: -44, y: -16}
+        - {x: -50, y: -18}
+      - - {x: 40, y: 12}
+        - {x: 30, y: 6}
+        - {x: 30, y: -12}
+        - {x: 41, y: -12}
+        - {x: 53, y: -1}
+        - {x: 53, y: 6}
+        - {x: 51, y: 12}
+      - - {x: 11, y: 40}
+        - {x: 9, y: 36}
+        - {x: 9, y: 29}
+        - {x: 13, y: 27}
+        - {x: 18, y: 27}
+        - {x: 21, y: 31}
+        - {x: 21, y: 36}
+        - {x: 17, y: 40}
+    - name: crystal_ahead_57
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 80
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -31, y: 16}
+        - {x: -31, y: -17}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: -51, y: -35}
+        - {x: -46, y: -43}
+        - {x: -37, y: -43}
+        - {x: -29, y: -40}
+        - {x: -29, y: -23}
+        - {x: -31, y: -16}
+        - {x: -45, y: -16}
+        - {x: -51, y: -18}
+      - - {x: 48, y: 12}
+        - {x: 42, y: 12}
+        - {x: 31, y: 1}
+        - {x: 31, y: -10}
+        - {x: 36, y: -12}
+        - {x: 43, y: -12}
+        - {x: 54, y: 1}
+        - {x: 54, y: 6}
+      - - {x: 13, y: 40}
+        - {x: 10, y: 37}
+        - {x: 10, y: 30}
+        - {x: 14, y: 27}
+        - {x: 20, y: 27}
+        - {x: 21, y: 30}
+        - {x: 21, y: 38}
+        - {x: 17, y: 40}
+    - name: crystal_ahead_58
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 80
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -31, y: 16}
+        - {x: -31, y: -17}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: -46, y: -16}
+        - {x: -52, y: -18}
+        - {x: -52, y: -39}
+        - {x: -45, y: -43}
+        - {x: -33, y: -43}
+        - {x: -30, y: -38}
+        - {x: -30, y: -23}
+        - {x: -32, y: -16}
+      - - {x: 40, y: 12}
+        - {x: 31, y: 5}
+        - {x: 31, y: -8}
+        - {x: 32, y: -12}
+        - {x: 47, y: -12}
+        - {x: 54, y: 1}
+        - {x: 54, y: 9}
+        - {x: 50, y: 12}
+      - - {x: 10, y: 36}
+        - {x: 10, y: 32}
+        - {x: 13, y: 27}
+        - {x: 17, y: 27}
+        - {x: 21, y: 29}
+        - {x: 21, y: 36}
+        - {x: 18, y: 40}
+        - {x: 14, y: 40}
+    - name: crystal_ahead_59
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 80
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 53}
+        - {x: -31, y: 16}
+        - {x: -31, y: -17}
+        - {x: 5, y: -52}
+        - {x: 8, y: -51}
+        - {x: 21, y: -16}
+        - {x: 21, y: 7}
+        - {x: -3, y: 53}
+      - - {x: -47, y: -16}
+        - {x: -53, y: -18}
+        - {x: -53, y: -39}
+        - {x: -46, y: -43}
+        - {x: -34, y: -43}
+        - {x: -31, y: -38}
+        - {x: -31, y: -23}
+        - {x: -33, y: -16}
+      - - {x: 42, y: 12}
+        - {x: 32, y: 6}
+        - {x: 32, y: -12}
+        - {x: 43, y: -12}
+        - {x: 55, y: -1}
+        - {x: 55, y: 6}
+        - {x: 53, y: 12}
+      - - {x: 12, y: 40}
+        - {x: 10, y: 36}
+        - {x: 10, y: 29}
+        - {x: 14, y: 27}
+        - {x: 19, y: 27}
+        - {x: 22, y: 31}
+        - {x: 22, y: 36}
+        - {x: 18, y: 40}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -10,7 +10,8 @@
     public enum Type_Enemy
     {
         CrazyFireball,
-        Shooter
+        Shooter,
+        Meteor
     }
 
     public enum Type_Bonus

@@ -98,13 +98,6 @@ public class Platform : MonoBehaviour, Poolable<Platform> {
             _body.transform.localPosition = _bodyOriginalPos;
             _body.transform.localRotation = _bodyOriginalRot;
         }        
-    }
-
-
-    void Update()
-    {
-        //if (Camera.main.transform.position.x - transform.position.x > Screen.width)
-        //    Release();
-    }
+    }    
 
 }
