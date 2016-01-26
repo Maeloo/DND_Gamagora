@@ -73,7 +73,6 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
 
             case Game.Type_Enemy.Shooter:
                 gameObject.AddComponent<Shooter>().bulletPrefab = a_template.GetComponent<Shooter>().bulletPrefab;
-
                 break;
         }
     }

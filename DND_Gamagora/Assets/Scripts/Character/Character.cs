@@ -18,6 +18,8 @@ public class Character : MonoBehaviour
     [SerializeField]
     private float RunSpeed = 2f; // Multiplicateur de MaxSpeed
     [SerializeField]
+    private float attackSpeed;
+    [SerializeField]
     private bool AirControl = false;                 // Whether or not a player can steer while jumping;
     [SerializeField]
     private LayerMask WhatIsGround;                  // A mask determining what is ground to the character
@@ -31,6 +33,8 @@ public class Character : MonoBehaviour
     private Rigidbody2D rb;
     private bool facingRight = true;  // For determining which way the player is currently facing.
     internal Vector3 lastCheckpointPos;
+    private float lastAttack;
+
     private void Awake()
     {
         // Setting up references.
@@ -39,6 +43,7 @@ public class Character : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         lastCheckpointPos = transform.position;
+        lastAttack = Time.time;
     }
 
 
@@ -118,6 +123,15 @@ public class Character : MonoBehaviour
         }
         if (IsFalled())
             MoveToLastCheckPoint();
+    }
+
+    public void Attack()
+    {
+        if(Time.time - lastAttack  > attackSpeed)
+        {
+            anim.SetTrigger("Attack");
+            lastAttack = Time.time;
+        }
     }
 
 
