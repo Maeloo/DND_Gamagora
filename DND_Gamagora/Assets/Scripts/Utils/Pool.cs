@@ -13,10 +13,13 @@ public class Pool<T> : UnityEngine.Object where T : Poolable<T>, new ( ) {
     {
         get { return unavailableObjects;  }
     }
+
     public List<T> unusedObjects
     {
         get { return availableObjects; }
     }
+
+
     public uint sizeMax = 5;
     public bool automaticReuseUnavailables = false;
 

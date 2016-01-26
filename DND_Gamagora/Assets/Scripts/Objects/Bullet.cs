@@ -97,7 +97,7 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
         if(player != null)
         {
-            // Add damage to player
+            player.Hit(1);
 
             Release();
         }
