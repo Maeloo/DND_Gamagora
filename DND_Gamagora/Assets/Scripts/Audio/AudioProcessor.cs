@@ -141,7 +141,7 @@ public class AudioProcessor : Singleton<AudioProcessor>
 
     public void PauseMusic()
     {
-        audioSrc.Pause();
+        //audioSrc.Pause();
     }
 
     // Current music time in seconds

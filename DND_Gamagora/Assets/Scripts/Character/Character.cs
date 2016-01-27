@@ -397,8 +397,15 @@ public class Character : MonoBehaviour
     void GameOver()
     {
         GameManager.Instance.SetPause(true);
-        ScoreManager.Instance.SaveScore();
+        //ScoreManager.Instance.SaveScore();
         HUDManager.Instance.showGameOver();
+
+        StartCoroutine(startGameCredit());
+    }
+    IEnumerator startGameCredit()
+    {
+        yield return new WaitForSeconds(2f);
+        GameManager.Instance.LoadScene("Score");
     }
 
 
