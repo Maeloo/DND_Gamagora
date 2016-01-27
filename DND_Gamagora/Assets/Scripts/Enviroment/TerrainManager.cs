@@ -135,10 +135,9 @@ public class TerrainManager : Singleton<TerrainManager> {
 
     public void ErasePlatform()
     {
-        for (int i = 0; i < pools[Type_Platform.Classic].usedObjects.Count; i++)
+        for (int i = pools[Type_Platform.Classic].usedObjects.Count-1 ; i >= 0; i--)
         {
             pools[Type_Platform.Classic].usedObjects[i].Release();
-            --i;
         }
     }
     /******* Public methods ********/

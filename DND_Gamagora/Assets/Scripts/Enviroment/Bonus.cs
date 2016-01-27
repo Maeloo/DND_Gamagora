@@ -66,7 +66,7 @@ public class Bonus : MonoBehaviour, Poolable<Bonus> {
     {
         transform.position = new Vector3(-1000f, -1000f, -1000f);
         _pool.onRelease(this);
-
+        this.gameObject.SetActive(false);
     }
 
     public void SetPosition(Vector3 position)
@@ -82,6 +82,7 @@ public class Bonus : MonoBehaviour, Poolable<Bonus> {
             _body.transform.localPosition = _bodyOriginalPos;
             _body.transform.localRotation = _bodyOriginalRot;
         }
+        this.gameObject.SetActive(true);
     }
 
 }

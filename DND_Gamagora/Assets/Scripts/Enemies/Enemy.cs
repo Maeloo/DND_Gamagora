@@ -93,6 +93,7 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
         }
 
         transform.position = new Vector3(9999, 9999, 9999);
+        this.gameObject.SetActive(false);
     }
 
 
@@ -100,6 +101,7 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
     {
         transform.position = new Vector3(9999, 9999, 9999);
         _pool.onRelease(this);
+        this.gameObject.SetActive(false);
     }
 
 
@@ -119,6 +121,8 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
                 gameObject.GetComponent<Meteor>().spawn(position);
                 break;
         }
+
+        this.gameObject.SetActive(true);
     }
 
 
