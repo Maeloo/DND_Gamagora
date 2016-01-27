@@ -1,0 +1,2574 @@
+fileFormatVersion: 2
+guid: 3c438cc2587f2824ebf1f0daa98a710d
+timeCreated: 1453890322
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: jinjos_0
+    21300002: jinjos_1
+    21300004: jinjos_2
+    21300006: jinjos_3
+    21300008: jinjos_4
+    21300010: jinjos_5
+    21300012: jinjos_6
+    21300014: jinjos_7
+    21300016: jinjos_8
+    21300018: jinjos_9
+    21300020: jinjos_10
+    21300022: jinjos_11
+    21300024: jinjos_12
+    21300026: jinjos_13
+    21300028: jinjos_14
+    21300030: jinjos_15
+    21300032: jinjos_16
+    21300034: jinjos_17
+    21300036: jinjos_18
+    21300038: jinjos_19
+    21300040: jinjos_20
+    21300042: jinjos_21
+    21300044: jinjos_22
+    21300046: jinjos_23
+    21300048: jinjos_24
+    21300050: jinjos_25
+    21300052: jinjos_26
+    21300054: jinjos_27
+    21300056: jinjos_28
+    21300058: jinjos_29
+    21300060: jinjos_30
+    21300062: jinjos_31
+    21300064: jinjos_32
+    21300066: jinjos_33
+    21300068: jinjos_34
+    21300070: jinjos_35
+    21300072: jinjos_36
+    21300074: jinjos_37
+    21300076: jinjos_38
+    21300078: jinjos_39
+    21300080: jinjos_40
+    21300082: jinjos_41
+    21300084: jinjos_42
+    21300086: jinjos_43
+    21300088: jinjos_44
+    21300090: jinjos_45
+    21300092: jinjos_46
+    21300094: jinjos_47
+    21300096: jinjos_48
+    21300098: jinjos_49
+    21300100: jinjos_50
+    21300102: jinjos_51
+    21300104: jinjos_52
+    21300106: jinjos_53
+    21300108: jinjos_54
+    21300110: jinjos_55
+    21300112: jinjos_56
+    21300114: jinjos_57
+    21300116: jinjos_58
+    21300118: jinjos_59
+    21300120: jinjos_60
+    21300122: jinjos_61
+    21300124: jinjos_62
+    21300126: jinjos_63
+    21300128: jinjos_64
+    21300130: jinjos_65
+    21300132: jinjos_66
+    21300134: jinjos_67
+    21300136: jinjos_68
+    21300138: jinjos_69
+    21300140: jinjos_70
+    21300142: jinjos_71
+    21300144: jinjos_72
+    21300146: jinjos_73
+    21300148: jinjos_74
+    21300150: jinjos_75
+    21300152: jinjos_76
+    21300154: jinjos_77
+    21300156: jinjos_78
+    21300158: jinjos_79
+    21300160: jinjos_80
+    21300162: jinjos_81
+    21300164: jinjos_82
+    21300166: jinjos_83
+    21300168: jinjos_84
+    21300170: jinjos_85
+    21300172: jinjos_86
+    21300174: jinjos_87
+    21300176: jinjos_88
+    21300178: jinjos_89
+    21300180: jinjos_90
+    21300182: jinjos_91
+    21300184: jinjos_92
+    21300186: jinjos_93
+    21300188: jinjos_94
+    21300190: jinjos_95
+    21300192: jinjos_96
+    21300194: jinjos_97
+    21300196: jinjos_98
+    21300198: jinjos_99
+    21300200: jinjos_100
+    21300202: jinjos_101
+    21300204: jinjos_102
+    21300206: jinjos_103
+    21300208: jinjos_104
+    21300210: jinjos_105
+    21300212: jinjos_106
+    21300214: jinjos_107
+    21300216: jinjos_108
+    21300218: jinjos_109
+    21300220: jinjos_110
+    21300222: jinjos_111
+    21300224: jinjos_112
+    21300226: jinjos_113
+    21300228: jinjos_114
+    21300230: jinjos_115
+    21300232: jinjos_116
+    21300234: jinjos_117
+    21300236: jinjos_118
+    21300238: jinjos_119
+    21300240: jinjos_120
+    21300242: jinjos_121
+    21300244: jinjos_122
+    21300246: jinjos_123
+    21300248: jinjos_124
+    21300250: jinjos_125
+    21300252: jinjos_126
+    21300254: jinjos_127
+    21300256: jinjos_128
+    21300258: jinjos_129
+    21300260: jinjos_130
+    21300262: jinjos_131
+    21300264: jinjos_132
+    21300266: jinjos_133
+    21300268: jinjos_134
+    21300270: jinjos_135
+    21300272: jinjos_136
+    21300274: jinjos_137
+    21300276: jinjos_138
+    21300278: jinjos_139
+    21300280: jinjos_140
+    21300282: jinjos_141
+    21300284: jinjos_142
+    21300286: jinjos_143
+    21300288: jinjos_144
+    21300290: jinjos_145
+    21300292: jinjos_146
+    21300294: jinjos_147
+    21300296: jinjos_148
+    21300298: jinjos_149
+    21300300: jinjos_150
+    21300302: jinjos_151
+    21300304: jinjos_152
+    21300306: jinjos_153
+    21300308: jinjos_154
+    21300310: jinjos_155
+    21300312: jinjos_156
+    21300314: jinjos_157
+    21300316: jinjos_158
+    21300318: jinjos_159
+    21300320: jinjos_160
+    21300322: jinjos_161
+    21300324: jinjos_162
+    21300326: jinjos_163
+    21300328: jinjos_164
+    21300330: jinjos_165
+    21300332: jinjos_166
+    21300334: jinjos_167
+    21300336: jinjos_168
+    21300338: jinjos_169
+    21300340: jinjos_170
+    21300342: jinjos_171
+    21300344: jinjos_172
+    21300346: jinjos_173
+    21300348: jinjos_174
+    21300350: jinjos_175
+    21300352: jinjos_176
+    21300354: jinjos_177
+    21300356: jinjos_178
+    21300358: jinjos_179
+    21300360: jinjos_180
+    21300362: jinjos_181
+    21300364: jinjos_182
+    21300366: jinjos_183
+    21300368: jinjos_184
+    21300370: jinjos_185
+    21300372: jinjos_186
+    21300374: jinjos_187
+    21300376: jinjos_188
+    21300378: jinjos_189
+    21300380: jinjos_190
+    21300382: jinjos_191
+    21300384: jinjos_192
+    21300386: jinjos_193
+    21300388: jinjos_194
+    21300390: jinjos_195
+    21300392: jinjos_196
+    21300394: jinjos_197
+    21300396: jinjos_198
+    21300398: jinjos_199
+    21300400: jinjos_200
+    21300402: jinjos_201
+    21300404: jinjos_202
+    21300406: jinjos_203
+    21300408: jinjos_204
+    21300410: jinjos_205
+    21300412: jinjos_206
+    21300414: jinjos_207
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: jinjos_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 401
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 401
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 401
+        width: 19
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_3
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 401
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_4
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 401
+        width: 19
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_5
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 401
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_6
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 401
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_7
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 401
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_8
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 406
+        width: 12
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_9
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 406
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_10
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 399
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_11
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 399
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_12
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 399
+        width: 19
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_13
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 399
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_14
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 399
+        width: 19
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_15
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 399
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_16
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 399
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_17
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 399
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_18
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 404
+        width: 12
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_19
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 404
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 361
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_21
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 361
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_22
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 361
+        width: 19
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_23
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 361
+        width: 19
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_24
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 361
+        width: 19
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_25
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 361
+        width: 21
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_26
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 361
+        width: 21
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_27
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 361
+        width: 24
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_28
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 361
+        width: 27
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_29
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 361
+        width: 25
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_30
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 361
+        width: 25
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_31
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 359
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_32
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 359
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_33
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 359
+        width: 19
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_34
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 359
+        width: 19
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_35
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 359
+        width: 19
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_36
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 359
+        width: 21
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_37
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 359
+        width: 21
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_38
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 359
+        width: 24
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_39
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 359
+        width: 27
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_40
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 359
+        width: 25
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_41
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 359
+        width: 25
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_42
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 326
+        width: 26
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_43
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 326
+        width: 26
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_44
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 326
+        width: 27
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_45
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 326
+        width: 27
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_46
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 326
+        width: 28
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_47
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 326
+        width: 25
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_48
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 326
+        width: 23
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_49
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 334
+        width: 5
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_50
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 326
+        width: 16
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_51
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 324
+        width: 26
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_52
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 324
+        width: 26
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_53
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 324
+        width: 27
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_54
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 324
+        width: 27
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_55
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 324
+        width: 28
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_56
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 324
+        width: 25
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_57
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 324
+        width: 23
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_58
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 332
+        width: 5
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_59
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 324
+        width: 16
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_60
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 326
+        width: 20
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_61
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 326
+        width: 15
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_62
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 326
+        width: 11
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_63
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 326
+        width: 22
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_64
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 324
+        width: 20
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_65
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 324
+        width: 15
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_66
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 324
+        width: 11
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_67
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 324
+        width: 22
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_68
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 280
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_69
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 280
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_70
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 280
+        width: 19
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_71
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 280
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_72
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 280
+        width: 19
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_73
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 280
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_74
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 280
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_75
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 280
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_76
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 285
+        width: 12
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_77
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 285
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_78
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 278
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_79
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 278
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_80
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 278
+        width: 19
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_81
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 278
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_82
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 278
+        width: 19
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_83
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 278
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_84
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 278
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_85
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 278
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_86
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 283
+        width: 12
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_87
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 283
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_89
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 240
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_90
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 240
+        width: 19
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_91
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 240
+        width: 19
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_92
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 240
+        width: 19
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_93
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 240
+        width: 21
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_94
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 240
+        width: 21
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_95
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 240
+        width: 24
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_96
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 240
+        width: 27
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_97
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 240
+        width: 25
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_98
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 240
+        width: 25
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_99
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 238
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_100
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 238
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_101
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 238
+        width: 19
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_102
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 238
+        width: 19
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_103
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 238
+        width: 19
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_104
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 238
+        width: 21
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_105
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 238
+        width: 21
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_106
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 238
+        width: 24
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_107
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 238
+        width: 27
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_108
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 238
+        width: 25
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_109
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 238
+        width: 25
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_110
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 205
+        width: 26
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_111
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 205
+        width: 26
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_112
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 205
+        width: 27
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_113
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 205
+        width: 27
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_114
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 205
+        width: 28
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_115
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 205
+        width: 25
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_116
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 205
+        width: 23
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_117
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 213
+        width: 5
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_118
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 205
+        width: 16
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_119
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 203
+        width: 26
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_120
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 203
+        width: 26
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_121
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 203
+        width: 27
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_122
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 203
+        width: 27
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_123
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 203
+        width: 28
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_124
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 203
+        width: 25
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_125
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 203
+        width: 23
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_126
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 211
+        width: 5
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_127
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 203
+        width: 16
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_128
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 205
+        width: 20
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_129
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 205
+        width: 15
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_130
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 205
+        width: 11
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_131
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 205
+        width: 22
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_132
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 203
+        width: 20
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_133
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 203
+        width: 15
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_134
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 203
+        width: 11
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_135
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 203
+        width: 22
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_136
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 158
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_137
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 158
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_138
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 158
+        width: 19
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_139
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 158
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_140
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 158
+        width: 19
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_141
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 158
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_142
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 158
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_143
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 158
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_144
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 163
+        width: 12
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_145
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 163
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_146
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 156
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_147
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 156
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_148
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 156
+        width: 19
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_149
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 156
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_150
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 156
+        width: 19
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_151
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 156
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_152
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 156
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_153
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 156
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_154
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 161
+        width: 12
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_155
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 161
+        width: 16
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_156
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 118
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_157
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 118
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_158
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 118
+        width: 19
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_159
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 118
+        width: 19
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_160
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 118
+        width: 19
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_161
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 118
+        width: 21
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_162
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 118
+        width: 21
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_163
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 118
+        width: 24
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_164
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 118
+        width: 27
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_165
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 118
+        width: 25
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_166
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 118
+        width: 25
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_167
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 116
+        width: 20
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_168
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 116
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_169
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 116
+        width: 19
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_170
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 116
+        width: 19
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_171
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 116
+        width: 19
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_172
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 116
+        width: 21
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_173
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 116
+        width: 21
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_174
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 116
+        width: 24
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_175
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 116
+        width: 27
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_176
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 116
+        width: 25
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_177
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 116
+        width: 25
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_178
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 83
+        width: 26
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_179
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 83
+        width: 26
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_180
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 83
+        width: 27
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_181
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 83
+        width: 27
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_182
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 83
+        width: 28
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_183
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 83
+        width: 25
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_184
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 83
+        width: 23
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_185
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 91
+        width: 5
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_186
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 83
+        width: 16
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_187
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 81
+        width: 26
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_188
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 81
+        width: 26
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_189
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 81
+        width: 27
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_190
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 81
+        width: 27
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_191
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 81
+        width: 28
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_192
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 81
+        width: 25
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_193
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 81
+        width: 23
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_194
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 89
+        width: 5
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_195
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 81
+        width: 16
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_196
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 83
+        width: 20
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_197
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 83
+        width: 15
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_198
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 83
+        width: 11
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_199
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 83
+        width: 22
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_200
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 81
+        width: 20
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_201
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 81
+        width: 15
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_202
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 81
+        width: 11
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_203
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 81
+        width: 22
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_204
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 27
+        width: 22
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: jinjos_205
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 0
+        width: 40
+        height: 67
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 67}
+        - {x: -20, y: 47}
+        - {x: -20, y: 11}
+        - {x: -16, y: 0}
+        - {x: 20, y: 0}
+        - {x: 20, y: 54}
+        - {x: 14, y: 67}
+    - name: jinjos_206
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 40
+        height: 67
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 67}
+        - {x: -20, y: 47}
+        - {x: -20, y: 11}
+        - {x: -16, y: 0}
+        - {x: 20, y: 0}
+        - {x: 20, y: 54}
+        - {x: 14, y: 67}
+    - name: jinjos_207
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 40
+        height: 67
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 67}
+        - {x: -20, y: 47}
+        - {x: -20, y: 11}
+        - {x: -16, y: 0}
+        - {x: 20, y: 0}
+        - {x: 20, y: 54}
+        - {x: 14, y: 67}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

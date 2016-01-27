@@ -1,0 +1,2772 @@
+fileFormatVersion: 2
+guid: 6a8499a61b932014e8ef3f6d27697bae
+timeCreated: 1453847294
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: megaman_0
+    21300002: megaman_1
+    21300004: megaman_2
+    21300006: megaman_3
+    21300008: megaman_4
+    21300010: megaman_5
+    21300012: megaman_6
+    21300014: megaman_7
+    21300016: megaman_8
+    21300018: megaman_9
+    21300020: megaman_10
+    21300022: megaman_11
+    21300024: megaman_12
+    21300026: megaman_13
+    21300028: megaman_14
+    21300030: megaman_15
+    21300032: megaman_16
+    21300034: megaman_17
+    21300036: megaman_18
+    21300038: megaman_19
+    21300040: megaman_20
+    21300042: megaman_21
+    21300044: megaman_22
+    21300046: megaman_23
+    21300048: megaman_24
+    21300050: megaman_25
+    21300052: megaman_26
+    21300054: megaman_27
+    21300056: megaman_28
+    21300058: megaman_29
+    21300060: megaman_30
+    21300062: megaman_31
+    21300064: megaman_32
+    21300066: megaman_33
+    21300068: megaman_34
+    21300070: megaman_35
+    21300072: megaman_36
+    21300074: megaman_37
+    21300076: megaman_38
+    21300078: megaman_39
+    21300080: megaman_40
+    21300082: megaman_41
+    21300084: megaman_42
+    21300086: megaman_43
+    21300088: megaman_44
+    21300090: megaman_45
+    21300092: megaman_46
+    21300094: megaman_47
+    21300096: megaman_48
+    21300098: megaman_49
+    21300100: megaman_50
+    21300102: megaman_51
+    21300104: megaman_52
+    21300106: megaman_53
+    21300108: megaman_54
+    21300110: megaman_55
+    21300112: megaman_56
+    21300114: megaman_57
+    21300116: megaman_58
+    21300118: megaman_59
+    21300120: megaman_60
+    21300122: megaman_61
+    21300124: megaman_62
+    21300126: megaman_63
+    21300128: megaman_64
+    21300130: megaman_65
+    21300132: megaman_66
+    21300134: megaman_67
+    21300136: megaman_68
+    21300138: megaman_69
+    21300140: megaman_70
+    21300142: megaman_71
+    21300144: megaman_72
+    21300146: megaman_73
+    21300148: megaman_74
+    21300150: megaman_75
+    21300152: megaman_76
+    21300154: megaman_77
+    21300156: megaman_78
+    21300158: megaman_79
+    21300160: megaman_80
+    21300162: megaman_81
+    21300164: megaman_82
+    21300166: megaman_83
+    21300168: megaman_84
+    21300170: megaman_85
+    21300172: megaman_86
+    21300174: megaman_87
+    21300176: megaman_88
+    21300178: megaman_89
+    21300180: megaman_90
+    21300182: megaman_91
+    21300184: megaman_92
+    21300186: megaman_93
+    21300188: megaman_94
+    21300190: megaman_95
+    21300192: megaman_96
+    21300194: megaman_97
+    21300196: megaman_98
+    21300198: megaman_99
+    21300200: megaman_100
+    21300202: megaman_101
+    21300204: megaman_102
+    21300206: megaman_103
+    21300208: megaman_104
+    21300210: megaman_105
+    21300212: megaman_106
+    21300214: megaman_107
+    21300216: megaman_108
+    21300218: megaman_109
+    21300220: megaman_110
+    21300222: megaman_111
+    21300224: megaman_112
+    21300226: megaman_113
+    21300228: megaman_114
+    21300230: megaman_115
+    21300232: megaman_116
+    21300234: megaman_117
+    21300236: megaman_118
+    21300238: megaman_119
+    21300240: megaman_120
+    21300242: megaman_121
+    21300244: megaman_122
+    21300246: megaman_123
+    21300248: megaman_124
+    21300250: megaman_125
+    21300252: megaman_126
+    21300254: megaman_127
+    21300256: megaman_128
+    21300258: megaman_129
+    21300260: megaman_130
+    21300262: megaman_131
+    21300264: megaman_132
+    21300266: megaman_133
+    21300268: megaman_134
+    21300270: megaman_135
+    21300272: megaman_136
+    21300274: megaman_137
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: megaman_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 820
+        width: 43
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: 47}
+        - {x: -21.5, y: 38}
+        - {x: -21.5, y: 10}
+        - {x: -19.5, y: 0}
+        - {x: 21.5, y: 0}
+        - {x: 21.5, y: 42}
+        - {x: 10.5, y: 47}
+    - name: megaman_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 820
+        width: 43
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 47}
+        - {x: -21.5, y: 39}
+        - {x: -21.5, y: 11}
+        - {x: -19.5, y: 2}
+        - {x: -17.5, y: 0}
+        - {x: 21.5, y: 0}
+        - {x: 21.5, y: 43}
+        - {x: 13.5, y: 47}
+    - name: megaman_2
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 819
+        width: 42
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 39}
+        - {x: -21, y: 0}
+        - {x: 21, y: 0}
+        - {x: 21, y: 27}
+        - {x: 20, y: 31}
+        - {x: 12, y: 48}
+        - {x: -10, y: 48}
+        - {x: -18, y: 45}
+    - name: megaman_3
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 820
+        width: 42
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 47}
+        - {x: -21, y: 37}
+        - {x: -21, y: 3}
+        - {x: -20, y: 0}
+        - {x: 21, y: 0}
+        - {x: 21, y: 35}
+        - {x: 10, y: 47}
+    - name: megaman_4
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 811
+        width: 40
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 42}
+        - {x: 11, y: 40}
+        - {x: 12, y: 48}
+        - {x: 12, y: 56}
+        - {x: -18, y: 56}
+        - {x: -20, y: 50}
+        - {x: -20, y: 15}
+        - {x: -18, y: 0}
+        - {x: -6, y: 0}
+        - {x: 20, y: 29}
+        - {x: 20, y: 45}
+        - {x: 15, y: 46}
+    - name: megaman_5
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 808
+        width: 28
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_6
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 818
+        width: 38
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 48}
+        - {x: -19, y: 40}
+        - {x: -19, y: 0}
+        - {x: 15, y: 0}
+        - {x: 19, y: 15}
+        - {x: 19, y: 48}
+    - name: megaman_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 807
+        width: 31
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_8
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 807
+        width: 31
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_9
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 808
+        width: 28
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_10
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 818
+        width: 38
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 48}
+        - {x: -19, y: 32}
+        - {x: -13, y: 0}
+        - {x: 19, y: 0}
+        - {x: 19, y: 38}
+        - {x: 10, y: 48}
+    - name: megaman_11
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 813
+        width: 35
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 53}
+        - {x: -17.5, y: 44}
+        - {x: -17.5, y: 25}
+        - {x: -15.5, y: 4}
+        - {x: -0.5, y: 0}
+        - {x: 17.5, y: 0}
+        - {x: 17.5, y: 53}
+    - name: megaman_12
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 807
+        width: 31
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_13
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 807
+        width: 31
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_14
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 809
+        width: 33
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 51}
+        - {x: -16.5, y: 8}
+        - {x: -14.5, y: 0}
+        - {x: 9.5, y: 0}
+        - {x: 16.5, y: 3}
+        - {x: 16.5, y: 49}
+        - {x: 12.5, y: 51}
+    - name: megaman_15
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 809
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 48}
+        - {x: -16, y: 4}
+        - {x: -15, y: 0}
+        - {x: 5, y: 0}
+        - {x: 16, y: 5}
+        - {x: 16, y: 48}
+    - name: megaman_16
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 814
+        width: 34
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 46}
+        - {x: -14, y: 42}
+        - {x: -17, y: 37}
+        - {x: -17, y: 0}
+        - {x: 10, y: 0}
+        - {x: 15, y: 1}
+        - {x: 16, y: 4}
+        - {x: 17, y: 11}
+        - {x: 17, y: 46}
+    - name: megaman_17
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 815
+        width: 42
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 45}
+        - {x: -21, y: 45}
+        - {x: -21, y: 5}
+        - {x: -19, y: 0}
+        - {x: 13, y: 0}
+        - {x: 15, y: 1}
+        - {x: 13, y: 8}
+        - {x: 21, y: 14}
+    - name: megaman_18
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 815
+        width: 42
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 47}
+        - {x: -21, y: 30}
+        - {x: -21, y: 0}
+        - {x: 21, y: 0}
+        - {x: 21, y: 37}
+        - {x: 7, y: 47}
+    - name: megaman_19
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 815
+        width: 42
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 46}
+        - {x: -16, y: 40}
+        - {x: -21, y: 24}
+        - {x: -21, y: 5}
+        - {x: -19, y: 0}
+        - {x: 21, y: 0}
+        - {x: 21, y: 10}
+        - {x: 6, y: 46}
+    - name: megaman_20
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 814
+        width: 42
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 47}
+        - {x: -21, y: 30}
+        - {x: -21, y: 0}
+        - {x: 21, y: 0}
+        - {x: 21, y: 37}
+        - {x: 7, y: 47}
+    - name: megaman_21
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 814
+        width: 40
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 48}
+        - {x: -20, y: 33}
+        - {x: -20, y: 0}
+        - {x: 20, y: 0}
+        - {x: 20, y: 39}
+        - {x: 7, y: 48}
+    - name: megaman_22
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 735
+        width: 39
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 0}
+        - {x: 19.5, y: 0}
+        - {x: 19.5, y: 48}
+        - {x: -7.5, y: 48}
+        - {x: -19.5, y: 38}
+    - name: megaman_23
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 731
+        width: 44
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 0}
+        - {x: 22, y: 0}
+        - {x: 22, y: 52}
+        - {x: 21, y: 56}
+        - {x: -9, y: 56}
+        - {x: -22, y: 44}
+    - name: megaman_24
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 731
+        width: 43
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 56}
+        - {x: -21.5, y: 35}
+        - {x: -21.5, y: 6}
+        - {x: -12.5, y: 0}
+        - {x: 8.5, y: 0}
+        - {x: 21.5, y: 7}
+        - {x: 21.5, y: 43}
+        - {x: 12.5, y: 56}
+    - name: megaman_25
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 731
+        width: 43
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21.5, y: 45}
+        - {x: 14.5, y: 57}
+        - {x: -5.5, y: 57}
+        - {x: -14.5, y: 52}
+        - {x: -21.5, y: 45}
+        - {x: -21.5, y: 8}
+        - {x: -20.5, y: 1}
+        - {x: -15.5, y: 0}
+        - {x: -6.5, y: 0}
+        - {x: -1.5, y: 5}
+        - {x: 13.5, y: 3}
+        - {x: 21.5, y: 16}
+    - name: megaman_26
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 732
+        width: 43
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 56}
+        - {x: -21.5, y: 50}
+        - {x: -21.5, y: 8}
+        - {x: -12.5, y: 0}
+        - {x: 6.5, y: 0}
+        - {x: 13.5, y: 2}
+        - {x: 21.5, y: 29}
+        - {x: 21.5, y: 47}
+        - {x: 14.5, y: 56}
+    - name: megaman_27
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 736
+        width: 39
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.5, y: 50}
+        - {x: 17.5, y: 52}
+        - {x: -19.5, y: 52}
+        - {x: -19.5, y: 23}
+        - {x: -12.5, y: 17}
+        - {x: -10.5, y: 17}
+        - {x: -6.5, y: 20}
+        - {x: -5.5, y: 23}
+        - {x: -5.5, y: 21}
+        - {x: -10.5, y: 17}
+        - {x: -14.5, y: 15}
+        - {x: -8.5, y: 0}
+        - {x: 10.5, y: 0}
+        - {x: 17.5, y: 18}
+        - {x: 19.5, y: 26}
+    - name: megaman_28
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 733
+        width: 40
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 55}
+        - {x: -20, y: 0}
+        - {x: 10, y: 0}
+        - {x: 20, y: 28}
+        - {x: 20, y: 55}
+    - name: megaman_29
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 724
+        width: 36
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 64}
+        - {x: -18, y: 26}
+        - {x: -6, y: 0}
+        - {x: 7, y: 0}
+        - {x: 18, y: 31}
+        - {x: 18, y: 64}
+    - name: megaman_30
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 720
+        width: 35
+        height: 77
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: 77}
+        - {x: -17.5, y: 33}
+        - {x: -16.5, y: 19}
+        - {x: -7.5, y: 0}
+        - {x: 5.5, y: 0}
+        - {x: 17.5, y: 12}
+        - {x: 17.5, y: 73}
+        - {x: 14.5, y: 77}
+    - name: megaman_31
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 721
+        width: 35
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.5, y: 74}
+        - {x: -1.5, y: 79}
+        - {x: -17.5, y: 79}
+        - {x: -17.5, y: 32}
+        - {x: -16.5, y: 19}
+        - {x: -7.5, y: 0}
+        - {x: 6.5, y: 0}
+        - {x: 16.5, y: 14}
+        - {x: 17.5, y: 19}
+    - name: megaman_32
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 723
+        width: 40
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 59}
+        - {x: -20, y: 1}
+        - {x: -18, y: 0}
+        - {x: 10, y: 0}
+        - {x: 20, y: 3}
+        - {x: 20, y: 53}
+        - {x: 7, y: 59}
+    - name: megaman_33
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 723
+        width: 70
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 45}
+        - {x: -35, y: 36}
+        - {x: -35, y: 0}
+        - {x: 25, y: 0}
+        - {x: 35, y: 9}
+        - {x: 35, y: 42}
+        - {x: 34, y: 45}
+    - name: megaman_34
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 724
+        width: 107
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -51.5, y: 36}
+        - {x: -53.5, y: 33}
+        - {x: -53.5, y: 11}
+        - {x: -47.5, y: 7}
+        - {x: -33.5, y: 0}
+        - {x: 40.5, y: 0}
+        - {x: 53.5, y: 6}
+        - {x: 53.5, y: 24}
+        - {x: 48.5, y: 36}
+    - name: megaman_35
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 722
+        width: 131
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -62.5, y: 38}
+        - {x: -65.5, y: 24}
+        - {x: -65.5, y: 12}
+        - {x: -60.5, y: 6}
+        - {x: -34.5, y: 0}
+        - {x: 38.5, y: 0}
+        - {x: 65.5, y: 6}
+        - {x: 65.5, y: 38}
+    - name: megaman_36
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 729
+        width: 36
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 50}
+        - {x: 4, y: 52}
+        - {x: -12, y: 52}
+        - {x: -18, y: 38}
+        - {x: -18, y: 0}
+        - {x: 18, y: 0}
+        - {x: 18, y: 36}
+        - {x: 17, y: 41}
+    - name: megaman_37
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 662
+        width: 36
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 45}
+        - {x: -18, y: 38}
+        - {x: -18, y: 0}
+        - {x: 18, y: 0}
+        - {x: 18, y: 34}
+        - {x: 10, y: 45}
+    - name: megaman_38
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 662
+        width: 38
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 46}
+        - {x: -19, y: 32}
+        - {x: -19, y: 0}
+        - {x: 19, y: 0}
+        - {x: 19, y: 34}
+        - {x: 15, y: 46}
+    - name: megaman_39
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 664
+        width: 51
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 44}
+        - {x: -25.5, y: 37}
+        - {x: -25.5, y: 21}
+        - {x: -24.5, y: 20}
+        - {x: -19.5, y: 20}
+        - {x: -18.5, y: 21}
+        - {x: -6.5, y: 21}
+        - {x: -3.5, y: 24}
+        - {x: -3.5, y: 19}
+        - {x: -7.5, y: 21}
+        - {x: -17.5, y: 21}
+        - {x: -24.5, y: 12}
+        - {x: -22.5, y: 0}
+        - {x: 25.5, y: 0}
+        - {x: 25.5, y: 44}
+    - name: megaman_40
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 662
+        width: 50
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 45}
+        - {x: -25, y: 10}
+        - {x: 6, y: 0}
+        - {x: 23, y: 0}
+        - {x: 25, y: 2}
+        - {x: 25, y: 45}
+    - name: megaman_41
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 662
+        width: 48
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 13}
+        - {x: -9, y: 0}
+        - {x: 24, y: 0}
+        - {x: 24, y: 45}
+        - {x: 23, y: 46}
+        - {x: -22, y: 46}
+        - {x: -24, y: 44}
+    - name: megaman_42
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 662
+        width: 46
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 47}
+        - {x: -23, y: 5}
+        - {x: -18, y: 0}
+        - {x: 23, y: 0}
+        - {x: 23, y: 40}
+        - {x: 20, y: 47}
+    - name: megaman_43
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 663
+        width: 44
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 48}
+        - {x: -20, y: 46}
+        - {x: -22, y: 43}
+        - {x: -22, y: 19}
+        - {x: -11, y: 0}
+        - {x: 21, y: 0}
+        - {x: 22, y: 7}
+        - {x: 22, y: 47}
+        - {x: 21, y: 48}
+    - name: megaman_44
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 663
+        width: 40
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 19}
+        - {x: -6, y: 0}
+        - {x: 13, y: 0}
+        - {x: 20, y: 15}
+        - {x: 20, y: 48}
+        - {x: -14, y: 48}
+        - {x: -20, y: 46}
+    - name: megaman_45
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 661
+        width: 45
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.5, y: 47}
+        - {x: 0.5, y: 47}
+        - {x: -22.5, y: 34}
+        - {x: -22.5, y: 17}
+        - {x: -14.5, y: 0}
+        - {x: 15.5, y: 0}
+        - {x: 22.5, y: 12}
+        - {x: 22.5, y: 42}
+    - name: megaman_46
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 662
+        width: 49
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 45}
+        - {x: -24.5, y: 39}
+        - {x: -24.5, y: 14}
+        - {x: -16.5, y: 0}
+        - {x: 20.5, y: 0}
+        - {x: 24.5, y: 1}
+        - {x: 24.5, y: 39}
+        - {x: 22.5, y: 45}
+    - name: megaman_47
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 660
+        width: 49
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.5, y: 46}
+        - {x: -22.5, y: 7}
+        - {x: -3.5, y: 0}
+        - {x: 24.5, y: 0}
+        - {x: 24.5, y: 46}
+      - - {x: -21.5, y: 3}
+        - {x: -21.5, y: 6}
+        - {x: -24.5, y: 7}
+        - {x: -24.5, y: 2}
+    - name: megaman_48
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 660
+        width: 50
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 47}
+        - {x: -20, y: 47}
+        - {x: -25, y: 41}
+        - {x: -25, y: 7}
+        - {x: -16, y: 0}
+        - {x: 17, y: 0}
+        - {x: 22, y: 4}
+        - {x: 25, y: 19}
+        - {x: 25, y: 38}
+    - name: megaman_49
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 660
+        width: 46
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 48}
+        - {x: -23, y: 44}
+        - {x: -23, y: 4}
+        - {x: -7, y: 0}
+        - {x: 23, y: 0}
+        - {x: 23, y: 48}
+    - name: megaman_50
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 660
+        width: 43
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 49}
+        - {x: -21.5, y: 5}
+        - {x: -20.5, y: 0}
+        - {x: 18.5, y: 0}
+        - {x: 21.5, y: 8}
+        - {x: 21.5, y: 49}
+    - name: megaman_51
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 660
+        width: 42
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 49}
+        - {x: -21, y: 47}
+        - {x: -21, y: 7}
+        - {x: -18, y: 0}
+        - {x: 10, y: 0}
+        - {x: 21, y: 13}
+        - {x: 21, y: 47}
+        - {x: 20, y: 49}
+    - name: megaman_52
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 660
+        width: 45
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 48}
+        - {x: -22.5, y: 38}
+        - {x: -22.5, y: 19}
+        - {x: -14.5, y: 0}
+        - {x: 22.5, y: 0}
+        - {x: 22.5, y: 48}
+    - name: megaman_53
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 615
+        width: 111
+        height: 92
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55.5, y: 92}
+        - {x: -55.5, y: 0}
+        - {x: 55.5, y: 0}
+        - {x: 55.5, y: 92}
+    - name: megaman_54
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 600
+        width: 36
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 45}
+        - {x: -18, y: 38}
+        - {x: -18, y: 0}
+        - {x: 18, y: 0}
+        - {x: 18, y: 30}
+        - {x: 10, y: 45}
+    - name: megaman_55
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 600
+        width: 38
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 46}
+        - {x: -19, y: 32}
+        - {x: -19, y: 0}
+        - {x: 19, y: 0}
+        - {x: 19, y: 34}
+        - {x: 15, y: 46}
+    - name: megaman_56
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 601
+        width: 46
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 47}
+        - {x: -23, y: 5}
+        - {x: -18, y: 0}
+        - {x: 23, y: 0}
+        - {x: 23, y: 40}
+        - {x: 20, y: 47}
+    - name: megaman_57
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 600
+        width: 44
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 48}
+        - {x: -20, y: 46}
+        - {x: -22, y: 43}
+        - {x: -22, y: 19}
+        - {x: -11, y: 0}
+        - {x: 21, y: 0}
+        - {x: 22, y: 7}
+        - {x: 22, y: 47}
+        - {x: 21, y: 48}
+    - name: megaman_58
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 600
+        width: 40
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 19}
+        - {x: -6, y: 0}
+        - {x: 13, y: 0}
+        - {x: 20, y: 15}
+        - {x: 20, y: 48}
+        - {x: -14, y: 48}
+        - {x: -20, y: 46}
+    - name: megaman_59
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 601
+        width: 45
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 47}
+        - {x: -22.5, y: 34}
+        - {x: -22.5, y: 9}
+        - {x: -12.5, y: 0}
+        - {x: 13.5, y: 0}
+        - {x: 22.5, y: 11}
+        - {x: 22.5, y: 41}
+        - {x: 21.5, y: 47}
+    - name: megaman_60
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 603
+        width: 49
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 45}
+        - {x: -19.5, y: 42}
+        - {x: -24.5, y: 31}
+        - {x: -24.5, y: 7}
+        - {x: -22.5, y: 0}
+        - {x: 24.5, y: 0}
+        - {x: 24.5, y: 34}
+        - {x: 20.5, y: 45}
+    - name: megaman_61
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 602
+        width: 45
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.5, y: 46}
+        - {x: -22.5, y: 8}
+        - {x: -19.5, y: 6}
+        - {x: -0.5, y: 0}
+        - {x: 19.5, y: 0}
+        - {x: 22.5, y: 3}
+        - {x: 22.5, y: 45}
+        - {x: 20.5, y: 46}
+    - name: megaman_62
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 601
+        width: 50
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 47}
+        - {x: -20, y: 47}
+        - {x: -25, y: 41}
+        - {x: -25, y: 7}
+        - {x: -16, y: 0}
+        - {x: 17, y: 0}
+        - {x: 22, y: 4}
+        - {x: 25, y: 19}
+        - {x: 25, y: 38}
+    - name: megaman_63
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 600
+        width: 46
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 48}
+        - {x: -23, y: 44}
+        - {x: -23, y: 4}
+        - {x: -7, y: 0}
+        - {x: 23, y: 0}
+        - {x: 23, y: 48}
+    - name: megaman_64
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 599
+        width: 43
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 49}
+        - {x: -21.5, y: 5}
+        - {x: -20.5, y: 0}
+        - {x: 18.5, y: 0}
+        - {x: 21.5, y: 8}
+        - {x: 21.5, y: 49}
+    - name: megaman_65
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 599
+        width: 42
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 49}
+        - {x: -21, y: 47}
+        - {x: -21, y: 7}
+        - {x: -18, y: 0}
+        - {x: 10, y: 0}
+        - {x: 21, y: 13}
+        - {x: 21, y: 47}
+        - {x: 20, y: 49}
+    - name: megaman_66
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 600
+        width: 45
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.5, y: 48}
+        - {x: -22.5, y: 38}
+        - {x: -22.5, y: 19}
+        - {x: -14.5, y: 0}
+        - {x: 22.5, y: 0}
+        - {x: 22.5, y: 48}
+    - name: megaman_67
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 604
+        width: 50
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 44}
+        - {x: -25, y: 38}
+        - {x: -25, y: 21}
+        - {x: -24, y: 20}
+        - {x: -19, y: 20}
+        - {x: -18, y: 21}
+        - {x: -6, y: 21}
+        - {x: -3, y: 24}
+        - {x: -3, y: 19}
+        - {x: -7, y: 21}
+        - {x: -17, y: 21}
+        - {x: -24, y: 12}
+        - {x: -22, y: 0}
+        - {x: 25, y: 0}
+        - {x: 25, y: 44}
+    - name: megaman_68
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 602
+        width: 48
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 13}
+        - {x: -9, y: 0}
+        - {x: 24, y: 0}
+        - {x: 24, y: 45}
+        - {x: 23, y: 46}
+        - {x: -22, y: 46}
+        - {x: -24, y: 44}
+    - name: megaman_69
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 603
+        width: 50
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 45}
+        - {x: -25, y: 42}
+        - {x: -25, y: 10}
+        - {x: 6, y: 0}
+        - {x: 25, y: 0}
+        - {x: 25, y: 45}
+    - name: megaman_70
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 528
+        width: 39
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.5, y: 3}
+        - {x: 1.5, y: 0}
+        - {x: 19.5, y: 0}
+        - {x: 19.5, y: 32}
+        - {x: 8.5, y: 46}
+        - {x: -14.5, y: 46}
+        - {x: -19.5, y: 40}
+        - {x: -19.5, y: 0}
+        - {x: -3.5, y: 0}
+        - {x: -1.5, y: 2}
+        - {x: 0.5, y: 12}
+        - {x: 0.5, y: 13}
+    - name: megaman_71
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 528
+        width: 46
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 50}
+        - {x: -18, y: 50}
+        - {x: -23, y: 42}
+        - {x: -23, y: 29}
+        - {x: -20, y: 0}
+        - {x: 23, y: 0}
+        - {x: 23, y: 33}
+        - {x: 9, y: 49}
+    - name: megaman_72
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 526
+        width: 49
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2.5, y: 0}
+        - {x: 19.5, y: 0}
+        - {x: 24.5, y: 16}
+        - {x: 24.5, y: 50}
+        - {x: 11.5, y: 63}
+        - {x: -2.5, y: 63}
+        - {x: -10.5, y: 54}
+        - {x: -24.5, y: 36}
+        - {x: -24.5, y: 0}
+        - {x: -5.5, y: 0}
+        - {x: -2.5, y: 3}
+        - {x: -1.5, y: 6}
+        - {x: -1.5, y: 4}
+    - name: megaman_73
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 526
+        width: 78
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 63}
+        - {x: -14, y: 63}
+        - {x: -39, y: 42}
+        - {x: -39, y: 17}
+        - {x: -36, y: 12}
+        - {x: -33, y: 13}
+        - {x: -24, y: 19}
+        - {x: -35, y: 11}
+        - {x: -38, y: 0}
+        - {x: 10, y: 0}
+        - {x: 39, y: 11}
+        - {x: 39, y: 52}
+        - {x: 32, y: 61}
+    - name: megaman_74
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 529
+        width: 87
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: 60}
+        - {x: -41.5, y: 50}
+        - {x: -43.5, y: 46}
+        - {x: -43.5, y: 0}
+        - {x: 43.5, y: 0}
+        - {x: 43.5, y: 38}
+        - {x: 20.5, y: 60}
+    - name: megaman_75
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 529
+        width: 91
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41.5, y: 46}
+        - {x: 36.5, y: 40}
+        - {x: 3.5, y: 48}
+        - {x: -41.5, y: 48}
+        - {x: -45.5, y: 43}
+        - {x: -45.5, y: 26}
+        - {x: -39.5, y: 0}
+        - {x: 43.5, y: 0}
+        - {x: 45.5, y: 2}
+        - {x: 45.5, y: 32}
+    - name: megaman_76
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 529
+        width: 83
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41.5, y: 28}
+        - {x: 23.5, y: 49}
+        - {x: -41.5, y: 49}
+        - {x: -41.5, y: 0}
+        - {x: 41.5, y: 0}
+    - name: megaman_77
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 529
+        width: 70
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35, y: 0}
+        - {x: 35, y: 8}
+        - {x: 13, y: 45}
+        - {x: -17, y: 45}
+        - {x: -35, y: 39}
+        - {x: -35, y: 19}
+        - {x: -32, y: 16}
+        - {x: -35, y: 4}
+        - {x: -35, y: 0}
+        - {x: 6, y: 0}
+        - {x: 8, y: 2}
+        - {x: 28, y: 0}
+    - name: megaman_78
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 529
+        width: 59
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.5, y: 45}
+        - {x: -6.5, y: 45}
+        - {x: -19.5, y: 40}
+        - {x: -29.5, y: 23}
+        - {x: -29.5, y: 0}
+        - {x: 19.5, y: 0}
+        - {x: 29.5, y: 3}
+        - {x: 29.5, y: 13}
+    - name: megaman_79
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 530
+        width: 52
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 10}
+        - {x: -4, y: 9}
+        - {x: -4, y: 5}
+        - {x: -2, y: 0}
+        - {x: 14, y: 0}
+        - {x: 16, y: 2}
+        - {x: 26, y: 6}
+        - {x: 26, y: 12}
+        - {x: 18, y: 39}
+        - {x: 15, y: 45}
+        - {x: -1, y: 45}
+        - {x: -4, y: 44}
+        - {x: -19, y: 35}
+        - {x: -26, y: 8}
+        - {x: -26, y: 0}
+        - {x: -9, y: 0}
+        - {x: -6, y: 3}
+        - {x: -4, y: 8}
+        - {x: -3, y: 12}
+    - name: megaman_80
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 530
+        width: 45
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.5, y: 10}
+        - {x: -0.5, y: 9}
+        - {x: -0.5, y: 5}
+        - {x: 1.5, y: 0}
+        - {x: 22.5, y: 0}
+        - {x: 22.5, y: 45}
+        - {x: -8.5, y: 45}
+        - {x: -15.5, y: 35}
+        - {x: -22.5, y: 8}
+        - {x: -22.5, y: 0}
+        - {x: -5.5, y: 0}
+        - {x: -2.5, y: 3}
+        - {x: -0.5, y: 8}
+        - {x: 0.5, y: 12}
+    - name: megaman_81
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 532
+        width: 49
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 45}
+        - {x: -24.5, y: 31}
+        - {x: -24.5, y: 7}
+        - {x: -19.5, y: 0}
+        - {x: 24.5, y: 0}
+        - {x: 24.5, y: 29}
+        - {x: 14.5, y: 45}
+    - name: megaman_82
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 465
+        width: 66
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 45}
+        - {x: -20, y: 36}
+        - {x: -25, y: 32}
+        - {x: -33, y: 11}
+        - {x: -33, y: 0}
+        - {x: 12, y: 0}
+        - {x: 33, y: 18}
+        - {x: 33, y: 41}
+        - {x: 13, y: 45}
+    - name: megaman_83
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 465
+        width: 83
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37.5, y: 31}
+        - {x: 7.5, y: 45}
+        - {x: -24.5, y: 45}
+        - {x: -41.5, y: 38}
+        - {x: -41.5, y: 0}
+        - {x: 1.5, y: 0}
+        - {x: 39.5, y: 14}
+        - {x: 41.5, y: 19}
+        - {x: 41.5, y: 29}
+    - name: megaman_84
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 465
+        width: 57
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.5, y: 33}
+        - {x: 21.5, y: 45}
+        - {x: -9.5, y: 45}
+        - {x: -20.5, y: 41}
+        - {x: -28.5, y: 24}
+        - {x: -28.5, y: 13}
+        - {x: -25.5, y: 12}
+        - {x: -14.5, y: 0}
+        - {x: 28.5, y: 0}
+    - name: megaman_85
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 478
+        width: 53
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_86
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 464
+        width: 67
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 46}
+        - {x: -33.5, y: 32}
+        - {x: -33.5, y: 14}
+        - {x: -14.5, y: 0}
+        - {x: 33.5, y: 0}
+        - {x: 33.5, y: 35}
+        - {x: 23.5, y: 46}
+    - name: megaman_87
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 464
+        width: 63
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 46}
+        - {x: -31.5, y: 32}
+        - {x: -31.5, y: 21}
+        - {x: -18.5, y: 17}
+        - {x: -8.5, y: 0}
+        - {x: 31.5, y: 0}
+        - {x: 31.5, y: 30}
+        - {x: 22.5, y: 46}
+    - name: megaman_88
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 464
+        width: 53
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 46}
+        - {x: -26.5, y: 33}
+        - {x: -26.5, y: 19}
+        - {x: -16.5, y: 0}
+        - {x: 26.5, y: 0}
+        - {x: 26.5, y: 34}
+        - {x: 12.5, y: 46}
+    - name: megaman_89
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 465
+        width: 49
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 45}
+        - {x: -24.5, y: 31}
+        - {x: -24.5, y: 7}
+        - {x: -19.5, y: 0}
+        - {x: 24.5, y: 0}
+        - {x: 24.5, y: 29}
+        - {x: 14.5, y: 45}
+    - name: megaman_90
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 464
+        width: 44
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 46}
+        - {x: -10, y: 43}
+        - {x: -10, y: 38}
+        - {x: -10, y: 39}
+        - {x: -12, y: 45}
+        - {x: -20, y: 44}
+        - {x: -22, y: 41}
+        - {x: -22, y: 27}
+        - {x: -20, y: 15}
+        - {x: -18, y: 0}
+        - {x: 22, y: 0}
+        - {x: 22, y: 38}
+        - {x: 15, y: 46}
+    - name: megaman_91
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 464
+        width: 41
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 46}
+        - {x: -20.5, y: 38}
+        - {x: -20.5, y: 1}
+        - {x: -17.5, y: 0}
+        - {x: 20.5, y: 0}
+        - {x: 20.5, y: 17}
+        - {x: 18.5, y: 29}
+        - {x: 7.5, y: 46}
+    - name: megaman_92
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 464
+        width: 43
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 46}
+        - {x: -21.5, y: 43}
+        - {x: -21.5, y: 9}
+        - {x: -19.5, y: 1}
+        - {x: -16.5, y: 0}
+        - {x: -0.5, y: 0}
+        - {x: 1.5, y: 2}
+        - {x: 1.5, y: 5}
+        - {x: 1.5, y: 3}
+        - {x: 5.5, y: 0}
+        - {x: 21.5, y: 0}
+        - {x: 21.5, y: 26}
+        - {x: 12.5, y: 46}
+    - name: megaman_93
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 392
+        width: 46
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 50}
+        - {x: -18, y: 50}
+        - {x: -23, y: 42}
+        - {x: -23, y: 29}
+        - {x: -20, y: 0}
+        - {x: 23, y: 0}
+        - {x: 23, y: 33}
+        - {x: 9, y: 49}
+    - name: megaman_94
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 393
+        width: 54
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 0}
+        - {x: 24, y: 0}
+        - {x: 27, y: 1}
+        - {x: 27, y: 45}
+        - {x: 5, y: 59}
+        - {x: -27, y: 59}
+        - {x: -27, y: 24}
+        - {x: -23, y: 0}
+        - {x: 0, y: 0}
+        - {x: 3, y: 3}
+        - {x: 4, y: 7}
+        - {x: 5, y: 3}
+    - name: megaman_95
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 388
+        width: 96
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33, y: 63}
+        - {x: 25, y: 64}
+        - {x: -37, y: 64}
+        - {x: -38, y: 61}
+        - {x: -37, y: 58}
+        - {x: -28, y: 57}
+        - {x: -47, y: 39}
+        - {x: -48, y: 36}
+        - {x: -48, y: 0}
+        - {x: 4, y: 0}
+        - {x: 48, y: 13}
+        - {x: 48, y: 38}
+        - {x: 46, y: 46}
+    - name: megaman_96
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 381
+        width: 103
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 71}
+        - {x: -11.5, y: 68}
+        - {x: 18.5, y: 52}
+        - {x: -16.5, y: 68}
+        - {x: -34.5, y: 65}
+        - {x: -51.5, y: 59}
+        - {x: -51.5, y: 0}
+        - {x: 42.5, y: 0}
+        - {x: 51.5, y: 5}
+        - {x: 51.5, y: 42}
+        - {x: 46.5, y: 51}
+        - {x: 35.5, y: 63}
+        - {x: 16.5, y: 71}
+    - name: megaman_97
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 386
+        width: 104
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52, y: 66}
+        - {x: -52, y: 2}
+        - {x: -26, y: 0}
+        - {x: 44, y: 0}
+        - {x: 52, y: 5}
+        - {x: 52, y: 58}
+        - {x: 42, y: 66}
+    - name: megaman_98
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 382
+        width: 104
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 70}
+        - {x: -43, y: 70}
+        - {x: -52, y: 39}
+        - {x: -52, y: 2}
+        - {x: -29, y: 0}
+        - {x: 42, y: 0}
+        - {x: 52, y: 9}
+        - {x: 52, y: 40}
+        - {x: 43, y: 54}
+    - name: megaman_99
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 385
+        width: 72
+        height: 67
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 0}
+        - {x: 36, y: 0}
+        - {x: 36, y: 19}
+        - {x: 22, y: 52}
+        - {x: 2, y: 67}
+        - {x: -16, y: 67}
+        - {x: -36, y: 19}
+    - name: megaman_100
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 385
+        width: 58
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 55}
+        - {x: -21, y: 44}
+        - {x: -29, y: 18}
+        - {x: -29, y: 2}
+        - {x: -9, y: 0}
+        - {x: 29, y: 0}
+        - {x: 29, y: 29}
+        - {x: 27, y: 45}
+        - {x: 25, y: 55}
+    - name: megaman_101
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 389
+        width: 53
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 43}
+        - {x: -26.5, y: 15}
+        - {x: -26.5, y: 2}
+        - {x: -16.5, y: 2}
+        - {x: -8.5, y: 4}
+        - {x: -4.5, y: 7}
+        - {x: 19.5, y: 0}
+        - {x: 26.5, y: 0}
+        - {x: 26.5, y: 34}
+        - {x: 25.5, y: 43}
+    - name: megaman_102
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 393
+        width: 51
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: 39}
+        - {x: -25.5, y: 8}
+        - {x: -25.5, y: 0}
+        - {x: 24.5, y: 0}
+        - {x: 24.5, y: 1}
+        - {x: 25.5, y: 3}
+        - {x: 25.5, y: 39}
+    - name: megaman_103
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 394
+        width: 51
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: 39}
+        - {x: -25.5, y: 8}
+        - {x: -25.5, y: 0}
+        - {x: 24.5, y: 0}
+        - {x: 24.5, y: 1}
+        - {x: 25.5, y: 3}
+        - {x: 25.5, y: 39}
+    - name: megaman_104
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 393
+        width: 41
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 44}
+        - {x: -20.5, y: 24}
+        - {x: -20.5, y: 0}
+        - {x: 20.5, y: 0}
+        - {x: 20.5, y: 44}
+    - name: megaman_105
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 313
+        width: 88
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38, y: 47}
+        - {x: -44, y: 27}
+        - {x: -44, y: 14}
+        - {x: -42, y: 0}
+        - {x: 42, y: 0}
+        - {x: 44, y: 1}
+        - {x: 44, y: 44}
+        - {x: 32, y: 47}
+    - name: megaman_106
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 313
+        width: 90
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 46}
+        - {x: -45, y: 41}
+        - {x: -45, y: 0}
+        - {x: 45, y: 0}
+        - {x: 45, y: 24}
+        - {x: 26, y: 46}
+    - name: megaman_107
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 313
+        width: 101
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 48}
+        - {x: -26.5, y: 43}
+        - {x: -26.5, y: 41}
+        - {x: -22.5, y: 36}
+        - {x: -21.5, y: 34}
+        - {x: -30.5, y: 44}
+        - {x: -44.5, y: 44}
+        - {x: -50.5, y: 31}
+        - {x: -50.5, y: 0}
+        - {x: 50.5, y: 0}
+        - {x: 50.5, y: 40}
+        - {x: 28.5, y: 48}
+    - name: megaman_108
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 337
+        width: 11
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_109
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 313
+        width: 103
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.5, y: 49}
+        - {x: -39.5, y: 40}
+        - {x: -37.5, y: 37}
+        - {x: -51.5, y: 38}
+        - {x: -51.5, y: 0}
+        - {x: 38.5, y: 0}
+        - {x: 40.5, y: 1}
+        - {x: 40.5, y: 21}
+        - {x: 22.5, y: 49}
+      - - {x: 44.5, y: 33}
+        - {x: 44.5, y: 14}
+        - {x: 47.5, y: 6}
+        - {x: 51.5, y: 6}
+        - {x: 51.5, y: 37}
+        - {x: 48.5, y: 37}
+    - name: megaman_110
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 313
+        width: 85
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.5, y: 46}
+        - {x: -42.5, y: 7}
+        - {x: -28.5, y: 0}
+        - {x: 42.5, y: 0}
+        - {x: 42.5, y: 27}
+        - {x: 29.5, y: 46}
+      - - {x: -42.5, y: 18}
+        - {x: -42.5, y: 11}
+        - {x: -40.5, y: 9}
+        - {x: -38.5, y: 9}
+        - {x: -36.5, y: 11}
+        - {x: -36.5, y: 12}
+        - {x: -40.5, y: 18}
+      - - {x: -41.5, y: 34}
+        - {x: -42.5, y: 33}
+        - {x: -42.5, y: 25}
+        - {x: -39.5, y: 26}
+        - {x: -36.5, y: 30}
+        - {x: -36.5, y: 32}
+        - {x: -37.5, y: 34}
+    - name: megaman_111
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 139
+        width: 319
+        height: 222
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 129.5, y: 0}
+        - {x: 128.5, y: 2}
+        - {x: 159.5, y: 69}
+        - {x: 159.5, y: 184}
+        - {x: -2.5, y: 216}
+        - {x: -4.5, y: 210}
+        - {x: -4.5, y: 203}
+        - {x: -4.5, y: 205}
+        - {x: -9.5, y: 210}
+        - {x: -25.5, y: 222}
+        - {x: -94.5, y: 222}
+        - {x: -159.5, y: 206}
+        - {x: -159.5, y: 173}
+        - {x: -132.5, y: 143}
+        - {x: -124.5, y: 140}
+        - {x: -113.5, y: 136}
+        - {x: -110.5, y: 136}
+        - {x: -109.5, y: 135}
+        - {x: -106.5, y: 135}
+        - {x: -120.5, y: 136}
+        - {x: -121.5, y: 137}
+        - {x: -148.5, y: 143}
+        - {x: -159.5, y: 145}
+        - {x: -159.5, y: 138}
+        - {x: -153.5, y: 131}
+        - {x: -143.5, y: 0}
+        - {x: -56.5, y: 0}
+        - {x: -40.5, y: 32}
+        - {x: 8.5, y: 2}
+        - {x: 25.5, y: 0}
+    - name: megaman_112
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 321
+        width: 12
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_113
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 231
+        width: 31
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_114
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 231
+        width: 31
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_115
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 233
+        width: 35
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.5, y: 53}
+        - {x: -7.5, y: 53}
+        - {x: -17.5, y: 43}
+        - {x: -17.5, y: 8}
+        - {x: -6.5, y: 0}
+        - {x: 15.5, y: 0}
+        - {x: 17.5, y: 1}
+        - {x: 17.5, y: 35}
+        - {x: 14.5, y: 48}
+    - name: megaman_116
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 237
+        width: 38
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 48}
+        - {x: -19, y: 48}
+        - {x: -19, y: 9}
+        - {x: -12, y: 0}
+        - {x: 19, y: 0}
+        - {x: 19, y: 38}
+    - name: megaman_117
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 230
+        width: 28
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_118
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 230
+        width: 31
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_119
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 229
+        width: 31
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_120
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 232
+        width: 35
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 52}
+        - {x: -14.5, y: 48}
+        - {x: -17.5, y: 32}
+        - {x: -17.5, y: 1}
+        - {x: -16.5, y: 0}
+        - {x: 2.5, y: 0}
+        - {x: 17.5, y: 6}
+        - {x: 17.5, y: 42}
+        - {x: 7.5, y: 52}
+    - name: megaman_121
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 237
+        width: 38
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 48}
+        - {x: -19, y: 44}
+        - {x: -19, y: 0}
+        - {x: 11, y: 0}
+        - {x: 12, y: 11}
+        - {x: 19, y: 35}
+        - {x: 19, y: 48}
+    - name: megaman_122
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 232
+        width: 28
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: megaman_123
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 235
+        width: 33
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 51}
+        - {x: -16.5, y: 8}
+        - {x: -14.5, y: 0}
+        - {x: 9.5, y: 0}
+        - {x: 16.5, y: 3}
+        - {x: 16.5, y: 49}
+        - {x: 12.5, y: 51}
+    - name: megaman_124
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 249
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 48}
+        - {x: -16, y: 4}
+        - {x: -15, y: 0}
+        - {x: 5, y: 0}
+        - {x: 16, y: 5}
+        - {x: 16, y: 48}
+    - name: megaman_125
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 261
+        width: 34
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 38}
+        - {x: -17, y: 0}
+        - {x: 10, y: 0}
+        - {x: 15, y: 1}
+        - {x: 17, y: 2}
+        - {x: 17, y: 47}
+        - {x: 0, y: 47}
+        - {x: -14, y: 41}
+    - name: megaman_126
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 264
+        width: 43
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 45}
+        - {x: -21.5, y: 29}
+        - {x: -21.5, y: 7}
+        - {x: -20.5, y: 4}
+        - {x: -17.5, y: 0}
+        - {x: 13.5, y: 0}
+        - {x: 21.5, y: 13}
+        - {x: 21.5, y: 36}
+        - {x: 14.5, y: 45}
+    - name: megaman_127
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 119
+        width: 63
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.5, y: 101}
+        - {x: -23.5, y: 101}
+        - {x: -31.5, y: 83}
+        - {x: -31.5, y: 5}
+        - {x: -22.5, y: 0}
+        - {x: 31.5, y: 0}
+        - {x: 31.5, y: 73}
+        - {x: 24.5, y: 98}
+    - name: megaman_128
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 117
+        width: 63
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.5, y: 101}
+        - {x: -23.5, y: 101}
+        - {x: -31.5, y: 83}
+        - {x: -31.5, y: 5}
+        - {x: -22.5, y: 0}
+        - {x: 31.5, y: 0}
+        - {x: 31.5, y: 73}
+        - {x: 24.5, y: 98}
+    - name: megaman_129
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 119
+        width: 63
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.5, y: 101}
+        - {x: -23.5, y: 101}
+        - {x: -31.5, y: 83}
+        - {x: -31.5, y: 5}
+        - {x: -22.5, y: 0}
+        - {x: 31.5, y: 0}
+        - {x: 31.5, y: 73}
+        - {x: 24.5, y: 98}
+    - name: megaman_130
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 120
+        width: 63
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.5, y: 101}
+        - {x: -23.5, y: 101}
+        - {x: -31.5, y: 83}
+        - {x: -31.5, y: 5}
+        - {x: -22.5, y: 0}
+        - {x: 31.5, y: 0}
+        - {x: 31.5, y: 73}
+        - {x: 24.5, y: 98}
+    - name: megaman_131
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 118
+        width: 63
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.5, y: 101}
+        - {x: -23.5, y: 101}
+        - {x: -31.5, y: 83}
+        - {x: -31.5, y: 5}
+        - {x: -22.5, y: 0}
+        - {x: 31.5, y: 0}
+        - {x: 31.5, y: 73}
+        - {x: 24.5, y: 98}
+    - name: megaman_132
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 117
+        width: 63
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: 101}
+        - {x: -29.5, y: 101}
+        - {x: -31.5, y: 93}
+        - {x: -31.5, y: 5}
+        - {x: -26.5, y: 0}
+        - {x: 31.5, y: 0}
+        - {x: 31.5, y: 73}
+        - {x: 24.5, y: 98}
+    - name: megaman_133
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 117
+        width: 66
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 101}
+        - {x: -33, y: 98}
+        - {x: -33, y: 14}
+        - {x: -30, y: 0}
+        - {x: 33, y: 0}
+        - {x: 33, y: 93}
+        - {x: 19, y: 101}
+    - name: megaman_134
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 116
+        width: 66
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 101}
+        - {x: -33, y: 98}
+        - {x: -33, y: 14}
+        - {x: -30, y: 0}
+        - {x: 33, y: 0}
+        - {x: 33, y: 93}
+        - {x: 19, y: 101}
+    - name: megaman_135
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 6
+        width: 75
+        height: 103
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37.5, y: 65}
+        - {x: 37.5, y: 83}
+        - {x: 35.5, y: 92}
+        - {x: 30.5, y: 97}
+        - {x: 24.5, y: 97}
+        - {x: 18.5, y: 103}
+        - {x: -27.5, y: 103}
+        - {x: -37.5, y: 92}
+        - {x: -37.5, y: 0}
+        - {x: 30.5, y: 0}
+        - {x: 37.5, y: 18}
+        - {x: 37.5, y: 28}
+        - {x: 33.5, y: 33}
+    - name: megaman_136
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 7
+        width: 75
+        height: 103
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37.5, y: 65}
+        - {x: 37.5, y: 83}
+        - {x: 35.5, y: 92}
+        - {x: 30.5, y: 97}
+        - {x: 24.5, y: 97}
+        - {x: 18.5, y: 103}
+        - {x: -27.5, y: 103}
+        - {x: -37.5, y: 92}
+        - {x: -37.5, y: 0}
+        - {x: 30.5, y: 0}
+        - {x: 37.5, y: 18}
+        - {x: 37.5, y: 28}
+        - {x: 33.5, y: 33}
+    - name: megaman_137
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 6
+        width: 78
+        height: 92
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39, y: 92}
+        - {x: -39, y: 56}
+        - {x: -35, y: 12}
+        - {x: -4, y: 0}
+        - {x: 19, y: 0}
+        - {x: 39, y: 54}
+        - {x: 39, y: 88}
+        - {x: 34, y: 92}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

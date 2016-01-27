@@ -1,0 +1,335 @@
+fileFormatVersion: 2
+guid: 4a72eba88dfe60b4d8bb7c4c896c4ed6
+timeCreated: 1453839837
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: checkpoint_0
+    21300002: checkpoint_1
+    21300004: checkpoint_2
+    21300006: checkpoint_3
+    21300008: checkpoint_4
+    21300010: checkpoint_5
+    21300012: checkpoint_6
+    21300014: checkpoint_7
+    21300016: checkpoint_8
+    21300018: checkpoint_9
+    21300020: checkpoint_10
+    21300022: checkpoint_11
+    21300024: checkpoint_12
+    21300026: checkpoint_13
+    21300028: checkpoint_14
+    21300030: checkpoint_15
+    21300032: checkpoint_16
+    21300034: checkpoint_17
+    21300036: checkpoint_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: checkpoint_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 42
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: -57}
+        - {x: 18, y: -57}
+        - {x: 18, y: -31}
+        - {x: 14, y: -8}
+        - {x: 11, y: -6}
+        - {x: -15, y: -6}
+        - {x: -18, y: -7}
+    - name: checkpoint_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 42
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: -57}
+        - {x: 18, y: -57}
+        - {x: 18, y: -31}
+        - {x: 14, y: -8}
+        - {x: 11, y: -6}
+        - {x: -15, y: -6}
+        - {x: -18, y: -7}
+    - name: checkpoint_2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 42
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: -57}
+        - {x: 18, y: -57}
+        - {x: 18, y: -31}
+        - {x: 14, y: -8}
+        - {x: 11, y: -6}
+        - {x: -15, y: -6}
+        - {x: -18, y: -7}
+    - name: checkpoint_3
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 42
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: -57}
+        - {x: 18, y: -57}
+        - {x: 18, y: -31}
+        - {x: 14, y: -8}
+        - {x: 11, y: -6}
+        - {x: -15, y: -6}
+        - {x: -18, y: -7}
+    - name: checkpoint_4
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 0
+        width: 42
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: -57}
+        - {x: 18, y: -57}
+        - {x: 18, y: -31}
+        - {x: 14, y: -8}
+        - {x: 11, y: -6}
+        - {x: -15, y: -6}
+        - {x: -18, y: -7}
+    - name: checkpoint_5
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 42
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: -57}
+        - {x: 18, y: -57}
+        - {x: 18, y: -23}
+        - {x: 15, y: -2}
+        - {x: 1, y: 3}
+        - {x: -9, y: 3}
+        - {x: -18, y: -3}
+    - name: checkpoint_6
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 0
+        width: 42
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: -57}
+        - {x: 18, y: -57}
+        - {x: 18, y: -31}
+        - {x: 14, y: -8}
+        - {x: 11, y: -6}
+        - {x: -15, y: -6}
+        - {x: -18, y: -7}
+      - - {x: -10, y: 24}
+        - {x: -13, y: 21}
+        - {x: -13, y: 5}
+        - {x: -6, y: 1}
+        - {x: 7, y: 1}
+        - {x: 13, y: 6}
+        - {x: 13, y: 20}
+        - {x: 12, y: 24}
+    - name: checkpoint_7
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 0
+        width: 42
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: -57}
+        - {x: 18, y: -57}
+        - {x: 18, y: -31}
+        - {x: 14, y: -8}
+        - {x: 11, y: -6}
+        - {x: -15, y: -6}
+        - {x: -18, y: -7}
+      - - {x: -12, y: 35}
+        - {x: -13, y: 33}
+        - {x: -13, y: 4}
+        - {x: -9, y: 0}
+        - {x: 5, y: 0}
+        - {x: 15, y: 10}
+        - {x: 15, y: 32}
+        - {x: 14, y: 33}
+        - {x: 13, y: 35}
+    - name: checkpoint_8
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 0
+        width: 42
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: -57}
+        - {x: 18, y: -57}
+        - {x: 18, y: -31}
+        - {x: 14, y: -8}
+        - {x: 11, y: -6}
+        - {x: -15, y: -6}
+        - {x: -18, y: -7}
+      - - {x: -8, y: 41}
+        - {x: -12, y: 40}
+        - {x: -13, y: 38}
+        - {x: -13, y: 13}
+        - {x: -6, y: 1}
+        - {x: 4, y: 1}
+        - {x: 13, y: 8}
+        - {x: 13, y: 37}
+        - {x: 8, y: 41}
+    - name: checkpoint_9
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 0
+        width: 42
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: -57}
+        - {x: 18, y: -57}
+        - {x: 18, y: -31}
+        - {x: 14, y: -8}
+        - {x: 11, y: -6}
+        - {x: -15, y: -6}
+        - {x: -18, y: -7}
+      - - {x: -13, y: 40}
+        - {x: -13, y: 16}
+        - {x: -8, y: 3}
+        - {x: -6, y: 1}
+        - {x: 2, y: 1}
+        - {x: 13, y: 8}
+        - {x: 13, y: 34}
+        - {x: 10, y: 40}
+    - name: checkpoint_10
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 0
+        width: 42
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: -57}
+        - {x: 18, y: -57}
+        - {x: 18, y: -31}
+        - {x: 14, y: -8}
+        - {x: 11, y: -6}
+        - {x: -15, y: -6}
+        - {x: -18, y: -7}
+      - - {x: 7, y: 27}
+        - {x: 1, y: 27}
+        - {x: -4, y: 17}
+        - {x: -4, y: 7}
+        - {x: -2, y: 6}
+        - {x: 2, y: 6}
+        - {x: 11, y: 16}
+        - {x: 12, y: 20}
+        - {x: 11, y: 23}
+    - name: checkpoint_11
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 0
+        width: 42
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: -57}
+        - {x: 18, y: -57}
+        - {x: 18, y: -31}
+        - {x: 14, y: -8}
+        - {x: 11, y: -6}
+        - {x: -15, y: -6}
+        - {x: -18, y: -7}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

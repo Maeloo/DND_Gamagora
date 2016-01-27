@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Checkpoint : MonoBehaviour
+public class Jinjo : MonoBehaviour
 {
     private Animator anim;
 
@@ -9,21 +9,20 @@ public class Checkpoint : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         if (anim != null)
-            anim.SetBool("Check", false);
+            anim.SetBool("End", false);
     }
 
-	void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         Character player = col.gameObject.GetComponent<Character>();
         if (player != null)
         {
-            player.lastCheckpointPos = transform.position;
+            //player.lastCheckpointPos = transform.position;
 
             if (anim != null)
             {
-                anim.SetBool("Check", true);
+                anim.SetBool("End", true);
             }
-               
         }
     }
 }
