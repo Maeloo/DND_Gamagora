@@ -10,11 +10,6 @@ public class HUDManager : Singleton<HUDManager>
 
     Dictionary<Type_HUD, HUDElement> elements;
 
-    void Awake()
-    {
-        
-    }
-
     public void registerElement (Type_HUD key, HUDElement element )
     {
         if ( elements == null )

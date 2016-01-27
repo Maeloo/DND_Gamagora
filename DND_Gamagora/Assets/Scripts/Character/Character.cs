@@ -27,14 +27,17 @@ public class Character : MonoBehaviour
     private float attackSpeed;
     [SerializeField]
     private bool AirControl = false;                 // Whether or not a player can steer while jumping;
+    private int nbJump = 1;
+    private int nbCurrentJump = 0;
+    private bool doublejump = true;
     [SerializeField]
     private LayerMask WhatIsGround;                  // A mask determining what is ground to the character
+    [SerializeField]
+    private LayerMask WhatIsPlatform;
     [SerializeField]
     private Bullet kamehameha;
     [SerializeField]
     private Bullet special_tornado;
-
-    public GameObject[] LifeUI;
 
     private Transform groundCheck;    // A position marking where to check if the player is grounded.
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -49,10 +52,8 @@ public class Character : MonoBehaviour
 
     //List Collider Slide and Run
     public BoxCollider2D RunBox;
-    public BoxCollider2D RunTopBox;
     public CircleCollider2D RunCircle;
     public BoxCollider2D SlideBox;
-    public BoxCollider2D SlideTopBox;
     public CircleCollider2D SlideCircle;
 
     private int noteCount;
@@ -130,6 +131,7 @@ public class Character : MonoBehaviour
     }
 
 
+    private bool _slide;
     public void Move(float move, bool slide, bool jump, bool run)
     {
         // If crouching, check to see if the character can stand up
@@ -138,18 +140,21 @@ public class Character : MonoBehaviour
             // If the character has a ceiling preventing them from standing up, keep them crouching
             if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, WhatIsGround))
             {
-                slide = true;
+                _slide = slide = true;
             }
         }
 
         SlideCollider(slide);
+
+        if (grounded)
+            nbCurrentJump = 0;
 
         // Set whether or not the character is crouching in the animator
         anim.SetBool("Slide", slide);
         //anim.SetBool("Run", !crouch && run);
 
         //only control the player if grounded or airControl is turned on
-        if (grounded || AirControl)
+        if (grounded || (AirControl && !Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, WhatIsPlatform)))
         {
             // Reduce the speed if crouching by the crouchSpeed multiplier
             if (slide)
@@ -192,15 +197,10 @@ public class Character : MonoBehaviour
             }
         }
         // If the player should jump...
-        if (grounded && jump && anim.GetBool("Ground"))
+        if (nbCurrentJump < nbJump && jump)
         {
-            // Add a vertical force to the player.
-            grounded = false;
-            anim.SetBool("Ground", false);
-            float str = JumpForce;
-            if (run)
-                str *= RunSpeed;
-            rb.AddForce(new Vector2(0f, str));
+            if (doublejump)
+                StartCoroutine(jumping(run));
         }
         if (IsFalled() && !falling)
         {
@@ -216,8 +216,22 @@ public class Character : MonoBehaviour
             audio_process.RewindSound(lastCheckpointMusicTime);
 
             Invoke("MoveToLastCheckPoint", 1.0f);
-            //MoveToLastCheckPoint();
         }            
+    }
+
+    private IEnumerator jumping(bool run)
+    {
+        doublejump = false;
+        nbCurrentJump++;
+        // Add a vertical force to the player.
+        grounded = false;
+        anim.SetBool("Ground", false);
+        float str = JumpForce;
+        if (run)
+            str *= RunSpeed;
+        rb.AddForce(new Vector2(0f, str));
+        yield return new WaitForSeconds(.1f);
+        doublejump = true;
     }
 
 
@@ -241,19 +255,17 @@ public class Character : MonoBehaviour
         if (slide)
         {
             RunBox.enabled = false;
-            RunTopBox.enabled = false;
             RunCircle.enabled = false;
+
             SlideBox.enabled = true;
-            SlideTopBox.enabled = true;
             SlideCircle.enabled = true;
         }
         else
         {
             RunBox.enabled = true;
-            RunTopBox.enabled = true;
             RunCircle.enabled = true;
+
             SlideBox.enabled = false;
-            SlideTopBox.enabled = false;
             SlideCircle.enabled = false;
         }
     }
@@ -341,6 +353,9 @@ public class Character : MonoBehaviour
 
     public void Hit(int power)
     {
+        if (isInvincible)
+            return;
+
         life -= power;
         life = life < 0 ? 0 : life;
 
@@ -358,11 +373,19 @@ public class Character : MonoBehaviour
 
     public void StartInvulnerabilityCoroutine()
     {
-        StartCoroutine(startInvulnerability(invulnerabilityTimeBonus));
+        StartCoroutine(startInvulnerability(invulnerabilityTimeBonus, true));
     }
 
-    IEnumerator startInvulnerability(float time = 1.0f)
+    [SerializeField]
+    GameObject shield;
+
+    private bool isInvincible;
+    IEnumerator startInvulnerability(float time = 1.0f, bool activeShield = false)
     {
+        isInvincible = true;
+
+        shield.SetActive(activeShield);
+
         Collider2D[] cs = GetComponents<Collider2D>();
 
         foreach(Collider2D c in cs)
@@ -370,32 +393,45 @@ public class Character : MonoBehaviour
             if (c.isTrigger)
                 c.enabled = false;
         }
-        for (int i = 0; i < time / 1.8f; ++i)
+
+        if(activeShield)
         {
-
-            fade(.3f, .35f);
-            yield return new WaitForSeconds(.3f);
-
-            fade(.3f, 1.0f);
-            yield return new WaitForSeconds(.3f);
-
-            fade(.3f, .35f);
-            yield return new WaitForSeconds(.3f);
-
-            fade(.3f, 1f);
-            yield return new WaitForSeconds(.3f);
-
-            fade(.3f, .35f);
-            yield return new WaitForSeconds(.3f);
-
-            fade(.3f, 1f);
-            yield return new WaitForSeconds(.3f);
-        }
-        foreach (Collider2D c in cs)
+            yield return new WaitForSeconds(time);
+        } else
         {
-            if (c.isTrigger)
-                c.enabled = true;
+            for (int i = 0; i < time / 1.8f; ++i)
+            {
+
+                fade(.3f, .35f);
+                yield return new WaitForSeconds(.3f);
+
+                fade(.3f, 1.0f);
+                yield return new WaitForSeconds(.3f);
+
+                fade(.3f, .35f);
+                yield return new WaitForSeconds(.3f);
+
+                fade(.3f, 1f);
+                yield return new WaitForSeconds(.3f);
+
+                fade(.3f, .35f);
+                yield return new WaitForSeconds(.3f);
+
+                fade(.3f, 1f);
+                yield return new WaitForSeconds(.3f);
+            }
         }
+
+        //foreach (Collider2D c in cs)
+        //{
+        //    if (c.isTrigger)
+        //        c.enabled = true;
+        //}
+        SlideCollider(_slide);
+
+        shield.SetActive(false);
+
+        isInvincible = false;
     }
 
 

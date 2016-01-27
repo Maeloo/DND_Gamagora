@@ -12,8 +12,7 @@ GameObject:
   - 92: {fileID: 9223078}
   - 124: {fileID: 12478910}
   - 81: {fileID: 8177268}
-  - 114: {fileID: 11464786}
-  - 114: {fileID: 11443158}
+  - 114: {fileID: 11441118}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -81,7 +80,7 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119762}
   m_Enabled: 1
---- !u!114 &11443158
+--- !u!114 &11441118
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -95,22 +94,6 @@ MonoBehaviour:
   LerpTime: 3
   offset: {x: 0, y: -2, z: 0}
   target: {fileID: 0}
---- !u!114 &11464786
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119762}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aad01dc431b6e441a08568082ac6ee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj: {fileID: 0}
-  vue: {x: 0, y: 7, z: -15}
-  xAvantMult: 100
-  zReculMult: -64
-  speedCam: 1
 --- !u!124 &12478910
 Behaviour:
   m_ObjectHideFlags: 1

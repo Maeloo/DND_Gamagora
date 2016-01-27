@@ -63,7 +63,7 @@ public class TerrainManager : Singleton<TerrainManager> {
 
     void InitJinjos()
     {
-        float delta = (GetTerrainSize() * 0.1f) / 6f;
+        float delta = (GetTerrainSize() * 0.5f) / 6f;
 
         Camera cam = Camera.main;
         float vertExtent = cam.orthographicSize * 2f;
@@ -76,8 +76,8 @@ public class TerrainManager : Singleton<TerrainManager> {
 
         float height = (minY - maxY) * 0.5f;
 
-        float max = cam.transform.position.y + height * 0.2f;
-        float min = cam.transform.position.y - height * 0.2f;
+        float max = cam.transform.position.y + height * 0.4f;
+        float min = cam.transform.position.y - height * 0.1f;
         float y = Random.Range(min, max);
 
         jinjos = new Dictionary<Jinjo, bool>(6);
@@ -133,7 +133,7 @@ public class TerrainManager : Singleton<TerrainManager> {
                 Player.transform.position.x + offset * classic_width < pos_pf.x + classic_width)
             {
                 int k = i == 0 ? 0 : i - 1;
-                Vector3 pos_pf_previous = pools[Type_Platform.Classic].usedObjects[i - 1].transform.position;
+                Vector3 pos_pf_previous = pools[Type_Platform.Classic].usedObjects[k].transform.position;
 
                 int j = i + 1 < pools[Type_Platform.Classic].usedObjects.Count ? i + 1 : i;
                 Vector3 pos_pf_next = pools[Type_Platform.Classic].usedObjects[j].transform.position;

@@ -22,7 +22,7 @@ public class BonusManager : Singleton<BonusManager>
         countNote = 0;
         pools = new Dictionary<Type_Bonus, Pool<Bonus>>();
 
-        Pool<Bonus> notePool = new Pool<Bonus>(Note, 64, 128);
+        Pool<Bonus> notePool = new Pool<Bonus>(Note, 8, 16);
         notePool.automaticReuseUnavailables = true;
         pools.Add(Type_Bonus.Note, notePool);
 
@@ -34,7 +34,7 @@ public class BonusManager : Singleton<BonusManager>
     public void SpawnBonus(Type_Bonus type)
     {
         Bonus bonus;
-        Debug.Log(type);
+        
         if (type == Type_Bonus.Note)
         {
             ++countNote;
@@ -50,7 +50,6 @@ public class BonusManager : Singleton<BonusManager>
         }
         if (type == Type_Bonus.Invincibility)
         {
-
             ++countInvincibility;
             if (passCountInvincibility <= countInvincibility)
             {
@@ -62,36 +61,4 @@ public class BonusManager : Singleton<BonusManager>
             }
         }
     }
-
-    public void RemoveBonus(Bonus obj, Type_Bonus type)
-    {
-        if (obj == null)
-            Debug.Log("fuck"); ;
-
-        for(int i = 0; i <  pools[type].usedObjects.Count; i++)
-        {
-            if(pools[type].usedObjects[i] == obj)
-            {
-                pools[type].usedObjects[i].Release();
-                return;
-            }
-          //  return;
-        }
-        Debug.Log("Bonus not found");
-        for (int i = 0; i < pools[type].unusedObjects.Count; i++)
-        {
-            if (pools[type].unusedObjects[i] == obj)
-            {
-
-                Debug.Log("Souci");
-               // pools[type].unusedObjects[i].Release();
-            }
-            //  return;
-        }
-
-    }
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
