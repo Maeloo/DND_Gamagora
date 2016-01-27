@@ -6,6 +6,7 @@ public class UserControl : MonoBehaviour
 {
     private Character character;
     private bool jump;
+    private bool slide;
     private InputManager inputs;
 
     private void Awake()
@@ -22,24 +23,29 @@ public class UserControl : MonoBehaviour
             // Read the jump input in Update so button presses aren't missed.
             jump = inputs.IsJumping;
         }
+        if (!slide)
+        {
+            // Read the jump input in Update so button presses aren't missed.
+            slide = inputs.IsSliding;
+        }
     }
 
 
     private void FixedUpdate()
     {
         // Read the inputs.
-        bool crouch = inputs.IsCrunching;
         bool run = inputs.IsRunning;
         bool attack = inputs.IsAttacking;
 
         float h = inputs.GetHorizontalAxis(); 
         
         // Pass all parameters to the character control script.
-        character.Move(h, crouch, jump, run);
+        character.Move(h, slide, jump, run);
 
         if (attack)
             character.Attack();
 
         jump = false;
+        slide = false;
     }
 }
