@@ -43,7 +43,7 @@ public class TerrainManager : Singleton<TerrainManager> {
         hightPlatformPool.automaticReuseUnavailables = true;
         pools.Add(Type_Platform.Hight, hightPlatformPool);
 
-        classic_width = ClassicPlatform.GetComponentInChildren<SpriteRenderer>().bounds.size.x + 0.02f;
+        classic_width = ClassicPlatform.GetComponentInChildren<SpriteRenderer>().bounds.size.x - 0.02f;
 
         _lastPos = firstPlatform.position;
 
@@ -127,7 +127,7 @@ public class TerrainManager : Singleton<TerrainManager> {
         {
             Vector3 pos = _lastPos;
             pos.x += classic_width;
-            pos.y = -0.59f;
+            pos.y += 2.31f;
             pf.SetPosition(pos);
         }
     }

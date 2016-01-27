@@ -49,7 +49,7 @@ public class Character : MonoBehaviour
     public Text noteText;
     private float lastAttack;
     private bool falling;
-
+    public float invulnerabilityTimeBonus = 3f;
     private CharacterCamera cam;
 
     private Pool<Bullet> kamehamehas;
@@ -261,6 +261,11 @@ public class Character : MonoBehaviour
         noteText.text = " x " + noteCount;
     }
 
+    public void StartInvulnerabilityCoroutine()
+    {
+        StartCoroutine(startInvulnerability(invulnerabilityTimeBonus));
+    }
+
     IEnumerator startInvulnerability(float time = 1.0f)
     {
         Collider2D[] cs = GetComponents<Collider2D>();
@@ -270,25 +275,27 @@ public class Character : MonoBehaviour
             if (c.isTrigger)
                 c.enabled = false;
         }
+        for (int i = 0; i < time / 1.8f; ++i)
+        {
 
-        fade(.3f, .35f);
-        yield return new WaitForSeconds(.3f);
-                                        
-        fade(.3f, 1.0f);                 
-        yield return new WaitForSeconds(.3f);
-                                        
-        fade(.3f, .35f);                  
-        yield return new WaitForSeconds(.3f);
-                                        
-        fade(.3f, 1f);                   
-        yield return new WaitForSeconds(.3f);
-                                        
-        fade(.3f, .35f);                 
-        yield return new WaitForSeconds(.3f);
-                                        
-        fade(.3f, 1f);                  
-        yield return new WaitForSeconds(.3f);
+            fade(.3f, .35f);
+            yield return new WaitForSeconds(.3f);
 
+            fade(.3f, 1.0f);
+            yield return new WaitForSeconds(.3f);
+
+            fade(.3f, .35f);
+            yield return new WaitForSeconds(.3f);
+
+            fade(.3f, 1f);
+            yield return new WaitForSeconds(.3f);
+
+            fade(.3f, .35f);
+            yield return new WaitForSeconds(.3f);
+
+            fade(.3f, 1f);
+            yield return new WaitForSeconds(.3f);
+        }
         foreach (Collider2D c in cs)
         {
             if (c.isTrigger)
