@@ -45,8 +45,9 @@ public class Bonus : MonoBehaviour, Poolable<Bonus> {
         {
             GameObject obj = Instantiate(child.gameObject) as GameObject;
             obj.transform.SetParent(transform);
+            obj.gameObject.layer = child.gameObject.layer;
         }
-
+        this.gameObject.layer = a_template.gameObject.layer;
         transform.position = new Vector3(1000, 1000, 3);
     }
 

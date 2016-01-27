@@ -50,6 +50,7 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
     {
         type = a_template.type;
         death_fx = a_template.death_fx;
+        this.gameObject.layer = a_template.gameObject.layer;
 
         foreach (Transform child in a_template.transform)
         {
@@ -59,6 +60,7 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
             obj.transform.localPosition = child.localPosition;
             obj.transform.localRotation = child.localRotation;
             obj.transform.localScale = child.localScale;
+            obj.gameObject.layer = child.gameObject.layer;
         }
 
         if (a_template.Copy3D)

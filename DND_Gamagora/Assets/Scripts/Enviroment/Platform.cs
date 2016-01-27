@@ -47,10 +47,12 @@ public class Platform : MonoBehaviour, Poolable<Platform> {
 
 
     public void Duplicate ( Platform a_template ) {
+        this.gameObject.layer = a_template.gameObject.layer;
         foreach(Transform child in a_template.transform)
         {
             GameObject obj = Instantiate(child.gameObject) as GameObject;
             obj.transform.SetParent(transform);
+            obj.gameObject.layer = child.gameObject.layer;
         }
 
         transform.position = new Vector3(1000, 1000, 3);
