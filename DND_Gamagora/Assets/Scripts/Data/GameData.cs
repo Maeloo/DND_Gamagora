@@ -55,4 +55,9 @@
         Music,
         Rewind
     }
+
+    public class Data
+    {
+        public static bool ACCESSIBILITY_MODE = false;
+    }
 }

@@ -16,14 +16,11 @@ public class InputManager : Singleton<InputManager>
     // Guarantee this will be always a singleton only - can't use the constructor!
     protected InputManager() { }
 
-    // Use this for initialization
-    void Awake()
-    {
-	    
-	}
-	
-	// Update is called once per frame
-	void Update()
+    public float deadZone = 0.5f;
+    public float sensitivity = 1.5f;
+
+    // Update is called once per frame
+    void Update()
     {
         IsRunning = Input.GetButton("Run");
         IsJumping = Input.GetButtonDown("Jump");
@@ -37,6 +34,80 @@ public class InputManager : Singleton<InputManager>
 
         IsAttacking = Input.GetButton("Attack");
         IsSpecial = Input.GetButton("Special");
+
+        /**** Accessibilité ****/
+        if(Game.Data.ACCESSIBILITY_MODE)
+        {
+
+            Vector2 currentMousePosition = Input.mousePosition;
+            // Calculer les differences de position entre deux frames
+            Vector2 deltaPosition = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            if (Input.touchCount > 0)
+            {
+                deltaPosition = Input.touches[0].deltaPosition * sensitivity;
+            }
+
+            // TODO Sauter 
+            // DeltaPosition est en haut
+            if (deltaPosition.y > deadZone)
+            {
+                Debug.Log("jump");
+                //m.Jump();
+                IsJumping = true;
+            } else
+            {
+                IsJumping = true;
+            }
+
+            // TODO Glisser
+            // DeltaPosition est en bas
+            if (deltaPosition.y < - deadZone)
+            {
+                Debug.Log("slide");
+                //m.Slide();
+                IsSliding = true;
+            } else
+            {
+                IsSliding = false;
+            }
+
+            // TODO Accelerer
+            // DeltaPosition est en droite
+            if (deltaPosition.x > deadZone)
+            {
+                Debug.Log("sprint");
+                //m.Sprint();
+                IsRunning = true;
+            } else
+            {
+                IsRunning = false;
+            }
+
+            // TODO Freinner
+            // DeltaPosition est en gauche
+            if (deltaPosition.x < - deadZone)
+            {
+                Debug.Log("slow");
+                //m.SlowDown();
+            }
+
+            if(Input.GetMouseButtonDown(0))
+            {
+                IsAttacking = true;
+            } else
+            {
+                IsAttacking = false;
+            }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                IsSpecial = true;
+            }
+            else
+            {
+                IsSpecial = false;
+            }
+        }
     }
 
     public float GetHorizontalAxis()
