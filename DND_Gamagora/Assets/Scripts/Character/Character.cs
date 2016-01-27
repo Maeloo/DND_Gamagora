@@ -237,7 +237,8 @@ public class Character : MonoBehaviour
         float str = JumpForce;
         if (run)
             str *= RunSpeed;
-        rb.AddForce(new Vector2(0f, str));
+        rb.velocity=(new Vector2(0,0));
+        rb.AddForce(new Vector2(0f, JumpForce));
         yield return new WaitForSeconds(.1f);
         doublejump = true;
     }
