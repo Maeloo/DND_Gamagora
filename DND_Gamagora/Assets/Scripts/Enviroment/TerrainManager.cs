@@ -43,7 +43,7 @@ public class TerrainManager : Singleton<TerrainManager> {
         //hightPlatformPool.automaticReuseUnavailables = true;
         //pools.Add(Type_Platform.Hight, hightPlatformPool);
 
-        classic_width = ClassicPlatform.GetComponentInChildren<SpriteRenderer>().bounds.size.x + 0.02f;
+        classic_width = ClassicPlatform.GetComponentInChildren<SpriteRenderer>().bounds.size.x - 0.02f;
 
         _lastPos = firstPlatform.position;
 
@@ -76,8 +76,10 @@ public class TerrainManager : Singleton<TerrainManager> {
             if (Player.transform.position.x + offset * classic_width > pos_pf.x &&
                 Player.transform.position.x + offset * classic_width < pos_pf.x + classic_width)
             {
-                Vector3 pos_pf_previous = pools[Type_Platform.Classic].usedObjects[i - 1].transform.position;
-                Vector3 pos_pf_next = pools[Type_Platform.Classic].usedObjects[i + 1].transform.position;
+                platform = pools[Type_Platform.Classic].usedObjects[i];
+                return true;
+                //Vector3 pos_pf_previous = pools[Type_Platform.Classic].usedObjects[i - 1].transform.position;
+                //Vector3 pos_pf_next = pools[Type_Platform.Classic].usedObjects[i + 1].transform.position;
                 //if (!CheckHightPlatform(pos_pf, pos_pf_previous, pos_pf_next, offset))
                 //{
                 //    platform = pools[Type_Platform.Classic].usedObjects[i];

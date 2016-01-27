@@ -23,6 +23,14 @@
     public enum Type_Bullet
     {
         Enemy,
-        Player
+        Player,
+        Special
+    }
+
+    public enum Type_HUD
+    {
+        Life,
+        Stamina,
+        Special
     }
 }

@@ -1,0 +1,108 @@
+fileFormatVersion: 2
+guid: c37126ff145025c4db64732fa580d860
+timeCreated: 1453903893
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: NuagePlatformAlpha_0
+    21300002: NuagePlatformAlpha_1
+    21300004: NuagePlatformAlpha_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 128
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: NuagePlatformAlpha_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 19.5}
+        - {x: -20.5, y: 18.5}
+        - {x: -20.5, y: -17.5}
+        - {x: -18.5, y: -19.5}
+        - {x: 20.5, y: -19.5}
+        - {x: 20.5, y: 19.5}
+    - name: NuagePlatformAlpha_1
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 0
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.1875, y: 19.5}
+        - {x: -19.1875, y: -19.5}
+        - {x: 19.8125, y: -19.5}
+        - {x: 19.8125, y: 19.5}
+    - name: NuagePlatformAlpha_2
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 0
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.125, y: 19.5}
+        - {x: -19.125, y: 18.5}
+        - {x: -19.125, y: -19.5}
+        - {x: 19.875, y: -19.5}
+        - {x: 19.875, y: 19.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

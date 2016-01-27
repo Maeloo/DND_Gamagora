@@ -36,6 +36,7 @@ public class UserControl : MonoBehaviour
         // Read the inputs.
         bool run = inputs.IsRunning;
         bool attack = inputs.IsAttacking;
+        bool special = inputs.IsSpecial;
 
         float h = inputs.GetHorizontalAxis(); 
         
@@ -44,6 +45,9 @@ public class UserControl : MonoBehaviour
 
         if (attack)
             character.Attack();
+
+        if (special)
+            character.Special();
 
         jump = false;
         slide = false;

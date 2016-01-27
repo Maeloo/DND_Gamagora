@@ -7,6 +7,7 @@ public class InputManager : Singleton<InputManager>
     public bool IsJumping { get; private set; }
     public bool IsSliding { get; private set; }
     public bool IsAttacking { get; private set; }
+    public bool IsSpecial { get; private set; }
 
     // Guarantee this will be always a singleton only - can't use the constructor!
     protected InputManager() { }
@@ -24,6 +25,7 @@ public class InputManager : Singleton<InputManager>
         IsJumping = Input.GetButtonDown("Jump");
         IsSliding = Input.GetButton("Slide");
         IsAttacking = Input.GetButton("Attack");
+        IsSpecial = Input.GetButton("Special");
     }
 
     public float GetHorizontalAxis()

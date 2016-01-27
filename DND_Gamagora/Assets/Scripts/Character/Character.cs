@@ -8,6 +8,10 @@ public class Character : MonoBehaviour
     [SerializeField]
     private int life = 4;
     [SerializeField]
+    private float stamina = 100;
+    [SerializeField]
+    private float special = 100;
+    [SerializeField]
     private float yMin = -10f;
     [SerializeField]
     private float MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
@@ -26,7 +30,10 @@ public class Character : MonoBehaviour
     private LayerMask WhatIsGround;                  // A mask determining what is ground to the character
     [SerializeField]
     private Bullet kamehameha;
-    public GameObject[] LifeUI;
+    [SerializeField]
+    private Bullet special_tornado;
+
+    //public GameObject[] LifeUI;
     private Transform groundCheck;    // A position marking where to check if the player is grounded.
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool grounded;            // Whether or not the player is grounded.
@@ -53,8 +60,16 @@ public class Character : MonoBehaviour
     private CharacterCamera cam;
 
     private Pool<Bullet> kamehamehas;
+    private Pool<Bullet> tornados;
 
     private Vector3 direction = Vector3.right;
+
+    private float _baseLife;
+    private float _baseStamina;
+    private float _baseSpecial;
+
+    private bool _noStamina;
+
 
     private void Awake()
     {
@@ -66,10 +81,25 @@ public class Character : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         lastCheckpointPos = transform.position;
         lastAttack = Time.time;
+
         kamehamehas = new Pool<Bullet>(kamehameha, 8, 16);
         kamehamehas.automaticReuseUnavailables = true;
 
+        tornados = new Pool<Bullet>(special_tornado, 4, 8);
+        tornados.automaticReuseUnavailables = true;
+
+        _baseLife = life;
+        _baseStamina = stamina;
+        _baseSpecial = special;
+
         cam = Camera.main.GetComponent<CharacterCamera>();
+    }
+
+
+    void Start()
+    {
+        //special = 0;
+        //HUDManager.instance.setSpecial(special);
     }
 
 
@@ -115,9 +145,22 @@ public class Character : MonoBehaviour
         {
             // Reduce the speed if crouching by the crouchSpeed multiplier
             if (slide)
+            {
                 move *= CrouchSpeed;
-            else if (run)
+            }                
+            else if (run && !_noStamina)
+            {
+                stamina = stamina < 2 ? 0 : stamina - 6;
+
+                HUDManager.instance.setStamina(stamina / _baseStamina);
+
+                if (stamina == 0)
+                {
+                    _noStamina = true;
+                }
+
                 move *= RunSpeed;
+            }                
 
             // The Speed animator parameter is set to the absolute value of the horizontal input.
             anim.SetFloat("Speed", Mathf.Abs(move));
@@ -167,6 +210,22 @@ public class Character : MonoBehaviour
         }            
     }
 
+
+    void Update()
+    {
+        stamina = stamina < _baseStamina ? stamina + 1.0f : _baseStamina;
+        HUDManager.instance.setStamina(stamina / _baseStamina);
+
+        if (_noStamina && stamina >= 50.0f )
+        {
+            _noStamina = false;
+        }
+
+        special = special < _baseSpecial ? special + .1f : _baseStamina;
+        HUDManager.instance.setSpecial(special / _baseSpecial);
+    }
+
+
     public void SlideCollider(bool slide)
     {
         if (slide)
@@ -198,6 +257,24 @@ public class Character : MonoBehaviour
 
             Bullet b;
             if(kamehamehas.GetAvailable(false, out b))
+            {
+                b.shoot(transform.position, direction);
+            }
+        }
+    }
+
+
+    public void Special()
+    {
+        if(special == _baseSpecial)
+        {
+            anim.SetTrigger("Attack");
+
+            special = 0;
+            HUDManager.instance.setSpecial(special);
+
+            Bullet b;
+            if (tornados.GetAvailable(false, out b))
             {
                 b.shoot(transform.position, direction);
             }
@@ -238,22 +315,17 @@ public class Character : MonoBehaviour
         falling = false;
     }
 
+
     public void Hit(int power)
     {
-        int oldLife = life;
         life -= power;
         life = life < 0 ? 0 : life;
 
-        for(int i = life; i < oldLife; ++i)
-        {
-            LifeUI[i].SetActive(false);
-        }
-
-        //if(life <= 0)
-        // Die();
+        HUDManager.instance.setLife(life == 0 ? 0 : (float)life / _baseLife);
 
         StartCoroutine(startInvulnerability());
     }
+
 
     public void AddNote()
     {
