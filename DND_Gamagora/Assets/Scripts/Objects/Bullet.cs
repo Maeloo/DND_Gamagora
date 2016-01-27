@@ -26,6 +26,8 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
     public float damage;
     public float speed;
 
+    public bool Copy2D;
+
     protected bool shooted;
 
     protected Vector3 scale;
@@ -45,14 +47,27 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
     {
         type = a_template.type;
 
-        gameObject.AddComponent<SpriteRenderer>().sprite = a_template.GetComponent<SpriteRenderer>().sprite;
-        gameObject.GetComponent<SpriteRenderer>().flipX = a_template.GetComponent<SpriteRenderer>().flipX;
-        gameObject.GetComponent<SpriteRenderer>().color = a_template.GetComponent<SpriteRenderer>().color;
+        foreach (Transform child in a_template.transform)
+        {
+            GameObject obj = Instantiate<GameObject>(child.gameObject);
+            obj.transform.SetParent(transform);
+
+            obj.transform.localPosition = child.localPosition;
+            obj.transform.localRotation = child.localRotation;
+            obj.transform.localScale = child.localScale;
+        }
+
+        if(a_template.Copy2D)
+        {
+            gameObject.AddComponent<SpriteRenderer>().sprite = a_template.GetComponent<SpriteRenderer>().sprite;
+            gameObject.GetComponent<SpriteRenderer>().flipX = a_template.GetComponent<SpriteRenderer>().flipX;
+            gameObject.GetComponent<SpriteRenderer>().color = a_template.GetComponent<SpriteRenderer>().color;
+
+            gameObject.AddComponent<PolygonCollider2D>().isTrigger = a_template.GetComponent<Collider2D>().isTrigger;
+            gameObject.AddComponent<Rigidbody2D>().isKinematic = true;
+        }       
 
         scale = a_template.transform.localScale;
-
-        gameObject.AddComponent<PolygonCollider2D>().isTrigger = a_template.GetComponent<Collider2D>().isTrigger;
-        gameObject.AddComponent<Rigidbody2D>().isKinematic = true;
 
         damage = a_template.GetComponent<Bullet>().damage;
         speed = a_template.GetComponent<Bullet>().speed;
@@ -77,18 +92,30 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
         transform.position = new Vector3(9999f, 9999f, 3.0f);
 
-        this.gameObject.SetActive(false);
+        if(type != Game.Type_Bullet.Special)
+        {
+            this.gameObject.SetActive(false);
+        }        
+
         _pool.onRelease(this);
     }
 
     public void shoot(Vector3 position, Vector3 direction)
     {
-        transform.localScale = Vector3.zero;
+
+        if(type != Game.Type_Bullet.Special)
+        {
+            transform.localScale = Vector3.zero;
+            
+            iTween.ScaleTo(gameObject, scale, .3f);
+
+            
+        }
+
         transform.position = position;
-
-        iTween.ScaleTo(gameObject, scale, .3f);
-
+        
         _direction = direction;
+
         transform.right = _direction;
 
         shooted = true;
@@ -132,7 +159,21 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
             if(e != null && e.type == Game.Type_Enemy.Shooter)
             {
                 e.onHit();
+
+                Release();
             }
+        }
+
+        if (type == Game.Type_Bullet.Special)
+        {
+            Enemy e = col.GetComponent<Enemy>();
+
+            if (e != null && e.type == Game.Type_Enemy.Shooter)
+            {
+                e.onHit();
+            }
+
+            // TODO Destruction murs
         }
     }
 

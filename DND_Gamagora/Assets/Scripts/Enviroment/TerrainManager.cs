@@ -43,8 +43,8 @@ public class TerrainManager : Singleton<TerrainManager> {
         hightPlatformPool.automaticReuseUnavailables = true;
         pools.Add(Type_Platform.Hight, hightPlatformPool);
 
-        classic_width = ClassicPlatform.GetComponentInChildren<SpriteRenderer>().bounds.size.x + 0.02f;
-
+        classic_width = ClassicPlatform.GetComponentInChildren<SpriteRenderer>().bounds.size.x - 0.02f;
+        Debug.Log("size :" + classic_width);
         _lastPos = firstPlatform.position;
 
         _lastSpawn = Time.time;
@@ -76,8 +76,12 @@ public class TerrainManager : Singleton<TerrainManager> {
             if (Player.transform.position.x + offset * classic_width > pos_pf.x &&
                 Player.transform.position.x + offset * classic_width < pos_pf.x + classic_width)
             {
+                int k = i == 0 ? 0 : i - 1;
                 Vector3 pos_pf_previous = pools[Type_Platform.Classic].usedObjects[i - 1].transform.position;
-                Vector3 pos_pf_next = pools[Type_Platform.Classic].usedObjects[i + 1].transform.position;
+
+                int j = i + 1 < pools[Type_Platform.Classic].usedObjects.Count ? i + 1 : i;
+                Vector3 pos_pf_next = pools[Type_Platform.Classic].usedObjects[j].transform.position;
+
                 if (!CheckHightPlatform(pos_pf, pos_pf_previous, pos_pf_next, offset))
                 {
                     platform = pools[Type_Platform.Classic].usedObjects[i];
@@ -127,7 +131,7 @@ public class TerrainManager : Singleton<TerrainManager> {
         {
             Vector3 pos = _lastPos;
             pos.x += classic_width;
-            pos.y = -0.59f;
+            pos.y += 5.5f;
             pf.SetPosition(pos);
         }
     }
@@ -153,9 +157,9 @@ public class TerrainManager : Singleton<TerrainManager> {
         return false;
     }
 
-
     public float GetTerrainSize()
     {
+        Debug.Log("classic_width: " + classic_width);
         return (classic_width * 1f / spawnTime) * AudioProcessor.Instance.GetMusicLength();
     }
 }

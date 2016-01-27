@@ -17,13 +17,22 @@
 
     public enum Type_Bonus
     {
-        Note
+        Note,
+        Invincibility
     }
 
     public enum Type_Bullet
     {
         Enemy,
-        Player
+        Player,
+        Special
+    }
+
+    public enum Type_HUD
+    {
+        Life,
+        Stamina,
+        Special
     }
     public enum Audio_Type
     {

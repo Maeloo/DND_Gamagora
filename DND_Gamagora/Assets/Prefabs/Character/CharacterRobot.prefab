@@ -175,6 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 4
+  stamina: 100
+  special: 100
   yMin: -10
   MaxSpeed: 10
   JumpForce: 800
@@ -186,7 +188,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   kamehameha: {fileID: 0}
-  LifeUI: []
   RunBox: {fileID: 0}
   RunTopBox: {fileID: 0}
   RunCircle: {fileID: 0}

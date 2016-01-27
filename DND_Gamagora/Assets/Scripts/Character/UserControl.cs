@@ -34,7 +34,7 @@ public class UserControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!GameManager.Instance.Pause)
+        if (!GameManager.Instance.Pause)
         {
             // Read the inputs.
             bool run = inputs.IsRunning;
@@ -42,11 +42,18 @@ public class UserControl : MonoBehaviour
 
             float h = inputs.GetHorizontalAxis();
 
+            bool special = inputs.IsSpecial;
+
+
             // Pass all parameters to the character control script.
             character.Move(h, slide, jump, run);
 
             if (attack)
                 character.Attack();
+
+
+            if (special)
+                character.Special();
 
             jump = false;
             slide = false;

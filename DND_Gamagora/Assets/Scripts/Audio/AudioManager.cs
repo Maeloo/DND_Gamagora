@@ -160,7 +160,7 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
          
     }
 
-    protected int minSkipBeatLow4 = 20; // Reglage Higklight Tribe
+    protected int minSkipBeatLow4 = 60; // Reglage Higklight Tribe
     protected int countTimeBeatLow4 = 0;
     public void onBeatLow4(float energy, float average_energy, float radiance, int frequency_size)
     {
@@ -176,6 +176,7 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
 
     public void onBeatMedium1(float energy, float average_energy, float radiance, int frequency_size)
     {
+        BonusManager.Instance.SpawnBonus(Type_Bonus.Note);
         box5.GetComponent<Renderer>().material.color = Color.black;
         StartCoroutine(StopColor(box5));
 
@@ -195,8 +196,7 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
 
     public void onBeatHigh1(float energy, float average_energy, float radiance, int frequency_size)
     {
-
-        BonusManager.Instance.SpawnBonus(Type_Bonus.Note);
+        BonusManager.Instance.SpawnBonus(Type_Bonus.Invincibility);
         box8.GetComponent<Renderer>().material.color = (Color.red + Color.green) * 0.5f;
         StartCoroutine(StopColor(box8));
 

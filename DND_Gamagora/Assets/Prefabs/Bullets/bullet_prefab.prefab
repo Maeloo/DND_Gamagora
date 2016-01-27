@@ -90,6 +90,7 @@ MonoBehaviour:
   type: 0
   damage: 1
   speed: 5
+  Copy2D: 1
 --- !u!212 &21292478
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   C: 3
   VarianceMin: 3
-  AmplitudeMultiplier: 3000
+  AmplitudeMultiplier: 1500
   RefValue: 0.1
   Threshold: 0.05
   Samples: 1024
@@ -129,15 +129,7 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_Pitch
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102760}
