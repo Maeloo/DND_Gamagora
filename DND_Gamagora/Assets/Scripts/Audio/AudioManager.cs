@@ -166,6 +166,7 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
     {
         box4.GetComponent<Renderer>().material.color = Color.green;
         StartCoroutine(StopColor(box4));
+
         countTimeBeatLow4++;
         if (countTimeBeatLow4 >= minSkipBeatLow4)
         {
@@ -176,10 +177,10 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
 
     public void onBeatMedium1(float energy, float average_energy, float radiance, int frequency_size)
     {
-        BonusManager.Instance.SpawnBonus(Type_Bonus.Note);
         box5.GetComponent<Renderer>().material.color = Color.black;
         StartCoroutine(StopColor(box5));
 
+        BonusManager.Instance.SpawnBonus(Type_Bonus.Note);
     }
 
     public void onBeatMedium2(float energy, float average_energy, float radiance, int frequency_size)
@@ -196,10 +197,10 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
 
     public void onBeatHigh1(float energy, float average_energy, float radiance, int frequency_size)
     {
-        BonusManager.Instance.SpawnBonus(Type_Bonus.Invincibility);
         box8.GetComponent<Renderer>().material.color = (Color.red + Color.green) * 0.5f;
         StartCoroutine(StopColor(box8));
 
+        BonusManager.Instance.SpawnBonus(Type_Bonus.Invincibility);
     }
 
     public void onBeatHigh2(float energy, float average_energy, float radiance, int frequency_size)

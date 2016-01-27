@@ -77,7 +77,7 @@ public class TerrainManager : Singleton<TerrainManager> {
                 Player.transform.position.x + offset * classic_width < pos_pf.x + classic_width)
             {
                 int k = i == 0 ? 0 : i - 1;
-                Vector3 pos_pf_previous = pools[Type_Platform.Classic].usedObjects[i - 1].transform.position;
+                Vector3 pos_pf_previous = pools[Type_Platform.Classic].usedObjects[k].transform.position;
 
                 int j = i + 1 < pools[Type_Platform.Classic].usedObjects.Count ? i + 1 : i;
                 Vector3 pos_pf_next = pools[Type_Platform.Classic].usedObjects[j].transform.position;
