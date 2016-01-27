@@ -17,10 +17,10 @@ TagManager:
   - 
   - 
   - Floor
-  - 
-  - 
-  - 
-  - 
+  - character
+  - ammo
+  - enemy
+  - bonus
   - 
   - 
   - 
