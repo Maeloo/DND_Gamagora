@@ -153,4 +153,9 @@ public class TerrainManager : Singleton<TerrainManager> {
         return false;
     }
 
+
+    public float GetTerrainSize()
+    {
+        return (classic_width * 1f / spawnTime) * AudioProcessor.Instance.GetMusicLength();
+    }
 }

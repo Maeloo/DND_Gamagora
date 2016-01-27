@@ -25,4 +25,12 @@ public class Jinjo : MonoBehaviour
             }
         }
     }
+
+    public void SetColorNumber(int number)
+    {
+        if (anim != null)
+        {
+            anim.SetInteger("Color", number);
+        }
+    }
 }

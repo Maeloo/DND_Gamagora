@@ -15,37 +15,41 @@ public class UserControl : MonoBehaviour
         inputs = InputManager.Instance;
     }
 
-
     private void Update()
     {
-        if (!jump)
+        if (!GameManager.Instance.Pause)
         {
-            // Read the jump input in Update so button presses aren't missed.
-            jump = inputs.IsJumping;
-        }
-        if (!slide)
-        {
-            // Read the jump input in Update so button presses aren't missed.
-            slide = inputs.IsSliding;
+            if (!jump)
+            {
+                // Read the jump input in Update so button presses aren't missed.
+                jump = inputs.IsJumping;
+            }
+            if (!slide)
+            {
+                // Read the jump input in Update so button presses aren't missed.
+                slide = inputs.IsSliding;
+            }
         }
     }
 
-
     private void FixedUpdate()
     {
-        // Read the inputs.
-        bool run = inputs.IsRunning;
-        bool attack = inputs.IsAttacking;
+        if(!GameManager.Instance.Pause)
+        {
+            // Read the inputs.
+            bool run = inputs.IsRunning;
+            bool attack = inputs.IsAttacking;
 
-        float h = inputs.GetHorizontalAxis(); 
-        
-        // Pass all parameters to the character control script.
-        character.Move(h, slide, jump, run);
+            float h = inputs.GetHorizontalAxis();
 
-        if (attack)
-            character.Attack();
+            // Pass all parameters to the character control script.
+            character.Move(h, slide, jump, run);
 
-        jump = false;
-        slide = false;
+            if (attack)
+                character.Attack();
+
+            jump = false;
+            slide = false;
+        }
     }
 }

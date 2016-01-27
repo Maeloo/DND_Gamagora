@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using Game;
+using System.Collections.Generic;
 
 public class Character : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class Character : MonoBehaviour
     private LayerMask WhatIsGround;                  // A mask determining what is ground to the character
     [SerializeField]
     private Bullet kamehameha;
+    [SerializeField]
+    private GameObject base_jinjo;
+
     public GameObject[] LifeUI;
     private Transform groundCheck;    // A position marking where to check if the player is grounded.
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -36,6 +40,7 @@ public class Character : MonoBehaviour
     private Rigidbody2D rb;
     private bool facingRight = true;  // For determining which way the player is currently facing.
     internal Vector3 lastCheckpointPos;
+    internal float lastCheckpointMusicTime;
 
     //List Collider Slide and Run
     public BoxCollider2D RunBox;
@@ -55,6 +60,8 @@ public class Character : MonoBehaviour
     private Pool<Bullet> kamehamehas;
 
     private Vector3 direction = Vector3.right;
+    private AudioProcessor audio_process;
+    private Dictionary<Jinjo, bool> jinjos;
 
     private void Awake()
     {
@@ -70,8 +77,36 @@ public class Character : MonoBehaviour
         kamehamehas.automaticReuseUnavailables = true;
 
         cam = Camera.main.GetComponent<CharacterCamera>();
-    }
+        audio_process = AudioProcessor.Instance;
+        lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
 
+        float delta = (TerrainManager.Instance.GetTerrainSize() * 0.5f) / 6f;
+
+        Camera cam_tmp = cam.GetComponent<Camera>();
+        float vertExtent = cam_tmp.orthographicSize * 2f;
+        float horzExtent = vertExtent * Screen.width / Screen.height;
+        // Calculations assume cam is position at the origin
+        float minX = horzExtent - cam_tmp.transform.position.x * 0.5f;
+        float maxX = cam_tmp.transform.position.x * 0.5f - horzExtent;
+        float minY = vertExtent - cam_tmp.transform.position.y * 0.5f;
+        float maxY = cam_tmp.transform.position.y * 0.5f - vertExtent;
+
+        float height = (minY - maxY) * 0.5f;
+
+        float max = cam_tmp.transform.position.y + height * 0.2f;
+        float min = cam_tmp.transform.position.y - height * 0.2f;
+        float y = Random.Range(min, max);
+
+        jinjos = new Dictionary<Jinjo, bool>(6);
+        for(int i = 0; i < 6; i++)
+        {
+            GameObject obj_jinjo = (GameObject)Instantiate(base_jinjo, new Vector3((i + 1) * delta, y, 0f), Quaternion.identity);
+            Jinjo j = obj_jinjo.GetComponent<Jinjo>();
+            j.SetColorNumber(i);
+            jinjos.Add(j, false);
+        }
+
+    }
 
     private void FixedUpdate()
     {
@@ -162,6 +197,8 @@ public class Character : MonoBehaviour
                 cam.ResetCamToCheckPoint(lastCheckpointPos);
             }
 
+            audio_process.RewindSound(lastCheckpointMusicTime);
+
             Invoke("MoveToLastCheckPoint", 1.0f);
             //MoveToLastCheckPoint();
         }            
@@ -234,8 +271,20 @@ public class Character : MonoBehaviour
 
         Hit(1);
         transform.position = lastCheckpointPos;
-
+        
         falling = false;
+        audio_process.PlayMusic();
+    }
+
+    public void SetCheckpoint(Vector3 checkpoint_pos)
+    {
+        lastCheckpointPos = checkpoint_pos;
+        lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
+    }
+
+    public void SetJinjo(Jinjo key)
+    {
+        jinjos[key] = true;
     }
 
     public void Hit(int power)

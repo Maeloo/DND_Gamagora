@@ -17,13 +17,15 @@ public class Checkpoint : MonoBehaviour
         Character player = col.gameObject.GetComponent<Character>();
         if (player != null)
         {
-            player.lastCheckpointPos = transform.position;
-
-            if (anim != null)
+            if(!anim.GetBool("Check"))
             {
-                anim.SetBool("Check", true);
-            }
-               
+                player.SetCheckpoint(transform.position);
+
+                if (anim != null)
+                {
+                    anim.SetBool("Check", true);
+                }
+            }      
         }
     }
 }

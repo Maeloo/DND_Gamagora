@@ -25,4 +25,9 @@
         Enemy,
         Player
     }
+    public enum Audio_Type
+    {
+        Music,
+        Rewind
+    }
 }

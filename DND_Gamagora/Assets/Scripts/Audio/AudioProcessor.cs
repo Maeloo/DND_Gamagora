@@ -57,6 +57,12 @@ public class AudioProcessor : Singleton<AudioProcessor>
     private List<AudioCallbacks> callbacks;
     private AudioSource audioSrc;
 
+    private bool rewind;
+    // Music time at last checkpoint
+    private float rewind_to;
+    private AudioClip rewind_sound;
+    private int key_sound_rewind;
+
     // Use this for initialization
     void Awake()
     {
@@ -80,13 +86,16 @@ public class AudioProcessor : Singleton<AudioProcessor>
             energies.Add(new float[EnergiesLength]);
             for (int j = 0; j < EnergiesLength; j++)
                 energies[i][j] = 0f;
-        } 
+        }
+
+        rewind = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {   
-        if (audioSrc.isPlaying)
+        if (audioSrc.isPlaying && !rewind && !GameManager.Instance.Pause)
         {
             AnalyzeSound();
          //   Debug.Log("RMS: " + rmsValue.ToString("F2") +
@@ -95,10 +104,59 @@ public class AudioProcessor : Singleton<AudioProcessor>
         }
     }
 
+    // Debug
     public void changeCameraColor(Color c)
     {
         Camera.main.clearFlags = CameraClearFlags.Color;
         Camera.main.backgroundColor = c;
+    }
+
+    public void RewindSound(float music_position)
+    {
+        if(!rewind)
+        {
+            PauseMusic();
+            Hashtable param = new Hashtable();
+            param.Add("starttime", 1f);
+            key_sound_rewind = SceneAudioManager.Instance.playAudio(Game.Audio_Type.Rewind, param);
+           
+            rewind_to = music_position;
+            rewind = true;
+        }
+    }
+
+    // Play music after rewind
+    public void PlayMusic()
+    {
+        if (rewind)
+        {
+            audioSrc.time = rewind_to;
+            SceneAudioManager.Instance.stop(key_sound_rewind);
+            audioSrc.Play();
+            rewind = false;
+        }
+        else
+            audioSrc.Play();
+    }
+
+    public void PauseMusic()
+    {
+        audioSrc.Pause();
+    }
+
+    // Current music time in seconds
+    public float GetMusicCurrentTime()
+    {
+        if(audioSrc != null)
+            return audioSrc.time;
+
+        return 0f;
+    }
+
+    // Music length in seconds
+    public float GetMusicLength()
+    {
+        return audioSrc.clip.length;
     }
 
     void AnalyzeSound()
