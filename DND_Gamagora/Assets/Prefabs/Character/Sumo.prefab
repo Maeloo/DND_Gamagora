@@ -312,7 +312,7 @@ MonoBehaviour:
   special_tornado: {fileID: 0}
   RunBox: {fileID: 6158056}
   RunCircle: {fileID: 5840438}
-  SlideBox: {fileID: 0}
+  SlideBox: {fileID: 6134490}
   SlideCircle: {fileID: 5810950}
   noteText: {fileID: 0}
   invulnerabilityTimeBonus: 3

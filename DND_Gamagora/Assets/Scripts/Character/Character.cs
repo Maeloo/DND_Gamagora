@@ -27,6 +27,9 @@ public class Character : MonoBehaviour
     private float attackSpeed;
     [SerializeField]
     private bool AirControl = false;                 // Whether or not a player can steer while jumping;
+    private int nbJump = 1;
+    private int nbCurrentJump = 0;
+    private bool doublejump = true;
     [SerializeField]
     private LayerMask WhatIsGround;                  // A mask determining what is ground to the character
     [SerializeField]
@@ -169,6 +172,9 @@ public class Character : MonoBehaviour
 
         SlideCollider(slide);
 
+        if (grounded)
+            nbCurrentJump = 0;
+
         // Set whether or not the character is crouching in the animator
         anim.SetBool("Slide", slide);
         //anim.SetBool("Run", !crouch && run);
@@ -217,15 +223,10 @@ public class Character : MonoBehaviour
             }
         }
         // If the player should jump...
-        if (grounded && jump && anim.GetBool("Ground"))
+        if (nbCurrentJump < nbJump && jump)
         {
-            // Add a vertical force to the player.
-            grounded = false;
-            anim.SetBool("Ground", false);
-            float str = JumpForce;
-            if (run)
-                str *= RunSpeed;
-            rb.AddForce(new Vector2(0f, str));
+            if (doublejump)
+                StartCoroutine(jumping(run));
         }
         if (IsFalled() && !falling)
         {
@@ -242,6 +243,21 @@ public class Character : MonoBehaviour
 
             Invoke("MoveToLastCheckPoint", 1.0f);
         }            
+    }
+
+    private IEnumerator jumping(bool run)
+    {
+        doublejump = false;
+        nbCurrentJump++;
+        // Add a vertical force to the player.
+        grounded = false;
+        anim.SetBool("Ground", false);
+        float str = JumpForce;
+        if (run)
+            str *= RunSpeed;
+        rb.AddForce(new Vector2(0f, str));
+        yield return new WaitForSeconds(.1f);
+        doublejump = true;
     }
 
 
