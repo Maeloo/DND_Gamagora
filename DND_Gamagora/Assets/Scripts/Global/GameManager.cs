@@ -26,10 +26,7 @@ public class GameManager : Singleton<GameManager>
 
     public void reset()
     {
-        SceneManager.LoadSceneAsync("scene");
-
-        DontDestroyOnLoad(AudioProcess);
-        DontDestroyOnLoad(gameObject);
+        LoadScene("scene");
     }
 
     public void SetPause(bool pause)
@@ -43,6 +40,9 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
+        DontDestroyOnLoad(AudioProcess);
+        DontDestroyOnLoad(gameObject);
+
         LoadScene("scene");
     }
 

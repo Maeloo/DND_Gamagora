@@ -10,11 +10,14 @@ public class HUDManager : Singleton<HUDManager>
 
     Dictionary<Type_HUD, HUDElement> elements;
     private Character _player;
+    private float _cooldown;
 
     public void registerElement (Type_HUD key, HUDElement element )
     {
         if ( elements == null )
             elements = new Dictionary<Type_HUD, HUDElement> ( );
+
+        elements.Add(key, element);
 
         if (key == Type_HUD.Jinjo_Violet_On ||
             key == Type_HUD.Jinjo_Yellow_On ||
@@ -27,7 +30,8 @@ public class HUDManager : Singleton<HUDManager>
         if (key == Type_HUD.GameOver)
             element.displayGroup(false, .0f, false, false);
 
-        elements.Add ( key, element );
+        if (key == Type_HUD.Cooldown && _player != null)
+            StartCoroutine(elements[Type_HUD.Cooldown].startCooldown(_cooldown));
     }
 
 
@@ -91,7 +95,10 @@ public class HUDManager : Singleton<HUDManager>
     public void startCooldown(Character player, float cooldown)
     {
         _player = player;
-        StartCoroutine(elements[Type_HUD.Cooldown].startCooldown(cooldown));
+        _cooldown = cooldown;
+
+        //if(elements != null)
+        //    StartCoroutine(elements[Type_HUD.Cooldown].startCooldown(_cooldown));
     }
 
     public void endCooldown()

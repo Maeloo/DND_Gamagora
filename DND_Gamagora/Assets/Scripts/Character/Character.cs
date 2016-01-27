@@ -103,8 +103,6 @@ public class Character : MonoBehaviour
         lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
 
         jinjos = new List<Jinjo>(6);
-
-
     }
 
     void Start()
@@ -112,6 +110,7 @@ public class Character : MonoBehaviour
         //special = 0;
         //HUDManager.instance.setSpecial(special);
         GameManager.Instance.SetPause(true);
+
         HUDManager.Instance.startCooldown(this, 3f);
     }
 

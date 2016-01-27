@@ -78,8 +78,10 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
         {
             case Game.Type_Enemy.CrazyFireball:
                 gameObject.AddComponent<CrazyFireball>().bulletPrefab = a_template.GetComponent<CrazyFireball>().bulletPrefab;
-                gameObject.AddComponent<ExplosionMat>();
                 gameObject.AddComponent<CrazyFireball>();
+                gameObject.AddComponent<ExplosionMat>()._ramp = a_template.GetComponent<ExplosionMat>()._ramp;
+                gameObject.GetComponent<ExplosionMat>()._noise = a_template.GetComponent<ExplosionMat>()._noise;
+                gameObject.GetComponent<ExplosionMat>().ExplosionMaterial = a_template.GetComponent<ExplosionMat>().ExplosionMaterial;
                 break;
 
             case Game.Type_Enemy.Shooter:
