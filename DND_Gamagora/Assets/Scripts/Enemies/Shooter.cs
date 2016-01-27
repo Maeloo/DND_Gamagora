@@ -15,7 +15,7 @@ public class Shooter : MonoBehaviour {
         {
             _bullets = new Pool<Bullet>(bulletPrefab, 4, 8);
             _bullets.automaticReuseUnavailables = true;
-        }            
+        }
     }
 
     public void spawn(Vector3 position, Transform player)

@@ -21,6 +21,10 @@ public class GameManager : Singleton<GameManager>
         audio_manager = SceneAudioManager.Instance;
         audio_process = AudioProcessor.Instance;
         Pause = false;
+
+        DontDestroyOnLoad(AudioProcess);
+        DontDestroyOnLoad(gameObject);
+
     }
 
 
@@ -40,9 +44,6 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
-        DontDestroyOnLoad(AudioProcess);
-        DontDestroyOnLoad(gameObject);
-
         LoadScene("scene");
     }
 
