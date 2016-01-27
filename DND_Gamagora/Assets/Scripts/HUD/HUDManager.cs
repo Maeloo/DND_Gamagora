@@ -9,6 +9,7 @@ public class HUDManager : Singleton<HUDManager>
     protected HUDManager() { }
 
     Dictionary<Type_HUD, HUDElement> elements;
+    private Character _player;
 
     public void registerElement (Type_HUD key, HUDElement element )
     {
@@ -75,6 +76,21 @@ public class HUDManager : Singleton<HUDManager>
                 break;
             default:
                 break;
+        }
+    }
+
+    public void startCooldown(Character player, float cooldown)
+    {
+        _player = player;
+        StartCoroutine(elements[Type_HUD.Cooldown].startCooldown(cooldown));
+    }
+
+    public void endCooldown()
+    {
+        if(_player != null)
+        {
+            _player.EndCooldownCheckpoint();
+            _player = null;
         }
     }
 }

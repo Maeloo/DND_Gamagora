@@ -63,7 +63,7 @@ public class TerrainManager : Singleton<TerrainManager> {
 
     void InitJinjos()
     {
-        float delta = (GetTerrainSize() * 0.5f) / 6f;
+        float delta = (GetTerrainSize() * 0.4f) / 6f;
 
         Camera cam = Camera.main;
         float vertExtent = cam.orthographicSize * 2f;
@@ -94,7 +94,7 @@ public class TerrainManager : Singleton<TerrainManager> {
     {
         jinjos[j] = true;
         jinjo_to_delete = j.gameObject;
-        Invoke("DeleteJinjo", 2f);
+        Invoke("DeleteJinjo", 1f);
     }
 
     private void DeleteJinjo()
@@ -108,16 +108,19 @@ public class TerrainManager : Singleton<TerrainManager> {
 
     void Update()
     {
-        if (Time.time - _lastSpawn > spawnTime)
+        if(!GameManager.Instance.Pause)
         {
-            SpawnPlatform(Type_Platform.Classic);
-            
-            _lastSpawn = Time.time;
-            if (platformCount > platformCountBeforeCheckpoint)
+            if (Time.time - _lastSpawn > spawnTime)
             {
-                CheckPointScript.Init();
-                Checkpoint.transform.position = _lastPos + new Vector3(0f, offsetYCheckpoint, 0f);
-                platformCount = 0;
+                SpawnPlatform(Type_Platform.Classic);
+
+                _lastSpawn = Time.time;
+                if (platformCount > platformCountBeforeCheckpoint)
+                {
+                    CheckPointScript.Init();
+                    Checkpoint.transform.position = _lastPos + new Vector3(0f, offsetYCheckpoint, 0f);
+                    platformCount = 0;
+                }
             }
         }
     }

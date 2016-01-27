@@ -207,6 +207,7 @@ public class Character : MonoBehaviour
             falling = true;
 
             anim.SetBool("Fall", true);
+            GameManager.Instance.SetPause(true);
 
             if (cam != null)
             {
@@ -335,6 +336,12 @@ public class Character : MonoBehaviour
         transform.position = lastCheckpointPos;
         
         falling = false;
+        HUDManager.Instance.startCooldown(this, 3f);
+    }
+
+    public void EndCooldownCheckpoint()
+    {
+        GameManager.Instance.SetPause(false);
         audio_process.PlayMusic();
     }
 

@@ -69,7 +69,7 @@ public class CharacterCamera : MonoBehaviour
 
         if(targeting)
         {
-            if (Vector3.Distance(transform.position, target_pos) < 2f)
+            if (Vector3.Distance(transform.position, target_pos) < 0.5f)
                 targeting = false;
         }
 

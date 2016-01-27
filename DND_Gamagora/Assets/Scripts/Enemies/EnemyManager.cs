@@ -86,28 +86,31 @@ public class EnemyManager : Singleton<EnemyManager>
 
     void FixedUpdate()
     {
-        if(Time.time - _lastFireball > _nextFireball)
+        if(!GameManager.Instance.Pause)
         {
-            spawnEnemy(Type_Enemy.CrazyFireball, new Vector3(Player.transform.position.x + 20.0f, .0f, 3.0f));
+            if (Time.time - _lastFireball > _nextFireball)
+            {
+                spawnEnemy(Type_Enemy.CrazyFireball, new Vector3(Player.transform.position.x + 20.0f, .0f, 3.0f));
 
-            _lastFireball = Time.time;
-            _nextFireball = 3.0f + Random.value * 3.0f;
-        }
+                _lastFireball = Time.time;
+                _nextFireball = 3.0f + Random.value * 3.0f;
+            }
 
-        if (Time.time - _lastShooter > _nextShooter)
-        {
-            spawnEnemy(Type_Enemy.Shooter, new Vector3(Player.transform.position.x + 20.0f, Random.Range(.0f, 2.0f), 3.0f));
+            if (Time.time - _lastShooter > _nextShooter)
+            {
+                spawnEnemy(Type_Enemy.Shooter, new Vector3(Player.transform.position.x + 20.0f, Random.Range(.0f, 2.0f), 3.0f));
 
-            _lastShooter = Time.time;
-            _nextShooter = 4.0f + Random.value * 4.0f;
-        }
+                _lastShooter = Time.time;
+                _nextShooter = 4.0f + Random.value * 4.0f;
+            }
 
-        if (Time.time - _lastMeteor > _nextMeteor)
-        {
-            spawnEnemy(Type_Enemy.Meteor, new Vector3(Player.transform.position.x + 20.0f, 22.0f, 3.0f));
+            if (Time.time - _lastMeteor > _nextMeteor)
+            {
+                spawnEnemy(Type_Enemy.Meteor, new Vector3(Player.transform.position.x + 20.0f, 22.0f, 3.0f));
 
-            _lastMeteor = Time.time;
-            _nextMeteor = 10.0f + Random.value * 10.0f;
+                _lastMeteor = Time.time;
+                _nextMeteor = 10.0f + Random.value * 10.0f;
+            }
         }
     }
 }
