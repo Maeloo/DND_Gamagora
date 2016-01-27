@@ -143,11 +143,15 @@ public class Character : MonoBehaviour
             // If the character has a ceiling preventing them from standing up, keep them crouching
             if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, WhatIsGround))
             {
-                _slide = slide = true;
+                slide = true;
             }
         }
 
-        SlideCollider(slide);
+        if(_slide != slide)
+        {
+            _slide = slide;
+            SlideCollider(slide);
+        }        
 
         if (grounded)
             nbCurrentJump = 0;

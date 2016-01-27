@@ -44,7 +44,7 @@ public class EnemyManager : Singleton<EnemyManager>
         pools = new Dictionary<Type_Enemy, Pool<Enemy>>();
 
         //Init fireballs
-        Pool<Enemy> poolFireballs = new Pool<Enemy>(fireball, 8, 16);
+        Pool<Enemy> poolFireballs = new Pool<Enemy>(fireball, 4, 8);
         poolFireballs.automaticReuseUnavailables = true;
 
         pools.Add(Type_Enemy.CrazyFireball, poolFireballs);
@@ -53,7 +53,7 @@ public class EnemyManager : Singleton<EnemyManager>
         _nextFireball = 3.0f + Random.value * 3.0f;
 
         //Init shooters
-        Pool<Enemy> poolShooter = new Pool<Enemy>(shooter, 8, 16);
+        Pool<Enemy> poolShooter = new Pool<Enemy>(shooter, 4, 8);
         poolShooter.automaticReuseUnavailables = true;
 
         pools.Add(Type_Enemy.Shooter, poolShooter);

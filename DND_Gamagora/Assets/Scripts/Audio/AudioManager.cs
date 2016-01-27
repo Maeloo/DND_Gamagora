@@ -49,6 +49,8 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         enemiesSpawner = EnemyManager.Instance;
         platformSpawn = TerrainManager.Instance;
         currentPos = Camera.main.transform.position;
+
+        _lastShoot = Time.time;
     }
     
     void Update()
@@ -114,15 +116,19 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         }       
     }
 
-    
+    protected float _lastShoot;
     public void onBeatLow2(float energy, float average_energy, float radiance, int frequency_size)
     {
         box2.GetComponent<Renderer>().material.color = Color.yellow;
         StartCoroutine(StopColor(box2));
 
+        bool shot = false;
         for (int i = 0; i < enemiesSpawner.fireballs.Count; i++)
         {
-            enemiesSpawner.fireballs[i].shoot();
+            if (Time.time - _lastShoot > 1.0f) {
+                enemiesSpawner.fireballs[i].shoot();
+                shot = true;
+            }                
 
             iTween.Stop(enemiesSpawner.fireballs[i].gameObject);
 
@@ -137,6 +143,9 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
                 "scale", new Vector3(2.0f, 2.0f, 2.0f),
                 "easetype", iTween.EaseType.easeInOutExpo));
         }
+
+        if (shot)
+            _lastShoot = Time.time;
     }
 
     protected int minSkipBeatLow3 = 20; // Reglage Higklight Tribe

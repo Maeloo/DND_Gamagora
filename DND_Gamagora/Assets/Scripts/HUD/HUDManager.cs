@@ -29,9 +29,6 @@ public class HUDManager : Singleton<HUDManager>
 
         if (key == Type_HUD.GameOver)
             element.displayGroup(false, .0f, false, false);
-
-        if (key == Type_HUD.Cooldown && _player != null)
-            StartCoroutine(elements[Type_HUD.Cooldown].startCooldown(_cooldown));
     }
 
 
