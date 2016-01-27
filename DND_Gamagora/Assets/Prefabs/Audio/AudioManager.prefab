@@ -88,6 +88,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &144134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 435968}
+  - 114: {fileID: 11417212}
+  m_Layer: 0
+  m_Name: RewindSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &153686
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +230,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 479556}
   m_RootOrder: 3
+--- !u!4 &435968
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144134}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 479556}
+  m_RootOrder: 9
 --- !u!4 &449618
 Transform:
   m_ObjectHideFlags: 1
@@ -293,6 +321,7 @@ Transform:
   - {fileID: 411816}
   - {fileID: 473692}
   - {fileID: 454422}
+  - {fileID: 435968}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &489310
@@ -712,6 +741,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11417212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ae74083ff494842a0f7a31ee3fa13d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClips:
+  - {fileID: 8300000, guid: 6defbf2338606524abbf5af5cc03752c, type: 3}
+  defaultMixerGroup: {fileID: 24300001, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
+  type: 1
+  playRandom: 0
 --- !u!114 &11470784
 MonoBehaviour:
   m_ObjectHideFlags: 1

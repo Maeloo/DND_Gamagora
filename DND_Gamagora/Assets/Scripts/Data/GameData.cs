@@ -45,8 +45,11 @@
         Jinjo_Blue_Off,
         Jinjo_Black_On,
         Jinjo_Black_Off,
-        GameOver
+        GameOver,
+        Cooldown
+
     }
+
     public enum Audio_Type
     {
         Music,

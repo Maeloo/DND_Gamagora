@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
     protected GameManager() { }
+
+    [SerializeField]
+    private GameObject AudioProcess;
 
     public bool Pause { get; private set; }
 
@@ -23,6 +27,9 @@ public class GameManager : Singleton<GameManager>
     public void reset()
     {
         SceneManager.LoadSceneAsync("scene");
+
+        DontDestroyOnLoad(AudioProcess);
+        DontDestroyOnLoad(gameObject);
     }
 
     public void SetPause(bool pause)
@@ -32,5 +39,15 @@ public class GameManager : Singleton<GameManager>
             audio_process.PauseMusic();
         else
             audio_process.PlayMusic();
+    }
+
+    public void StartGame()
+    {
+        LoadScene("scene");
+    }
+
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadSceneAsync(name);
     }
 }

@@ -103,12 +103,16 @@ public class Character : MonoBehaviour
         lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
 
         jinjos = new List<Jinjo>(6);
+
+
     }
 
     void Start()
     {
         //special = 0;
         //HUDManager.instance.setSpecial(special);
+        GameManager.Instance.SetPause(true);
+        HUDManager.Instance.startCooldown(this, 3f);
     }
 
 
@@ -207,6 +211,7 @@ public class Character : MonoBehaviour
             falling = true;
 
             anim.SetBool("Fall", true);
+            GameManager.Instance.SetPause(true);
 
             if (cam != null)
             {
@@ -335,6 +340,12 @@ public class Character : MonoBehaviour
         transform.position = lastCheckpointPos;
         
         falling = false;
+        HUDManager.Instance.startCooldown(this, 3f);
+    }
+
+    public void EndCooldownCheckpoint()
+    {
+        GameManager.Instance.SetPause(false);
         audio_process.PlayMusic();
     }
 

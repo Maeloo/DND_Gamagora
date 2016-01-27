@@ -9,7 +9,11 @@ public class HUDElement : MonoBehaviour
 
     Image _bar;
     Image _jinjo;
+
     CanvasGroup _group;
+
+    Text _start;
+
 
     protected string _type;
 
@@ -23,12 +27,15 @@ public class HUDElement : MonoBehaviour
             {
                 _bar = child.GetComponent<Image>();
             }
+            else if (child.CompareTag("CooldownHUD"))
+                _start = child.GetComponent<Text>();
         }
 
         if(tag == "JinjoHUD")
         {
             _jinjo = GetComponent<Image>();
         }
+
 
         _group = GetComponent<CanvasGroup>();
            
@@ -44,6 +51,7 @@ public class HUDElement : MonoBehaviour
     {
         _jinjo.enabled = enable;
     }
+
 
     public void displayGroup(bool show = true, float time = 1.0f, bool interactable = true, bool block = true)
     {
@@ -64,6 +72,25 @@ public class HUDElement : MonoBehaviour
     {
         if (_group != null)
             _group.alpha = value;
+    }
+
+    public IEnumerator startCooldown(float cooldown)
+    {
+        float startTime = Time.time;
+        float time;
+
+        do
+        {
+            time = cooldown - (Time.time - startTime);
+            time = time < .0f ? .0f : time;
+
+            _start.text = time.ToString("0");
+
+            yield return new WaitForEndOfFrame();
+        } while (time > .0f);
+
+        _start.text = "";
+        HUDManager.Instance.endCooldown();
     }
 
 }
