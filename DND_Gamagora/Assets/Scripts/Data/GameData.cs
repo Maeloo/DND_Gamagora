@@ -44,7 +44,8 @@
         Jinjo_Blue_On,
         Jinjo_Blue_Off,
         Jinjo_Black_On,
-        Jinjo_Black_Off
+        Jinjo_Black_Off,
+        GameOver
     }
     public enum Audio_Type
     {

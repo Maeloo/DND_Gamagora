@@ -164,6 +164,8 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
                 e.onHit();
 
                 Release();
+
+                ScoreManager.Instance.AddPoint((int)(damage + 10 * (UnityEngine.Random.value)));
             }
         }
 
@@ -174,6 +176,8 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
             if (e != null && e.type == Game.Type_Enemy.Shooter)
             {
                 e.onHit();
+
+                ScoreManager.Instance.AddPoint((int)(damage + 10 * (UnityEngine.Random.value)));
             }
 
             // TODO Destruction murs

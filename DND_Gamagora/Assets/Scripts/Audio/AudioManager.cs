@@ -122,6 +122,8 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
 
         for (int i = 0; i < enemiesSpawner.fireballs.Count; i++)
         {
+            enemiesSpawner.fireballs[i].shoot();
+
             iTween.Stop(enemiesSpawner.fireballs[i].gameObject);
 
             iTween.ScaleTo(enemiesSpawner.fireballs[i].gameObject, iTween.Hash(

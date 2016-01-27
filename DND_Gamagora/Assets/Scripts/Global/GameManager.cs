@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameManager : Singleton<GameManager>
@@ -17,11 +18,11 @@ public class GameManager : Singleton<GameManager>
         audio_process = AudioProcessor.Instance;
         Pause = false;
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
 
+
+    public void reset()
+    {
+        SceneManager.LoadSceneAsync("scene");
     }
 
     public void SetPause(bool pause)

@@ -10,6 +10,8 @@ public class Note : MonoBehaviour {
         {
             player.AddNote();
             GetComponentInParent<Bonus>().Release();
+
+            ScoreManager.Instance.AddPoint(50);
         }
     }
 }

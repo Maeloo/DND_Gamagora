@@ -77,6 +77,7 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
         switch (type) 
         {
             case Game.Type_Enemy.CrazyFireball:
+                gameObject.AddComponent<CrazyFireball>().bulletPrefab = a_template.GetComponent<CrazyFireball>().bulletPrefab;
                 gameObject.AddComponent<ExplosionMat>();
                 gameObject.AddComponent<CrazyFireball>();
                 break;
@@ -130,7 +131,11 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
 
     public void shoot()
     {
-        gameObject.GetComponent<Shooter>().shoot();
+        if (type == Game.Type_Enemy.CrazyFireball)
+            gameObject.GetComponent<CrazyFireball>().shoot();
+
+        if (type == Game.Type_Enemy.Shooter)
+            gameObject.GetComponent<Shooter>().shoot();
     }
 
 

@@ -8,6 +8,8 @@ public class Invincibility : MonoBehaviour {
         Character player = col.gameObject.GetComponent<Character>();
         if (player != null)
         {
+            ScoreManager.Instance.AddPoint(100);
+
             player.StartInvulnerabilityCoroutine();
 
             GetComponent<Animator>().SetTrigger("Pop");

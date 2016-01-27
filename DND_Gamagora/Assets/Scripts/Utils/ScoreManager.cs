@@ -5,9 +5,12 @@ using System.Collections.Generic;
 public class ScoreManager : Singleton<ScoreManager>
 {
     private const int SIZE_CLASSEMENT = 10;
+
     private int currentScore;
+
     protected ScoreManager() { }
-	// Use this for initialization
+	
+    
 	void Awake () {
         currentScore = 0;
 	}
@@ -24,24 +27,24 @@ public class ScoreManager : Singleton<ScoreManager>
         {
             string name = "HighScore" + (i + 1);
 
+            //Debug.logger.Log(name + " " + res[i]);
             res[i] = PlayerPrefs.GetInt(name, 0);
-
-          //  Debug.logger.Log(name + " " + res[i]);
         }
         return res;
     }
 
-    void SaveClassement(int [] classement)
+    public void SaveClassement(int [] classement)
     {
         for(int i = 0; i < SIZE_CLASSEMENT; ++i)
         {
             string name = "HighScore" + (i + 1);
 
-            Debug.logger.Log(name + " " + classement[i]);
+            //Debug.logger.Log(name + " " + classement[i]);
             PlayerPrefs.SetInt(name, classement[i]);
         }
     }
-    void SaveScore()
+
+    public void SaveScore()
     {
         int[] res = GetClassement();
         int i = 0;
@@ -71,18 +74,18 @@ public class ScoreManager : Singleton<ScoreManager>
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            AddPoint(10);
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    AddPoint(10);
 
-            Debug.logger.Log("Score : " + currentScore);
-        }
+        //    Debug.logger.Log("Score : " + currentScore);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            Debug.logger.Log("SaveScore");
-            SaveScore();
-        }
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    Debug.logger.Log("SaveScore");
+        //    SaveScore();
+        //}
     }
 
 }

@@ -5,7 +5,6 @@ public class Shooter : MonoBehaviour {
 
     public Bullet bulletPrefab;
 
-
     protected Pool<Bullet> _bullets;
 
     protected Transform _player;

@@ -88,7 +88,7 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         if(Time.time - _lastFireball > _nextFireball)
         {
-            spawnEnemy(Type_Enemy.CrazyFireball, new Vector3(Player.transform.position.x + 20.0f, .0f, 3.0f));
+            spawnEnemy(Type_Enemy.CrazyFireball, new Vector3(Player.transform.position.x + 20.0f, 10.0f, 3.0f));
 
             _lastFireball = Time.time;
             _nextFireball = 3.0f + Random.value * 3.0f;

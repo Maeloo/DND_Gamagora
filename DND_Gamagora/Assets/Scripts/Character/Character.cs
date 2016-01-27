@@ -361,7 +361,18 @@ public class Character : MonoBehaviour
 
         HUDManager.Instance.setLife(life == 0 ? 0 : (float)life / _baseLife);
 
+        if (life == 0)
+            GameOver();
+
         StartCoroutine(startInvulnerability());
+    }
+
+
+    void GameOver()
+    {
+        GameManager.Instance.SetPause(true);
+        ScoreManager.Instance.SaveScore();
+        HUDManager.Instance.showGameOver();
     }
 
 
@@ -422,11 +433,6 @@ public class Character : MonoBehaviour
             }
         }
 
-        //foreach (Collider2D c in cs)
-        //{
-        //    if (c.isTrigger)
-        //        c.enabled = true;
-        //}
         SlideCollider(_slide);
 
         shield.SetActive(false);

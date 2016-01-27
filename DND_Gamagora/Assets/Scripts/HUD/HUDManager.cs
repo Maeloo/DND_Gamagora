@@ -23,7 +23,16 @@ public class HUDManager : Singleton<HUDManager>
                 key == Type_HUD.Jinjo_Black_On)
             element.SetEnable(false);
 
+        if (key == Type_HUD.GameOver)
+            element.displayGroup(false, .0f, false, false);
+
         elements.Add ( key, element );
+    }
+
+
+    public void showGameOver()
+    {
+        elements[Type_HUD.GameOver].displayGroup(true, 1.0f, true, true);
     }
 
 

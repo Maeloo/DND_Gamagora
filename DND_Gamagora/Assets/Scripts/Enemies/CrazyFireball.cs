@@ -3,6 +3,10 @@ using System.Collections;
 
 public class CrazyFireball : MonoBehaviour
 {
+    public Bullet bulletPrefab;
+
+    protected Pool<Bullet> _bullets;
+
 
     void Start()
     {
@@ -12,6 +16,9 @@ public class CrazyFireball : MonoBehaviour
     public void spawn(Vector3 position)
     {
         reset();
+
+        if (_bullets == null)
+            _bullets = new Pool<Bullet>(bulletPrefab, 8, 16);
 
         transform.position = position;
 
@@ -25,5 +32,16 @@ public class CrazyFireball : MonoBehaviour
     {
         transform.localScale = Vector3.zero;
     }
-    
+
+
+    public void shoot()
+    {
+        Bullet bullet;
+
+        if (_bullets.GetAvailable(false, out bullet))
+        {
+            bullet.shoot(transform.position, -Vector3.up);
+        }
+    }
+
 }

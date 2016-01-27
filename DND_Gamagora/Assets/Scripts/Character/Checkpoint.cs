@@ -26,6 +26,8 @@ public class Checkpoint : MonoBehaviour
             {
                 player.SetCheckpoint(transform.position);
 
+                ScoreManager.Instance.AddPoint(-100);
+
                 if (anim != null)
                 {
                     anim.SetBool("Check", true);
