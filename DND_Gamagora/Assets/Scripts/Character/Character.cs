@@ -33,6 +33,8 @@ public class Character : MonoBehaviour
     [SerializeField]
     private LayerMask WhatIsGround;                  // A mask determining what is ground to the character
     [SerializeField]
+    private LayerMask WhatIsPlatform;
+    [SerializeField]
     private Bullet kamehameha;
     [SerializeField]
     private GameObject base_jinjo;
@@ -180,7 +182,7 @@ public class Character : MonoBehaviour
         //anim.SetBool("Run", !crouch && run);
 
         //only control the player if grounded or airControl is turned on
-        if (grounded || AirControl)
+        if (grounded || (AirControl && !Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, WhatIsPlatform)))
         {
             // Reduce the speed if crouching by the crouchSpeed multiplier
             if (slide)

@@ -95,7 +95,7 @@ GameObject:
   - 4: {fileID: 37628357}
   - 212: {fileID: 37628359}
   - 61: {fileID: 37628358}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,6 +309,14 @@ Prefab:
       propertyPath: noteText
       value: 
       objectReference: {fileID: 829934350}
+    - target: {fileID: 11468982, guid: 53e6e405e293ba745ba0e1a9979c8143, type: 2}
+      propertyPath: WhatIsPlatform.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468982, guid: 53e6e405e293ba745ba0e1a9979c8143, type: 2}
+      propertyPath: WhatIsGround.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53e6e405e293ba745ba0e1a9979c8143, type: 2}
   m_IsPrefabParent: 0
@@ -322,7 +330,7 @@ GameObject:
   - 4: {fileID: 79309173}
   - 212: {fileID: 79309175}
   - 61: {fileID: 79309174}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +570,7 @@ Prefab:
     - target: {fileID: 2381192, guid: 638954828ac33b14795c3190321da629, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1858039205}
+      objectReference: {fileID: 1808750676}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 638954828ac33b14795c3190321da629, type: 2}
   m_IsPrefabParent: 0
@@ -894,7 +902,7 @@ GameObject:
   - 4: {fileID: 677566295}
   - 212: {fileID: 677566297}
   - 61: {fileID: 677566296}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -968,7 +976,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 754386870}
   - 114: {fileID: 754386871}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClassicPlatform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1327,7 +1335,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1174714109}
   - 114: {fileID: 1174714110}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClassicPlatform (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1415,7 +1423,7 @@ GameObject:
   - 4: {fileID: 1336409068}
   - 212: {fileID: 1336409070}
   - 61: {fileID: 1336409069}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1555,7 +1563,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1791492418}
   - 114: {fileID: 1791492417}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClassicPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1587,12 +1595,7 @@ Transform:
   - {fileID: 2018438001}
   m_Father: {fileID: 2111901182}
   m_RootOrder: 1
---- !u!20 &1846670213 stripped
-Camera:
-  m_PrefabParentObject: {fileID: 2004804, guid: 2b87baa550aec8a48bd2cc2616e8fbf7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1031020372}
---- !u!21 &1858039205
+--- !u!21 &1808750676
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1665,6 +1668,11 @@ Material:
         first:
           name: _SpherePos
         second: {r: 0, g: 0, b: 0, a: 0}
+--- !u!20 &1846670213 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 2004804, guid: 2b87baa550aec8a48bd2cc2616e8fbf7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1031020372}
 --- !u!1 &1900108530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,7 +1682,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1900108531}
   - 114: {fileID: 1900108532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClassicPlatform (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1742,7 +1750,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1924588236}
   - 114: {fileID: 1924588237}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClassicPlatform (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1975,7 +1983,7 @@ GameObject:
   - 212: {fileID: 2018438004}
   - 50: {fileID: 2018438003}
   - 61: {fileID: 2018438002}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
