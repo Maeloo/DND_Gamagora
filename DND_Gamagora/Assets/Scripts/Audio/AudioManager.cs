@@ -160,18 +160,18 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
          
     }
 
-    protected int minSkipBeatLow4 = 60; // Reglage Higklight Tribe
+    protected int minSkipBeatLow4 = 20; // Reglage Higklight Tribe
     protected int countTimeBeatLow4 = 0;
     public void onBeatLow4(float energy, float average_energy, float radiance, int frequency_size)
     {
         box4.GetComponent<Renderer>().material.color = Color.green;
         StartCoroutine(StopColor(box4));
         countTimeBeatLow4++;
-        //if (countTimeBeatLow4 >= minSkipBeatLow4)
-        //{
-        //    platformSpawn.SpawnPlatformHight(Type_Platform.Hight);
-        //    countTimeBeatLow4 = 0;
-        //}
+        if (countTimeBeatLow4 >= minSkipBeatLow4)
+        {
+            platformSpawn.SpawnPlatformHight(Type_Platform.Hight);
+            countTimeBeatLow4 = 0;
+        }
     }
 
     public void onBeatMedium1(float energy, float average_energy, float radiance, int frequency_size)

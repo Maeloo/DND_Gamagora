@@ -104,7 +104,7 @@ public class Character : MonoBehaviour
             }
         }
 
-        //SlideCollider(slide);
+        SlideCollider(slide);
 
         // Set whether or not the character is crouching in the animator
         anim.SetBool("Slide", slide);
