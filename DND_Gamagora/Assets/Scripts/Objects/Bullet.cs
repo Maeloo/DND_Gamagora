@@ -47,6 +47,8 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
     {
         type = a_template.type;
 
+        this.gameObject.layer = a_template.gameObject.layer;
+
         foreach (Transform child in a_template.transform)
         {
             GameObject obj = Instantiate<GameObject>(child.gameObject);
@@ -55,6 +57,7 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
             obj.transform.localPosition = child.localPosition;
             obj.transform.localRotation = child.localRotation;
             obj.transform.localScale = child.localScale;
+            obj.gameObject.layer = child.gameObject.layer;
         }
 
         if(a_template.Copy2D)
