@@ -39,9 +39,9 @@ public class TerrainManager : Singleton<TerrainManager> {
         bouncyPool.automaticReuseUnavailables = true;
         pools.Add(Type_Platform.Bouncy, bouncyPool);
 
-        //Pool<Platform> hightPlatformPool = new Pool<Platform>(HightPlatform, 64, 128);
-        //hightPlatformPool.automaticReuseUnavailables = true;
-        //pools.Add(Type_Platform.Hight, hightPlatformPool);
+        Pool<Platform> hightPlatformPool = new Pool<Platform>(HightPlatform, 64, 128);
+        hightPlatformPool.automaticReuseUnavailables = true;
+        pools.Add(Type_Platform.Hight, hightPlatformPool);
 
         classic_width = ClassicPlatform.GetComponentInChildren<SpriteRenderer>().bounds.size.x - 0.02f;
 
@@ -76,15 +76,16 @@ public class TerrainManager : Singleton<TerrainManager> {
             if (Player.transform.position.x + offset * classic_width > pos_pf.x &&
                 Player.transform.position.x + offset * classic_width < pos_pf.x + classic_width)
             {
-                platform = pools[Type_Platform.Classic].usedObjects[i];
-                return true;
-                //Vector3 pos_pf_previous = pools[Type_Platform.Classic].usedObjects[i - 1].transform.position;
-                //Vector3 pos_pf_next = pools[Type_Platform.Classic].usedObjects[i + 1].transform.position;
-                //if (!CheckHightPlatform(pos_pf, pos_pf_previous, pos_pf_next, offset))
-                //{
-                //    platform = pools[Type_Platform.Classic].usedObjects[i];
-                //    return true;
-                //}
+                Vector3 pos_pf_previous = pools[Type_Platform.Classic].usedObjects[i - 1].transform.position;
+
+                int j = i + 1 < pools[Type_Platform.Classic].usedObjects.Count ? i + 1 : i;
+                Vector3 pos_pf_next = pools[Type_Platform.Classic].usedObjects[j].transform.position;
+
+                if (!CheckHightPlatform(pos_pf, pos_pf_previous, pos_pf_next, offset))
+                {
+                    platform = pools[Type_Platform.Classic].usedObjects[i];
+                    return true;
+                }
             }
         }
 
@@ -129,7 +130,7 @@ public class TerrainManager : Singleton<TerrainManager> {
         {
             Vector3 pos = _lastPos;
             pos.x += classic_width;
-            pos.y +=2.41f;
+            pos.y += 5.5f;
             pf.SetPosition(pos);
         }
     }

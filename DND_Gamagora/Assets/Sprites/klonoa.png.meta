@@ -1,0 +1,413 @@
+fileFormatVersion: 2
+guid: 7709294741cc68d499e67259fee2cbb3
+timeCreated: 1453902572
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: klonoa_0
+    21300002: klonoa_1
+    21300004: klonoa_2
+    21300006: klonoa_3
+    21300008: klonoa_4
+    21300010: klonoa_5
+    21300012: klonoa_6
+    21300014: klonoa_7
+    21300016: klonoa_8
+    21300018: klonoa_9
+    21300020: klonoa_10
+    21300022: klonoa_11
+    21300024: klonoa_12
+    21300026: klonoa_13
+    21300028: klonoa_14
+    21300030: klonoa_15
+    21300032: klonoa_16
+    21300034: klonoa_17
+    21300036: klonoa_18
+    21300038: klonoa_19
+    21300040: klonoa_20
+    21300042: klonoa_21
+    21300044: klonoa_22
+    21300046: klonoa_23
+    21300048: klonoa_24
+    21300050: klonoa_25
+    21300052: klonoa_26
+    21300054: klonoa_27
+    21300056: klonoa_28
+    21300058: klonoa_29
+    21300060: klonoa_30
+    21300062: klonoa_31
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: klonoa_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 35.333332
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 10.5}
+        - {x: 9, y: 15.5}
+        - {x: -4, y: 15.5}
+        - {x: -10, y: 14.5}
+        - {x: -15, y: 6.5}
+        - {x: -15, y: -9.5}
+        - {x: -7, y: -16.5}
+        - {x: 7, y: -16.5}
+        - {x: 15, y: -11.5}
+        - {x: 17, y: -7.5}
+        - {x: 17, y: 4.5}
+    - name: klonoa_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 35
+        width: 35.333332
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 15.5}
+        - {x: -14, y: 6.5}
+        - {x: -14, y: -8.5}
+        - {x: -6, y: -15.5}
+        - {x: 13, y: -15.5}
+        - {x: 16, y: -7.5}
+        - {x: 16, y: 10.5}
+        - {x: 8, y: 15.5}
+    - name: klonoa_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 35
+        width: 35.333332
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 14.5}
+        - {x: -14, y: 9.5}
+        - {x: -14, y: -8.5}
+        - {x: -6, y: -15.5}
+        - {x: 5, y: -15.5}
+        - {x: 9, y: -13.5}
+        - {x: 16, y: -8.5}
+        - {x: 16, y: 10.5}
+        - {x: 12, y: 14.5}
+    - name: klonoa_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 35
+        width: 35.333332
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 14.5}
+        - {x: -14, y: 10.5}
+        - {x: -14, y: -12.5}
+        - {x: -10, y: -15.5}
+        - {x: 6, y: -15.5}
+        - {x: 16, y: -11.5}
+        - {x: 16, y: 6.5}
+        - {x: 8, y: 14.5}
+    - name: klonoa_4
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 35
+        width: 35.333332
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 14.5}
+        - {x: -14, y: 9.5}
+        - {x: -14, y: -12.5}
+        - {x: -7, y: -15.5}
+        - {x: 4, y: -15.5}
+        - {x: 9, y: -14.5}
+        - {x: 16, y: -8.5}
+        - {x: 16, y: 8.5}
+        - {x: 7, y: 14.5}
+    - name: klonoa_5
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 35
+        width: 35.333332
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 15.5}
+        - {x: -13, y: 11.5}
+        - {x: -14, y: 4.5}
+        - {x: -14, y: -8.5}
+        - {x: -8, y: -15.5}
+        - {x: 11, y: -15.5}
+        - {x: 16, y: -6.5}
+        - {x: 16, y: 10.5}
+        - {x: 8, y: 15.5}
+    - name: klonoa_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 35.333332
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 15.5}
+        - {x: -12, y: 14.5}
+        - {x: -14, y: 13.5}
+        - {x: -14, y: -15.5}
+        - {x: -12, y: -16.5}
+        - {x: 10, y: -16.5}
+        - {x: 18, y: -14.5}
+        - {x: 18, y: 11.5}
+        - {x: 16, y: 15.5}
+    - name: klonoa_7
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 0
+        width: 35.333332
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 17.5}
+        - {x: -16, y: -17.5}
+        - {x: 18, y: -17.5}
+        - {x: 18, y: 17.5}
+    - name: klonoa_8
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 35.333332
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 17.5}
+        - {x: -17, y: 15.5}
+        - {x: -17, y: -12.5}
+        - {x: -16, y: -17.5}
+        - {x: 18, y: -17.5}
+        - {x: 18, y: 17.5}
+    - name: klonoa_9
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 35.333332
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: -9.5}
+        - {x: 6, y: -9.5}
+        - {x: 3, y: -11.5}
+        - {x: 3, y: -13.5}
+        - {x: 6, y: -16.5}
+        - {x: 13, y: -17.5}
+        - {x: 18, y: -17.5}
+        - {x: 18, y: 16.5}
+        - {x: 16, y: 17.5}
+        - {x: 10, y: 15.5}
+        - {x: -4, y: 17.5}
+        - {x: -15, y: 17.5}
+        - {x: -16, y: 16.5}
+        - {x: -16, y: -3.5}
+        - {x: -11, y: -6.5}
+        - {x: -7, y: -6.5}
+        - {x: -10, y: -6.5}
+        - {x: -13, y: -8.5}
+        - {x: -16, y: -15.5}
+        - {x: -15, y: -17.5}
+        - {x: 1, y: -17.5}
+        - {x: 3, y: -14.5}
+        - {x: 3, y: -12.5}
+        - {x: 1, y: -5.5}
+    - name: klonoa_10
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 35.333332
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: -8.5}
+        - {x: 3, y: -13.5}
+        - {x: 5, y: -16.5}
+        - {x: 15, y: -16.5}
+        - {x: 18, y: -13.5}
+        - {x: 18, y: 12.5}
+        - {x: 17, y: 16.5}
+        - {x: -14, y: 16.5}
+        - {x: -15, y: 12.5}
+        - {x: -15, y: 8.5}
+        - {x: -10, y: 4.5}
+        - {x: -9, y: 4.5}
+        - {x: -15, y: -4.5}
+        - {x: -15, y: -16.5}
+        - {x: -1, y: -16.5}
+        - {x: 1, y: -14.5}
+        - {x: 3, y: -9.5}
+        - {x: 2, y: -6.5}
+      - - {x: -16, y: 5.5}
+        - {x: -17, y: 2.5}
+        - {x: -14, y: -0.5}
+        - {x: -12, y: -0.5}
+        - {x: -10, y: 1.5}
+        - {x: -10, y: 2.5}
+        - {x: -13, y: 5.5}
+    - name: klonoa_11
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 0
+        width: 35.333332
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: -8.5}
+        - {x: -15, y: -13.5}
+        - {x: -14, y: -15.5}
+        - {x: -11, y: -15.5}
+        - {x: -5, y: -13.5}
+        - {x: -5, y: -10.5}
+        - {x: -9, y: -6.5}
+        - {x: -10, y: -6.5}
+      - - {x: 5, y: -9.5}
+        - {x: 3, y: -10.5}
+        - {x: 3, y: -15.5}
+        - {x: 9, y: -15.5}
+        - {x: 9, y: -11.5}
+        - {x: 8, y: -9.5}
+      - - {x: 11, y: -10.5}
+        - {x: 11, y: -12.5}
+        - {x: 13, y: -14.5}
+        - {x: 14, y: -14.5}
+        - {x: 18, y: -10.5}
+        - {x: 18, y: -8.5}
+        - {x: 15, y: -7.5}
+      - - {x: -4, y: -10.5}
+        - {x: -1, y: -9.5}
+        - {x: -1, y: -6.5}
+        - {x: -4, y: -5.5}
+        - {x: -6, y: -7.5}
+      - - {x: 6, y: -9.5}
+        - {x: 9, y: -8.5}
+        - {x: 9, y: -5.5}
+        - {x: 6, y: -4.5}
+        - {x: 4, y: -6.5}
+      - - {x: -6, y: 3.5}
+        - {x: -7, y: -2.5}
+        - {x: -5, y: -4.5}
+        - {x: -2, y: -4.5}
+        - {x: 0, y: -0.5}
+        - {x: 0, y: 1.5}
+        - {x: -3, y: 4.5}
+      - - {x: 6, y: 5.5}
+        - {x: 4, y: 2.5}
+        - {x: 4, y: -1.5}
+        - {x: 6, y: -3.5}
+        - {x: 10, y: -2.5}
+        - {x: 11, y: 2.5}
+        - {x: 11, y: 4.5}
+        - {x: 10, y: 5.5}
+      - - {x: 12, y: 2.5}
+        - {x: 13, y: -0.5}
+        - {x: 16, y: -0.5}
+        - {x: 18, y: 1.5}
+        - {x: 17, y: 4.5}
+        - {x: 14, y: 4.5}
+      - - {x: -12, y: 5.5}
+        - {x: -12, y: 2.5}
+        - {x: -11, y: 0.5}
+        - {x: -9, y: 0.5}
+        - {x: -6, y: 3.5}
+        - {x: -7, y: 6.5}
+        - {x: -10, y: 6.5}
+      - - {x: -1, y: 4.5}
+        - {x: 2, y: 1.5}
+        - {x: 5, y: 2.5}
+        - {x: 5, y: 4.5}
+        - {x: 2, y: 7.5}
+        - {x: 0, y: 7.5}
+      - - {x: 9, y: 12.5}
+        - {x: 12, y: 13.5}
+        - {x: 12, y: 16.5}
+        - {x: 9, y: 17.5}
+        - {x: 7, y: 15.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
