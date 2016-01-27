@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bar
   - FxTemporaire
+  - JinjoHUD
   layers:
   - Default
   - TransparentFX

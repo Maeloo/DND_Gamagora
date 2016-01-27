@@ -8,6 +8,11 @@ public class Checkpoint : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
+        Init();
+    }
+
+    public void Init()
+    {
         if (anim != null)
             anim.SetBool("Check", false);
     }

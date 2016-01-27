@@ -4,6 +4,7 @@ using System.Collections;
 public class Jinjo : MonoBehaviour
 {
     private Animator anim;
+    public int Id { get; private set; }
 
     void Awake()
     {
@@ -17,7 +18,7 @@ public class Jinjo : MonoBehaviour
         Character player = col.gameObject.GetComponent<Character>();
         if (player != null)
         {
-            //player.lastCheckpointPos = transform.position;
+            player.SetJinjo(this);
 
             if (anim != null)
             {
@@ -28,6 +29,7 @@ public class Jinjo : MonoBehaviour
 
     public void SetColorNumber(int number)
     {
+        Id = number;
         if (anim != null)
         {
             anim.SetInteger("Color", number);

@@ -32,8 +32,6 @@ public class Character : MonoBehaviour
     [SerializeField]
     private Bullet kamehameha;
     [SerializeField]
-    private GameObject base_jinjo;
-    [SerializeField]
     private Bullet special_tornado;
 
     public GameObject[] LifeUI;
@@ -69,7 +67,7 @@ public class Character : MonoBehaviour
 
     private Vector3 direction = Vector3.right;
     private AudioProcessor audio_process;
-    private Dictionary<Jinjo, bool> jinjos;
+    private List<Jinjo> jinjos;
 
     private float _baseLife;
     private float _baseStamina;
@@ -102,34 +100,8 @@ public class Character : MonoBehaviour
         cam = Camera.main.GetComponent<CharacterCamera>();
         audio_process = AudioProcessor.Instance;
         lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
-        
-        float delta = (TerrainManager.Instance.GetTerrainSize() * 0.5f) / 6f;
 
-        Camera cam_tmp = cam.GetComponent<Camera>();
-        float vertExtent = cam_tmp.orthographicSize * 2f;
-        float horzExtent = vertExtent * Screen.width / Screen.height;
-        // Calculations assume cam is position at the origin
-        float minX = horzExtent - cam_tmp.transform.position.x * 0.5f;
-        float maxX = cam_tmp.transform.position.x * 0.5f - horzExtent;
-        float minY = vertExtent - cam_tmp.transform.position.y * 0.5f;
-        float maxY = cam_tmp.transform.position.y * 0.5f - vertExtent;
-
-        float height = (minY - maxY) * 0.5f;
-
-        float max = cam_tmp.transform.position.y + height * 0.2f;
-        float min = cam_tmp.transform.position.y - height * 0.2f;
-        float y = Random.Range(min, max);
-
-        jinjos = new Dictionary<Jinjo, bool>(6);
-        for(int i = 0; i < 6; i++)
-        {
-            Debug.Log("x : " + (i + 1) * delta);
-            GameObject obj_jinjo = (GameObject)Instantiate(base_jinjo, new Vector3((i + 1) * delta, y, 0f), Quaternion.identity);
-            Jinjo j = obj_jinjo.GetComponent<Jinjo>();
-            j.SetColorNumber(i);
-            jinjos.Add(j, false);
-        }
-
+        jinjos = new List<Jinjo>(6);
     }
 
     void Start()
@@ -188,7 +160,7 @@ public class Character : MonoBehaviour
             {
                 stamina = stamina < 2 ? 0 : stamina - 6;
 
-                HUDManager.instance.setStamina(stamina / _baseStamina);
+                HUDManager.Instance.setStamina(stamina / _baseStamina);
 
                 if (stamina == 0)
                 {
@@ -252,7 +224,7 @@ public class Character : MonoBehaviour
     void Update()
     {
         stamina = stamina < _baseStamina ? stamina + 1.0f : _baseStamina;
-        HUDManager.instance.setStamina(stamina / _baseStamina);
+        HUDManager.Instance.setStamina(stamina / _baseStamina);
 
         if (_noStamina && stamina >= 50.0f )
         {
@@ -260,7 +232,7 @@ public class Character : MonoBehaviour
         }
 
         special = special < _baseSpecial ? special + .1f : _baseStamina;
-        HUDManager.instance.setSpecial(special / _baseSpecial);
+        HUDManager.Instance.setSpecial(special / _baseSpecial);
     }
 
 
@@ -309,7 +281,7 @@ public class Character : MonoBehaviour
             anim.SetTrigger("Attack");
 
             special = 0;
-            HUDManager.instance.setSpecial(special);
+            HUDManager.Instance.setSpecial(special);
 
             Bullet b;
             if (tornados.GetAvailable(false, out b))
@@ -356,23 +328,23 @@ public class Character : MonoBehaviour
 
     public void SetCheckpoint(Vector3 checkpoint_pos)
     {
-        Debug.Log(checkpoint_pos);
-        lastCheckpointPos = checkpoint_pos;
+        lastCheckpointPos = checkpoint_pos;   
         lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
     }
 
-    public void SetJinjo(Jinjo key)
+    public void SetJinjo(Jinjo jinjo)
     {
-        jinjos[key] = true;
+        jinjos.Add(jinjo);
+        HUDManager.Instance.setJinjo(jinjo);
+        TerrainManager.Instance.DeleteJinjo(jinjo);
     }
-
 
     public void Hit(int power)
     {
         life -= power;
         life = life < 0 ? 0 : life;
 
-        HUDManager.instance.setLife(life == 0 ? 0 : (float)life / _baseLife);
+        HUDManager.Instance.setLife(life == 0 ? 0 : (float)life / _baseLife);
 
         StartCoroutine(startInvulnerability());
     }

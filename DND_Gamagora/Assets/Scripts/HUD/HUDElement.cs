@@ -8,26 +8,38 @@ public class HUDElement : MonoBehaviour
 {
 
     Image _bar;
+    Image _jinjo;
 
     protected string _type;
 
     public Type_HUD type;
 
-    void Start ( ) {
-        foreach ( Transform child in transform ) {
+    void Start ( )
+    {
+        foreach ( Transform child in transform )
+        {
             if(child.CompareTag("Bar"))
             {
                 _bar = child.GetComponent<Image>();
             }
         }
 
-        HUDManager.instance.registerElement ( type, this );
+        if(tag == "JinjoHUD")
+        {
+            _jinjo = GetComponent<Image>();
+        }
+           
+        HUDManager.Instance.registerElement ( type, this );
     }
-
 
     public void setFillAmount(float value)
     {
         _bar.fillAmount = value;
+    }
+
+    public void SetEnable(bool enable)
+    {
+        _jinjo.enabled = enable;
     }
 	
 }

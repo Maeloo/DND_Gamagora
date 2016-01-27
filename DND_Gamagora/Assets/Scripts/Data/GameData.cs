@@ -32,7 +32,19 @@
     {
         Life,
         Stamina,
-        Special
+        Special,
+        Jinjo_Violet_On,
+        Jinjo_Violet_Off,
+        Jinjo_Yellow_On,
+        Jinjo_Yellow_Off,
+        Jinjo_Orange_On,
+        Jinjo_Orange_Off,
+        Jinjo_Green_On,
+        Jinjo_Green_Off,
+        Jinjo_Blue_On,
+        Jinjo_Blue_Off,
+        Jinjo_Black_On,
+        Jinjo_Black_Off
     }
     public enum Audio_Type
     {
