@@ -99,7 +99,7 @@ public class EnemyManager : Singleton<EnemyManager>
 
             if (Time.time - _lastShooter > _nextShooter)
             {
-                spawnEnemy(Type_Enemy.Shooter, new Vector3(Player.transform.position.x + 20.0f, Random.Range(.0f, 2.0f), 3.0f));
+                spawnEnemy(Type_Enemy.Shooter, new Vector3(Player.transform.position.x + 20.0f, Random.Range(-1.0f, 1.0f), 3.0f));
 
                 _lastShooter = Time.time;
                 _nextShooter = 4.0f + Random.value * 4.0f;

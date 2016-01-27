@@ -190,7 +190,7 @@ public class TerrainManager : Singleton<TerrainManager> {
         {
             Vector3 pos = _lastPos;
             pos.x += classic_width;
-            pos.y += 6.5f;
+            pos.y += 6.66f;
             pf.SetPosition(pos);
         }
     }

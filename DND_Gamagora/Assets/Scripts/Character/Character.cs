@@ -147,11 +147,22 @@ public class Character : MonoBehaviour
             }
         }
 
-        if(_slide != slide)
+        if (_slide != slide)
         {
+            if(!slide)
+            {
+                RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 1.0f, Vector3.up);
+                foreach(RaycastHit2D hit in hits)
+                {
+                    if (hit.collider.CompareTag("Column"))
+                        slide = true;
+                }
+            }
+            
             _slide = slide;
+
             SlideCollider(slide);
-        }        
+        }
 
         if (grounded)
             nbCurrentJump = 0;
