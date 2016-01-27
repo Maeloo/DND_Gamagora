@@ -97,8 +97,10 @@ public class HUDManager : Singleton<HUDManager>
         _player = player;
         _cooldown = cooldown;
 
-        //if(elements != null)
-        //    StartCoroutine(elements[Type_HUD.Cooldown].startCooldown(_cooldown));
+        HUDElement elem;
+
+        if(elements.TryGetValue(Type_HUD.Cooldown, out elem))
+           StartCoroutine(elem.startCooldown(_cooldown));
     }
 
     public void endCooldown()
