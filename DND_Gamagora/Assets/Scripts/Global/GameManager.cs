@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
     protected GameManager() { }
+
+    [SerializeField]
+    private GameObject AudioProcess;
 
     public bool Pause { get; private set; }
 
@@ -16,12 +20,8 @@ public class GameManager : Singleton<GameManager>
         audio_manager = SceneAudioManager.Instance;
         audio_process = AudioProcessor.Instance;
         Pause = false;
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-
+        DontDestroyOnLoad(AudioProcess);
+        DontDestroyOnLoad(gameObject);
     }
 
     public void SetPause(bool pause)
@@ -31,5 +31,15 @@ public class GameManager : Singleton<GameManager>
             audio_process.PauseMusic();
         else
             audio_process.PlayMusic();
+    }
+
+    public void StartGame()
+    {
+        LoadScene("scene");
+    }
+
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadSceneAsync(name);
     }
 }
