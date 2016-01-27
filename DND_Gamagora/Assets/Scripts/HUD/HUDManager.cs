@@ -4,30 +4,24 @@ using System.Collections;
 using System.Collections.Generic;
 using Game;
 
-public class HUDManager : MonoBehaviour {
-
-    #region Singleton Stuff
-    private static HUDManager		_instance		= null;
-    private static readonly object	singletonLock	= new object ( );
-    #endregion
+public class HUDManager : Singleton<HUDManager>
+{
+    protected HUDManager() { }
 
     Dictionary<Type_HUD, HUDElement> elements;
 
-    public static HUDManager instance {
-        get {
-            lock ( singletonLock ) {
-                if ( _instance == null ) {
-                    _instance = ( HUDManager ) GameObject.Find ( "HUD" ).GetComponent<HUDManager> ( );
-                }
-                return _instance;
-            }
-        }
-    }
-
-
-    public void registerElement (Type_HUD key, HUDElement element ) {
+    public void registerElement (Type_HUD key, HUDElement element )
+    {
         if ( elements == null )
             elements = new Dictionary<Type_HUD, HUDElement> ( );
+
+        if (key == Type_HUD.Jinjo_Violet_On ||
+            key == Type_HUD.Jinjo_Yellow_On ||
+             key == Type_HUD.Jinjo_Orange_On ||
+              key == Type_HUD.Jinjo_Green_On ||
+               key == Type_HUD.Jinjo_Blue_On ||
+                key == Type_HUD.Jinjo_Black_On)
+            element.SetEnable(false);
 
         elements.Add ( key, element );
     }
@@ -50,5 +44,37 @@ public class HUDManager : MonoBehaviour {
         elements[Type_HUD.Special].setFillAmount(value);
     }
 
-
+    public void setJinjo(Jinjo jinjo)
+    {
+        Debug.Log("jinjo : " + jinjo.Id);
+        switch(jinjo.Id)
+        {
+            case 0:
+                elements[Type_HUD.Jinjo_Violet_On].SetEnable(true);
+                elements[Type_HUD.Jinjo_Violet_Off].SetEnable(false);
+                break;
+            case 1:
+                elements[Type_HUD.Jinjo_Yellow_On].SetEnable(true);
+                elements[Type_HUD.Jinjo_Yellow_Off].SetEnable(false);
+                break;
+            case 2:
+                elements[Type_HUD.Jinjo_Orange_On].SetEnable(true);
+                elements[Type_HUD.Jinjo_Orange_Off].SetEnable(false);
+                break;
+            case 3:
+                elements[Type_HUD.Jinjo_Green_On].SetEnable(true);
+                elements[Type_HUD.Jinjo_Green_Off].SetEnable(false);
+                break;
+            case 4:
+                elements[Type_HUD.Jinjo_Blue_On].SetEnable(true);
+                elements[Type_HUD.Jinjo_Blue_Off].SetEnable(false);
+                break;
+            case 5:
+                elements[Type_HUD.Jinjo_Black_On].SetEnable(true);
+                elements[Type_HUD.Jinjo_Black_Off].SetEnable(false);
+                break;
+            default:
+                break;
+        }
+    }
 }

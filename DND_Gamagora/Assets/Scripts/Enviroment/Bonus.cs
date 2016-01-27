@@ -20,17 +20,6 @@ public class Bonus : MonoBehaviour, Poolable<Bonus> {
 
     protected Pool<Bonus> _pool;
 
-    protected GameObject _body;
-    protected Vector3 _bodyOriginalPos;
-    protected Quaternion _bodyOriginalRot;
-
-    void Start()
-    {
-        _body = transform.gameObject;
-        _bodyOriginalPos = _body.transform.localPosition;
-        _bodyOriginalRot = _body.transform.localRotation;
-    }
-
 
     public Bonus Create()
     {
@@ -66,24 +55,15 @@ public class Bonus : MonoBehaviour, Poolable<Bonus> {
     public void Release()
     {
         transform.position = new Vector3(-1000f, -1000f, -1000f);
+
         _pool.onRelease(this);
-        //this.gameObject.SetActive(false);
     }
 
     public void SetPosition(Vector3 position)
     {
+        this.gameObject.SetActive(true);
 
         transform.position = position;
-
-        Rigidbody2D rb = _body.GetComponent<Rigidbody2D>();
-        if (rb)
-        {
-            GetComponentInChildren<SpriteRenderer>().color = Color.white;
-            rb.isKinematic = true;
-            _body.transform.localPosition = _bodyOriginalPos;
-            _body.transform.localRotation = _bodyOriginalRot;
-        }
-        this.gameObject.SetActive(true);
     }
 
 }

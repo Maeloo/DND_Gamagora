@@ -19,6 +19,9 @@ public class Shooter : MonoBehaviour {
         _player = player;
 
         transform.position = position;
+
+        GetComponent<BoxCollider2D>().size = new Vector2(1.0f, 2.0f);
+        GetComponent<BoxCollider2D>().offset = new Vector2(.0f, -.7f);
     }
 	
 	

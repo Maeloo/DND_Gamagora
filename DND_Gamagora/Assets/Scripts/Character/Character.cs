@@ -27,16 +27,17 @@ public class Character : MonoBehaviour
     private float attackSpeed;
     [SerializeField]
     private bool AirControl = false;                 // Whether or not a player can steer while jumping;
+    private int nbJump = 1;
+    private int nbCurrentJump = 0;
+    private bool doublejump = true;
     [SerializeField]
     private LayerMask WhatIsGround;                  // A mask determining what is ground to the character
     [SerializeField]
+    private LayerMask WhatIsPlatform;
+    [SerializeField]
     private Bullet kamehameha;
     [SerializeField]
-    private GameObject base_jinjo;
-    [SerializeField]
     private Bullet special_tornado;
-
-    public GameObject[] LifeUI;
 
     private Transform groundCheck;    // A position marking where to check if the player is grounded.
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -51,10 +52,8 @@ public class Character : MonoBehaviour
 
     //List Collider Slide and Run
     public BoxCollider2D RunBox;
-    public BoxCollider2D RunTopBox;
     public CircleCollider2D RunCircle;
     public BoxCollider2D SlideBox;
-    public BoxCollider2D SlideTopBox;
     public CircleCollider2D SlideCircle;
 
     private int noteCount;
@@ -69,7 +68,7 @@ public class Character : MonoBehaviour
 
     private Vector3 direction = Vector3.right;
     private AudioProcessor audio_process;
-    private Dictionary<Jinjo, bool> jinjos;
+    private List<Jinjo> jinjos;
 
     private float _baseLife;
     private float _baseStamina;
@@ -102,34 +101,8 @@ public class Character : MonoBehaviour
         cam = Camera.main.GetComponent<CharacterCamera>();
         audio_process = AudioProcessor.Instance;
         lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
-        
-        float delta = (TerrainManager.Instance.GetTerrainSize() * 0.5f) / 6f;
 
-        Camera cam_tmp = cam.GetComponent<Camera>();
-        float vertExtent = cam_tmp.orthographicSize * 2f;
-        float horzExtent = vertExtent * Screen.width / Screen.height;
-        // Calculations assume cam is position at the origin
-        float minX = horzExtent - cam_tmp.transform.position.x * 0.5f;
-        float maxX = cam_tmp.transform.position.x * 0.5f - horzExtent;
-        float minY = vertExtent - cam_tmp.transform.position.y * 0.5f;
-        float maxY = cam_tmp.transform.position.y * 0.5f - vertExtent;
-
-        float height = (minY - maxY) * 0.5f;
-
-        float max = cam_tmp.transform.position.y + height * 0.2f;
-        float min = cam_tmp.transform.position.y - height * 0.2f;
-        float y = Random.Range(min, max);
-
-        jinjos = new Dictionary<Jinjo, bool>(6);
-        for(int i = 0; i < 6; i++)
-        {
-            Debug.Log("x : " + (i + 1) * delta);
-            GameObject obj_jinjo = (GameObject)Instantiate(base_jinjo, new Vector3((i + 1) * delta, y, 0f), Quaternion.identity);
-            Jinjo j = obj_jinjo.GetComponent<Jinjo>();
-            j.SetColorNumber(i);
-            jinjos.Add(j, false);
-        }
-
+        jinjos = new List<Jinjo>(6);
     }
 
     void Start()
@@ -158,6 +131,7 @@ public class Character : MonoBehaviour
     }
 
 
+    private bool _slide;
     public void Move(float move, bool slide, bool jump, bool run)
     {
         // If crouching, check to see if the character can stand up
@@ -166,18 +140,21 @@ public class Character : MonoBehaviour
             // If the character has a ceiling preventing them from standing up, keep them crouching
             if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, WhatIsGround))
             {
-                slide = true;
+                _slide = slide = true;
             }
         }
 
         SlideCollider(slide);
+
+        if (grounded)
+            nbCurrentJump = 0;
 
         // Set whether or not the character is crouching in the animator
         anim.SetBool("Slide", slide);
         //anim.SetBool("Run", !crouch && run);
 
         //only control the player if grounded or airControl is turned on
-        if (grounded || AirControl)
+        if (grounded || (AirControl && !Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, WhatIsPlatform)))
         {
             // Reduce the speed if crouching by the crouchSpeed multiplier
             if (slide)
@@ -188,7 +165,7 @@ public class Character : MonoBehaviour
             {
                 stamina = stamina < 2 ? 0 : stamina - 6;
 
-                HUDManager.instance.setStamina(stamina / _baseStamina);
+                HUDManager.Instance.setStamina(stamina / _baseStamina);
 
                 if (stamina == 0)
                 {
@@ -220,15 +197,10 @@ public class Character : MonoBehaviour
             }
         }
         // If the player should jump...
-        if (grounded && jump && anim.GetBool("Ground"))
+        if (nbCurrentJump < nbJump && jump)
         {
-            // Add a vertical force to the player.
-            grounded = false;
-            anim.SetBool("Ground", false);
-            float str = JumpForce;
-            if (run)
-                str *= RunSpeed;
-            rb.AddForce(new Vector2(0f, str));
+            if (doublejump)
+                StartCoroutine(jumping(run));
         }
         if (IsFalled() && !falling)
         {
@@ -244,15 +216,29 @@ public class Character : MonoBehaviour
             audio_process.RewindSound(lastCheckpointMusicTime);
 
             Invoke("MoveToLastCheckPoint", 1.0f);
-            //MoveToLastCheckPoint();
         }            
+    }
+
+    private IEnumerator jumping(bool run)
+    {
+        doublejump = false;
+        nbCurrentJump++;
+        // Add a vertical force to the player.
+        grounded = false;
+        anim.SetBool("Ground", false);
+        float str = JumpForce;
+        if (run)
+            str *= RunSpeed;
+        rb.AddForce(new Vector2(0f, str));
+        yield return new WaitForSeconds(.1f);
+        doublejump = true;
     }
 
 
     void Update()
     {
         stamina = stamina < _baseStamina ? stamina + 1.0f : _baseStamina;
-        HUDManager.instance.setStamina(stamina / _baseStamina);
+        HUDManager.Instance.setStamina(stamina / _baseStamina);
 
         if (_noStamina && stamina >= 50.0f )
         {
@@ -260,7 +246,7 @@ public class Character : MonoBehaviour
         }
 
         special = special < _baseSpecial ? special + .1f : _baseStamina;
-        HUDManager.instance.setSpecial(special / _baseSpecial);
+        HUDManager.Instance.setSpecial(special / _baseSpecial);
     }
 
 
@@ -269,19 +255,17 @@ public class Character : MonoBehaviour
         if (slide)
         {
             RunBox.enabled = false;
-            RunTopBox.enabled = false;
             RunCircle.enabled = false;
+
             SlideBox.enabled = true;
-            SlideTopBox.enabled = true;
             SlideCircle.enabled = true;
         }
         else
         {
             RunBox.enabled = true;
-            RunTopBox.enabled = true;
             RunCircle.enabled = true;
+
             SlideBox.enabled = false;
-            SlideTopBox.enabled = false;
             SlideCircle.enabled = false;
         }
     }
@@ -309,7 +293,7 @@ public class Character : MonoBehaviour
             anim.SetTrigger("Attack");
 
             special = 0;
-            HUDManager.instance.setSpecial(special);
+            HUDManager.Instance.setSpecial(special);
 
             Bullet b;
             if (tornados.GetAvailable(false, out b))
@@ -356,23 +340,26 @@ public class Character : MonoBehaviour
 
     public void SetCheckpoint(Vector3 checkpoint_pos)
     {
-        Debug.Log(checkpoint_pos);
-        lastCheckpointPos = checkpoint_pos;
+        lastCheckpointPos = checkpoint_pos;   
         lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
     }
 
-    public void SetJinjo(Jinjo key)
+    public void SetJinjo(Jinjo jinjo)
     {
-        jinjos[key] = true;
+        jinjos.Add(jinjo);
+        HUDManager.Instance.setJinjo(jinjo);
+        TerrainManager.Instance.DeleteJinjo(jinjo);
     }
-
 
     public void Hit(int power)
     {
+        if (isInvincible)
+            return;
+
         life -= power;
         life = life < 0 ? 0 : life;
 
-        HUDManager.instance.setLife(life == 0 ? 0 : (float)life / _baseLife);
+        HUDManager.Instance.setLife(life == 0 ? 0 : (float)life / _baseLife);
 
         StartCoroutine(startInvulnerability());
     }
@@ -386,11 +373,19 @@ public class Character : MonoBehaviour
 
     public void StartInvulnerabilityCoroutine()
     {
-        StartCoroutine(startInvulnerability(invulnerabilityTimeBonus));
+        StartCoroutine(startInvulnerability(invulnerabilityTimeBonus, true));
     }
 
-    IEnumerator startInvulnerability(float time = 1.0f)
+    [SerializeField]
+    GameObject shield;
+
+    private bool isInvincible;
+    IEnumerator startInvulnerability(float time = 1.0f, bool activeShield = false)
     {
+        isInvincible = true;
+
+        shield.SetActive(activeShield);
+
         Collider2D[] cs = GetComponents<Collider2D>();
 
         foreach(Collider2D c in cs)
@@ -398,32 +393,45 @@ public class Character : MonoBehaviour
             if (c.isTrigger)
                 c.enabled = false;
         }
-        for (int i = 0; i < time / 1.8f; ++i)
+
+        if(activeShield)
         {
-
-            fade(.3f, .35f);
-            yield return new WaitForSeconds(.3f);
-
-            fade(.3f, 1.0f);
-            yield return new WaitForSeconds(.3f);
-
-            fade(.3f, .35f);
-            yield return new WaitForSeconds(.3f);
-
-            fade(.3f, 1f);
-            yield return new WaitForSeconds(.3f);
-
-            fade(.3f, .35f);
-            yield return new WaitForSeconds(.3f);
-
-            fade(.3f, 1f);
-            yield return new WaitForSeconds(.3f);
-        }
-        foreach (Collider2D c in cs)
+            yield return new WaitForSeconds(time);
+        } else
         {
-            if (c.isTrigger)
-                c.enabled = true;
+            for (int i = 0; i < time / 1.8f; ++i)
+            {
+
+                fade(.3f, .35f);
+                yield return new WaitForSeconds(.3f);
+
+                fade(.3f, 1.0f);
+                yield return new WaitForSeconds(.3f);
+
+                fade(.3f, .35f);
+                yield return new WaitForSeconds(.3f);
+
+                fade(.3f, 1f);
+                yield return new WaitForSeconds(.3f);
+
+                fade(.3f, .35f);
+                yield return new WaitForSeconds(.3f);
+
+                fade(.3f, 1f);
+                yield return new WaitForSeconds(.3f);
+            }
         }
+
+        //foreach (Collider2D c in cs)
+        //{
+        //    if (c.isTrigger)
+        //        c.enabled = true;
+        //}
+        SlideCollider(_slide);
+
+        shield.SetActive(false);
+
+        isInvincible = false;
     }
 
 

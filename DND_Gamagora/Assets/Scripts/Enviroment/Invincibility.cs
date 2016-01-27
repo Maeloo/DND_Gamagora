@@ -17,7 +17,6 @@ public class Invincibility : MonoBehaviour {
 
     void CallRelease()
     {
-
         GetComponent<Animator>().SetTrigger("BackToIdle");
         GetComponentInParent<Bonus>().Release();
     }

@@ -13,6 +13,9 @@ public class TerrainManager : Singleton<TerrainManager> {
     [SerializeField] GameObject Checkpoint;
     [SerializeField] int platformCountBeforeCheckpoint = 100;
     [SerializeField] float offsetYCheckpoint = 1f;
+    [SerializeField]
+    private GameObject base_jinjo;
+
     internal float offsetXPlatform;
     protected TerrainManager ( ) { }
 
@@ -26,8 +29,14 @@ public class TerrainManager : Singleton<TerrainManager> {
     private float _lastSpawn;
     internal Vector3 _lastPos;
     private int platformCount = 0;
+
+    private Dictionary<Jinjo, bool> jinjos;
+    private Checkpoint CheckPointScript;
+    private GameObject jinjo_to_delete;
+
     void Awake()
     {
+        CheckPointScript = Checkpoint.GetComponent<Checkpoint>();
         Checkpoint.transform.position = new Vector3(-1000, -1000, -1000);
         pools = new Dictionary<Type_Platform, Pool<Platform>>();
 
@@ -44,12 +53,58 @@ public class TerrainManager : Singleton<TerrainManager> {
         pools.Add(Type_Platform.Hight, hightPlatformPool);
 
         classic_width = ClassicPlatform.GetComponentInChildren<SpriteRenderer>().bounds.size.x - 0.02f;
-        Debug.Log("size :" + classic_width);
+
         _lastPos = firstPlatform.position;
 
         _lastSpawn = Time.time;
+
+        InitJinjos();
     }
 
+    void InitJinjos()
+    {
+        float delta = (GetTerrainSize() * 0.5f) / 6f;
+
+        Camera cam = Camera.main;
+        float vertExtent = cam.orthographicSize * 2f;
+        float horzExtent = vertExtent * Screen.width / Screen.height;
+        // Calculations assume cam is position at the origin
+        float minX = horzExtent - cam.transform.position.x * 0.5f;
+        float maxX = cam.transform.position.x * 0.5f - horzExtent;
+        float minY = vertExtent - cam.transform.position.y * 0.5f;
+        float maxY = cam.transform.position.y * 0.5f - vertExtent;
+
+        float height = (minY - maxY) * 0.5f;
+
+        float max = cam.transform.position.y + height * 0.4f;
+        float min = cam.transform.position.y - height * 0.1f;
+        float y = Random.Range(min, max);
+
+        jinjos = new Dictionary<Jinjo, bool>(6);
+        for (int i = 0; i < 6; i++)
+        {
+            GameObject obj_jinjo = (GameObject)Instantiate(base_jinjo, new Vector3((i + 1) * delta, y, 0f), Quaternion.identity);
+            Jinjo j = obj_jinjo.GetComponent<Jinjo>();
+            j.SetColorNumber(i);
+            jinjos.Add(j, false);
+        }
+    }
+
+    public void DeleteJinjo(Jinjo j)
+    {
+        jinjos[j] = true;
+        jinjo_to_delete = j.gameObject;
+        Invoke("DeleteJinjo", 2f);
+    }
+
+    private void DeleteJinjo()
+    {
+        if(jinjo_to_delete != null)
+        {
+            jinjo_to_delete.SetActive(false);
+            jinjo_to_delete = null;
+        }
+    }
 
     void Update()
     {
@@ -60,6 +115,7 @@ public class TerrainManager : Singleton<TerrainManager> {
             _lastSpawn = Time.time;
             if (platformCount > platformCountBeforeCheckpoint)
             {
+                CheckPointScript.Init();
                 Checkpoint.transform.position = _lastPos + new Vector3(0f, offsetYCheckpoint, 0f);
                 platformCount = 0;
             }
@@ -159,7 +215,6 @@ public class TerrainManager : Singleton<TerrainManager> {
 
     public float GetTerrainSize()
     {
-        Debug.Log("classic_width: " + classic_width);
         return (classic_width * 1f / spawnTime) * AudioProcessor.Instance.GetMusicLength();
     }
 }

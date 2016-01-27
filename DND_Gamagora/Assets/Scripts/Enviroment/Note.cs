@@ -10,7 +10,6 @@ public class Note : MonoBehaviour {
         {
             player.AddNote();
             GetComponentInParent<Bonus>().Release();
-            //BonusManager.Instance.RemoveBonus(, Type_Bonus.Note);
         }
     }
 }
