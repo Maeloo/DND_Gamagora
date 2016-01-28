@@ -49,19 +49,21 @@ public class InputManager : Singleton<InputManager>
 
             // TODO Sauter 
             // DeltaPosition est en haut
-            if (deltaPosition.y > deadZone)
+            //if (deltaPosition.y > deadZone)
+            if (currentMousePosition.y > 2.0f * Screen.height / 3.0f)
             {
                 Debug.Log("jump");
                 //m.Jump();
                 IsJumping = true;
             } else
             {
-                IsJumping = true;
+                IsJumping = false;
             }
 
             // TODO Glisser
             // DeltaPosition est en bas
-            if (deltaPosition.y < - deadZone)
+            //if (deltaPosition.y < - deadZone)
+            if (currentMousePosition.y < Screen.height / 3.0f)
             {
                 Debug.Log("slide");
                 //m.Slide();
@@ -73,7 +75,8 @@ public class InputManager : Singleton<InputManager>
 
             // TODO Accelerer
             // DeltaPosition est en droite
-            if (deltaPosition.x > deadZone)
+            //if (deltaPosition.x > deadZone)
+            if (currentMousePosition.x > 2.0f * Screen.width / 3.0f)
             {
                 Debug.Log("sprint");
                 //m.Sprint();
@@ -112,6 +115,6 @@ public class InputManager : Singleton<InputManager>
 
     public float GetHorizontalAxis()
     {
-        return Input.GetAxis("Horizontal");
+        return Game.Data.ACCESSIBILITY_MODE ? .5f : Input.GetAxis("Horizontal");
     }
 }

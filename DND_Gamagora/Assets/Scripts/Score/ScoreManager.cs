@@ -13,6 +13,7 @@ public class ScoreManager : Singleton<ScoreManager>
     
 	void Awake () {
         currentScore = 0;
+
         DontDestroyOnLoad(gameObject);
 	}
 	

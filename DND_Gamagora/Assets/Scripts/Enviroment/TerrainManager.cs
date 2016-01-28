@@ -44,9 +44,9 @@ public class TerrainManager : Singleton<TerrainManager> {
         classicPool.automaticReuseUnavailables = true;
         pools.Add(Type_Platform.Classic, classicPool);        
 
-        Pool<Platform> bouncyPool = new Pool<Platform>(BouncyPlatform, 8, 16);
-        bouncyPool.automaticReuseUnavailables = true;
-        pools.Add(Type_Platform.Bouncy, bouncyPool);
+        //Pool<Platform> bouncyPool = new Pool<Platform>(BouncyPlatform, 8, 16);
+        //bouncyPool.automaticReuseUnavailables = true;
+        //pools.Add(Type_Platform.Bouncy, bouncyPool);
 
         Pool<Platform> hightPlatformPool = new Pool<Platform>(HightPlatform, 64, 128);
         hightPlatformPool.automaticReuseUnavailables = true;
@@ -188,6 +188,9 @@ public class TerrainManager : Singleton<TerrainManager> {
 
         if (pools[type].GetAvailable(false, out pf))
         {
+            if (pf == null)
+                return;
+
             Vector3 pos = _lastPos;
             pos.x += classic_width;
             pos.y += 6.66f;

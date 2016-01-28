@@ -387,27 +387,20 @@ public class Character : MonoBehaviour
 
         HUDManager.Instance.setLife(life == 0 ? 0 : (float)life / _baseLife);
 
-        if (life == 0)
+        if (!dead && life == 0)
             GameOver();
 
         StartCoroutine(startInvulnerability());
     }
 
 
+    bool dead;
     void GameOver()
     {
+        dead = true;
         GameManager.Instance.SetPause(true);
-        //ScoreManager.Instance.SaveScore();
         HUDManager.Instance.showGameOver();
-
-        StartCoroutine(startGameCredit());
     }
-    IEnumerator startGameCredit()
-    {
-        yield return new WaitForSeconds(2f);
-        GameManager.Instance.LoadScene("Score");
-    }
-
 
     public void AddNote()
     {

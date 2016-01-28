@@ -145,6 +145,9 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
     {
         if(type == Game.Type_Bullet.Enemy)
         {
+            if (Game.Data.ACCESSIBILITY_MODE)
+                return;
+
             Character player = col.GetComponent<Character>();
 
             if (player != null)

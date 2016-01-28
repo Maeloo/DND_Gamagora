@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.SceneManagement;
@@ -15,16 +16,14 @@ public class GameManager : Singleton<GameManager>
     private SceneAudioManager audio_manager;
     private AudioProcessor audio_process;
 
+    public Toggle am;
+
 	// Use this for initialization
 	void Awake ()
     {
         audio_manager = SceneAudioManager.Instance;
         audio_process = AudioProcessor.Instance;
         Pause = false;
-
-        DontDestroyOnLoad(AudioProcess);
-        DontDestroyOnLoad(gameObject);
-
     }
 
 
@@ -44,6 +43,12 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
+        Game.Data.ACCESSIBILITY_MODE = am.isOn;
+
+        DontDestroyOnLoad(AudioProcess);
+        DontDestroyOnLoad(audio_manager);
+        DontDestroyOnLoad(gameObject);
+
         LoadScene("scene");
     }
 

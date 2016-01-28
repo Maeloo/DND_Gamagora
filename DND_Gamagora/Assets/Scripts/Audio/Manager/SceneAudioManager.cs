@@ -18,7 +18,8 @@ public class SceneAudioManager : Singleton<SceneAudioManager>
     void Awake( )
     {
         AudioPool       = new Pool<AudioPSource> ( null, 64, 256 );
-        AudioDatas      = new Dictionary<Audio_Type, AudioData> ( );
+        if (AudioDatas == null)
+            AudioDatas = new Dictionary<Audio_Type, AudioData>();
         AudioPlaying    = new Dictionary<int, AudioPSource> ( );
 
         if ( masterMixerGroup == null ) {
@@ -32,7 +33,11 @@ public class SceneAudioManager : Singleton<SceneAudioManager>
 
 
     public void registerAudioData ( Audio_Type type, AudioData data ) {
-        AudioDatas.Add ( type, data );
+        //if (AudioDatas == null)
+        //    AudioDatas = new Dictionary<Audio_Type, AudioData>();
+
+        if (!AudioDatas.ContainsKey(type))
+            AudioDatas.Add(type, data);
     }
 
 

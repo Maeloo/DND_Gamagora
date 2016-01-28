@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -107,5 +108,15 @@ public class HUDManager : Singleton<HUDManager>
             _player.EndCooldownCheckpoint();
             _player = null;
         }
+    }
+
+    public void loadScore()
+    {
+        GameManager.Instance.LoadScene("Score");
+    }
+
+    public void reset()
+    {
+        GameManager.Instance.LoadScene("scene");
     }
 }
