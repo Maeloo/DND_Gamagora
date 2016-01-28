@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class ScoreManager : Singleton<ScoreManager>
 {
     internal const int SIZE_CLASSEMENT = 10;
-
+    private Text scoreText;
     private int currentScore;
 
     protected ScoreManager() { }
@@ -13,13 +14,18 @@ public class ScoreManager : Singleton<ScoreManager>
     
 	void Awake () {
         currentScore = 0;
-
+        GameObject UITextScore = GameObject.FindGameObjectWithTag("TextScore");
+        scoreText = UITextScore.GetComponentInChildren<Text>();
         DontDestroyOnLoad(gameObject);
 	}
 	
     public void AddPoint(int points)
     {
         currentScore += points;
+        if (scoreText != null)
+        {
+            scoreText.text = "Score " + currentScore.ToString();
+        }
     }
 
     public int [] GetClassement()
@@ -28,8 +34,7 @@ public class ScoreManager : Singleton<ScoreManager>
         for(int i = 0; i < SIZE_CLASSEMENT; ++i)
         {
             string name = "HighScore" + (i + 1);
-
-            //Debug.logger.Log(name + " " + res[i]);
+            
             res[i] = PlayerPrefs.GetInt(name, 0);
         }
         return res;

@@ -12,14 +12,15 @@ public class Invincibility : MonoBehaviour {
 
             player.StartInvulnerabilityCoroutine();
 
-            GetComponent<Animator>().SetTrigger("Pop");
+            GetComponent<Animator>().SetBool("isPopping", true);
             Invoke("CallRelease", 0.5f);
         }
     }
 
     void CallRelease()
     {
-        GetComponent<Animator>().SetTrigger("BackToIdle");
+
+        GetComponent<Animator>().SetBool("isPopping", false);
         GetComponentInParent<Bonus>().Release();
     }
 }
