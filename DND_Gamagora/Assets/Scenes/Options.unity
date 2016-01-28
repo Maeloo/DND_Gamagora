@@ -2650,6 +2650,7 @@ GameObject:
   - 114: {fileID: 1104558479}
   - 114: {fileID: 1104558478}
   - 95: {fileID: 1104558477}
+  - 114: {fileID: 1104558481}
   m_Layer: 5
   m_Name: back_button
   m_TagString: Untagged
@@ -2731,9 +2732,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11401236, guid: 5fcbed08d47a50846a59e5be2270ea98, type: 2}
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 1104558481}
+        m_MethodName: BackToMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2777,6 +2778,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1104558475}
+--- !u!114 &1104558481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104558475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6174f15f96be6b64d9d6370feb2daa8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1105646782
 GameObject:
   m_ObjectHideFlags: 0
