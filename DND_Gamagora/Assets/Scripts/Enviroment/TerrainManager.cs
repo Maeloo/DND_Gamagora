@@ -9,7 +9,7 @@ public class TerrainManager : Singleton<TerrainManager> {
     [SerializeField] Platform ClassicPlatform;
     [SerializeField] Platform BouncyPlatform;
     [SerializeField] Platform HightPlatform;
-    [SerializeField] GameObject Player;
+    private GameObject Player;
     [SerializeField] GameObject Checkpoint;
     [SerializeField] int platformCountBeforeCheckpoint = 100;
     [SerializeField] float offsetYCheckpoint = 1f;
@@ -36,6 +36,7 @@ public class TerrainManager : Singleton<TerrainManager> {
 
     void Awake()
     {
+        Player = LoadCharacter.Instance.GetCharacter();
         CheckPointScript = Checkpoint.GetComponent<Checkpoint>();
         Checkpoint.transform.position = new Vector3(-1000, -1000, -1000);
         pools = new Dictionary<Type_Platform, Pool<Platform>>();

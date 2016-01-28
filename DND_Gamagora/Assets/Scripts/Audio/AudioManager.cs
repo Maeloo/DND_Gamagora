@@ -33,8 +33,7 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
     public GameObject box8;
     public GameObject box9;
 
-    [SerializeField]
-    Transform player;
+    private Transform player;
 
     private AudioProcessor processor;
     private EnemyManager enemiesSpawner;
@@ -49,6 +48,8 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         enemiesSpawner = EnemyManager.Instance;
         platformSpawn = TerrainManager.Instance;
         currentPos = Camera.main.transform.position;
+
+        player = LoadCharacter.Instance.GetCharacter().transform;
     }
     
     void Update()

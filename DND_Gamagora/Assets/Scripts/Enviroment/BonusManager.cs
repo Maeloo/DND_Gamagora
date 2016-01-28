@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using Game;
 public class BonusManager : Singleton<BonusManager>
 {
-    [SerializeField]
-    GameObject player;
+    private GameObject player;
     [SerializeField]
     Bonus Note;
     [SerializeField]
@@ -18,6 +17,7 @@ public class BonusManager : Singleton<BonusManager>
     protected Dictionary<Type_Bonus, Pool<Bonus>> pools;
 	// Use this for initialization
 	void Awake () {
+        player = LoadCharacter.Instance.GetCharacter();
         countInvincibility = 0;
         countNote = 0;
         pools = new Dictionary<Type_Bonus, Pool<Bonus>>();

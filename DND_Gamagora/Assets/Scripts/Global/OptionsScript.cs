@@ -11,9 +11,12 @@ public class OptionsScript : Singleton<OptionsScript>
     private int selected_track;
     private List<AudioClip> clips;
     private List<Button> buttons_clip;
+    private Image player_sumo_btn;
+    private Image player_megaman_btn;
     private float amplitude;
     private float variance;
     private float C;
+    private int player_nb;
 
     private Slider amplitude_slider;
     private Slider variance_slider;
@@ -55,9 +58,12 @@ public class OptionsScript : Singleton<OptionsScript>
             amplitude_slider.value = amplitude;
             variance_slider.value = variance;
             c_slider.value = C;
+
+            player_megaman_btn = c.transform.FindChild("player_button").FindChild("ButtonMegaman").GetComponent<Image>();
+            player_sumo_btn = c.transform.FindChild("player_button").FindChild("ButtonSumo").GetComponent<Image>();
         }
         
-        clips = new List<AudioClip>(Resources.LoadAll<AudioClip>("Audio/"));
+        clips = GameManager.Instance.Tracks;
 
         buttons_clip = new List<Button>(clips.Count);
         buttons_clip.Add(music_panel.FindChild("Button1").GetComponent<Button>());
@@ -66,7 +72,6 @@ public class OptionsScript : Singleton<OptionsScript>
         buttons_clip.Add(music_panel.FindChild("Button4").GetComponent<Button>());
         
         event_sys = FindObjectOfType<EventSystem>();
-
 
         for(int i = 0; i < clips.Count; i++)
         {
@@ -79,6 +84,36 @@ public class OptionsScript : Singleton<OptionsScript>
         ColorBlock color = buttons_clip[selected_track].colors;
         color.normalColor = new Color(0.1f, 0.8f, 0f);
         buttons_clip[selected_track].colors = color;
+
+
+        player_nb = Character.CharacterNb;
+        if(player_nb == 0)
+        {
+            player_sumo_btn.color = new Color(0.1f, 0.8f, 0f);
+        }
+        else
+        {
+            player_megaman_btn.color = new Color(0.1f, 0.8f, 0f);
+        }
+    }
+
+    public void SetSelectedPlayer(int nb)
+    {
+        if(nb != player_nb)
+        {
+            if (nb == 0)
+            {
+                player_sumo_btn.color = new Color(0.1f, 0.8f, 0f);
+                player_megaman_btn.color = new Color(1f, 1f, 1f, 0f);
+            }
+            else
+            {
+                player_megaman_btn.color = new Color(0.1f, 0.8f, 0f);
+                player_sumo_btn.color = new Color(1f, 1f, 1f, 0f);
+            }
+
+            player_nb = nb;
+        }
     }
 
     public void SetSelectedTrack(int nb)
@@ -119,6 +154,9 @@ public class OptionsScript : Singleton<OptionsScript>
 
     public void SaveChanges()
     {
+        Character.CharacterNb = player_nb;
         GameManager.Instance.SaveOptions(clips[selected_track], amplitude, variance, C);
     }
+
+
 }

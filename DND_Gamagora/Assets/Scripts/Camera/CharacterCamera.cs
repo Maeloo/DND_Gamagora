@@ -22,7 +22,6 @@ public class CharacterCamera : MonoBehaviour
     [SerializeField]
     private Vector3 offset = new Vector3(0f, 0f);
 
-    [SerializeField]
     private Transform target;
 
     //private float speed;
@@ -38,6 +37,7 @@ public class CharacterCamera : MonoBehaviour
         //audioProcess = AudioProcessor.Instance;
         //speed = MinSpeed;
         //oldPitch = audioProcess.PitchValue;
+        target = LoadCharacter.Instance.GetCharacter().transform;
         target_pos = target.position;
         targeting = false;
         transform.position = transform.position + offset;

@@ -12,8 +12,7 @@ public class EnemyManager : Singleton<EnemyManager>
     [SerializeField]
     Enemy meteor;
 
-    [SerializeField]
-    GameObject Player;
+    private GameObject Player;
 
     protected EnemyManager() { }
 
@@ -41,6 +40,7 @@ public class EnemyManager : Singleton<EnemyManager>
 
     void Awake()
     {
+        Player = GameObject.FindWithTag("Player");
         pools = new Dictionary<Type_Enemy, Pool<Enemy>>();
 
         //Init fireballs

@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class Character : MonoBehaviour
 {
+    public static int CharacterNb = 0;
+
     [SerializeField]
     private int life = 4;
     [SerializeField]
@@ -75,8 +77,7 @@ public class Character : MonoBehaviour
     private float _baseSpecial;
 
     private bool _noStamina;
-
-
+    
     private void Awake()
     {
         noteCount = 0;

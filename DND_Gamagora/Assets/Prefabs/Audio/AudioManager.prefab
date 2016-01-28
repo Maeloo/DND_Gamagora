@@ -309,7 +309,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.55, y: -45.61, z: 0}
+  m_LocalPosition: {x: -9.55, y: -47.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 489310}
@@ -777,7 +777,6 @@ MonoBehaviour:
   box7: {fileID: 159572}
   box8: {fileID: 111630}
   box9: {fileID: 195388}
-  player: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
