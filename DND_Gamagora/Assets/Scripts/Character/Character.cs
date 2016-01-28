@@ -221,21 +221,27 @@ public class Character : MonoBehaviour
             if (doublejump)
                 StartCoroutine(jumping(run));
         }
+
         if (IsFalled() && !falling)
         {
             falling = true;
 
             anim.SetBool("Fall", true);
+
+            Hit(1);
             GameManager.Instance.SetPause(true);
 
-            if (cam != null)
+            if(!dead)
             {
-                cam.ResetCamToCheckPoint(lastCheckpointPos);
+                if (cam != null)
+                {
+                    cam.ResetCamToCheckPoint(lastCheckpointPos);
+                }
+
+                audio_process.RewindSound(lastCheckpointMusicTime);
+
+                Invoke("MoveToLastCheckPoint", 1.0f);
             }
-
-            audio_process.RewindSound(lastCheckpointMusicTime);
-
-            Invoke("MoveToLastCheckPoint", 1.0f);
         }            
     }
 
@@ -355,7 +361,6 @@ public class Character : MonoBehaviour
         TerrainManager.Instance.SpawnPlatform(Type_Platform.Classic);
         TerrainManager.Instance.SpawnPlatform(Type_Platform.Classic);
 
-        Hit(1);
         transform.position = lastCheckpointPos;
         
         falling = false;

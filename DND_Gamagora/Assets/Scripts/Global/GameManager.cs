@@ -35,6 +35,7 @@ public class GameManager : Singleton<GameManager>
 
     public void SetPause(bool pause)
     {
+        HUDManager.Instance.pause(pause);
         Pause = pause;
         if (pause)
             audio_process.PauseMusic();

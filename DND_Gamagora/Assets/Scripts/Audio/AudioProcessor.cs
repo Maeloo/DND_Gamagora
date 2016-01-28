@@ -144,6 +144,12 @@ public class AudioProcessor : Singleton<AudioProcessor>
         audioSrc.Pause();
     }
 
+    public void ResetMusic()
+    {
+        if (audioSrc != null)
+            audioSrc.time = 0f;
+    }
+
     // Current music time in seconds
     public float GetMusicCurrentTime()
     {

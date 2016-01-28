@@ -28,6 +28,9 @@ public class HUDManager : Singleton<HUDManager>
                 key == Type_HUD.Jinjo_Black_On)
             element.SetEnable(false);
 
+        if(key == Type_HUD.Pause)
+            element.displayGroup(false, .0f, false, false);
+
         if (key == Type_HUD.GameOver)
             element.displayGroup(false, .0f, false, false);
     }
@@ -117,6 +120,17 @@ public class HUDManager : Singleton<HUDManager>
 
     public void reset()
     {
+        AudioProcessor.Instance.ResetMusic();
         GameManager.Instance.LoadScene("scene");
+    }
+
+    public void pause(bool pause)
+    {
+        HUDElement elem;
+
+        if (elements.TryGetValue(Type_HUD.Pause, out elem))
+        {
+            elem.displayGroup(pause, pause ? 0.5f : 0f, pause, pause);
+        }
     }
 }
