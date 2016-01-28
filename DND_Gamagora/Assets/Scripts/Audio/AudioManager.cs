@@ -191,7 +191,15 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         countTimeBeatLow4++;
         if (countTimeBeatLow4 >= minSkipBeatLow4)
         {
-            platformSpawn.SpawnPlatformHight(Type_Platform.Hight);
+            float rand = UnityEngine.Random.Range(0f, 1f);
+            if (rand < 0.50)
+            {
+                platformSpawn.SpawnPlatformHight(Type_Platform.Hight);
+            }
+            else
+            {
+                platformSpawn.SpawnPlatformTnt(enemiesSpawner,player);
+            }
             countTimeBeatLow4 = 0;
         }
     }

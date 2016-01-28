@@ -12,7 +12,8 @@
     {
         CrazyFireball,
         Shooter,
-        Meteor
+        Meteor,
+        Tnt
     }
 
     public enum Type_Bonus

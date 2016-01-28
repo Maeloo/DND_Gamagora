@@ -198,6 +198,14 @@ public class TerrainManager : Singleton<TerrainManager> {
         }
     }
 
+    internal void SpawnPlatformTnt(EnemyManager e,Transform p)
+    {
+        Vector3 pos = _lastPos;
+        pos.x += classic_width;
+
+        e.spawnEnemy(Type_Enemy.Tnt, new Vector3(pos.x, 0, 3.0f));
+    }
+
 
     public void ErasePlatform()
     {

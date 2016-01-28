@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
     public bool Copy3D;
     public bool Copy2D;
     public GameObject death_fx;
+    public Sprite sprite;
 
 
     public Enemy Create()
@@ -96,6 +97,13 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
                 gameObject.AddComponent<Rigidbody2D>().useAutoMass = true;
                 gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
                 break;
+
+            case Game.Type_Enemy.Tnt:
+                gameObject.GetComponent<Enemy>().sprite = a_template.GetComponent<Enemy>().sprite;
+                gameObject.AddComponent<Tnt>()._sprite = a_template.GetComponent<Enemy>().sprite;
+                gameObject.GetComponent<Tnt>().Init();
+                break;
+
         }
 
         transform.position = new Vector3(9999, 9999, 9999);
@@ -126,6 +134,11 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
             case Game.Type_Enemy.Meteor:
                 gameObject.GetComponent<Meteor>().spawn(position);
                 break;
+
+            case Game.Type_Enemy.Tnt:
+                gameObject.GetComponent<Tnt>().Init();
+                gameObject.GetComponent<Tnt>().spawn(position, player);
+                break;
         }
 
         this.gameObject.SetActive(true);
@@ -149,7 +162,20 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
 
     public void onHit()
     {
-        Instantiate(death_fx, transform.position, Quaternion.identity);
-        Release();
+        if (type == Game.Type_Enemy.Shooter)
+        {
+            Instantiate(death_fx, transform.position, Quaternion.identity);
+            Release();
+        }
+        else if (type == Game.Type_Enemy.Tnt)
+        {
+            gameObject.GetComponentInChildren<Animator>().SetTrigger("Boom");
+
+            foreach (Transform child in gameObject.transform)
+            {
+                if (child.gameObject.layer == 11)
+                    child.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            }
+        }
     }
 }
