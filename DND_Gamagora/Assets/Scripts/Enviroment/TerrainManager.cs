@@ -213,6 +213,11 @@ public class TerrainManager : Singleton<TerrainManager> {
         {
             pools[Type_Platform.Classic].usedObjects[i].Release();
         }
+        for (int i = pools[Type_Platform.Classic].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+        {
+            pools[Type_Platform.Classic].unusedObjects[i].gameObject.SetActive(false);
+            pools[Type_Platform.Classic].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
+        }
     }
     /******* Public methods ********/
 
