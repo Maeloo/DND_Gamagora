@@ -165,7 +165,7 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         {
             for (int i = 0; i < enemiesSpawner.Shooters.Count; i++)
             {
-                if (enemiesSpawner.fireballs[i] == null)
+                if (enemiesSpawner.Shooters[i] == null)
                 {
                     continue;
                 }
