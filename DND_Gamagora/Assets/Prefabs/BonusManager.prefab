@@ -259,7 +259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdba692762973f49aa0be92f3638f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   Note: {fileID: 11480606}
   Invincibility: {fileID: 11429728}
   passCountNote: 40

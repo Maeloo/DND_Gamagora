@@ -144,11 +144,26 @@ public class Character : MonoBehaviour
             // If the character has a ceiling preventing them from standing up, keep them crouching
             if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, WhatIsGround))
             {
-                _slide = slide = true;
+                slide = true;
             }
         }
 
-        SlideCollider(slide);
+        if (_slide != slide)
+        {
+            if(!slide)
+            {
+                RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 1.0f, Vector3.up);
+                foreach(RaycastHit2D hit in hits)
+                {
+                    if (hit.collider.CompareTag("Column"))
+                        slide = true;
+                }
+            }
+            
+            _slide = slide;
+
+            SlideCollider(slide);
+        }
 
         if (grounded)
             nbCurrentJump = 0;
@@ -234,7 +249,8 @@ public class Character : MonoBehaviour
         float str = JumpForce;
         if (run)
             str *= RunSpeed;
-        rb.AddForce(new Vector2(0f, str));
+        rb.velocity=(new Vector2(0,0));
+        rb.AddForce(new Vector2(0f, JumpForce));
         yield return new WaitForSeconds(.1f);
         doublejump = true;
     }
@@ -334,6 +350,9 @@ public class Character : MonoBehaviour
         
         TerrainManager.Instance.ErasePlatform();
         TerrainManager.Instance._lastPos = new Vector3(lastCheckpointPos.x - TerrainManager.Instance.classic_width, TerrainManager.Instance._lastPos.y, TerrainManager.Instance._lastPos.z);
+        if (TerrainManager.Instance._lastPos.x < TerrainManager.Instance.firstPlatform.position.x)
+            TerrainManager.Instance._lastPos.x = TerrainManager.Instance.firstPlatform.position.x;
+        TerrainManager.Instance.SpawnPlatform(Type_Platform.Classic);
         TerrainManager.Instance.SpawnPlatform(Type_Platform.Classic);
 
         Hit(1);
@@ -372,20 +391,20 @@ public class Character : MonoBehaviour
 
         HUDManager.Instance.setLife(life == 0 ? 0 : (float)life / _baseLife);
 
-        if (life == 0)
+        if (!dead && life == 0)
             GameOver();
 
         StartCoroutine(startInvulnerability());
     }
 
 
+    bool dead;
     void GameOver()
     {
+        dead = true;
         GameManager.Instance.SetPause(true);
-        ScoreManager.Instance.SaveScore();
         HUDManager.Instance.showGameOver();
     }
-
 
     public void AddNote()
     {

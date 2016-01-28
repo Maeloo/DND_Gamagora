@@ -12,7 +12,8 @@
     {
         CrazyFireball,
         Shooter,
-        Meteor
+        Meteor,
+        Tnt
     }
 
     public enum Type_Bonus
@@ -46,12 +47,18 @@
         Jinjo_Black_On,
         Jinjo_Black_Off,
         GameOver,
-        Cooldown
+        Cooldown,
+        Pause
     }
 
     public enum Audio_Type
     {
         Music,
         Rewind
+    }
+
+    public class Data
+    {
+        public static bool ACCESSIBILITY_MODE = false;
     }
 }

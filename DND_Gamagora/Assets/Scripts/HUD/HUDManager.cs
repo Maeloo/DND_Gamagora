@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,9 +30,6 @@ public class HUDManager : Singleton<HUDManager>
 
         if (key == Type_HUD.GameOver)
             element.displayGroup(false, .0f, false, false);
-
-        if (key == Type_HUD.Cooldown && _player != null)
-            StartCoroutine(elements[Type_HUD.Cooldown].startCooldown(_cooldown));
     }
 
 
@@ -110,5 +108,15 @@ public class HUDManager : Singleton<HUDManager>
             _player.EndCooldownCheckpoint();
             _player = null;
         }
+    }
+
+    public void loadScore()
+    {
+        GameManager.Instance.LoadScene("Score");
+    }
+
+    public void reset()
+    {
+        GameManager.Instance.LoadScene("scene");
     }
 }

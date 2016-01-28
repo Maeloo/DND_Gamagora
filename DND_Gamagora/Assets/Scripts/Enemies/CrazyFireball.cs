@@ -8,17 +8,23 @@ public class CrazyFireball : MonoBehaviour
     protected Pool<Bullet> _bullets;
 
 
-    void Start()
+    public void init()
     {
         reset();
+
+        if(_bullets == null)
+        {
+            _bullets = new Pool<Bullet>(bulletPrefab, 4, 8);
+            _bullets.automaticReuseUnavailables = true;
+        }            
     }
 
     public void spawn(Vector3 position)
     {
         reset();
 
-        if (_bullets == null)
-            _bullets = new Pool<Bullet>(bulletPrefab, 8, 16);
+        //if (_bullets == null)
+        //    _bullets = new Pool<Bullet>(bulletPrefab, 4, 8);
 
         transform.position = position;
 

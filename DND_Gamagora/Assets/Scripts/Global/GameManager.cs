@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 public class GameManager : Singleton<GameManager>
@@ -12,21 +12,18 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField]
     private GameObject AudioProcess;
-    [SerializeField]
-    private GameObject Character;
 
     public bool Pause { get; private set; }
 
     private SceneAudioManager audio_manager;
     private AudioProcessor audio_process;
+    public Toggle am;
 
     // Use this for initialization
     void Awake ()
-    {
+    { 
         audio_manager = SceneAudioManager.Instance;
         audio_process = AudioProcessor.Instance;
-        DontDestroyOnLoad(AudioProcess);
-        DontDestroyOnLoad(gameObject);
         Pause = false;
         Tracks = new List<AudioClip>(Resources.LoadAll<AudioClip>("Audio/"));
     }
@@ -47,6 +44,10 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
+        Game.Data.ACCESSIBILITY_MODE = am.isOn;
+        DontDestroyOnLoad(AudioProcess);
+        DontDestroyOnLoad(audio_manager);
+        DontDestroyOnLoad(gameObject);
         LoadScene("scene");
     }
 

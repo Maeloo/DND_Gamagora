@@ -9,11 +9,19 @@ public class Shooter : MonoBehaviour {
 
     protected Transform _player;
 
+    public void init()
+    {
+        if (_bullets == null)
+        {
+            _bullets = new Pool<Bullet>(bulletPrefab, 4, 8);
+            _bullets.automaticReuseUnavailables = true;
+        }
+    }
 
     public void spawn(Vector3 position, Transform player)
     {
-        if (_bullets == null)
-            _bullets = new Pool<Bullet>(bulletPrefab, 8, 16);
+        //if (_bullets == null)
+        //    _bullets = new Pool<Bullet>(bulletPrefab, 8, 16);
 
         _player = player;
 

@@ -50,11 +50,8 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         currentPos = Camera.main.transform.position;
 
         player = LoadCharacter.Instance.GetCharacter().transform;
-    }
-    
-    void Update()
-    {
-        
+
+        _lastShoot = Time.time;
     }
 
     // This event will be called every time a beat is detected.
@@ -104,8 +101,8 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
     protected int countTimeBeatLow1 = 0;
     public void onBeatLow1(float energy, float average_energy, float radiance, int frequency_size)
     {
-        box1.GetComponent<Renderer>().material.color = Color.red;
-        StartCoroutine(StopColor(box1));
+        //box1.GetComponent<Renderer>().material.color = Color.red;
+        //StartCoroutine(StopColor(box1));
 
         countTimeBeatLow1++;
         if (countTimeBeatLow1 >= minSkipBeatLow1)
@@ -115,15 +112,24 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         }       
     }
 
-    
+    protected float _lastShoot;
     public void onBeatLow2(float energy, float average_energy, float radiance, int frequency_size)
     {
-        box2.GetComponent<Renderer>().material.color = Color.yellow;
-        StartCoroutine(StopColor(box2));
+        //box2.GetComponent<Renderer>().material.color = Color.yellow;
+        //StartCoroutine(StopColor(box2));
 
+        bool shot = false;
         for (int i = 0; i < enemiesSpawner.fireballs.Count; i++)
         {
-            enemiesSpawner.fireballs[i].shoot();
+            if (enemiesSpawner.fireballs[i] == null)
+            {
+                continue;
+            }
+
+            if (Time.time - _lastShoot > 1.0f) {
+                enemiesSpawner.fireballs[i].shoot();
+                shot = true;
+            }                
 
             iTween.Stop(enemiesSpawner.fireballs[i].gameObject);
 
@@ -138,20 +144,28 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
                 "scale", new Vector3(2.0f, 2.0f, 2.0f),
                 "easetype", iTween.EaseType.easeInOutExpo));
         }
+
+        if (shot)
+            _lastShoot = Time.time;
     }
 
     protected int minSkipBeatLow3 = 20; // Reglage Higklight Tribe
     protected int countTimeBeatLow3 = 0;
     public void onBeatLow3(float energy, float average_energy, float radiance, int frequency_size)
     {
-        box3.GetComponent<Renderer>().material.color = Color.blue;
-        StartCoroutine(StopColor(box3));
+        //box3.GetComponent<Renderer>().material.color = Color.blue;
+        //StartCoroutine(StopColor(box3));
 
         countTimeBeatLow3++;
         if (countTimeBeatLow3 >= minSkipBeatLow3)
         {
             for (int i = 0; i < enemiesSpawner.Shooters.Count; i++)
             {
+                if (enemiesSpawner.Shooters[i] == null)
+                {
+                    continue;
+                }
+
                 if (enemiesSpawner.Shooters[i].transform.position.x > player.position.x)
                 {
                     enemiesSpawner.Shooters[i].shoot();
@@ -167,41 +181,49 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
     protected int countTimeBeatLow4 = 0;
     public void onBeatLow4(float energy, float average_energy, float radiance, int frequency_size)
     {
-        box4.GetComponent<Renderer>().material.color = Color.green;
-        StartCoroutine(StopColor(box4));
+        //box4.GetComponent<Renderer>().material.color = Color.green;
+        //StartCoroutine(StopColor(box4));
 
         countTimeBeatLow4++;
         if (countTimeBeatLow4 >= minSkipBeatLow4)
         {
-            platformSpawn.SpawnPlatformHight(Type_Platform.Hight);
+            float rand = UnityEngine.Random.Range(0f, 1f);
+            if (rand < 0.50)
+            {
+                platformSpawn.SpawnPlatformHight(Type_Platform.Hight);
+            }
+            else
+            {
+                platformSpawn.SpawnPlatformTnt(enemiesSpawner,player);
+            }
             countTimeBeatLow4 = 0;
         }
     }
 
     public void onBeatMedium1(float energy, float average_energy, float radiance, int frequency_size)
     {
-        box5.GetComponent<Renderer>().material.color = Color.black;
-        StartCoroutine(StopColor(box5));
+        //box5.GetComponent<Renderer>().material.color = Color.black;
+        //StartCoroutine(StopColor(box5));
 
         BonusManager.Instance.SpawnBonus(Type_Bonus.Note);
     }
 
     public void onBeatMedium2(float energy, float average_energy, float radiance, int frequency_size)
     {
-        box6.GetComponent<Renderer>().material.color = Color.cyan;
-        StartCoroutine(StopColor(box6));
+        //box6.GetComponent<Renderer>().material.color = Color.cyan;
+        //StartCoroutine(StopColor(box6));
     }
 
     public void onBeatMedium3(float energy, float average_energy, float radiance, int frequency_size)
     {
-        box7.GetComponent<Renderer>().material.color = Color.magenta;
-        StartCoroutine(StopColor(box7));
+        //box7.GetComponent<Renderer>().material.color = Color.magenta;
+        //StartCoroutine(StopColor(box7));
     }
 
     public void onBeatHigh1(float energy, float average_energy, float radiance, int frequency_size)
     {
-        box8.GetComponent<Renderer>().material.color = (Color.red + Color.green) * 0.5f;
-        StartCoroutine(StopColor(box8));
+        //box8.GetComponent<Renderer>().material.color = (Color.red + Color.green) * 0.5f;
+        //StartCoroutine(StopColor(box8));
 
         BonusManager.Instance.SpawnBonus(Type_Bonus.Invincibility);
     }
@@ -209,8 +231,8 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
     public void onBeatHigh2(float energy, float average_energy, float radiance, int frequency_size)
     {
 
-        box9.GetComponent<Renderer>().material.color = Color.white;
-        StartCoroutine(StopColor(box9));
+        //box9.GetComponent<Renderer>().material.color = Color.white;
+        //StartCoroutine(StopColor(box9));
     }
 
     public IEnumerator StopColor(GameObject obj)

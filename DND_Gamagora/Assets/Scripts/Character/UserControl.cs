@@ -51,7 +51,6 @@ public class UserControl : MonoBehaviour
             if (attack)
                 character.Attack();
 
-
             if (special)
                 character.Special();
 

@@ -145,6 +145,9 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
     {
         if(type == Game.Type_Bullet.Enemy)
         {
+            if (Game.Data.ACCESSIBILITY_MODE)
+                return;
+
             Character player = col.GetComponent<Character>();
 
             if (player != null)
@@ -158,14 +161,20 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
         if (type == Game.Type_Bullet.Player)
         {
             Enemy e = col.GetComponent<Enemy>();
+            Enemy e2 = col.GetComponentInParent<Enemy>();
 
-            if(e != null && e.type == Game.Type_Enemy.Shooter)
+            if (e != null && e.type == Game.Type_Enemy.Shooter)
             {
                 e.onHit();
 
                 Release();
 
                 ScoreManager.Instance.AddPoint((int)(damage + 10 * (UnityEngine.Random.value)));
+            }
+            if (e2 != null && e2.type == Game.Type_Enemy.Tnt)
+            {
+                e2.onHit();
+                Release();
             }
         }
 

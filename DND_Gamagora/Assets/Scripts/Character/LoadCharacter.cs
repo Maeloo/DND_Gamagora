@@ -12,7 +12,8 @@ public class LoadCharacter : Singleton<LoadCharacter>
 	// Use this for initialization
 	void Start ()
     {
-        Init();
+        if(!Loaded)
+            Init();
     }
 
     private void Init()

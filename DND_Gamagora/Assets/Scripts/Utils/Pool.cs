@@ -43,6 +43,24 @@ public class Pool<T> : UnityEngine.Object where T : Poolable<T>, new ( ) {
     }
 
     public bool GetAvailable ( bool a_forceExpand, out T obj ) {
+        for(int i = 0; i < availableObjects.Count; i++)
+        {
+            if (availableObjects[i] == null)
+            {
+                availableObjects.RemoveAt(i);
+                i--;
+            }                
+        }
+
+        for (int i = 0; i < unavailableObjects.Count; i++)
+        {
+            if (unavailableObjects[i] == null)
+            {
+                unavailableObjects.RemoveAt(i);
+                i--;
+            }
+        }
+
         if (availableObjects.Count > 0) {
             obj = availableObjects[availableObjects.Count - 1];
             availableObjects.Remove(obj);
@@ -54,7 +72,9 @@ public class Pool<T> : UnityEngine.Object where T : Poolable<T>, new ( ) {
             {
                 obj = unavailableObjects[i];
                 unavailableObjects.Remove(obj);
-                availableObjects.Add(obj);
+
+                if (obj != null)
+                    availableObjects.Add(obj);
             }
 
             obj = availableObjects[availableObjects.Count - 1];

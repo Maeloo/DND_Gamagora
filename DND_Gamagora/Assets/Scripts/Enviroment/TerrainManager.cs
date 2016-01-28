@@ -45,9 +45,9 @@ public class TerrainManager : Singleton<TerrainManager> {
         classicPool.automaticReuseUnavailables = true;
         pools.Add(Type_Platform.Classic, classicPool);        
 
-        Pool<Platform> bouncyPool = new Pool<Platform>(BouncyPlatform, 8, 16);
-        bouncyPool.automaticReuseUnavailables = true;
-        pools.Add(Type_Platform.Bouncy, bouncyPool);
+        //Pool<Platform> bouncyPool = new Pool<Platform>(BouncyPlatform, 8, 16);
+        //bouncyPool.automaticReuseUnavailables = true;
+        //pools.Add(Type_Platform.Bouncy, bouncyPool);
 
         Pool<Platform> hightPlatformPool = new Pool<Platform>(HightPlatform, 64, 128);
         hightPlatformPool.automaticReuseUnavailables = true;
@@ -189,11 +189,22 @@ public class TerrainManager : Singleton<TerrainManager> {
 
         if (pools[type].GetAvailable(false, out pf))
         {
+            if (pf == null)
+                return;
+
             Vector3 pos = _lastPos;
             pos.x += classic_width;
-            pos.y += 6.5f;
+            pos.y += 6.66f;
             pf.SetPosition(pos);
         }
+    }
+
+    internal void SpawnPlatformTnt(EnemyManager e,Transform p)
+    {
+        Vector3 pos = _lastPos;
+        pos.x += classic_width;
+
+        e.spawnEnemy(Type_Enemy.Tnt, new Vector3(pos.x, 0, 3.0f));
     }
 
 
@@ -202,6 +213,11 @@ public class TerrainManager : Singleton<TerrainManager> {
         for (int i = pools[Type_Platform.Classic].usedObjects.Count-1 ; i >= 0; i--)
         {
             pools[Type_Platform.Classic].usedObjects[i].Release();
+        }
+        for (int i = pools[Type_Platform.Classic].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+        {
+            pools[Type_Platform.Classic].unusedObjects[i].gameObject.SetActive(false);
+            pools[Type_Platform.Classic].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
         }
     }
     /******* Public methods ********/

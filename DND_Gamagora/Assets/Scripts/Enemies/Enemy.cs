@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
     public bool Copy3D;
     public bool Copy2D;
     public GameObject death_fx;
+    public Sprite sprite;
 
 
     public Enemy Create()
@@ -44,7 +45,6 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
     {
         throw new NotImplementedException();
     }
-
 
     public void Duplicate(Enemy a_template)
     {
@@ -78,7 +78,7 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
         {
             case Game.Type_Enemy.CrazyFireball:
                 gameObject.AddComponent<CrazyFireball>().bulletPrefab = a_template.GetComponent<CrazyFireball>().bulletPrefab;
-                gameObject.AddComponent<CrazyFireball>();
+                gameObject.GetComponent<CrazyFireball>().init();
                 gameObject.AddComponent<ExplosionMat>()._ramp = a_template.GetComponent<ExplosionMat>()._ramp;
                 gameObject.GetComponent<ExplosionMat>()._noise = a_template.GetComponent<ExplosionMat>()._noise;
                 gameObject.GetComponent<ExplosionMat>().ExplosionMaterial = a_template.GetComponent<ExplosionMat>().ExplosionMaterial;
@@ -87,6 +87,7 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
             case Game.Type_Enemy.Shooter:
                 gameObject.AddComponent<Shooter>().bulletPrefab = a_template.GetComponent<Shooter>().bulletPrefab;
                 gameObject.AddComponent<BoxCollider2D>().isTrigger = true;
+                gameObject.GetComponent<Shooter>().init();
                 break;
 
             case Game.Type_Enemy.Meteor:
@@ -95,6 +96,13 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
                 gameObject.AddComponent<Rigidbody2D>().useAutoMass = true;
                 gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
                 break;
+
+            case Game.Type_Enemy.Tnt:
+                gameObject.GetComponent<Enemy>().sprite = a_template.GetComponent<Enemy>().sprite;
+                gameObject.AddComponent<Tnt>()._sprite = a_template.GetComponent<Enemy>().sprite;
+                gameObject.GetComponent<Tnt>().Init();
+                break;
+
         }
 
         transform.position = new Vector3(9999, 9999, 9999);
@@ -125,6 +133,11 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
             case Game.Type_Enemy.Meteor:
                 gameObject.GetComponent<Meteor>().spawn(position);
                 break;
+
+            case Game.Type_Enemy.Tnt:
+                gameObject.GetComponent<Tnt>().Init();
+                gameObject.GetComponent<Tnt>().spawn(position, player);
+                break;
         }
 
         this.gameObject.SetActive(true);
@@ -134,16 +147,34 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
     public void shoot()
     {
         if (type == Game.Type_Enemy.CrazyFireball)
-            gameObject.GetComponent<CrazyFireball>().shoot();
+        {
+            GetComponent<CrazyFireball>().shoot();
+        }
+            
 
         if (type == Game.Type_Enemy.Shooter)
-            gameObject.GetComponent<Shooter>().shoot();
+        {
+            GetComponent<Shooter>().shoot();
+        }            
     }
 
 
     public void onHit()
     {
-        Instantiate(death_fx, transform.position, Quaternion.identity);
-        Release();
+        if (type == Game.Type_Enemy.Shooter)
+        {
+            Instantiate(death_fx, transform.position, Quaternion.identity);
+            Release();
+        }
+        else if (type == Game.Type_Enemy.Tnt)
+        {
+            gameObject.GetComponentInChildren<Animator>().SetTrigger("Boom");
+
+            foreach (Transform child in gameObject.transform)
+            {
+                if (child.gameObject.layer == 11)
+                    child.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            }
+        }
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - FxTemporaire
   - JinjoHUD
   - CooldownHUD
+  - Column
   layers:
   - Default
   - TransparentFX

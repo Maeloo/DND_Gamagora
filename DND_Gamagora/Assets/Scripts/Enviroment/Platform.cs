@@ -48,8 +48,13 @@ public class Platform : MonoBehaviour, Poolable<Platform> {
 
     public void Duplicate ( Platform a_template ) {
         this.gameObject.layer = a_template.gameObject.layer;
+
+        gameObject.tag = a_template.tag;
+
         foreach(Transform child in a_template.transform)
         {
+            child.tag = a_template.tag;
+
             GameObject obj = Instantiate(child.gameObject) as GameObject;
             obj.transform.SetParent(transform);
             obj.gameObject.layer = child.gameObject.layer;
@@ -62,7 +67,6 @@ public class Platform : MonoBehaviour, Poolable<Platform> {
 
     public void Release ( ) {
         _pool.onRelease ( this );
-        //this.gameObject.SetActive(false);
         transform.position = new Vector3(- 1000f, - 1000f, - 1000f);
         this.gameObject.SetActive(false);
     }
