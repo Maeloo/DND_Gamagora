@@ -9,6 +9,7 @@ TagManager:
   - JinjoHUD
   - CooldownHUD
   - Column
+  - TextScore
   layers:
   - Default
   - TransparentFX

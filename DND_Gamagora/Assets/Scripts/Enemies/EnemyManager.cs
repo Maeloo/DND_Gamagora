@@ -97,7 +97,8 @@ public class EnemyManager : Singleton<EnemyManager>
         Enemy enemy;
         if(pools[type].GetAvailable(false, out enemy))
         {
-            enemy.spawn(position, Player.transform);
+            if (enemy != null)
+                enemy.spawn(position, Player.transform);
         }
         return false;
     }
