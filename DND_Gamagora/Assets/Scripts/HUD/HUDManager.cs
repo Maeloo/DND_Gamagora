@@ -38,6 +38,7 @@ public class HUDManager : Singleton<HUDManager>
 
     public void showGameOver()
     {
+        pause(false);
         elements[Type_HUD.GameOver].displayGroup(true, 1.0f, true, true);
     }
 
@@ -99,7 +100,6 @@ public class HUDManager : Singleton<HUDManager>
         _cooldown = cooldown;
 
         HUDElement elem;
-
         if(elements.TryGetValue(Type_HUD.Cooldown, out elem))
            StartCoroutine(elem.startCooldown(_cooldown));
     }
@@ -130,7 +130,7 @@ public class HUDManager : Singleton<HUDManager>
 
         if (elements.TryGetValue(Type_HUD.Pause, out elem))
         {
-            elem.displayGroup(pause, pause ? 0.5f : 0f, pause, pause);
+            elem.displayGroup(pause, 0f, pause, pause);
         }
     }
 }

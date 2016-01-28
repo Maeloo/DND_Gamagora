@@ -130,7 +130,7 @@ Transform:
   - {fileID: 409816}
   - {fileID: 488964}
   m_Father: {fileID: 435638}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &435638
 Transform:
   m_ObjectHideFlags: 1
@@ -141,9 +141,9 @@ Transform:
   m_LocalPosition: {x: 0, y: -2.9, z: 3}
   m_LocalScale: {x: -0.3, y: 0.3, z: 1}
   m_Children:
-  - {fileID: 493764}
   - {fileID: 425628}
   - {fileID: 443742}
+  - {fileID: 493764}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &443742
@@ -157,7 +157,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 435638}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!4 &488964
 Transform:
   m_ObjectHideFlags: 1
@@ -181,7 +181,7 @@ Transform:
   m_LocalScale: {x: 0.56448287, y: 0.5644837, z: 1}
   m_Children: []
   m_Father: {fileID: 435638}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!50 &5004090
 Rigidbody2D:
   serializedVersion: 2
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd1e08b932bdbd469fcf4eacc377a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 2
+  life: 1
   stamina: 100
   special: 100
   yMin: -10

@@ -7,11 +7,11 @@ using System.Collections;
 public class BackToMenuButton : MonoBehaviour {
     public void BackToMenu()
     {
-        DestroyImmediate(GameManager.Instance.gameObject);
-        DestroyImmediate(AudioProcessor.Instance.gameObject);
-        DestroyImmediate(SceneAudioManager.Instance.gameObject);
+        //DestroyImmediate(GameManager.Instance.gameObject);
+        //DestroyImmediate(AudioProcessor.Instance.gameObject);
+        //DestroyImmediate(SceneAudioManager.Instance.gameObject);
 
-        System.GC.Collect();
+        //System.GC.Collect();
 
         SceneManager.LoadScene("Menu");
     }

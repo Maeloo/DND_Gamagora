@@ -17,7 +17,6 @@ public class GameManager : Singleton<GameManager>
 
     private SceneAudioManager audio_manager;
     private AudioProcessor audio_process;
-    public Toggle am;
 
     // Use this for initialization
     void Awake ()
@@ -35,7 +34,6 @@ public class GameManager : Singleton<GameManager>
 
     public void SetPause(bool pause)
     {
-        HUDManager.Instance.pause(pause);
         Pause = pause;
         if (pause)
             audio_process.PauseMusic();
@@ -43,12 +41,43 @@ public class GameManager : Singleton<GameManager>
             audio_process.PlayMusic();
     }
 
+    public void SetPauseHUD(bool pause)
+    {
+        if (pause)
+        {
+            HUDManager.Instance.pause(pause);
+            SetPause(pause);
+            Invoke("scaleTime0", 0.1f);
+        }
+        else
+        {
+            scaleTime1();
+            HUDManager.Instance.pause(pause);
+            SetPause(pause);
+        }
+    }
+
+    private void scaleTime1()
+    {
+        Time.timeScale = 1f;
+    }
+
+    private void scaleTime0()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public bool IsMainScene()
+    {
+        return SceneManager.GetActiveScene().name.Equals("scene");
+    }
+
     public void StartGame()
     {
-        Game.Data.ACCESSIBILITY_MODE = am.isOn;
-        DontDestroyOnLoad(AudioProcess);
-        DontDestroyOnLoad(audio_manager);
-        DontDestroyOnLoad(gameObject);
+        Game.Data.ACCESSIBILITY_MODE = FindObjectOfType<Toggle>().isOn;
+        //DontDestroyOnLoad(AudioProcess);
+        //DontDestroyOnLoad(audio_manager);
+        //DontDestroyOnLoad(gameObject);
         LoadScene("scene");
     }
 

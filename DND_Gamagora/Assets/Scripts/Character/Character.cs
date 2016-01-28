@@ -112,6 +112,12 @@ public class Character : MonoBehaviour
         //HUDManager.instance.setSpecial(special);
         GameManager.Instance.SetPause(true);
 
+        Invoke("tempo", 1.0f);
+    }
+
+
+    void tempo()
+    {
         HUDManager.Instance.startCooldown(this, 3f);
     }
 
