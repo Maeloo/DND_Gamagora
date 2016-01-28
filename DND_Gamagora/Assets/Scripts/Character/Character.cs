@@ -349,6 +349,9 @@ public class Character : MonoBehaviour
         
         TerrainManager.Instance.ErasePlatform();
         TerrainManager.Instance._lastPos = new Vector3(lastCheckpointPos.x - TerrainManager.Instance.classic_width, TerrainManager.Instance._lastPos.y, TerrainManager.Instance._lastPos.z);
+        if (TerrainManager.Instance._lastPos.x < TerrainManager.Instance.firstPlatform.position.x)
+            TerrainManager.Instance._lastPos.x = TerrainManager.Instance.firstPlatform.position.x;
+        TerrainManager.Instance.SpawnPlatform(Type_Platform.Classic);
         TerrainManager.Instance.SpawnPlatform(Type_Platform.Classic);
 
         Hit(1);
