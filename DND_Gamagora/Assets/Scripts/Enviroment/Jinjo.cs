@@ -20,6 +20,8 @@ public class Jinjo : MonoBehaviour
         {
             player.SetJinjo(this);
 
+            ScoreManager.Instance.AddPoint(500);
+
             if (anim != null)
             {
                 anim.SetBool("End", true);

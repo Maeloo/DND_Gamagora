@@ -133,4 +133,9 @@ public class HUDManager : Singleton<HUDManager>
             elem.displayGroup(pause, 0f, pause, pause);
         }
     }
+
+    public void resumePause()
+    {
+        GameManager.Instance.SetPauseHUD(false);
+    }
 }

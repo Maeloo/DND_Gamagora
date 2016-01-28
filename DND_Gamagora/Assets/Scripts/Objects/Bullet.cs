@@ -181,6 +181,7 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
         if (type == Game.Type_Bullet.Special)
         {
             Enemy e = col.GetComponent<Enemy>();
+            Enemy e2 = col.GetComponentInParent<Enemy>();
 
             if (e != null && e.type == Game.Type_Enemy.Shooter)
             {
@@ -188,8 +189,11 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
                 ScoreManager.Instance.AddPoint((int)(damage + 10 * (UnityEngine.Random.value)));
             }
-
-            // TODO Destruction murs
+            if (e2 != null && e2.type == Game.Type_Enemy.Tnt)
+            {
+                e2.onHit();
+                Release();
+            }
         }
     }
 

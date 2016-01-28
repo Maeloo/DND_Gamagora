@@ -95,6 +95,9 @@ public class Character : MonoBehaviour
         tornados = new Pool<Bullet>(special_tornado, 4, 8);
         tornados.automaticReuseUnavailables = true;
 
+        if (Game.Data.ACCESSIBILITY_MODE)
+            stamina *= 3.0f;
+
         _baseLife = life;
         _baseStamina = stamina;
         _baseSpecial = special;
@@ -270,7 +273,11 @@ public class Character : MonoBehaviour
 
     void Update()
     {
-        stamina = stamina < _baseStamina ? stamina + 1.0f : _baseStamina;
+        float gain = 1.0f;
+        if (Game.Data.ACCESSIBILITY_MODE)
+            gain = 6.0f;
+
+        stamina = stamina < _baseStamina ? stamina + gain : _baseStamina;
         HUDManager.Instance.setStamina(stamina / _baseStamina);
 
         if (_noStamina && stamina >= 50.0f )
