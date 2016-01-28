@@ -20,9 +20,10 @@ public class GameManager : Singleton<GameManager>
     {
         audio_manager = SceneAudioManager.Instance;
         audio_process = AudioProcessor.Instance;
+        DontDestroyOnLoad(AudioProcess);
+        DontDestroyOnLoad(gameObject);
         Pause = false;
     }
-
 
     public void reset()
     {
@@ -40,9 +41,6 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
-        DontDestroyOnLoad(AudioProcess);
-        DontDestroyOnLoad(gameObject);
-
         LoadScene("scene");
     }
 
@@ -50,4 +48,15 @@ public class GameManager : Singleton<GameManager>
     {
         SceneManager.LoadSceneAsync(name);
     }
+
+    public void SaveOptions(AudioClip new_track, float new_amplitude, float new_variance, float new_c)
+    {
+        audio_process.ChangeTrack(new_track);
+        audio_process.AmplitudeMultiplier = new_amplitude;
+        audio_process.VarianceMin = new_variance;
+        audio_process.C = new_c;
+
+        LoadScene("Menu");
+    }
+
 }

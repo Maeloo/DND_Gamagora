@@ -23,18 +23,18 @@ public class AudioProcessor : Singleton<AudioProcessor>
 {
     protected AudioProcessor() { }
 
-    public float C; // Constant for average sensibility
-    public float VarianceMin; // Variance minimum to detect a beat
-    public float AmplitudeMultiplier; // Multiplier for FFT amplitude computing
-    public float RefValue; // RMS value for 0 dB
-    public float Threshold; // Minimum amplitude to extract pitch
-    public int Samples;  // Spectrum array size
-    public int FftSamples; // Buffer subbands
+    public float C = 3f; // Constant for average sensibility
+    public float VarianceMin = 3f; // Variance minimum to detect a beat
+    public float AmplitudeMultiplier = 1500f; // Multiplier for FFT amplitude computing
+    public float RefValue = 0.1f; // RMS value for 0 dB
+    public float Threshold = 0.05f; // Minimum amplitude to extract pitch
+    public int Samples = 1024;  // Spectrum array size
+    public int FftSamples = 64; // Buffer subbands
     // Constants based on Samples and FftSamples for w computing
     // w1 = A + B (~= 2)
     // FftSamples * B + A * FftSamples * (FftSamples - 1) * 0.5 = Samples
-    public float A; // 0.44307692307f
-    public float B; // 1.6f
+    public float A = 0.4430769f; // 0.44307692307f
+    public float B = 1.6f; // 1.6f
 
     public float RmsValue { get; private set; } // Sound level - RMS
     public float DbValue { get; private set; } // Sound level - dB
@@ -95,7 +95,7 @@ public class AudioProcessor : Singleton<AudioProcessor>
     // Update is called once per frame
     void Update()
     {   
-        if (audioSrc.isPlaying && !rewind && !GameManager.Instance.Pause)
+        if (audioSrc != null && audioSrc.isPlaying && !rewind && !GameManager.Instance.Pause)
         {
             AnalyzeSound();
          //   Debug.Log("RMS: " + rmsValue.ToString("F2") +
@@ -418,6 +418,16 @@ public class AudioProcessor : Singleton<AudioProcessor>
         void onBeatHigh2(float energy, float average_energy, float radiance, int frequency_size);
         void onBeatDetected();
         void onData(float[] spectrum, float[] energy, float[] average_energy, float[] variance);
+    }
+
+    public void ChangeTrack(AudioClip new_track)
+    {
+        audioSrc.clip = new_track;
+    }
+
+    public string GetTrackName()
+    {
+        return audioSrc.clip.name;
     }
 }
 

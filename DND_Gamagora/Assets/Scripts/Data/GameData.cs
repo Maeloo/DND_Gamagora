@@ -47,7 +47,6 @@
         Jinjo_Black_Off,
         GameOver,
         Cooldown
-
     }
 
     public enum Audio_Type
