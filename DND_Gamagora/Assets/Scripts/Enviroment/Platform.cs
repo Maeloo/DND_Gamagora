@@ -67,7 +67,6 @@ public class Platform : MonoBehaviour, Poolable<Platform> {
 
     public void Release ( ) {
         _pool.onRelease ( this );
-        //this.gameObject.SetActive(false);
         transform.position = new Vector3(- 1000f, - 1000f, - 1000f);
         this.gameObject.SetActive(false);
     }
