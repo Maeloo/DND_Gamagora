@@ -70,6 +70,8 @@ public class Character : MonoBehaviour
 
     private Vector3 direction = Vector3.right;
     private AudioProcessor audio_process;
+    private EnemyManager Enemy_manager;
+    private BonusManager Bonus_manager;
     private List<Jinjo> jinjos;
 
     private float _baseLife;
@@ -104,6 +106,8 @@ public class Character : MonoBehaviour
 
         cam = Camera.main.GetComponent<CharacterCamera>();
         audio_process = AudioProcessor.Instance;
+        Enemy_manager = EnemyManager.Instance;
+        Bonus_manager = BonusManager.Instance;
         lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
 
         jinjos = new List<Jinjo>(6);
@@ -368,6 +372,8 @@ public class Character : MonoBehaviour
         anim.SetBool("Fall", false);
         
         TerrainManager.Instance.ErasePlatform();
+        Enemy_manager.Respawn();
+        Bonus_manager.Resapwn();
         TerrainManager.Instance._lastPos = new Vector3(lastCheckpointPos.x - TerrainManager.Instance.classic_width, TerrainManager.Instance._lastPos.y, TerrainManager.Instance._lastPos.z);
         if (TerrainManager.Instance._lastPos.x < TerrainManager.Instance.firstPlatform.position.x)
             TerrainManager.Instance._lastPos.x = TerrainManager.Instance.firstPlatform.position.x;

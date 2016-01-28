@@ -103,6 +103,50 @@ public class EnemyManager : Singleton<EnemyManager>
         return false;
     }
 
+    public void Respawn()
+    {
+        for (int i = pools[Type_Enemy.CrazyFireball].usedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Enemy.CrazyFireball].usedObjects[i].Release();
+        }
+        for (int i = pools[Type_Enemy.CrazyFireball].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+        {
+            pools[Type_Enemy.CrazyFireball].unusedObjects[i].gameObject.SetActive(false);
+            pools[Type_Enemy.CrazyFireball].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
+        }
+
+
+        for (int i = pools[Type_Enemy.Shooter].usedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Enemy.Shooter].usedObjects[i].Release();
+        }
+        for (int i = pools[Type_Enemy.Shooter].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+        {
+            pools[Type_Enemy.Shooter].unusedObjects[i].gameObject.SetActive(false);
+            pools[Type_Enemy.Shooter].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
+        }
+
+        for (int i = pools[Type_Enemy.Meteor].usedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Enemy.Meteor].usedObjects[i].Release();
+        }
+        for (int i = pools[Type_Enemy.Meteor].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+        {
+            pools[Type_Enemy.Meteor].unusedObjects[i].gameObject.SetActive(false);
+            pools[Type_Enemy.Meteor].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
+        }
+
+        for (int i = pools[Type_Enemy.Tnt].usedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Enemy.Tnt].usedObjects[i].Release();
+        }
+        for (int i = pools[Type_Enemy.Tnt].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+        {
+            pools[Type_Enemy.Tnt].unusedObjects[i].gameObject.SetActive(false);
+            pools[Type_Enemy.Tnt].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
+        }
+    }
+
 
     void FixedUpdate()
     {
@@ -132,15 +176,6 @@ public class EnemyManager : Singleton<EnemyManager>
                 _lastMeteor = Time.time;
                 _nextMeteor = 10.0f + Random.value * 10.0f;
             }
-
-
-            //if (Time.time - _lastTnt > _nextTnt)
-            //{
-            //    spawnEnemy(Type_Enemy.Tnt, new Vector3(Player.transform.position.x + 20.0f, 0, 3.0f));
-
-            //    _lastTnt = Time.time;
-            //    _nextTnt = 5.0f + Random.value * 5.0f;
-            //}
         }
     }
 }

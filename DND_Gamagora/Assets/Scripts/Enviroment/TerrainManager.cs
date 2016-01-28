@@ -33,6 +33,7 @@ public class TerrainManager : Singleton<TerrainManager> {
     private Dictionary<Jinjo, bool> jinjos;
     private Checkpoint CheckPointScript;
     private GameObject jinjo_to_delete;
+    
 
     void Awake()
     {
@@ -203,13 +204,13 @@ public class TerrainManager : Singleton<TerrainManager> {
     {
         Vector3 pos = _lastPos;
         pos.x += classic_width;
-
         e.spawnEnemy(Type_Enemy.Tnt, new Vector3(pos.x, 0, 3.0f));
     }
 
 
     public void ErasePlatform()
     {
+        platformCount = 0;
         for (int i = pools[Type_Platform.Classic].usedObjects.Count-1 ; i >= 0; i--)
         {
             pools[Type_Platform.Classic].usedObjects[i].Release();
@@ -219,7 +220,18 @@ public class TerrainManager : Singleton<TerrainManager> {
             pools[Type_Platform.Classic].unusedObjects[i].gameObject.SetActive(false);
             pools[Type_Platform.Classic].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
         }
+
+        for (int i = pools[Type_Platform.Hight].usedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Platform.Hight].usedObjects[i].Release();
+        }
+        for (int i = pools[Type_Platform.Hight].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+        {
+            pools[Type_Platform.Hight].unusedObjects[i].gameObject.SetActive(false);
+            pools[Type_Platform.Hight].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
+        }
     }
+
     /******* Public methods ********/
 
     public bool makeCurrentClassicPlatformFall()

@@ -61,4 +61,27 @@ public class BonusManager : Singleton<BonusManager>
             }
         }
     }
+
+    public void Resapwn()
+    {
+        for (int i = pools[Type_Bonus.Invincibility].usedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Bonus.Invincibility].usedObjects[i].Release();
+        }
+        for (int i = pools[Type_Bonus.Invincibility].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+        {
+            pools[Type_Bonus.Invincibility].unusedObjects[i].gameObject.SetActive(false);
+            pools[Type_Bonus.Invincibility].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
+        }
+
+        for (int i = pools[Type_Bonus.Note].usedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Bonus.Note].usedObjects[i].Release();
+        }
+        for (int i = pools[Type_Bonus.Note].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+        {
+            pools[Type_Bonus.Note].unusedObjects[i].gameObject.SetActive(false);
+            pools[Type_Bonus.Note].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
+        }
+    }
 }
