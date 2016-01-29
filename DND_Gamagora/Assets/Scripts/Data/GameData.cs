@@ -61,7 +61,9 @@
         Shield,
         ExplosionTNT,
         Note,
-        Tornado
+        Tornado,
+        Countdown,
+        Go
     }
 
     public class Data
