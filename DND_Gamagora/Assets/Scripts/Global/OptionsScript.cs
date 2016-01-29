@@ -3,10 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Audio;
 
 public class OptionsScript : Singleton<OptionsScript>
 {
     protected OptionsScript() { }
+    
+    [SerializeField]
+    private AudioMixer Mixer;
+
+    [SerializeField]
+    private float PlayerInfos_FadeIn;
+    [SerializeField]
+    private float PlayerInfos_FadeOut;
 
     private int selected_track;
     private List<AudioClip> clips;
@@ -16,6 +25,9 @@ public class OptionsScript : Singleton<OptionsScript>
     private float amplitude;
     private float variance;
     private float C;
+    private float master_vol;
+    private float music_vol;
+    private float sounds_vol;
     private int player_nb;
 
     private Slider amplitude_slider;
@@ -26,8 +38,17 @@ public class OptionsScript : Singleton<OptionsScript>
     private Text c_text;
     private Transform music_panel;
 
+    private Slider master_slider;
+    private Slider music_slider;
+    private Slider sounds_slider;
+    private Text txtHP_Sumo;
+    private Text txtSpeed_Sumo;
+    private Text txtHP_Megaman;
+    private Text txtSpeed_Megaman;
     private AudioProcessor audio_process;
     private EventSystem event_sys;
+    
+    private AudioMixerGroup[] mixer_groups;
 
     void Awake()
     {
@@ -61,6 +82,37 @@ public class OptionsScript : Singleton<OptionsScript>
 
             player_megaman_btn = c.transform.FindChild("player_button").FindChild("ButtonMegaman").GetComponent<Image>();
             player_sumo_btn = c.transform.FindChild("player_button").FindChild("ButtonSumo").GetComponent<Image>();
+
+            txtHP_Sumo = player_sumo_btn.transform.FindChild("TextHP").GetComponent<Text>();
+            txtSpeed_Sumo = player_sumo_btn.transform.FindChild("TextSpeed").GetComponent<Text>();
+            txtHP_Megaman = player_megaman_btn.transform.FindChild("TextHP").GetComponent<Text>();
+            txtSpeed_Megaman = player_megaman_btn.transform.FindChild("TextSpeed").GetComponent<Text>();
+
+            txtHP_Sumo.CrossFadeAlpha(0f, 0f, true);
+            txtSpeed_Sumo.CrossFadeAlpha(0f, 0f, true);
+            txtHP_Megaman.CrossFadeAlpha(0f, 0f, true);
+            txtSpeed_Megaman.CrossFadeAlpha(0f, 0f, true);
+
+            Transform vol_btn = c.transform.FindChild("volume_button");
+            master_slider = vol_btn.FindChild("master_button").FindChild("slider").GetComponent<Slider>();
+            music_slider = vol_btn.FindChild("music_button").FindChild("slider").GetComponent<Slider>();
+            sounds_slider = vol_btn.FindChild("sounds_button").FindChild("slider").GetComponent<Slider>();
+
+            mixer_groups = Mixer.FindMatchingGroups("Master");
+
+            foreach(AudioMixerGroup g in mixer_groups)
+            {
+                if (g.name.Equals("Master"))
+                    g.audioMixer.GetFloat("MasterVol", out master_vol);
+                else if(g.name.Equals("Music"))
+                    g.audioMixer.GetFloat("MusicVol", out music_vol);
+                else if (g.name.Equals("Sounds"))
+                    g.audioMixer.GetFloat("SoundsVol", out sounds_vol);
+            }
+           
+            master_slider.value = Mathf.Pow(10, (master_vol / 20f)); // Db to [0, 1]
+            music_slider.value = Mathf.Pow(10, (music_vol / 20f));
+            sounds_slider.value = Mathf.Pow(10, (sounds_vol / 20f));
         }
         
         clips = GameManager.Instance.Tracks;
@@ -152,11 +204,58 @@ public class OptionsScript : Singleton<OptionsScript>
         c_text.text = C.ToString("0");
     }
 
+    public void ChangeMasterVolume()
+    {
+        master_vol = master_slider.value;
+    }
+
+    public void ChangeMusicVolume()
+    {
+        music_vol = music_slider.value;
+    }
+
+    public void ChangeSoundsVolume()
+    {
+        sounds_vol = sounds_slider.value;
+    }
+
+    public void ShowSumoInfos()
+    {
+        txtHP_Sumo.CrossFadeAlpha(1f, PlayerInfos_FadeIn, true);
+        txtSpeed_Sumo.CrossFadeAlpha(1f, PlayerInfos_FadeIn, true);
+    }
+
+    public void HideSumoInfos()
+    {
+        txtHP_Sumo.CrossFadeAlpha(0f, PlayerInfos_FadeOut, true);
+        txtSpeed_Sumo.CrossFadeAlpha(0f, PlayerInfos_FadeOut, true);
+    }
+
+    public void ShowMegamanInfos()
+    {
+        txtHP_Megaman.CrossFadeAlpha(1f, PlayerInfos_FadeIn, true);
+        txtSpeed_Megaman.CrossFadeAlpha(1f, PlayerInfos_FadeIn, true);
+    }
+
+    public void HideMegamanInfos()
+    {
+        txtHP_Megaman.CrossFadeAlpha(0f, PlayerInfos_FadeOut, true);
+        txtSpeed_Megaman.CrossFadeAlpha(0f, PlayerInfos_FadeOut, true);
+    }
+
     public void SaveChanges()
     {
+        foreach (AudioMixerGroup g in mixer_groups)
+        {
+            if (g.name.Equals("Master"))
+                g.audioMixer.SetFloat("MasterVol", 20 * Mathf.Log10(master_vol));
+            else if (g.name.Equals("Music"))
+                g.audioMixer.SetFloat("MusicVol", 20 * Mathf.Log10(music_vol));
+            else if (g.name.Equals("Sounds"))
+                g.audioMixer.SetFloat("SoundsVol", 20 * Mathf.Log10(sounds_vol));
+        }
+
         Character.CharacterNb = player_nb;
         GameManager.Instance.SaveOptions(clips[selected_track], amplitude, variance, C);
     }
-
-
 }

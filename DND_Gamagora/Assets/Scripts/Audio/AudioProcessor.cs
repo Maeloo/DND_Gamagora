@@ -454,7 +454,9 @@ public class AudioProcessor : Singleton<AudioProcessor>
 
     public string GetTrackName()
     {
-        return audioSrc.clip.name;
+        if(audioSrc != null)
+            return audioSrc.clip.name;
+        return string.Empty;
     }
 
     public void FadeVolume(float time, float volume)
