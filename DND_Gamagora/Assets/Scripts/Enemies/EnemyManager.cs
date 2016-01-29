@@ -82,7 +82,7 @@ public class EnemyManager : Singleton<EnemyManager>
         _nextMeteor = 10.0f + Random.value * 10.0f;
 
         //Init tnts
-        Pool<Enemy> poolTnt = new Pool<Enemy>(tnt, 34, 100);
+        Pool<Enemy> poolTnt = new Pool<Enemy>(tnt, 10, 25);
         poolTnt.automaticReuseUnavailables = true;
 
         pools.Add(Type_Enemy.Tnt, poolTnt);

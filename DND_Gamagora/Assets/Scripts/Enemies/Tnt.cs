@@ -11,7 +11,7 @@ public class Tnt : MonoBehaviour
         {
             if (child.gameObject.layer == 11)
             {
-                child.gameObject.GetComponent<SpriteRenderer>().sprite = _sprite;
+                child.gameObject.GetComponent<Animator>().SetTrigger("Spawn");
                 child.gameObject.GetComponent<BoxCollider2D>().enabled=true;
             }
         }
