@@ -166,7 +166,9 @@ public class TerrainManager : Singleton<TerrainManager> {
                 return true;
             }
         }
-        return enemyManager.CheckPlatformTnt(pf, pf_previous, pf_next, offset);
+        if(enemyManager!=null)
+            return enemyManager.CheckPlatformTnt(pf, pf_previous, pf_next, offset);
+        return false;
     }
 
     internal void SpawnPlatform(Type_Platform type)
