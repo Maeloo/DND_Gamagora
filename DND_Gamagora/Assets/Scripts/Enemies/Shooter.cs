@@ -46,4 +46,24 @@ public class Shooter : MonoBehaviour {
             _bullets.usedObjects[i].Release();
         }
     }
+
+    void OnTriggerStay2D(Collider2D col) {
+        HighPlatform hpf = col.GetComponent<HighPlatform>();
+
+        if(hpf != null)
+        {
+            Vector3 temp = transform.position;
+            temp.x--;
+            transform.position = temp;
+        }
+
+        Enemy e = col.GetComponentInParent<Enemy>();
+
+        if(e != null && e.type == Game.Type_Enemy.Tnt)
+        {
+            Vector3 temp = transform.position;
+            temp.x++;
+            transform.position = temp;
+        }
+    }
 }
