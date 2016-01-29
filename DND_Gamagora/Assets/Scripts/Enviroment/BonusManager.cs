@@ -2,33 +2,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using Game;
+
 public class BonusManager : Singleton<BonusManager>
 {
     private GameObject player;
+
     [SerializeField]
     Bonus Note;
     [SerializeField]
     Bonus Invincibility;
     [SerializeField]
     Bonus Heart;
+    [SerializeField]
+    Bonus Power;
+
     protected BonusManager() {}
+
     private int countNote;
-    public int passCountNote = 10;
     private int countHeart;
+    private int countPower;
+    private int countInvincibility = 0;
+
+    public int passCountNote = 10;
     public int passCountHeart = 5;
     public int passCountInvincibility = 10;
-    private int countInvincibility = 0;
+    public int passCountPower = 15;
+
     private Vector3 lastBonusPos;
     private Vector3 DELTA_BONUS_CHARACTER = new Vector3(10f, 0f, 0f);
     protected Dictionary<Type_Bonus, Pool<Bonus>> pools;
+
     public float distMinInvulnerability = 10f;
-    // Use this for initialization
+    
+
     void Awake () {
         lastBonusPos = new Vector3(0f, 0f, 0f);
         player = LoadCharacter.Instance.GetCharacter();
         countInvincibility = 0;
         countNote = 0;
         countHeart = 0;
+        countPower = 0;
         pools = new Dictionary<Type_Bonus, Pool<Bonus>>();
 
         Pool<Bonus> notePool = new Pool<Bonus>(Note, 8, 16);
@@ -39,10 +52,13 @@ public class BonusManager : Singleton<BonusManager>
         invincibilityPool.automaticReuseUnavailables = true;
         pools.Add(Type_Bonus.Invincibility, invincibilityPool);
 
-
         Pool<Bonus> heartsPool = new Pool<Bonus>(Heart, 8, 16);
         heartsPool.automaticReuseUnavailables = true;
         pools.Add(Type_Bonus.Heart, heartsPool);
+
+        Pool<Bonus> powerPool = new Pool<Bonus>(Power, 8, 16);
+        heartsPool.automaticReuseUnavailables = true;
+        pools.Add(Type_Bonus.Power, powerPool);
     }
 	
     public void SpawnBonus(Type_Bonus type)
@@ -62,6 +78,7 @@ public class BonusManager : Singleton<BonusManager>
                 }
             }
         }
+
         if (type == Type_Bonus.Invincibility)
         {
             ++countInvincibility;
@@ -76,12 +93,12 @@ public class BonusManager : Singleton<BonusManager>
                 }
             }
         }
+
         if (type == Type_Bonus.Heart)
         {
             ++countHeart;
             if (passCountHeart <= countHeart)
             {
-
                 if (pools[type].GetAvailable(false, out bonus))
                 {
                     countHeart = 0;
@@ -89,9 +106,22 @@ public class BonusManager : Singleton<BonusManager>
                 }
             }
         }
+
+        if(type == Type_Bonus.Power)
+        {
+            ++countPower;
+            if (passCountPower <= countPower)
+            {
+                if (pools[type].GetAvailable(false, out bonus))
+                {
+                    countPower = 0;
+                    bonus.SetPosition(player.transform.position + DELTA_BONUS_CHARACTER);
+                }
+            }
+        }
     }
 
-    public void Resapwn()
+    public void Respawn()
     {
         for (int i = pools[Type_Bonus.Invincibility].usedObjects.Count - 1; i >= 0; i--)
         {
@@ -113,7 +143,6 @@ public class BonusManager : Singleton<BonusManager>
             pools[Type_Bonus.Note].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
         }
 
-
         for (int i = pools[Type_Bonus.Heart].usedObjects.Count - 1; i >= 0; i--)
         {
             pools[Type_Bonus.Heart].usedObjects[i].Release();
@@ -124,5 +153,14 @@ public class BonusManager : Singleton<BonusManager>
             pools[Type_Bonus.Heart].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
         }
 
+        for (int i = pools[Type_Bonus.Power].usedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Bonus.Power].usedObjects[i].Release();
+        }
+        for (int i = pools[Type_Bonus.Power].unusedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Bonus.Power].unusedObjects[i].gameObject.SetActive(false);
+            pools[Type_Bonus.Power].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
+        }
     }
 }

@@ -380,6 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd1e08b932bdbd469fcf4eacc377a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxLife: 0
   life: 15
   stamina: 100
   special: 100
@@ -404,6 +405,7 @@ MonoBehaviour:
   SlideCircle: {fileID: 5828078}
   noteText: {fileID: 0}
   invulnerabilityTimeBonus: 3
+  power_fx: {fileID: 157576}
   shield: {fileID: 131200}
 --- !u!198 &19831048
 ParticleSystem:

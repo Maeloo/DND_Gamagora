@@ -81,6 +81,8 @@ public class Character : MonoBehaviour
 
     private bool _noStamina;
 
+    private bool _unlimitedStamina;
+
     private Vector3 start_pos;
     private static int jinjo_sound = -1;
     private static int all_jinjos_sound = -1;
@@ -116,6 +118,7 @@ public class Character : MonoBehaviour
         _baseLife = life;
         _baseStamina = stamina;
         _baseSpecial = special;
+
         if (Game.Data.ACCESSIBILITY_MODE)
             stamina *= 3.0f;
 
@@ -207,7 +210,8 @@ public class Character : MonoBehaviour
             }                
             else if (run && !_noStamina)
             {
-                stamina = stamina < 2 ? 0 : stamina - 6;
+                if (!_unlimitedStamina)
+                    stamina = stamina < 2 ? 0 : stamina - 6;
 
                 HUDManager.Instance.setStamina(stamina / _baseStamina);
 
@@ -404,7 +408,7 @@ public class Character : MonoBehaviour
 
         TerrainManager.Instance.ErasePlatform();
         Enemy_manager.Respawn();
-        Bonus_manager.Resapwn();
+        Bonus_manager.Respawn();
         TerrainManager.Instance._lastPos = new Vector3(lastCheckpointPos.x - TerrainManager.Instance.classic_width, TerrainManager.Instance._lastPos.y, TerrainManager.Instance._lastPos.z);
         if (TerrainManager.Instance._lastPos.x < TerrainManager.Instance.firstPlatform.position.x)
             TerrainManager.Instance._lastPos.x = TerrainManager.Instance.firstPlatform.position.x;
@@ -500,6 +504,25 @@ public class Character : MonoBehaviour
     {
         life++;
         HUDManager.Instance.setLife(life == 0 ? 0 : (float)life / _baseLife);
+    }
+
+    [SerializeField]
+    GameObject power_fx;
+
+    public void setUnlimiedStamina()
+    {
+        power_fx.SetActive(true);
+        _unlimitedStamina = true;
+        stamina = _baseStamina;
+        HUDManager.Instance.setStamina(1.0f);
+
+        Invoke("endUnlimitedStamina", 3.14f);
+    }
+
+    void endUnlimitedStamina()
+    {
+        power_fx.SetActive(false);
+        _unlimitedStamina = false;
     }
 
     public void StartInvulnerabilityCoroutine()
