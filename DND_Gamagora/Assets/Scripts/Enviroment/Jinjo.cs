@@ -39,26 +39,26 @@ public class Jinjo : MonoBehaviour
         
     }
 
-    //void OnTriggerStay2D(Collider2D col)
-    //{
-    //    HighPlatform hpf = col.GetComponent<HighPlatform>();
+    void OnTriggerStay2D(Collider2D col)
+    {
+        HighPlatform hpf = col.GetComponent<HighPlatform>();
 
-    //    if (hpf != null)
-    //    {
-    //        Vector3 temp = transform.position;
-    //        temp.x--;
-    //        transform.position = temp;
-    //    }
+        if (hpf != null)
+        {
+            Vector3 temp = transform.position;
+            temp.x--;
+            transform.position = temp;
+        }
 
-    //    Enemy e = col.GetComponentInParent<Enemy>();
+        Enemy e = col.GetComponentInParent<Enemy>();
 
-    //    if (e != null && e.type == Game.Type_Enemy.Tnt)
-    //    {
-    //        Vector3 temp = transform.position;
-    //        temp.x++;
-    //        transform.position = temp;
-    //    }
-    //}
+        if (e != null && e.type == Game.Type_Enemy.Tnt)
+        {
+            Vector3 temp = transform.position;
+            temp.x++;
+            transform.position = temp;
+        }
+    }
 
     private void DeleteJinjo()
     {
