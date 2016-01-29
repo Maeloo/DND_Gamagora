@@ -76,6 +76,7 @@ public class HUDElement : MonoBehaviour
 
     public IEnumerator startCooldown(float cooldown)
     {
+        SceneAudioManager.Instance.playAudio(Audio_Type.Countdown);
         float startTime = Time.time;
         float time;
 
@@ -91,6 +92,7 @@ public class HUDElement : MonoBehaviour
 
         _start.text = "";
         HUDManager.Instance.endCooldown();
+        SceneAudioManager.Instance.playAudio(Audio_Type.Go);
     }
 
 }
