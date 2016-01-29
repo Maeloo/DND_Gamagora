@@ -25,6 +25,18 @@ public class Meteor : MonoBehaviour {
     }
 
 
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Bullet b = col.GetComponent<Bullet>();
+
+        if(b != null && b.type == Game.Type_Bullet.Special)
+        {
+            GetComponent<Enemy>().onHit();
+            GetComponent<Rigidbody2D>().isKinematic = true;
+        }
+    }
+
+
     void Update()
     {
         if(transform.position.y < -100)

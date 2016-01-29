@@ -9,7 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 464434}
   - 114: {fileID: 11444050}
-  m_Layer: 0
+  - 61: {fileID: 6126262}
+  - 50: {fileID: 5017114}
+  m_Layer: 10
   m_Name: special_tornado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,25 +30,8 @@ GameObject:
   - 199: {fileID: 19977298}
   - 114: {fileID: 11470978}
   - 114: {fileID: 11409240}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: special_tornado
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &180624
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 477232}
-  - 61: {fileID: 6193122}
-  - 50: {fileID: 5097436}
-  m_Layer: 0
-  m_Name: collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +48,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 464434}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &464434
 Transform:
   m_ObjectHideFlags: 1
@@ -74,31 +59,18 @@ Transform:
   m_LocalPosition: {x: 0, y: 1000, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 477232}
   - {fileID: 411206}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &477232
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180624}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.34, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 464434}
-  m_RootOrder: 0
---- !u!50 &5097436
+--- !u!50 &5017114
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180624}
+  m_GameObject: {fileID: 120582}
   m_UseAutoMass: 1
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -107,20 +79,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6193122
+--- !u!61 &6126262
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180624}
+  m_GameObject: {fileID: 120582}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1}
   serializedVersion: 2
-  m_Size: {x: 1, y: 3}
+  m_Size: {x: 1, y: 5}
 --- !u!114 &11409240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,6 +120,7 @@ MonoBehaviour:
   type: 2
   damage: 10
   speed: 20
+  specialFX: {fileID: 100002, guid: 97eba9179cb1859448a24397955cf3e4, type: 2}
   Copy2D: 0
 --- !u!114 &11470978
 MonoBehaviour:
@@ -170,7 +143,7 @@ ParticleSystem:
   serializedVersion: 2
   lengthInSec: 0.6
   startDelay:
-    scalar: 0.05
+    scalar: 0
     maxCurve:
       serializedVersion: 2
       m_Curve:
@@ -240,7 +213,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startSpeed:
-      scalar: 6
+      scalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:

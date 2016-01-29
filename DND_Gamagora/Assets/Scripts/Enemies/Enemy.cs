@@ -181,6 +181,13 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
             Instantiate(death_fx, transform.position, Quaternion.identity);
             Release();
         }
+
+        if (type == Game.Type_Enemy.Meteor)
+        {
+            Instantiate(death_fx, transform.position, Quaternion.identity);
+            Release();
+        }
+
         else if (type == Game.Type_Enemy.Tnt)
         {
             gameObject.GetComponentInChildren<Animator>().SetTrigger("Boom");

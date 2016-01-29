@@ -31,7 +31,7 @@ GameObject:
   - 114: {fileID: 11497934}
   - 114: {fileID: 11465092}
   - 114: {fileID: 11420218}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: crazy_fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - 4: {fileID: 479182}
   - 212: {fileID: 21201906}
   - 114: {fileID: 11436358}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: crystal_ahead_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - 4: {fileID: 403746}
   - 212: {fileID: 21240710}
   - 114: {fileID: 11453052}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: crystal6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - 4: {fileID: 497098}
   - 212: {fileID: 21262070}
   - 114: {fileID: 11486384}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: crystal4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - 4: {fileID: 459492}
   - 212: {fileID: 21263946}
   - 114: {fileID: 11403688}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: crystal7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - 4: {fileID: 444962}
   - 114: {fileID: 11467834}
   - 114: {fileID: 11426080}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - 4: {fileID: 470324}
   - 212: {fileID: 21281110}
   - 114: {fileID: 11438536}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: crystal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - 4: {fileID: 480682}
   - 114: {fileID: 11476854}
   - 114: {fileID: 11486344}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TntBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - 4: {fileID: 439534}
   - 212: {fileID: 21232220}
   - 114: {fileID: 11484452}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: crystal2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - 4: {fileID: 444266}
   - 212: {fileID: 21200530}
   - 114: {fileID: 11496858}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: crystal3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   - 4: {fileID: 484926}
   - 212: {fileID: 21287382}
   - 114: {fileID: 11475272}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: crystal5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.54, y: -2.44, z: -0.1}
+  m_LocalPosition: {x: 0.54, y: -2.44, z: 0}
   m_LocalScale: {x: 3.7, y: 3.7, z: 3.7}
   m_Children: []
   m_Father: {fileID: 480682}

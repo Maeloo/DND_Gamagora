@@ -25,6 +25,7 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
     public Game.Type_Bullet type;
     public float damage;
     public float speed;
+    public GameObject specialFX;
 
     public bool Copy2D;
 
@@ -46,6 +47,7 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
     public void Duplicate(Bullet a_template)
     {
         type = a_template.type;
+        specialFX = a_template.specialFX;
 
         this.gameObject.layer = a_template.gameObject.layer;
 
@@ -68,7 +70,20 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
             gameObject.AddComponent<PolygonCollider2D>().isTrigger = a_template.GetComponent<Collider2D>().isTrigger;
             gameObject.AddComponent<Rigidbody2D>().isKinematic = true;
-        }       
+        }     
+        
+        if(type == Game.Type_Bullet.Special)
+        {
+            BoxCollider2D box = gameObject.AddComponent<BoxCollider2D>();
+            box.isTrigger = true;
+            box.size = new Vector2(1.0f, 5.0f);
+            box.offset = new Vector2(.0f, 1.0f);
+
+            Rigidbody2D body = gameObject.AddComponent<Rigidbody2D>();
+            body.useAutoMass = true;
+            body.freezeRotation = true;
+            body.isKinematic = true;
+        }
 
         scale = a_template.transform.localScale;
 
@@ -169,18 +184,22 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
                 ScoreManager.Instance.AddPoint((int)(damage + 10 * (UnityEngine.Random.value)));
             }
+
             if (e2 != null && e2.type == Game.Type_Enemy.Tnt)
             {
                 e2.onHit();
+
                 Release();
+
+                ScoreManager.Instance.AddPoint((int)(damage + 10 * (UnityEngine.Random.value)));
             }
         }
 
         if (type == Game.Type_Bullet.Special)
         {
-            Debug.logger.Log("FUUUUUUCK");
             Enemy e = col.GetComponent<Enemy>();
             Enemy e2 = col.GetComponentInParent<Enemy>();
+            Bullet b = col.GetComponent<Bullet>();
 
             if (e != null && e.type == Game.Type_Enemy.Shooter)
             {
@@ -188,10 +207,18 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
                 ScoreManager.Instance.AddPoint((int)(damage + 10 * (UnityEngine.Random.value)));
             }
+
             if (e2 != null && e2.type == Game.Type_Enemy.Tnt)
             {
                 e2.onHit();
-                Release();
+
+                ScoreManager.Instance.AddPoint((int)(damage + 10 * (UnityEngine.Random.value)));
+            }
+
+            if(b != null && b.type == Game.Type_Bullet.Enemy)
+            {
+                Instantiate(specialFX, b.transform.position, Quaternion.identity);
+                b.Release();                
             }
         }
     }
