@@ -89,6 +89,8 @@ public class EnemyManager : Singleton<EnemyManager>
 
         _lastTnt = Time.time;
         _nextTnt = 5.0f + Random.value * 5.0f;
+
+        ScoreManager.Instance.init();
     }
 	
     

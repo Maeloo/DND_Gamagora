@@ -7,13 +7,13 @@ public class ScoreManager : Singleton<ScoreManager>
 {
     internal const int SIZE_CLASSEMENT = 10;
     private Text scoreText;
-    private int currentScore;
+    //private int currentScore;
 
     protected ScoreManager() { }
 	
     
-	void Awake () {
-        currentScore = 0;
+	public void init () {
+        Game.Data.CURRENT_SCORE = 0;
         GameObject UITextScore = GameObject.FindGameObjectWithTag("TextScore");
         if (UITextScore != null)
             scoreText = UITextScore.GetComponentInChildren<Text>();
@@ -22,10 +22,10 @@ public class ScoreManager : Singleton<ScoreManager>
 	
     public void AddPoint(int points)
     {
-        currentScore += points;
+        Game.Data.CURRENT_SCORE += points;
         if (scoreText != null)
         {
-            scoreText.text = "Score " + currentScore.ToString();
+            scoreText.text = "Score " + Game.Data.CURRENT_SCORE.ToString();
         }
     }
 
@@ -71,7 +71,7 @@ public class ScoreManager : Singleton<ScoreManager>
         int i = 0;
         for(; i < SIZE_CLASSEMENT; ++i)
         {
-            if(res[i] <= currentScore)
+            if(res[i] <= Game.Data.CURRENT_SCORE)
             {
                 break;
             }
@@ -83,7 +83,7 @@ public class ScoreManager : Singleton<ScoreManager>
             int tmp;
             string previousName = resString[i];
             string tmpStr;
-            res[i] = currentScore;
+            res[i] = Game.Data.CURRENT_SCORE;
             ++i;
             for(; i < SIZE_CLASSEMENT; ++i)
             {

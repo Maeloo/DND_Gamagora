@@ -115,6 +115,7 @@ public class HUDManager : Singleton<HUDManager>
 
     public void loadScore()
     {
+        
         GameManager.Instance.LoadScene("Score");
     }
 

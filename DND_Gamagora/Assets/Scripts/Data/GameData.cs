@@ -60,5 +60,6 @@
     public class Data
     {
         public static bool ACCESSIBILITY_MODE = false;
+        public static int CURRENT_SCORE = 0;
     }
 }
