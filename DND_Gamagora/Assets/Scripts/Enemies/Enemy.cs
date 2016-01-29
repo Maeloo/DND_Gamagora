@@ -136,7 +136,7 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
 
             case Game.Type_Enemy.Tnt:
                 gameObject.GetComponent<Tnt>().Init();
-                gameObject.GetComponent<Tnt>().spawn(position, player);
+                gameObject.GetComponent<Tnt>().spawn(position);
                 break;
         }
 
