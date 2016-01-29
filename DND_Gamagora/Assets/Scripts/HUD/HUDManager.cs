@@ -73,7 +73,6 @@ public class HUDManager : Singleton<HUDManager>
 
     public void setJinjo(Jinjo jinjo)
     {
-        Debug.Log("jinjo : " + jinjo.Id);
         switch(jinjo.Id)
         {
             case 0:

@@ -33,7 +33,7 @@ public class TerrainManager : Singleton<TerrainManager> {
     private Dictionary<Jinjo, bool> jinjos;
     private Checkpoint CheckPointScript;
     private GameObject jinjo_to_delete;
-    
+    private Dictionary<string, ParticleSystem> jinjo_particles;
 
     void Awake()
     {
@@ -60,6 +60,13 @@ public class TerrainManager : Singleton<TerrainManager> {
 
         _lastSpawn = Time.time;
 
+        ParticleSystem[] res = Resources.LoadAll<ParticleSystem>("Effects/");
+        jinjo_particles = new Dictionary<string, ParticleSystem>(res.Length);
+        for(int i = 0; i < res.Length; i++)
+        {
+            jinjo_particles.Add(res[i].name, res[i]);
+        }
+        
         InitJinjos();
     }
 
@@ -78,16 +85,31 @@ public class TerrainManager : Singleton<TerrainManager> {
 
         float height = (minY - maxY) * 0.5f;
 
-        float max = cam.transform.position.y + height * 0.4f;
-        float min = cam.transform.position.y - height * 0.1f;
-        float y = Random.Range(min, max);
-
+        float max = cam.transform.position.y + height * 0.2f;
+        float min = cam.transform.position.y - height * 0.2f;
+        delta = 5f;
         jinjos = new Dictionary<Jinjo, bool>(6);
         for (int i = 0; i < 6; i++)
         {
+            float y = Random.Range(min, max);
             GameObject obj_jinjo = (GameObject)Instantiate(base_jinjo, new Vector3((i + 1) * delta, y, 0f), Quaternion.identity);
             Jinjo j = obj_jinjo.GetComponent<Jinjo>();
+
             j.SetColorNumber(i);
+
+            if (i == 0)
+                j.SetParticles(jinjo_particles["Jinjo_Violet"]);
+            else if(i == 1)
+                j.SetParticles(jinjo_particles["Jinjo_Yellow"]);
+            else if (i == 2)
+                j.SetParticles(jinjo_particles["Jinjo_Orange"]);
+            else if (i == 3)
+                j.SetParticles(jinjo_particles["Jinjo_Green"]);
+            else if (i == 4)
+                j.SetParticles(jinjo_particles["Jinjo_Blue"]);
+            else if (i == 5)
+                j.SetParticles(jinjo_particles["Jinjo_Black"]);
+
             jinjos.Add(j, false);
         }
     }
@@ -96,7 +118,7 @@ public class TerrainManager : Singleton<TerrainManager> {
     {
         jinjos[j] = true;
         jinjo_to_delete = j.gameObject;
-        Invoke("DeleteJinjo", 1f);
+        Invoke("DeleteJinjo", 2f);
     }
 
     private void DeleteJinjo()

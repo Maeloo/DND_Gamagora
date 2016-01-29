@@ -54,7 +54,8 @@
     public enum Audio_Type
     {
         Music,
-        Rewind
+        Rewind,
+        Jinjo
     }
 
     public class Data

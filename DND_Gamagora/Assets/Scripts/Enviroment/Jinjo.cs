@@ -1,9 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Jinjo : MonoBehaviour
 {
+    private static int jinjo_sound = -1;
+
     private Animator anim;
+    private ParticleSystem fireworks;
+    private bool triggered;
+
     public int Id { get; private set; }
 
     void Awake()
@@ -11,22 +17,61 @@ public class Jinjo : MonoBehaviour
         anim = GetComponent<Animator>();
         if (anim != null)
             anim.SetBool("End", false);
+        triggered = false;
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Character player = col.gameObject.GetComponent<Character>();
-        if (player != null)
+        if(!triggered)
         {
-            player.SetJinjo(this);
-
-            ScoreManager.Instance.AddPoint(500);
-
-            if (anim != null)
+            Character player = col.gameObject.GetComponent<Character>();
+            if (player != null)
             {
-                anim.SetBool("End", true);
+                if (jinjo_sound != 1)
+                    SceneAudioManager.Instance.stop(jinjo_sound);
+
+                Hashtable param = new Hashtable();
+                param.Add("starttime", 0.6f);
+                jinjo_sound = SceneAudioManager.Instance.playAudio(Game.Audio_Type.Jinjo, param);
+
+                if (anim != null)
+                {
+                    anim.SetBool("End", true);
+                }
+                Invoke("DeleteJinjo", 1.3f);
+
+                player.SetJinjo(this);
+                ScoreManager.Instance.AddPoint(500);
+                triggered = true;
             }
         }
+        
+    }
+
+    //void OnTriggerStay2D(Collider2D col)
+    //{
+    //    HighPlatform hpf = col.GetComponent<HighPlatform>();
+
+    //    if (hpf != null)
+    //    {
+    //        Vector3 temp = transform.position;
+    //        temp.x--;
+    //        transform.position = temp;
+    //    }
+
+    //    Enemy e = col.GetComponentInParent<Enemy>();
+
+    //    if (e != null && e.type == Game.Type_Enemy.Tnt)
+    //    {
+    //        Vector3 temp = transform.position;
+    //        temp.x++;
+    //        transform.position = temp;
+    //    }
+    //}
+
+    private void DeleteJinjo()
+    {
+        Instantiate(fireworks, transform.position, transform.rotation);
     }
 
     public void SetColorNumber(int number)
@@ -35,6 +80,15 @@ public class Jinjo : MonoBehaviour
         if (anim != null)
         {
             anim.SetInteger("Color", number);
+        }
+    }
+
+    public void SetParticles(ParticleSystem p)
+    {
+        if(p != null)
+        {
+            fireworks = p;
+            fireworks.Stop();
         }
     }
 }
