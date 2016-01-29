@@ -13,7 +13,7 @@ GameObject:
   - 61: {fileID: 6168492}
   m_Layer: 0
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: Column
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -797,7 +797,7 @@ MonoBehaviour:
   type: 2
   Copy3D: 0
   Copy2D: 1
-  death_fx: {fileID: 0}
+  death_fx: {fileID: 100010, guid: 1b2f8e049c22af2438cac65a921271a6, type: 2}
   sprite: {fileID: 0}
 --- !u!114 &11496858
 MonoBehaviour:

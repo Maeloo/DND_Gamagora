@@ -378,7 +378,7 @@ Prefab:
     - target: {fileID: 2381192, guid: 638954828ac33b14795c3190321da629, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1901362153}
+      objectReference: {fileID: 323697528}
     - target: {fileID: 11420218, guid: 638954828ac33b14795c3190321da629, type: 2}
       propertyPath: bulletPrefab
       value: 
@@ -387,9 +387,86 @@ Prefab:
       propertyPath: death_fx
       value: 
       objectReference: {fileID: 100010, guid: 1b2f8e049c22af2438cac65a921271a6, type: 2}
+    - target: {fileID: 107784, guid: 638954828ac33b14795c3190321da629, type: 2}
+      propertyPath: m_TagString
+      value: Column
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 638954828ac33b14795c3190321da629, type: 2}
   m_IsPrefabParent: 0
+--- !u!21 &323697528
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Explosion
+  m_Shader: {fileID: 4800000, guid: 1ffd39b3e33a04094a482b549da5c0f7, type: 3}
+  m_ShaderKeywords: OCTAVES_4 QUALITY_HIGH SCATTERING_ON
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 4648634f8231b4bf0860b6a2b4f6fadc, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RampTex
+        second:
+          m_Texture: {fileID: 2800000, guid: d787fa6620639944881fe35807b05ed1, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _3DNoise
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NoiseTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Radius
+        second: -0.52216744
+      data:
+        first:
+          name: _Heat
+        second: 1
+      data:
+        first:
+          name: _Frequency
+        second: 1
+      data:
+        first:
+          name: _ScrollSpeed
+        second: 1
+      data:
+        first:
+          name: _Alpha
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpherePos
+        second: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &347493067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,141 +1114,25 @@ Prefab:
       propertyPath: Checkpoint
       value: 
       objectReference: {fileID: 1697017304}
-    - target: {fileID: 462578, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 462578, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 493294, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 493294, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 475446, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 475446, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 442040, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 442040, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6101548, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6101548, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6101548, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Size.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6101548, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Size.y
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 6152178, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6152178, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6152178, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Size.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6152178, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Size.y
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 6123444, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6123444, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6123444, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Size.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6123444, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Size.y
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 6132514, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6132514, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6132514, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Size.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6132514, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Size.y
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 404404, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 492840, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 440130, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -4.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 169736, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 151784, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 131926, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 195676, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 189024, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 156480, guid: 80318473a1f921044a39b213d0894f67, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80318473a1f921044a39b213d0894f67, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1621900007 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 151784, guid: 80318473a1f921044a39b213d0894f67, type: 2}
+  m_PrefabInternal: {fileID: 1621900006}
+--- !u!114 &1621900008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1621900007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3577e2d8da8f57146a8ac47a1dc3fa9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destruction_fx: {fileID: 100000, guid: 979632a27455af442bd2d8f36eb0ffce, type: 2}
 --- !u!1001 &1694674172
 Prefab:
   m_ObjectHideFlags: 0
@@ -1265,79 +1226,6 @@ Camera:
   m_PrefabParentObject: {fileID: 2004804, guid: 2b87baa550aec8a48bd2cc2616e8fbf7,
     type: 2}
   m_PrefabInternal: {fileID: 1031020372}
---- !u!21 &1901362153
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Explosion
-  m_Shader: {fileID: 4800000, guid: 1ffd39b3e33a04094a482b549da5c0f7, type: 3}
-  m_ShaderKeywords: OCTAVES_4 QUALITY_HIGH SCATTERING_ON
-  m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 4648634f8231b4bf0860b6a2b4f6fadc, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _RampTex
-        second:
-          m_Texture: {fileID: 2800000, guid: d787fa6620639944881fe35807b05ed1, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _3DNoise
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _NoiseTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-    m_Floats:
-      data:
-        first:
-          name: _Radius
-        second: -0.52216744
-      data:
-        first:
-          name: _Heat
-        second: 1
-      data:
-        first:
-          name: _Frequency
-        second: 1
-      data:
-        first:
-          name: _ScrollSpeed
-        second: 1
-      data:
-        first:
-          name: _Alpha
-        second: 1
-    m_Colors:
-      data:
-        first:
-          name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _SpherePos
-        second: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1901780549
 GameObject:
   m_ObjectHideFlags: 0

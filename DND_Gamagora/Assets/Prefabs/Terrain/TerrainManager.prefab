@@ -75,7 +75,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 445694}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - 212: {fileID: 21228192}
   - 50: {fileID: 5050410}
   - 61: {fileID: 6125094}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 489780}
   - 114: {fileID: 11454546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TerrainManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   - 4: {fileID: 497938}
   - 212: {fileID: 21222476}
   - 61: {fileID: 6178474}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 459632}
   - 114: {fileID: 11431274}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BouncyPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 432110}
   - 114: {fileID: 11421516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HightPlatform
   m_TagString: Column
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.19, y: -3, z: 0}
+  m_LocalPosition: {x: -1.7, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 475446}
@@ -322,7 +322,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.8, y: -3, z: 0}
+  m_LocalPosition: {x: -4.09, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 462578}
@@ -336,7 +336,7 @@ Transform:
   m_GameObject: {fileID: 149690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.25, y: -0.3, z: 3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 480546}
   m_RootOrder: 0
@@ -377,7 +377,7 @@ Transform:
   m_GameObject: {fileID: 100862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.25, y: -0.3, z: 3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 440130}
   m_RootOrder: 0
@@ -401,7 +401,7 @@ Transform:
   m_GameObject: {fileID: 136858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.25, y: -0.3, z: 3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 404404}
   m_RootOrder: 0
@@ -441,7 +441,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.44, y: -3, z: 0}
+  m_LocalPosition: {x: 0.7, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 493294}
@@ -455,7 +455,7 @@ Transform:
   m_GameObject: {fileID: 196310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.25, y: -0.3, z: 3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 492840}
   m_RootOrder: 0
@@ -516,9 +516,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 1.25, y: 0.3125}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 0.625}
+  m_Size: {x: 0.5, y: 0.45}
 --- !u!61 &6123444
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -530,9 +530,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 1.25, y: 0.3125}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 0.625}
+  m_Size: {x: 0.5, y: 0.45}
 --- !u!61 &6125094
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -558,9 +558,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 1.25, y: 0.3125}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 0.625}
+  m_Size: {x: 0.5, y: 0.45}
 --- !u!61 &6152178
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -572,9 +572,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 1.25, y: 0.3125}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 0.625}
+  m_Size: {x: 0.5, y: 0.45}
 --- !u!61 &6156820
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -614,6 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f00e3033225544e87648eb852a8910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!114 &11420944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -625,6 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f00e3033225544e87648eb852a8910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!114 &11421516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -636,6 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f00e3033225544e87648eb852a8910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
 --- !u!114 &11431274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -647,6 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f00e3033225544e87648eb852a8910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
 --- !u!114 &11431724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -658,6 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f00e3033225544e87648eb852a8910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!114 &11441844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -669,6 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f00e3033225544e87648eb852a8910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!114 &11454546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -700,6 +706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f00e3033225544e87648eb852a8910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!212 &21212454
 SpriteRenderer:
   m_ObjectHideFlags: 1

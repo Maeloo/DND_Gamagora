@@ -22,6 +22,16 @@ public class Meteor : MonoBehaviour {
         {
             pf.makeFall();
         }
+
+        Character c = col.collider.GetComponent<Character>();
+
+        if(c != null)
+        {
+            if(transform.position.y > c.transform.position.y)
+            {
+                c.Hit(1);
+            }
+        }
     }
 
 
