@@ -109,21 +109,26 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         for (int i = pools[Type_Enemy.CrazyFireball].usedObjects.Count - 1; i >= 0; i--)
         {
+            pools[Type_Enemy.CrazyFireball].usedObjects[i].releaseBullets();
             pools[Type_Enemy.CrazyFireball].usedObjects[i].Release();
         }
-        for (int i = pools[Type_Enemy.CrazyFireball].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
-        {
-            pools[Type_Enemy.CrazyFireball].unusedObjects[i].gameObject.SetActive(false);
-            pools[Type_Enemy.CrazyFireball].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
-        }
 
+        for (int i = pools[Type_Enemy.CrazyFireball].unusedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Enemy.CrazyFireball].unusedObjects[i].releaseBullets();
+            pools[Type_Enemy.CrazyFireball].unusedObjects[i].gameObject.SetActive(false);
+            pools[Type_Enemy.CrazyFireball].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);            
+        }
 
         for (int i = pools[Type_Enemy.Shooter].usedObjects.Count - 1; i >= 0; i--)
         {
+            pools[Type_Enemy.Shooter].usedObjects[i].releaseBullets();
             pools[Type_Enemy.Shooter].usedObjects[i].Release();
         }
-        for (int i = pools[Type_Enemy.Shooter].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+
+        for (int i = pools[Type_Enemy.Shooter].unusedObjects.Count - 1; i >= 0; i--) 
         {
+            pools[Type_Enemy.Shooter].unusedObjects[i].releaseBullets();
             pools[Type_Enemy.Shooter].unusedObjects[i].gameObject.SetActive(false);
             pools[Type_Enemy.Shooter].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
         }
@@ -132,7 +137,8 @@ public class EnemyManager : Singleton<EnemyManager>
         {
             pools[Type_Enemy.Meteor].usedObjects[i].Release();
         }
-        for (int i = pools[Type_Enemy.Meteor].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+
+        for (int i = pools[Type_Enemy.Meteor].unusedObjects.Count - 1; i >= 0; i--) 
         {
             pools[Type_Enemy.Meteor].unusedObjects[i].gameObject.SetActive(false);
             pools[Type_Enemy.Meteor].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
@@ -142,7 +148,8 @@ public class EnemyManager : Singleton<EnemyManager>
         {
             pools[Type_Enemy.Tnt].usedObjects[i].Release();
         }
-        for (int i = pools[Type_Enemy.Tnt].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+
+        for (int i = pools[Type_Enemy.Tnt].unusedObjects.Count - 1; i >= 0; i--) 
         {
             pools[Type_Enemy.Tnt].unusedObjects[i].gameObject.SetActive(false);
             pools[Type_Enemy.Tnt].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);

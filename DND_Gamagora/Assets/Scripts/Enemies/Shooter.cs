@@ -20,9 +20,6 @@ public class Shooter : MonoBehaviour {
 
     public void spawn(Vector3 position, Transform player)
     {
-        //if (_bullets == null)
-        //    _bullets = new Pool<Bullet>(bulletPrefab, 8, 16);
-
         _player = player;
 
         transform.position = position;
@@ -39,6 +36,14 @@ public class Shooter : MonoBehaviour {
         if(_bullets.GetAvailable(false, out bullet))
         {
             bullet.shoot(transform.position, (_player.position - transform.position).normalized);
+        }
+    }
+
+    public void releaseBullets()
+    {
+        for (int i = _bullets.usedObjects.Count - 1; i >= 0; i--)
+        {
+            _bullets.usedObjects[i].Release();
         }
     }
 }

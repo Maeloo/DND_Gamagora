@@ -110,9 +110,7 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
         {
             transform.localScale = Vector3.zero;
             
-            iTween.ScaleTo(gameObject, scale, .3f);
-
-            
+            iTween.ScaleTo(gameObject, scale, .3f);   
         }
 
         transform.position = position;
@@ -180,6 +178,7 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
         if (type == Game.Type_Bullet.Special)
         {
+            Debug.logger.Log("FUUUUUUCK");
             Enemy e = col.GetComponent<Enemy>();
             Enemy e2 = col.GetComponentInParent<Enemy>();
 

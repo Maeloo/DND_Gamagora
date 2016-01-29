@@ -23,9 +23,6 @@ public class CrazyFireball : MonoBehaviour
     {
         reset();
 
-        //if (_bullets == null)
-        //    _bullets = new Pool<Bullet>(bulletPrefab, 4, 8);
-
         transform.position = position;
 
         iTween.ScaleTo(gameObject, iTween.Hash(
@@ -39,7 +36,6 @@ public class CrazyFireball : MonoBehaviour
         transform.localScale = Vector3.zero;
     }
 
-
     public void shoot()
     {
         Bullet bullet;
@@ -47,6 +43,14 @@ public class CrazyFireball : MonoBehaviour
         if (_bullets.GetAvailable(false, out bullet))
         {
             bullet.shoot(transform.position, -Vector3.up);
+        }
+    }
+
+    public void releaseBullets()
+    {
+        for (int i = _bullets.usedObjects.Count - 1; i >= 0; i--)
+        {
+            _bullets.usedObjects[i].Release();
         }
     }
 

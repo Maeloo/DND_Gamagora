@@ -144,6 +144,21 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
     }
 
 
+    public void releaseBullets()
+    {
+        if (type == Game.Type_Enemy.CrazyFireball)
+        {
+            GetComponent<CrazyFireball>().releaseBullets();
+        }
+
+
+        if (type == Game.Type_Enemy.Shooter)
+        {
+            GetComponent<Shooter>().releaseBullets();
+        }
+    }
+
+
     public void shoot()
     {
         if (type == Game.Type_Enemy.CrazyFireball)

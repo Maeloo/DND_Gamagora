@@ -75,9 +75,7 @@ public class GameManager : Singleton<GameManager>
     public void StartGame()
     {
         Game.Data.ACCESSIBILITY_MODE = FindObjectOfType<Toggle>().isOn;
-        //DontDestroyOnLoad(AudioProcess);
-        //DontDestroyOnLoad(audio_manager);
-        //DontDestroyOnLoad(gameObject);
+
         LoadScene("scene");
     }
 
