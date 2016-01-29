@@ -12,11 +12,17 @@ public class HUDManager : Singleton<HUDManager>
     Dictionary<Type_HUD, HUDElement> elements;
     private Character _player;
     private float _cooldown;
+    private Canvas base_canvas;
 
-    public void registerElement (Type_HUD key, HUDElement element )
+    void Awake()
     {
-        if ( elements == null )
-            elements = new Dictionary<Type_HUD, HUDElement> ( );
+        base_canvas = GetComponent<Canvas>();
+    }
+
+    public void registerElement(Type_HUD key, HUDElement element)
+    {
+        if (elements == null)
+            elements = new Dictionary<Type_HUD, HUDElement>();
 
         elements.Add(key, element);
 
@@ -28,7 +34,7 @@ public class HUDManager : Singleton<HUDManager>
                 key == Type_HUD.Jinjo_Black_On)
             element.SetEnable(false);
 
-        if(key == Type_HUD.Pause)
+        if (key == Type_HUD.Pause)
             element.displayGroup(false, .0f, false, false);
 
         if (key == Type_HUD.GameOver)
@@ -36,10 +42,15 @@ public class HUDManager : Singleton<HUDManager>
     }
 
 
-    public void showGameOver()
+    public void showGameOver(bool show = true)
     {
-        pause(false);
-        elements[Type_HUD.GameOver].displayGroup(true, 1.0f, true, true);
+        if(show)
+        {
+            pause(false);
+            elements[Type_HUD.GameOver].displayGroup(true, 1.0f, true, true);
+        }
+        else
+            elements[Type_HUD.GameOver].displayGroup(false, 0.0f, false, false);
     }
 
 
@@ -113,6 +124,12 @@ public class HUDManager : Singleton<HUDManager>
         }
     }
 
+    private void Init()
+    {
+        GameManager.Instance.Init();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Character>().Init();
+    }
+
     public void loadScore()
     {
         
@@ -121,8 +138,13 @@ public class HUDManager : Singleton<HUDManager>
 
     public void reset()
     {
-        AudioProcessor.Instance.ResetMusic();
         GameManager.Instance.LoadScene("scene");
+    }
+
+    public void quit()
+    {
+        //Init();
+        GameManager.Instance.LoadScene("Menu");
     }
 
     public void pause(bool pause)
@@ -138,5 +160,10 @@ public class HUDManager : Singleton<HUDManager>
     public void resumePause()
     {
         GameManager.Instance.SetPauseHUD(false);
+    }
+
+    public void show_HUD(bool show)
+    {
+        base_canvas.enabled = show;
     }
 }

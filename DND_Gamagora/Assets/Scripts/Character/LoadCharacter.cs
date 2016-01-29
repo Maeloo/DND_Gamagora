@@ -5,28 +5,37 @@ public class LoadCharacter : Singleton<LoadCharacter>
 {
     protected LoadCharacter() { }
 
-    public bool Loaded = false;
+    public bool Loaded;
+    private bool first_load = true;
 
     private GameObject player;
+    private GameObject megaman;
+    private GameObject sumo;
 
-	// Use this for initialization
-	void Start ()
+    void Awake()
     {
-        if(!Loaded)
-            Init();
+        megaman = GameObject.Find("Megaman");
+        sumo = GameObject.Find("Sumo");
+    }
+
+    // Use this for initialization
+    void Start ()
+    {
+        Loaded = false;
+        Init();
     }
 
     private void Init()
     {
         if (Character.CharacterNb == 0)
         {
-            GameObject.Find("Megaman").SetActive(false);
-            player = GameObject.Find("Sumo");
+            megaman.SetActive(false);
+            player = sumo;
         }
         else
         {
-            GameObject.Find("Sumo").SetActive(false);
-            player = GameObject.Find("Megaman");
+            sumo.SetActive(false);
+            player = megaman;
         }
 
         player.SetActive(true);

@@ -8,10 +8,7 @@ public class InputManager : Singleton<InputManager>
     public bool IsSliding { get; private set; }
     public bool IsAttacking { get; private set; }
 
-    public bool IsPause { get; private set; }
-
     public bool IsSpecial { get; private set; }
-
 
     // Guarantee this will be always a singleton only - can't use the constructor!
     protected InputManager() { }
@@ -28,8 +25,7 @@ public class InputManager : Singleton<InputManager>
 
         if(Input.GetButtonDown("Cancel") && GameManager.Instance.IsMainScene())
         {
-            IsPause = !IsPause;
-            GameManager.Instance.SetPauseHUD(IsPause);
+            GameManager.Instance.SetPauseHUD(!GameManager.Instance.Pause);
         }
 
         IsAttacking = Input.GetButton("Attack");

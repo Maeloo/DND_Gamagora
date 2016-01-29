@@ -15,7 +15,6 @@ public class InitGame : MonoBehaviour {
         DontDestroyOnLoad(SceneAudioManager.Instance.gameObject);
         DontDestroyOnLoad(AudioProcessor.Instance.gameObject);
         DontDestroyOnLoad(GameManager.Instance.gameObject);
-
         SceneManager.LoadScene("Menu");
     }
 	

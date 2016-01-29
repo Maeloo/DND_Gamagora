@@ -27,6 +27,11 @@ public class GameManager : Singleton<GameManager>
         Tracks = new List<AudioClip>(Resources.LoadAll<AudioClip>("Audio/"));
     }
 
+    public void Init()
+    {
+        audio_process.ResetMusic();
+    }
+
     public void reset()
     {
         LoadScene("scene");

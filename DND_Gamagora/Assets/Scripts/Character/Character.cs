@@ -79,17 +79,16 @@ public class Character : MonoBehaviour
     private float _baseSpecial;
 
     private bool _noStamina;
+
+    private Vector3 start_pos;
     
     private void Awake()
     {
-        noteCount = 0;
         // Setting up references.
         groundCheck = transform.Find("GroundCheck");
         ceilingCheck = transform.Find("CeilingCheck");
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        lastCheckpointPos = transform.position;
-        lastAttack = Time.time;
 
         kamehamehas = new Pool<Bullet>(kamehameha, 8, 16);
         kamehamehas.automaticReuseUnavailables = true;
@@ -97,24 +96,32 @@ public class Character : MonoBehaviour
         tornados = new Pool<Bullet>(special_tornado, 4, 8);
         tornados.automaticReuseUnavailables = true;
 
-        if (Game.Data.ACCESSIBILITY_MODE)
-            stamina *= 3.0f;
-
-        _baseLife = life;
-        _baseStamina = stamina;
-        _baseSpecial = special;
-
         cam = Camera.main.GetComponent<CharacterCamera>();
         audio_process = AudioProcessor.Instance;
         Enemy_manager = EnemyManager.Instance;
         Bonus_manager = BonusManager.Instance;
-        lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
+    }
 
+    public void Init()
+    {
+        dead = false;
+        start_pos = transform.position;
+        lastAttack = Time.time;
+        noteCount = 0;
+        _baseLife = life;
+        _baseStamina = stamina;
+        _baseSpecial = special;
+        if (Game.Data.ACCESSIBILITY_MODE)
+            stamina *= 3.0f;
+
+        lastCheckpointPos = start_pos;
+        lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
         jinjos = new List<Jinjo>(6);
     }
 
     void Start()
     {
+        Init();
         //special = 0;
         //HUDManager.instance.setSpecial(special);
         GameManager.Instance.SetPause(true);
@@ -370,7 +377,8 @@ public class Character : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
         anim.SetBool("Fall", false);
-        
+        anim.SetFloat("Speed", 0f);
+
         TerrainManager.Instance.ErasePlatform();
         Enemy_manager.Respawn();
         Bonus_manager.Resapwn();
@@ -389,7 +397,6 @@ public class Character : MonoBehaviour
     public void EndCooldownCheckpoint()
     {
         GameManager.Instance.SetPause(false);
-        audio_process.PlayMusic();
     }
 
     public void SetCheckpoint(Vector3 checkpoint_pos)
@@ -428,6 +435,8 @@ public class Character : MonoBehaviour
         dead = true;
         GameManager.Instance.SetPause(true);
         HUDManager.Instance.showGameOver();
+        GameManager.Instance.Init();
+        Init();
     }
 
     public void AddNote()
