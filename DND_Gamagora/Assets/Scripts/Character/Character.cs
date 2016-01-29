@@ -8,8 +8,9 @@ public class Character : MonoBehaviour
 {
     public static int CharacterNb = 0;
 
-    [SerializeField]
-    private int life = 4;
+    public int MaxLife=0;
+    [HideInInspector]
+    public int life;
     [SerializeField]
     private float stamina = 100;
     [SerializeField]
@@ -86,6 +87,8 @@ public class Character : MonoBehaviour
     
     private void Awake()
     {
+        life = MaxLife;
+
         // Setting up references.
         groundCheck = transform.Find("GroundCheck");
         ceilingCheck = transform.Find("CeilingCheck");
@@ -491,6 +494,12 @@ public class Character : MonoBehaviour
         SceneAudioManager.Instance.playAudio(Audio_Type.Note, param);
         ++noteCount;
         noteText.text = " x " + noteCount;
+    }
+
+    public void AddLife()
+    {
+        life++;
+        HUDManager.Instance.setLife(life == 0 ? 0 : (float)life / _baseLife);
     }
 
     public void StartInvulnerabilityCoroutine()
