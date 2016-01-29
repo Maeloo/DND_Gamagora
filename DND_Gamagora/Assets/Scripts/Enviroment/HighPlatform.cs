@@ -15,6 +15,7 @@ public class HighPlatform : MonoBehaviour {
         if (b != null && b.type == Game.Type_Bullet.Special)
         {
             GetComponentInParent<Platform>().makeFall();
+            GetComponent<Rigidbody2D>().AddTorque(1000.0f);
             destructible = true;
         }
 
