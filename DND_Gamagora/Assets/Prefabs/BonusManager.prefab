@@ -261,8 +261,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Note: {fileID: 11480606}
   Invincibility: {fileID: 11429728}
-  passCountNote: 40
-  passCountInvincibility: 40
+  passCountNote: 50
+  passCountInvincibility: 60
+  distMinInvulnerability: 20
 --- !u!114 &11408798
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -263,10 +263,22 @@ public class TerrainManager : Singleton<TerrainManager> {
 
     public bool makeCurrentClassicPlatformFall()
     {
+        Platform pf0 = null;
+        if (getClassicPlatform(ref pf0, 2))
+        {
+            return pf0.makeFall(10.0f, .15f);
+        }
+
         Platform pf = null;
         if(getClassicPlatform(ref pf, 3))
         {
             return pf.makeFall(10.0f, .3f);
+        }
+
+        Platform pf2 = null;
+        if (getClassicPlatform(ref pf2, 4))
+        {
+            return pf2.makeFall(10.0f, .4f);
         }
 
         return false;

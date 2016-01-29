@@ -344,6 +344,10 @@ public class Character : MonoBehaviour
             Bullet b;
             if(kamehamehas.GetAvailable(false, out b))
             {
+                Hashtable param = new Hashtable();
+                param.Add("volume", .5f);
+                param.Add("pitch", Random.Range(.9f, 1.2f));
+                SceneAudioManager.Instance.playAudio(Audio_Type.Kamehameha, param);
                 b.shoot(transform.position, direction);
             }
         }
@@ -362,6 +366,9 @@ public class Character : MonoBehaviour
             Bullet b;
             if (tornados.GetAvailable(false, out b))
             {
+                Hashtable param = new Hashtable();
+                param.Add("pitch", 3.0f);
+                SceneAudioManager.Instance.playAudio(Audio_Type.Tornado, param);
                 b.shoot(transform.position, direction);
             }
         }
@@ -479,6 +486,9 @@ public class Character : MonoBehaviour
 
     public void AddNote()
     {
+        Hashtable param = new Hashtable();
+        param.Add("volume", .3f);
+        SceneAudioManager.Instance.playAudio(Audio_Type.Note, param);
         ++noteCount;
         noteText.text = " x " + noteCount;
     }
@@ -498,6 +508,8 @@ public class Character : MonoBehaviour
 
         shield.SetActive(activeShield);
 
+        
+
         Collider2D[] cs = GetComponents<Collider2D>();
 
         foreach(Collider2D c in cs)
@@ -508,6 +520,9 @@ public class Character : MonoBehaviour
 
         if(activeShield)
         {
+            Hashtable param = new Hashtable();
+            param.Add("volume", .7f);
+            SceneAudioManager.Instance.playAudio(Audio_Type.Shield, param);            
             yield return new WaitForSeconds(time);
         } else
         {

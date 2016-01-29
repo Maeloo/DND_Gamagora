@@ -17,16 +17,6 @@ public class Tnt : MonoBehaviour
         }
     }
 
-    // Use this for initialization
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public void spawn(Vector3 position)
     {
         transform.position = position;

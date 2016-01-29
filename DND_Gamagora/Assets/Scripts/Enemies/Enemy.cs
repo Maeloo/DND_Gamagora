@@ -190,6 +190,8 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
 
         else if (type == Game.Type_Enemy.Tnt)
         {
+            SceneAudioManager.Instance.playAudio(Game.Audio_Type.ExplosionTNT);
+
             gameObject.GetComponentInChildren<Animator>().SetTrigger("Boom");
 
             foreach (Transform child in gameObject.transform)

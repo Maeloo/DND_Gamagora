@@ -56,7 +56,12 @@
         Music,
         Rewind,
         Jinjo,
-        AllJinjos
+        AllJinjos,
+        Kamehameha,
+        Shield,
+        ExplosionTNT,
+        Note,
+        Tornado
     }
 
     public class Data
