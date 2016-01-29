@@ -188,7 +188,7 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         if (countTimeBeatLow4 >= minSkipBeatLow4)
         {
             float rand = UnityEngine.Random.Range(0f, 1f);
-            if (rand < 0.50)
+            if (rand <= 0.5)
             {
                 platformSpawn.SpawnPlatformHight(Type_Platform.Hight);
             }

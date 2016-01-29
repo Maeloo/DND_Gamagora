@@ -185,10 +185,10 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
                 ScoreManager.Instance.AddPoint((int)(damage + 10 * (UnityEngine.Random.value)));
             }
 
-            if (e2 != null && e2.type == Game.Type_Enemy.Tnt)
+            if (e2 != null && e2.type == Game.Type_Enemy.Tnt && !col.CompareTag("Column"))
             {
                 e2.onHit();
-
+                
                 Release();
 
                 ScoreManager.Instance.AddPoint((int)(damage + 10 * (UnityEngine.Random.value)));
@@ -208,10 +208,10 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
                 ScoreManager.Instance.AddPoint((int)(damage + 10 * (UnityEngine.Random.value)));
             }
 
-            if (e2 != null && e2.type == Game.Type_Enemy.Tnt)
+            if (e2 != null && e2.type == Game.Type_Enemy.Tnt && !col.CompareTag("Column"))
             {
                 e2.onHit();
-
+                
                 ScoreManager.Instance.AddPoint((int)(damage + 10 * (UnityEngine.Random.value)));
             }
 

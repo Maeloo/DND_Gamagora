@@ -22,6 +22,16 @@ public class Meteor : MonoBehaviour {
         {
             pf.makeFall();
         }
+
+        Character c = col.collider.GetComponent<Character>();
+
+        if(c != null)
+        {
+            if(transform.position.y > c.transform.position.y)
+            {
+                c.Hit(1);
+            }
+        }
     }
 
 
@@ -32,6 +42,7 @@ public class Meteor : MonoBehaviour {
         if(b != null && b.type == Game.Type_Bullet.Special)
         {
             GetComponent<Enemy>().onHit();
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             GetComponent<Rigidbody2D>().isKinematic = true;
         }
     }
@@ -41,6 +52,7 @@ public class Meteor : MonoBehaviour {
     {
         if(transform.position.y < -100)
         {
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             GetComponent<Rigidbody2D>().isKinematic = true;
             GetComponent<Enemy>().Release();
         }

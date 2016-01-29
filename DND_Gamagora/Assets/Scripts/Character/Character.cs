@@ -235,6 +235,17 @@ public class Character : MonoBehaviour
                 direction *= -1;
             }
         }
+        else if (AirControl && facingRight && Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, WhatIsPlatform) && move < 0)
+        {
+            Flip();
+            direction *= -1;
+        }
+        else if (AirControl && !facingRight && Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, WhatIsPlatform) && move > 0)
+        {
+            Flip();
+            direction *= -1;
+        }
+
         // If the player should jump...
         if (nbCurrentJump < nbJump && jump)
         {

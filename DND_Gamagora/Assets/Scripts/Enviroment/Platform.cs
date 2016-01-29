@@ -17,6 +17,8 @@ public class Platform : MonoBehaviour, Poolable<Platform> {
         return self;
     }
 
+    public Game.Type_Platform type;
+
     protected Pool<Platform> _pool;
 
     protected GameObject    _body;
@@ -49,6 +51,8 @@ public class Platform : MonoBehaviour, Poolable<Platform> {
     public void Duplicate ( Platform a_template ) {
         this.gameObject.layer = a_template.gameObject.layer;
 
+        type = a_template.type;
+
         gameObject.tag = a_template.tag;
 
         foreach(Transform child in a_template.transform)
@@ -77,7 +81,9 @@ public class Platform : MonoBehaviour, Poolable<Platform> {
         Rigidbody2D rb = _body.GetComponent<Rigidbody2D>();
         if (rb)
         {
-            GetComponentInChildren<SpriteRenderer>().color = Color.red;
+            if (type == Game.Type_Platform.Classic)
+                GetComponentInChildren<SpriteRenderer>().color = Color.red;
+
             StartCoroutine(fall(delay, rb));
             return true;
         }

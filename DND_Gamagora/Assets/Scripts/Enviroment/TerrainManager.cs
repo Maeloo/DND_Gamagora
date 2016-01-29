@@ -34,6 +34,7 @@ public class TerrainManager : Singleton<TerrainManager> {
     private Checkpoint CheckPointScript;
     private GameObject jinjo_to_delete;
     private Dictionary<string, ParticleSystem> jinjo_particles;
+    private EnemyManager enemyManager;
 
     void Awake()
     {
@@ -187,6 +188,8 @@ public class TerrainManager : Singleton<TerrainManager> {
                 return true;
             }
         }
+        if(enemyManager!=null)
+            return enemyManager.CheckPlatformTnt(pf, pf_previous, pf_next, offset);
         return false;
     }
 
@@ -224,9 +227,11 @@ public class TerrainManager : Singleton<TerrainManager> {
 
     internal void SpawnPlatformTnt(EnemyManager e,Transform p)
     {
+        enemyManager = e;
+
         Vector3 pos = _lastPos;
         pos.x += classic_width;
-        e.spawnEnemy(Type_Enemy.Tnt, new Vector3(pos.x, 0, 3.0f));
+        enemyManager.spawnEnemy(Type_Enemy.Tnt, new Vector3(pos.x, 0, 3.0f));
     }
 
 
@@ -259,7 +264,7 @@ public class TerrainManager : Singleton<TerrainManager> {
     public bool makeCurrentClassicPlatformFall()
     {
         Platform pf = null;
-        if(getClassicPlatform(ref pf, 2))
+        if(getClassicPlatform(ref pf, 3))
         {
             return pf.makeFall(10.0f, .3f);
         }
