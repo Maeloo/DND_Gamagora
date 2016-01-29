@@ -14,9 +14,13 @@ public class BonusManager : Singleton<BonusManager>
     public int passCountNote = 10;
     public int passCountInvincibility = 10;
     private int countInvincibility = 0;
+    private Vector3 lastBonusPos;
+    private Vector3 DELTA_BONUS_CHARACTER = new Vector3(10f, 0f, 0f);
     protected Dictionary<Type_Bonus, Pool<Bonus>> pools;
-	// Use this for initialization
-	void Awake () {
+    public float distMinInvulnerability = 10f;
+    // Use this for initialization
+    void Awake () {
+        lastBonusPos = new Vector3(0f, 0f, 0f);
         player = LoadCharacter.Instance.GetCharacter();
         countInvincibility = 0;
         countNote = 0;
@@ -44,19 +48,21 @@ public class BonusManager : Singleton<BonusManager>
                 if (pools[type].GetAvailable(false, out bonus))
                 {
                     countNote = 0;
-                    bonus.SetPosition(player.transform.position + new Vector3(10f, 0f, 0f));
+                    bonus.SetPosition(player.transform.position + DELTA_BONUS_CHARACTER);
                 }
             }
         }
         if (type == Type_Bonus.Invincibility)
         {
             ++countInvincibility;
-            if (passCountInvincibility <= countInvincibility)
+            Vector3 newPos = player.transform.position + DELTA_BONUS_CHARACTER;
+            if (passCountInvincibility <= countInvincibility && Vector3.Distance(lastBonusPos, newPos) > distMinInvulnerability)
             {
                 if (pools[type].GetAvailable(false, out bonus))
                 {
                     countInvincibility = 0;
-                    bonus.SetPosition(player.transform.position + new Vector3(10f, 0f, 0f));
+                    lastBonusPos = newPos;
+                    bonus.SetPosition(lastBonusPos);
                 }
             }
         }
