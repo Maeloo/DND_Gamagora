@@ -9,9 +9,13 @@ public class BonusManager : Singleton<BonusManager>
     Bonus Note;
     [SerializeField]
     Bonus Invincibility;
+    [SerializeField]
+    Bonus Heart;
     protected BonusManager() {}
     private int countNote;
     public int passCountNote = 10;
+    private int countHeart;
+    public int passCountHeart = 5;
     public int passCountInvincibility = 10;
     private int countInvincibility = 0;
     private Vector3 lastBonusPos;
@@ -24,6 +28,7 @@ public class BonusManager : Singleton<BonusManager>
         player = LoadCharacter.Instance.GetCharacter();
         countInvincibility = 0;
         countNote = 0;
+        countHeart = 0;
         pools = new Dictionary<Type_Bonus, Pool<Bonus>>();
 
         Pool<Bonus> notePool = new Pool<Bonus>(Note, 8, 16);
@@ -32,8 +37,13 @@ public class BonusManager : Singleton<BonusManager>
 
         Pool<Bonus> invincibilityPool = new Pool<Bonus>(Invincibility, 8, 16);
         invincibilityPool.automaticReuseUnavailables = true;
-        pools.Add(Type_Bonus.Invincibility, invincibilityPool);   
-	}
+        pools.Add(Type_Bonus.Invincibility, invincibilityPool);
+
+
+        Pool<Bonus> heartsPool = new Pool<Bonus>(Heart, 8, 16);
+        heartsPool.automaticReuseUnavailables = true;
+        pools.Add(Type_Bonus.Heart, heartsPool);
+    }
 	
     public void SpawnBonus(Type_Bonus type)
     {
@@ -66,6 +76,19 @@ public class BonusManager : Singleton<BonusManager>
                 }
             }
         }
+        if (type == Type_Bonus.Heart)
+        {
+            ++countHeart;
+            if (passCountHeart <= countHeart)
+            {
+
+                if (pools[type].GetAvailable(false, out bonus))
+                {
+                    countHeart = 0;
+                    bonus.SetPosition(player.transform.position + DELTA_BONUS_CHARACTER);
+                }
+            }
+        }
     }
 
     public void Resapwn()
@@ -74,7 +97,7 @@ public class BonusManager : Singleton<BonusManager>
         {
             pools[Type_Bonus.Invincibility].usedObjects[i].Release();
         }
-        for (int i = pools[Type_Bonus.Invincibility].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+        for (int i = pools[Type_Bonus.Invincibility].unusedObjects.Count - 1; i >= 0; i--)
         {
             pools[Type_Bonus.Invincibility].unusedObjects[i].gameObject.SetActive(false);
             pools[Type_Bonus.Invincibility].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
@@ -84,10 +107,22 @@ public class BonusManager : Singleton<BonusManager>
         {
             pools[Type_Bonus.Note].usedObjects[i].Release();
         }
-        for (int i = pools[Type_Bonus.Note].unusedObjects.Count - 1; i >= 0; i--) //supprime les platforms qui ont été remises dans la liste d'unusedObjects.
+        for (int i = pools[Type_Bonus.Note].unusedObjects.Count - 1; i >= 0; i--)
         {
             pools[Type_Bonus.Note].unusedObjects[i].gameObject.SetActive(false);
             pools[Type_Bonus.Note].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
         }
+
+
+        for (int i = pools[Type_Bonus.Heart].usedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Bonus.Heart].usedObjects[i].Release();
+        }
+        for (int i = pools[Type_Bonus.Heart].unusedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Bonus.Heart].unusedObjects[i].gameObject.SetActive(false);
+            pools[Type_Bonus.Heart].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
+        }
+
     }
 }

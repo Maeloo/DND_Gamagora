@@ -212,6 +212,8 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
     {
         //box6.GetComponent<Renderer>().material.color = Color.cyan;
         //StartCoroutine(StopColor(box6));
+
+        BonusManager.Instance.SpawnBonus(Type_Bonus.Heart);
     }
 
     public void onBeatMedium3(float energy, float average_energy, float radiance, int frequency_size)

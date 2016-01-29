@@ -19,7 +19,8 @@
     public enum Type_Bonus
     {
         Note,
-        Invincibility
+        Invincibility,
+        Heart
     }
 
     public enum Type_Bullet
