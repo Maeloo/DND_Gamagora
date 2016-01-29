@@ -33,7 +33,8 @@ public class TerrainManager : Singleton<TerrainManager> {
     private Dictionary<Jinjo, bool> jinjos;
     private Checkpoint CheckPointScript;
     private GameObject jinjo_to_delete;
-    
+
+    private EnemyManager enemyManager;
 
     void Awake()
     {
@@ -165,7 +166,7 @@ public class TerrainManager : Singleton<TerrainManager> {
                 return true;
             }
         }
-        return false;
+        return enemyManager.CheckPlatformTnt(pf, pf_previous, pf_next, offset);
     }
 
     internal void SpawnPlatform(Type_Platform type)
@@ -202,9 +203,11 @@ public class TerrainManager : Singleton<TerrainManager> {
 
     internal void SpawnPlatformTnt(EnemyManager e,Transform p)
     {
+        enemyManager = e;
+
         Vector3 pos = _lastPos;
         pos.x += classic_width;
-        e.spawnEnemy(Type_Enemy.Tnt, new Vector3(pos.x, 0, 3.0f));
+        enemyManager.spawnEnemy(Type_Enemy.Tnt, new Vector3(pos.x, 0, 3.0f));
     }
 
 

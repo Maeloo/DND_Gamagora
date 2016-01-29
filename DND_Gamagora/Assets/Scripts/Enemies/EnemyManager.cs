@@ -187,4 +187,17 @@ public class EnemyManager : Singleton<EnemyManager>
             }
         }
     }
+
+    public bool CheckPlatformTnt(Vector3 pf, Vector3 pf_previous, Vector3 pf_next, int offset)
+    {
+         for (int i = 0; i < pools[Type_Enemy.Tnt].usedObjects.Count; i++)
+        {
+            Vector3 pos_pf = pools[Type_Enemy.Tnt].usedObjects[i].transform.position;
+            if (pos_pf.x == pf.x || pos_pf.x == pf_previous.x || pos_pf.x == pf_next.x)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

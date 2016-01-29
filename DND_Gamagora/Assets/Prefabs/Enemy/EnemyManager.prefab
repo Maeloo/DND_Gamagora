@@ -353,7 +353,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.54, y: -2.44, z: 0}
+  m_LocalPosition: {x: -1.4, y: -2.44, z: 0}
   m_LocalScale: {x: 3.7, y: 3.7, z: 3.7}
   m_Children: []
   m_Father: {fileID: 480682}
@@ -377,7 +377,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.74, y: 2.3, z: 0}
+  m_LocalPosition: {x: -1.25, y: 2.3, z: 0}
   m_LocalScale: {x: 2.1752927, y: 2.175292, z: 2.175292}
   m_Children: []
   m_Father: {fileID: 480682}
@@ -425,7 +425,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.87, y: -1000, z: 0}
+  m_LocalPosition: {x: -6.12, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 470026}
@@ -797,7 +797,7 @@ MonoBehaviour:
   type: 2
   Copy3D: 0
   Copy2D: 1
-  death_fx: {fileID: 0}
+  death_fx: {fileID: 100010, guid: 1b2f8e049c22af2438cac65a921271a6, type: 2}
   sprite: {fileID: 0}
 --- !u!114 &11496858
 MonoBehaviour:

@@ -4,7 +4,6 @@ using System.Collections;
 public class Tnt : MonoBehaviour
 {
     public Sprite _sprite;
-    protected Transform _player;
 
     public void Init()
     {
@@ -28,10 +27,8 @@ public class Tnt : MonoBehaviour
     {
     }
 
-    public void spawn(Vector3 position, Transform player)
+    public void spawn(Vector3 position)
     {
-        _player = player;
-
         transform.position = position;
     }
 }
