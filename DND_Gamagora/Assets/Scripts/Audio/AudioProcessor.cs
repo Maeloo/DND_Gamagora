@@ -63,6 +63,11 @@ public class AudioProcessor : Singleton<AudioProcessor>
     private AudioClip rewind_sound;
     private int key_sound_rewind;
 
+    protected bool fading;
+    protected float fade;
+    protected float fadeTime;
+    protected float currentFadeTime;
+
     // Use this for initialization
     void Awake()
     {
@@ -98,9 +103,24 @@ public class AudioProcessor : Singleton<AudioProcessor>
         if (audioSrc != null && audioSrc.isPlaying && !rewind && !GameManager.Instance.Pause)
         {
             AnalyzeSound();
-         //   Debug.Log("RMS: " + rmsValue.ToString("F2") +
-         //" (" + dbValue.ToString("F1") + " dB)\n" +
-         //"Pitch: " + pitchValue.ToString("F0") + " Hz");
+
+            if (fading)
+            {
+                currentFadeTime += Time.deltaTime;
+
+                if (Mathf.Abs(fade - audioSrc.volume) < 0.05f)
+                {
+                    fading = false;
+                    currentFadeTime = fadeTime;
+                    audioSrc.volume = fade;
+                }
+
+                audioSrc.volume = Mathf.Lerp(audioSrc.volume, fade, currentFadeTime * fadeTime);
+            }
+
+            //   Debug.Log("RMS: " + rmsValue.ToString("F2") +
+            //" (" + dbValue.ToString("F1") + " dB)\n" +
+            //"Pitch: " + pitchValue.ToString("F0") + " Hz");
         }
     }
 
@@ -118,6 +138,7 @@ public class AudioProcessor : Singleton<AudioProcessor>
             PauseMusic();
             Hashtable param = new Hashtable();
             param.Add("starttime", 1f);
+            param.Add("volume", 0.7f);
             key_sound_rewind = SceneAudioManager.Instance.playAudio(Game.Audio_Type.Rewind, param);
            
             rewind_to = music_position;
@@ -434,6 +455,14 @@ public class AudioProcessor : Singleton<AudioProcessor>
     public string GetTrackName()
     {
         return audioSrc.clip.name;
+    }
+
+    public void FadeVolume(float time, float volume)
+    {
+        fade = volume;
+        fadeTime = time == .0f ? .0f : 1.0f / (time * time * 10.0f);
+        currentFadeTime = .0f;
+        fading = true;
     }
 }
 

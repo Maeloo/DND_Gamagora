@@ -55,7 +55,8 @@
     {
         Music,
         Rewind,
-        Jinjo
+        Jinjo,
+        AllJinjos
     }
 
     public class Data

@@ -81,6 +81,8 @@ public class Character : MonoBehaviour
     private bool _noStamina;
 
     private Vector3 start_pos;
+    private static int jinjo_sound = -1;
+    private static int all_jinjos_sound = -1;
     
     private void Awake()
     {
@@ -421,6 +423,31 @@ public class Character : MonoBehaviour
         jinjos.Add(jinjo);
         HUDManager.Instance.setJinjo(jinjo);
         TerrainManager.Instance.DeleteJinjo(jinjo);
+
+        if (jinjo_sound != 1)
+            SceneAudioManager.Instance.stop(jinjo_sound);
+
+        if (jinjos.Count < 6)
+        {
+            Hashtable param = new Hashtable();
+            param.Add("starttime", 0.6f);
+            param.Add("volume", 0.7f);
+            jinjo_sound = SceneAudioManager.Instance.playAudio(Game.Audio_Type.Jinjo, param);
+        }
+        else
+        {
+            AudioProcessor.Instance.FadeVolume(0.5f, 0.7f);
+            Hashtable param = new Hashtable();
+            param.Add("volume", 1f);
+            all_jinjos_sound = SceneAudioManager.Instance.playAudio(Game.Audio_Type.AllJinjos, param);
+            Invoke("FadeJinjoSound", 2f);
+        }
+    }
+
+    private void FadeJinjoSound()
+    {
+        SceneAudioManager.Instance.fade(all_jinjos_sound, 1f, 0f);
+        AudioProcessor.Instance.FadeVolume(1f, 1f);
     }
 
     public void Hit(int power)

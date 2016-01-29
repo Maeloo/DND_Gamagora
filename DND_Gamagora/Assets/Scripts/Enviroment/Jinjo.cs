@@ -4,8 +4,6 @@ using System.Collections;
 
 public class Jinjo : MonoBehaviour
 {
-    private static int jinjo_sound = -1;
-
     private Animator anim;
     private ParticleSystem fireworks;
     private bool triggered;
@@ -27,13 +25,6 @@ public class Jinjo : MonoBehaviour
             Character player = col.gameObject.GetComponent<Character>();
             if (player != null)
             {
-                if (jinjo_sound != 1)
-                    SceneAudioManager.Instance.stop(jinjo_sound);
-
-                Hashtable param = new Hashtable();
-                param.Add("starttime", 0.6f);
-                jinjo_sound = SceneAudioManager.Instance.playAudio(Game.Audio_Type.Jinjo, param);
-
                 if (anim != null)
                 {
                     anim.SetBool("End", true);
