@@ -152,7 +152,7 @@ Transform:
   m_LocalScale: {x: 0.56448287, y: 0.5644837, z: 1}
   m_Children: []
   m_Father: {fileID: 499504}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!4 &405392
 Transform:
   m_ObjectHideFlags: 1
@@ -191,7 +191,7 @@ Transform:
   m_Children:
   - {fileID: 445142}
   m_Father: {fileID: 499504}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &445142
 Transform:
   m_ObjectHideFlags: 1
@@ -239,8 +239,8 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 405392}
-  - {fileID: 415298}
   - {fileID: 400990}
+  - {fileID: 415298}
   - {fileID: 453346}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -399,6 +399,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   kamehameha: {fileID: 0}
   special_tornado: {fileID: 0}
+  impact: {fileID: 153214, guid: 650fe16a2d10e504ca17edff20b6bf5f, type: 2}
   RunBox: {fileID: 6136684}
   RunCircle: {fileID: 5821848}
   SlideBox: {fileID: 6149956}

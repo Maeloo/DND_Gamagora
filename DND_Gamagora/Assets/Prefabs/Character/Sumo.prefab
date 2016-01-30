@@ -399,6 +399,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   kamehameha: {fileID: 0}
   special_tornado: {fileID: 0}
+  impact: {fileID: 153214, guid: 650fe16a2d10e504ca17edff20b6bf5f, type: 2}
   RunBox: {fileID: 6158056}
   RunCircle: {fileID: 5840438}
   SlideBox: {fileID: 6134490}

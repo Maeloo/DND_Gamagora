@@ -41,6 +41,8 @@ public class Character : MonoBehaviour
     private Bullet kamehameha;
     [SerializeField]
     private Bullet special_tornado;
+    [SerializeField]
+    private GameObject impact;
 
     private Transform groundCheck;    // A position marking where to check if the player is grounded.
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -268,7 +270,7 @@ public class Character : MonoBehaviour
 
             anim.SetBool("Fall", true);
 
-            Hit(1);
+            Hit(1, Vector3.zero);
             GameManager.Instance.SetPause(true);
 
             if(!dead)
@@ -472,10 +474,24 @@ public class Character : MonoBehaviour
         AudioProcessor.Instance.FadeVolume(1f, 1f);
     }
 
-    public void Hit(int power)
+    public void Hit(int power, Vector3 dir_hit)
     {
         if (isInvincible)
             return;
+
+        if(dir_hit != Vector3.zero)
+        {
+            Vector3 pos = transform.position;
+            pos.y -= Random.Range(.0f, .35f);
+            GameObject hit = (GameObject)Instantiate(impact, pos, Quaternion.identity);
+            hit.transform.parent = transform;
+            hit.transform.GetChild(0).right = dir_hit;
+        }
+
+        Hashtable param = new Hashtable();
+        param.Add("volume", .9f);
+        param.Add("pitch", Random.Range(.9f, 1.1f));
+        SceneAudioManager.Instance.playAudio(Audio_Type.Impact, param);
 
         life -= power;
         life = life < 0 ? 0 : life;
@@ -541,9 +557,12 @@ public class Character : MonoBehaviour
     [SerializeField]
     GameObject shield;
 
+    private int key_shield;
     private bool isInvincible;
     IEnumerator startInvulnerability(float time = 1.0f, bool activeShield = false)
     {
+        SceneAudioManager.Instance.stop(key_shield);
+
         isInvincible = true;
 
         shield.SetActive(activeShield);
@@ -559,8 +578,8 @@ public class Character : MonoBehaviour
         if(activeShield)
         {
             Hashtable param = new Hashtable();
-            param.Add("volume", .7f);
-            SceneAudioManager.Instance.playAudio(Audio_Type.Shield, param);            
+            param.Add("volume", .4f);
+            key_shield = SceneAudioManager.Instance.playAudio(Audio_Type.Shield, param);            
             yield return new WaitForSeconds(time);
         } else
         {

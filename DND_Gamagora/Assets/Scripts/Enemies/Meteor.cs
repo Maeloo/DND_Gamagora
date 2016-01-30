@@ -29,7 +29,7 @@ public class Meteor : MonoBehaviour {
         {
             if(transform.position.y > c.transform.position.y)
             {
-                c.Hit(1);
+                c.Hit(1, Vector3.zero);
             }
         }
     }

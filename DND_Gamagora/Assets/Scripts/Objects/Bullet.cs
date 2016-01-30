@@ -170,7 +170,7 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
             if (player != null)
             {
-                player.Hit(1);
+                player.Hit(1, -transform.right);
 
                 Release();
             }

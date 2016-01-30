@@ -179,7 +179,7 @@ public class Enemy : MonoBehaviour, Poolable<Enemy>
         if (type == Game.Type_Enemy.Shooter)
         {
             Hashtable param = new Hashtable();
-            param.Add("volume", .5f);
+            param.Add("volume", .3f);
             param.Add("pitch", UnityEngine.Random.Range(.7f, 1.3f));
             SceneAudioManager.Instance.playAudio(Game.Audio_Type.Death, param);
             Instantiate(death_fx, transform.position, Quaternion.identity);
