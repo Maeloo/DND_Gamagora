@@ -41,6 +41,10 @@ public class Meteor : MonoBehaviour {
 
         if(b != null && b.type == Game.Type_Bullet.Special)
         {
+            Hashtable param = new Hashtable();
+            param.Add("volume", .6f);
+            SceneAudioManager.Instance.playAudio(Game.Audio_Type.ExplosionMeteor, param);
+
             GetComponent<Enemy>().onHit();
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             GetComponent<Rigidbody2D>().isKinematic = true;

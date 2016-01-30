@@ -21,6 +21,7 @@ public class HighPlatform : MonoBehaviour {
 
         if(b != null && b.type == Game.Type_Bullet.Player && destructible)
         {
+            SceneAudioManager.Instance.playAudio(Game.Audio_Type.Smash);
             Instantiate(destruction_fx, transform.position, Quaternion.identity);
             GetComponentInParent<Platform>().Release();
             destructible = false;

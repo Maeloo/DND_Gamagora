@@ -68,7 +68,10 @@
         Countdown,
         Go,
         GameOver,
-        Bonus
+        Bonus,
+        Smash,
+        Death,
+        ExplosionMeteor
     }
 
     public class Data
