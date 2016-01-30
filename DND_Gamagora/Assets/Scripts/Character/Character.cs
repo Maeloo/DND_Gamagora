@@ -316,7 +316,15 @@ public class Character : MonoBehaviour
             _noStamina = false;
         }
 
-        special = special < _baseSpecial ? special + .1f : _baseStamina;
+        special = special < _baseSpecial ? special + .1f : _baseSpecial;
+        HUDManager.Instance.setSpecial(special / _baseSpecial);
+    }
+
+
+    public void addSpcial(float value)
+    {
+        special += value;
+        special = special <= _baseSpecial ? special : _baseSpecial;
         HUDManager.Instance.setSpecial(special / _baseSpecial);
     }
 

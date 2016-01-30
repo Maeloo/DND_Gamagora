@@ -358,7 +358,7 @@ Prefab:
     - target: {fileID: 2381192, guid: 638954828ac33b14795c3190321da629, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1657145767}
+      objectReference: {fileID: 1631609060}
     - target: {fileID: 11420218, guid: 638954828ac33b14795c3190321da629, type: 2}
       propertyPath: bulletPrefab
       value: 
@@ -947,7 +947,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80318473a1f921044a39b213d0894f67, type: 2}
   m_IsPrefabParent: 0
---- !u!21 &1657145767
+--- !u!21 &1631609060
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1189,6 +1189,36 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 11403652, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
+      propertyPath: Special
+      value: 
+      objectReference: {fileID: 2117038529}
+    - target: {fileID: 11403652, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
+      propertyPath: passCountNote
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11403652, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
+      propertyPath: passCountInvincibility
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 11403652, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
+      propertyPath: passCountHeart
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 11403652, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
+      propertyPath: passCountPower
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11403652, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
+      propertyPath: passCountSpecial
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2117038529 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11479186, guid: cc933a20b22dfb54da69e05f27f1431d,
+    type: 2}
+  m_PrefabInternal: {fileID: 2117038528}
+  m_Script: {fileID: 11500000, guid: cd210b30e1a3b7a4db2c9ecd688adaa5, type: 3}

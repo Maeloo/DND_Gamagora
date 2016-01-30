@@ -134,6 +134,11 @@ public class Bullet : MonoBehaviour, Poolable<Bullet> {
 
         transform.right = _direction;
 
+        Quaternion tmp = transform.rotation;
+        tmp.x = .0f;
+        //tmp.y = .0f;
+        transform.rotation = tmp;
+
         shooted = true;
         timeDestroy = timeDestroyInit;
         this.gameObject.SetActive(true);

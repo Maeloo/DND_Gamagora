@@ -21,7 +21,8 @@
         Note,
         Invincibility,
         Heart,
-        Power
+        Power,
+        Special
     }
 
     public enum Type_Bullet
