@@ -52,7 +52,7 @@ public class GameManager : Singleton<GameManager>
         {
             HUDManager.Instance.pause(pause);
             SetPause(pause);
-            //Invoke("scaleTime0", 0.2f);
+            Invoke("scaleTime0", 0.1f);
         }
         else
         {

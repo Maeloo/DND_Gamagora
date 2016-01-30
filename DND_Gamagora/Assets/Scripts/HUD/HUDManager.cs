@@ -216,16 +216,11 @@ public class HUDManager : Singleton<HUDManager>
         {
             if (show_music_controls)
             {
-                elem.gameObject.SetActive(true);
                 if(!music_controls_showed)
                     music_controls_showed = true;
             }
-            // TODO Debug Text
-            elem.displayGroup(show_music_controls, 0f, show_music_controls, show_music_controls);
-            elem.showMusicControls(show_music_controls);
 
-            if (!show_music_controls)
-                Invoke("reset_MusicOptions", 0.15f);  
+            elem.showMusicControls(show_music_controls);
         }
     }
 
@@ -236,7 +231,6 @@ public class HUDManager : Singleton<HUDManager>
         if (elements.TryGetValue(Type_HUD.MusicControl, out elem))
         {
             elem.showMusicControls(false);
-            elem.gameObject.SetActive(false);
         }
     }
 }
