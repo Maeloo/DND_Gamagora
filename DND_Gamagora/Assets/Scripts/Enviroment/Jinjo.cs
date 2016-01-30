@@ -4,9 +4,16 @@ using System.Collections;
 
 public class Jinjo : MonoBehaviour
 {
+    [SerializeField]
+    private float AuraEmitDistance = 20f;
+
     private Animator anim;
     private ParticleSystem fireworks;
+    private ParticleSystem halo;
     private bool triggered;
+    private Transform player;
+    private float timeBeforeLastAura;
+    private ParticleSystem aura_particles;
 
     public int Id { get; private set; }
 
@@ -16,6 +23,25 @@ public class Jinjo : MonoBehaviour
         if (anim != null)
             anim.SetBool("End", false);
         triggered = false;
+        player = LoadCharacter.Instance.GetCharacter().transform;
+        timeBeforeLastAura = 0f;
+    }
+
+    void FixedUpdate()
+    {
+        float dist = Vector3.Distance(transform.position, player.position);
+        if (dist < AuraEmitDistance && !triggered)
+        {
+            if(timeBeforeLastAura > 1f)
+            {
+                aura_particles.transform.position = new Vector3(transform.position.x, transform.position.y + 0.7f, transform.position.z + 1.5f);
+                aura_particles.gameObject.SetActive(true);
+                aura_particles.Play(true);
+                timeBeforeLastAura = 0f;
+            }
+        }
+
+        timeBeforeLastAura += Time.deltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -25,11 +51,15 @@ public class Jinjo : MonoBehaviour
             Character player = col.gameObject.GetComponent<Character>();
             if (player != null)
             {
+                if (aura_particles != null)
+                    aura_particles.Stop(true);
+
                 if (anim != null)
                 {
                     anim.SetBool("End", true);
                 }
-                Invoke("DeleteJinjo", 1.3f);
+
+                Invoke("DeleteJinjo", 1f);
 
                 player.SetJinjo(this);
                 ScoreManager.Instance.AddPoint(500);
@@ -74,12 +104,19 @@ public class Jinjo : MonoBehaviour
         }
     }
 
-    public void SetParticles(ParticleSystem p)
+    public void SetParticles(ParticleSystem boom, ParticleSystem aura)
     {
-        if(p != null)
+        if(boom != null)
         {
-            fireworks = p;
+            fireworks = boom;
             fireworks.Stop();
+        }
+
+        if (aura != null)
+        {
+            halo = aura;
+            aura_particles = (ParticleSystem)Instantiate(halo, new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z), transform.rotation);
+            aura_particles.Stop();
         }
     }
 }

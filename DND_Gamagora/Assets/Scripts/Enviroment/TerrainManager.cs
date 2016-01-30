@@ -41,6 +41,7 @@ public class TerrainManager : Singleton<TerrainManager> {
         Player = LoadCharacter.Instance.GetCharacter();
         CheckPointScript = Checkpoint.GetComponent<Checkpoint>();
         Checkpoint.transform.position = new Vector3(-1000, -1000, -1000);
+        CheckPointScript.Init();
         pools = new Dictionary<Type_Platform, Pool<Platform>>();
 
         Pool<Platform> classicPool = new Pool<Platform>(ClassicPlatform, 64, 128);
@@ -86,9 +87,9 @@ public class TerrainManager : Singleton<TerrainManager> {
 
         float height = (minY - maxY) * 0.5f;
 
-        float max = cam.transform.position.y + height * 0.2f;
+        float max = cam.transform.position.y + height * 0.1f;
         float min = cam.transform.position.y - height * 0.2f;
-
+        
         jinjos = new Dictionary<Jinjo, bool>(6);
         for (int i = 0; i < 6; i++)
         {
@@ -99,17 +100,17 @@ public class TerrainManager : Singleton<TerrainManager> {
             j.SetColorNumber(i);
 
             if (i == 0)
-                j.SetParticles(jinjo_particles["Jinjo_Violet"]);
+                j.SetParticles(jinjo_particles["Jinjo_Violet"], jinjo_particles["fx_Jinjo_Purple"]);
             else if(i == 1)
-                j.SetParticles(jinjo_particles["Jinjo_Yellow"]);
+                j.SetParticles(jinjo_particles["Jinjo_Yellow"], jinjo_particles["fx_Jinjo_Yellow"]);
             else if (i == 2)
-                j.SetParticles(jinjo_particles["Jinjo_Orange"]);
+                j.SetParticles(jinjo_particles["Jinjo_Orange"], jinjo_particles["fx_Jinjo_Orange"]);
             else if (i == 3)
-                j.SetParticles(jinjo_particles["Jinjo_Green"]);
+                j.SetParticles(jinjo_particles["Jinjo_Green"], jinjo_particles["fx_Jinjo_Green"]);
             else if (i == 4)
-                j.SetParticles(jinjo_particles["Jinjo_Blue"]);
+                j.SetParticles(jinjo_particles["Jinjo_Blue"], jinjo_particles["fx_Jinjo_Blue"]);
             else if (i == 5)
-                j.SetParticles(jinjo_particles["Jinjo_Black"]);
+                j.SetParticles(jinjo_particles["Jinjo_Black"], jinjo_particles["fx_Jinjo_Black"]);
 
             jinjos.Add(j, false);
         }
@@ -142,14 +143,19 @@ public class TerrainManager : Singleton<TerrainManager> {
                 _lastSpawn = Time.time;
                 if (platformCount > platformCountBeforeCheckpoint)
                 {
-                    CheckPointScript.Init();
                     Checkpoint.transform.position = _lastPos + new Vector3(0f, offsetYCheckpoint, 0f);
+                    CheckPointScript.Init();
                     platformCount = 0;
                 }
             }
         }
     }
 
+    public void ResetCheckpoint(Vector3 last_checkpoint_pos)
+    {
+        CheckPointScript.ResetParticlesPos();
+        Checkpoint.transform.position = last_checkpoint_pos;
+    }
 
     // Offset à 0 = platform actuelle, Offset à 3 = 3 platform en avance .. etc
     bool getClassicPlatform(ref Platform platform, int offset = 0)

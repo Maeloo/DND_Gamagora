@@ -277,6 +277,9 @@ public class Character : MonoBehaviour
 
             if(!dead)
             {
+                if(lastCheckpointPos != start_pos)
+                    TerrainManager.Instance.ResetCheckpoint(lastCheckpointPos);
+
                 if (cam != null)
                 {
                     cam.ResetCamToCheckPoint(lastCheckpointPos);
@@ -417,7 +420,7 @@ public class Character : MonoBehaviour
 
         anim.SetBool("Fall", false);
         anim.SetFloat("Speed", 0f);
-
+        
         TerrainManager.Instance.ErasePlatform();
         Enemy_manager.Respawn();
         Bonus_manager.Respawn();
@@ -426,7 +429,7 @@ public class Character : MonoBehaviour
             TerrainManager.Instance._lastPos.x = TerrainManager.Instance.firstPlatform.position.x;
         TerrainManager.Instance.SpawnPlatform(Type_Platform.Classic);
         TerrainManager.Instance.SpawnPlatform(Type_Platform.Classic);
-
+        
         transform.position = lastCheckpointPos;
         
         falling = false;
