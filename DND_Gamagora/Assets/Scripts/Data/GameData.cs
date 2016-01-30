@@ -72,7 +72,8 @@
         Bonus,
         Smash,
         Death,
-        ExplosionMeteor
+        ExplosionMeteor,
+        Checkpoint
     }
 
     public class Data

@@ -41,10 +41,9 @@ public class HUDElement : MonoBehaviour
         if (tag.Equals("MusicControlHUD"))
         {
             _animMusicControl = GetComponent<Animator>();
-            Transform c = transform.FindChild("Canvas");
-            master_slider = c.FindChild("master_button").FindChild("slider").GetComponent<Slider>();
-            music_slider = c.FindChild("music_button").FindChild("slider").GetComponent<Slider>();
-            sounds_slider = c.FindChild("sounds_button").FindChild("slider").GetComponent<Slider>();
+            master_slider = transform.FindChild("master_button").FindChild("slider").GetComponent<Slider>();
+            music_slider = transform.FindChild("music_button").FindChild("slider").GetComponent<Slider>();
+            sounds_slider = transform.FindChild("sounds_button").FindChild("slider").GetComponent<Slider>();
         }
 
         _group = GetComponent<CanvasGroup>();

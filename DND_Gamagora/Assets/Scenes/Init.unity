@@ -166,6 +166,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &713285439 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 178684, guid: d05eec034e7e2984c98deb9cf4bc4c97, type: 2}
+  m_PrefabInternal: {fileID: 1147375661}
 --- !u!1001 &1147375661
 Prefab:
   m_ObjectHideFlags: 0
@@ -204,10 +208,6 @@ Prefab:
     - target: {fileID: 448678, guid: d05eec034e7e2984c98deb9cf4bc4c97, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8290842, guid: d05eec034e7e2984c98deb9cf4bc4c97, type: 2}
-      propertyPath: m_Volume
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d05eec034e7e2984c98deb9cf4bc4c97, type: 2}
@@ -249,8 +249,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 489890, guid: 5fcbed08d47a50846a59e5be2270ea98, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11497722, guid: 5fcbed08d47a50846a59e5be2270ea98, type: 2}
+      propertyPath: AudioProcess
+      value: 
+      objectReference: {fileID: 713285439}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fcbed08d47a50846a59e5be2270ea98, type: 2}
   m_IsPrefabParent: 0

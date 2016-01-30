@@ -86,7 +86,9 @@ public class Character : MonoBehaviour
     private Vector3 start_pos;
     private static int jinjo_sound = -1;
     private static int all_jinjos_sound = -1;
-    
+
+    private static int checkpoint_sound = -1;
+
     private void Awake()
     {
         life = MaxLife;
@@ -436,6 +438,13 @@ public class Character : MonoBehaviour
 
     public void SetCheckpoint(Vector3 checkpoint_pos)
     {
+        Hashtable param = new Hashtable();
+
+        if (checkpoint_sound != -1)
+            SceneAudioManager.Instance.stop(checkpoint_sound);
+
+        checkpoint_sound = SceneAudioManager.Instance.playAudio(Audio_Type.Checkpoint, param);
+
         lastCheckpointPos = checkpoint_pos;   
         lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
     }

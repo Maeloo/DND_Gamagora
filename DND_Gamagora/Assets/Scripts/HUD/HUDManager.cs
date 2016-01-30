@@ -216,11 +216,20 @@ public class HUDManager : Singleton<HUDManager>
         {
             if (show_music_controls)
             {
-                if(!music_controls_showed)
+                if (!music_controls_showed)
+                {
                     music_controls_showed = true;
+                }
+                elem.displayGroup(false, 0.1f, false, false);
+                elem.displayGroup(true, 0f, true, true);
             }
 
             elem.showMusicControls(show_music_controls);
+
+            if(!show_music_controls)
+            {
+                elem.displayGroup(false, 0.3f, false, false);
+            }
         }
     }
 
@@ -230,6 +239,7 @@ public class HUDManager : Singleton<HUDManager>
 
         if (elements.TryGetValue(Type_HUD.MusicControl, out elem))
         {
+            elem.displayGroup(false, 0.1f, false, false);
             elem.showMusicControls(false);
         }
     }
