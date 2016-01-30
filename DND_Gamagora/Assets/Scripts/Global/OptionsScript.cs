@@ -243,7 +243,7 @@ public class OptionsScript : Singleton<OptionsScript>
         txtSpeed_Megaman.CrossFadeAlpha(0f, PlayerInfos_FadeOut, true);
     }
 
-    public void SaveChanges()
+    public void SaveMusicChanges()
     {
         foreach (AudioMixerGroup g in mixer_groups)
         {
@@ -254,6 +254,11 @@ public class OptionsScript : Singleton<OptionsScript>
             else if (g.name.Equals("Sounds"))
                 g.audioMixer.SetFloat("SoundsVol", 20 * Mathf.Log10(sounds_vol));
         }
+    }
+
+    public void SaveChanges()
+    {
+        SaveMusicChanges();
 
         Character.CharacterNb = player_nb;
         GameManager.Instance.SaveOptions(clips[selected_track], amplitude, variance, C);

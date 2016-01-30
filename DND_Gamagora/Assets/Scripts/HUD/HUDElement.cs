@@ -3,19 +3,21 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 using Game;
+using UnityEngine.Audio;
 
 public class HUDElement : MonoBehaviour
 {
-
     Image _bar;
     Image _jinjo;
 
     CanvasGroup _group;
 
     Text _start;
-
-
+    private Animator _animMusicControl;
     protected string _type;
+    private Slider master_slider;
+    private Slider music_slider;
+    private Slider sounds_slider;
 
     public Type_HUD type;
 
@@ -31,11 +33,19 @@ public class HUDElement : MonoBehaviour
                 _start = child.GetComponent<Text>();
         }
 
-        if(tag == "JinjoHUD")
+        if(tag.Equals("JinjoHUD"))
         {
             _jinjo = GetComponent<Image>();
         }
 
+        if (tag.Equals("MusicControlHUD"))
+        {
+            _animMusicControl = GetComponent<Animator>();
+            Transform c = transform.FindChild("Canvas");
+            master_slider = c.FindChild("master_button").FindChild("slider").GetComponent<Slider>();
+            music_slider = c.FindChild("music_button").FindChild("slider").GetComponent<Slider>();
+            sounds_slider = c.FindChild("sounds_button").FindChild("slider").GetComponent<Slider>();
+        }
 
         _group = GetComponent<CanvasGroup>();
            
@@ -95,4 +105,43 @@ public class HUDElement : MonoBehaviour
         SceneAudioManager.Instance.playAudio(Audio_Type.Go);
     }
 
+
+    public void showMusicControls(bool show)
+    {
+        _animMusicControl.SetBool("ShowMusicOptions", show);
+    }
+
+    public void initMusicControl(AudioMixerGroup[] mixer_groups)
+    {
+        float master_vol = 0f, music_vol = 0f, sounds_vol = 0f;
+
+        foreach (AudioMixerGroup g in mixer_groups)
+        {
+            if (g.name.Equals("Master"))
+                g.audioMixer.GetFloat("MasterVol", out master_vol);
+            else if (g.name.Equals("Music"))
+                g.audioMixer.GetFloat("MusicVol", out music_vol);
+            else if (g.name.Equals("Sounds"))
+                g.audioMixer.GetFloat("SoundsVol", out sounds_vol);
+        }
+        
+        master_slider.value = Mathf.Pow(10, (master_vol / 20f)); // Db to [0, 1]
+        music_slider.value = Mathf.Pow(10, (music_vol / 20f));
+        sounds_slider.value = Mathf.Pow(10, (sounds_vol / 20f));
+    }
+
+    public float getMasterVol()
+    {
+        return 20 * Mathf.Log10(master_slider.value);
+    }
+
+    public float getMusicVol()
+    {
+        return 20 * Mathf.Log10(music_slider.value);
+    }
+
+    public float getSoundsVol()
+    {
+        return 20 * Mathf.Log10(sounds_slider.value);
+    }
 }

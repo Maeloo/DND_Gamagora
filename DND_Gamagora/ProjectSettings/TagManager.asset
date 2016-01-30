@@ -10,6 +10,7 @@ TagManager:
   - CooldownHUD
   - Column
   - TextScore
+  - MusicControlHUD
   layers:
   - Default
   - TransparentFX

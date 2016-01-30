@@ -49,7 +49,8 @@
         Jinjo_Black_Off,
         GameOver,
         Cooldown,
-        Pause
+        Pause,
+        MusicControl
     }
 
     public enum Audio_Type

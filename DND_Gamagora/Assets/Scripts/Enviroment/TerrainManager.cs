@@ -88,7 +88,7 @@ public class TerrainManager : Singleton<TerrainManager> {
 
         float max = cam.transform.position.y + height * 0.2f;
         float min = cam.transform.position.y - height * 0.2f;
-        delta = 5f;
+
         jinjos = new Dictionary<Jinjo, bool>(6);
         for (int i = 0; i < 6; i++)
         {

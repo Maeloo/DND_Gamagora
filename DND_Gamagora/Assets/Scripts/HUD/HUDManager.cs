@@ -4,19 +4,30 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using Game;
+using UnityEngine.Audio;
 
 public class HUDManager : Singleton<HUDManager>
 {
     protected HUDManager() { }
+
+    [SerializeField]
+    private AudioMixer Mixer;
 
     Dictionary<Type_HUD, HUDElement> elements;
     private Character _player;
     private float _cooldown;
     private Canvas base_canvas;
 
+    private bool show_music_controls;
+    private bool music_controls_showed;
+    private AudioMixerGroup[] mixer_groups;
+
     void Awake()
     {
         base_canvas = GetComponent<Canvas>();
+        show_music_controls = false;
+        music_controls_showed = false;
+        mixer_groups = Mixer.FindMatchingGroups("Master");
     }
 
     public void registerElement(Type_HUD key, HUDElement element)
@@ -39,6 +50,9 @@ public class HUDManager : Singleton<HUDManager>
 
         if (key == Type_HUD.GameOver)
             element.displayGroup(false, .0f, false, false);
+
+        if (key == Type_HUD.MusicControl)
+            element.initMusicControl(mixer_groups);
     }
 
 
@@ -148,11 +162,38 @@ public class HUDManager : Singleton<HUDManager>
 
     public void pause(bool pause)
     {
+        reset_MusicOptions();
+
+        if (!pause && music_controls_showed)
+        {
+            saveMusicChanges();
+        }
+        
         HUDElement elem;
 
         if (elements.TryGetValue(Type_HUD.Pause, out elem))
         {
             elem.displayGroup(pause, 0f, pause, pause);
+        }
+
+        music_controls_showed = false;
+    }
+
+    private void saveMusicChanges()
+    {
+        HUDElement elem;
+
+        if (elements.TryGetValue(Type_HUD.MusicControl, out elem))
+        {
+            foreach (AudioMixerGroup g in mixer_groups)
+            {
+                if (g.name.Equals("Master"))
+                    g.audioMixer.SetFloat("MasterVol", elem.getMasterVol());
+                else if (g.name.Equals("Music"))
+                    g.audioMixer.SetFloat("MusicVol", elem.getMusicVol());
+                else if (g.name.Equals("Sounds"))
+                    g.audioMixer.SetFloat("SoundsVol", elem.getSoundsVol());
+            }
         }
     }
 
@@ -164,5 +205,38 @@ public class HUDManager : Singleton<HUDManager>
     public void show_HUD(bool show)
     {
         base_canvas.enabled = show;
+    }
+
+    public void show_MusicOptions()
+    {
+        show_music_controls = !show_music_controls;
+        HUDElement elem;
+
+        if (elements.TryGetValue(Type_HUD.MusicControl, out elem))
+        {
+            if (show_music_controls)
+            {
+                elem.gameObject.SetActive(true);
+                if(!music_controls_showed)
+                    music_controls_showed = true;
+            }
+            // TODO Debug Text
+            elem.displayGroup(show_music_controls, 0f, show_music_controls, show_music_controls);
+            elem.showMusicControls(show_music_controls);
+
+            if (!show_music_controls)
+                Invoke("reset_MusicOptions", 0.15f);  
+        }
+    }
+
+    private void reset_MusicOptions()
+    {
+        HUDElement elem;
+
+        if (elements.TryGetValue(Type_HUD.MusicControl, out elem))
+        {
+            elem.showMusicControls(false);
+            elem.gameObject.SetActive(false);
+        }
     }
 }

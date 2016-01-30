@@ -380,13 +380,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd1e08b932bdbd469fcf4eacc377a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxLife: 15
   life: 15
   stamina: 100
   special: 100
   yMin: -10
   MaxSpeed: 10
   JumpForce: 800
-  CrouchSpeed: 0.8
+  CrouchSpeed: 0.85
   RunSpeed: 2.1
   attackSpeed: 0.6
   AirControl: 1
