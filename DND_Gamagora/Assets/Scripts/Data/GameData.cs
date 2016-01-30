@@ -20,7 +20,9 @@
     {
         Note,
         Invincibility,
-        Heart
+        Heart,
+        Power,
+        Special
     }
 
     public enum Type_Bullet
@@ -65,12 +67,17 @@
         Note,
         Tornado,
         Countdown,
-        Go
+        Go,
+        GameOver,
+        Bonus,
+        Smash,
+        Death,
+        ExplosionMeteor
     }
 
     public class Data
     {
         public static bool ACCESSIBILITY_MODE = false;
-        public static int CURRENT_SCORE = 0;
+        public static int CURRENT_SCORE = -1;
     }
 }

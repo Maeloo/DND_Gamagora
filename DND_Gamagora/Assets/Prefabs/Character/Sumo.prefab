@@ -405,6 +405,7 @@ MonoBehaviour:
   SlideCircle: {fileID: 5810950}
   noteText: {fileID: 0}
   invulnerabilityTimeBonus: 3
+  power_fx: {fileID: 133758}
   shield: {fileID: 153730}
 --- !u!198 &19819870
 ParticleSystem:

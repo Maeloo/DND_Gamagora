@@ -109,7 +109,9 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         {
             if (TerrainManager.Instance.makeCurrentClassicPlatformFall())
                 countTimeBeatLow1 = 0;
-        }       
+        }
+
+        BonusManager.Instance.SpawnBonus(Type_Bonus.Special);
     }
 
     protected float _lastShoot;
@@ -220,6 +222,8 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
     {
         //box7.GetComponent<Renderer>().material.color = Color.magenta;
         //StartCoroutine(StopColor(box7));
+
+        BonusManager.Instance.SpawnBonus(Type_Bonus.Power);
     }
 
     public void onBeatHigh1(float energy, float average_energy, float radiance, int frequency_size)

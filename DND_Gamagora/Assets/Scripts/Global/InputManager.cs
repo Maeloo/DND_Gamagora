@@ -9,7 +9,12 @@ public class InputManager : Singleton<InputManager>
     public bool IsAttacking { get; private set; }
 
     public bool IsSpecial { get; private set; }
-
+    // UI 
+    public bool IsUp { get; private set; }
+    public bool IsDown { get; private set; }
+    public bool IsValidate { get; private set; }
+    public bool IsNext { get; private set; }
+    public bool IsCancel { get; private set; }
     // Guarantee this will be always a singleton only - can't use the constructor!
     protected InputManager() { }
 
@@ -31,8 +36,15 @@ public class InputManager : Singleton<InputManager>
         IsAttacking = Input.GetButton("Attack");
         IsSpecial = Input.GetButton("Special");
 
+        /********** UI *********/
+        IsUp = Input.GetAxis("Vertical") > 0f;
+        IsDown = Input.GetAxis("Vertical") < 0f; ;
+        IsNext = Input.GetButtonDown("Attack");
+        IsValidate = Input.GetButtonDown("Cancel");
+        IsCancel = Input.GetButtonDown("Special");
+
         /**** Accessibilité ****/
-        if(Game.Data.ACCESSIBILITY_MODE)
+        if (Game.Data.ACCESSIBILITY_MODE)
         {
 
             Vector2 currentMousePosition = Input.mousePosition;

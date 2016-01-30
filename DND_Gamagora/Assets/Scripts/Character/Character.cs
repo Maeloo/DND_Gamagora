@@ -81,6 +81,8 @@ public class Character : MonoBehaviour
 
     private bool _noStamina;
 
+    private bool _unlimitedStamina;
+
     private Vector3 start_pos;
     private static int jinjo_sound = -1;
     private static int all_jinjos_sound = -1;
@@ -116,6 +118,7 @@ public class Character : MonoBehaviour
         _baseLife = life;
         _baseStamina = stamina;
         _baseSpecial = special;
+
         if (Game.Data.ACCESSIBILITY_MODE)
             stamina *= 3.0f;
 
@@ -207,7 +210,8 @@ public class Character : MonoBehaviour
             }                
             else if (run && !_noStamina)
             {
-                stamina = stamina < 2 ? 0 : stamina - 6;
+                if (!_unlimitedStamina)
+                    stamina = stamina < 2 ? 0 : stamina - 6;
 
                 HUDManager.Instance.setStamina(stamina / _baseStamina);
 
@@ -312,7 +316,15 @@ public class Character : MonoBehaviour
             _noStamina = false;
         }
 
-        special = special < _baseSpecial ? special + .1f : _baseStamina;
+        special = special < _baseSpecial ? special + .1f : _baseSpecial;
+        HUDManager.Instance.setSpecial(special / _baseSpecial);
+    }
+
+
+    public void addSpcial(float value)
+    {
+        special += value;
+        special = special <= _baseSpecial ? special : _baseSpecial;
         HUDManager.Instance.setSpecial(special / _baseSpecial);
     }
 
@@ -404,7 +416,7 @@ public class Character : MonoBehaviour
 
         TerrainManager.Instance.ErasePlatform();
         Enemy_manager.Respawn();
-        Bonus_manager.Resapwn();
+        Bonus_manager.Respawn();
         TerrainManager.Instance._lastPos = new Vector3(lastCheckpointPos.x - TerrainManager.Instance.classic_width, TerrainManager.Instance._lastPos.y, TerrainManager.Instance._lastPos.z);
         if (TerrainManager.Instance._lastPos.x < TerrainManager.Instance.firstPlatform.position.x)
             TerrainManager.Instance._lastPos.x = TerrainManager.Instance.firstPlatform.position.x;
@@ -476,11 +488,11 @@ public class Character : MonoBehaviour
         StartCoroutine(startInvulnerability());
     }
 
-
     bool dead;
     void GameOver()
     {
         dead = true;
+        SceneAudioManager.Instance.playAudio(Audio_Type.GameOver);
         GameManager.Instance.SetPause(true);
         HUDManager.Instance.showGameOver();
         GameManager.Instance.Init();
@@ -502,6 +514,25 @@ public class Character : MonoBehaviour
         HUDManager.Instance.setLife(life == 0 ? 0 : (float)life / _baseLife);
     }
 
+    [SerializeField]
+    GameObject power_fx;
+
+    public void setUnlimiedStamina()
+    {
+        power_fx.SetActive(true);
+        _unlimitedStamina = true;
+        stamina = _baseStamina;
+        HUDManager.Instance.setStamina(1.0f);
+
+        Invoke("endUnlimitedStamina", 3.14f);
+    }
+
+    void endUnlimitedStamina()
+    {
+        power_fx.SetActive(false);
+        _unlimitedStamina = false;
+    }
+
     public void StartInvulnerabilityCoroutine()
     {
         StartCoroutine(startInvulnerability(invulnerabilityTimeBonus, true));
@@ -516,8 +547,6 @@ public class Character : MonoBehaviour
         isInvincible = true;
 
         shield.SetActive(activeShield);
-
-        
 
         Collider2D[] cs = GetComponents<Collider2D>();
 

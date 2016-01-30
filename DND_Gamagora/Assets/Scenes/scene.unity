@@ -194,82 +194,17 @@ Prefab:
       propertyPath: noteText
       value: 
       objectReference: {fileID: 829934350}
+    - target: {fileID: 11468982, guid: 53e6e405e293ba745ba0e1a9979c8143, type: 2}
+      propertyPath: power_fx
+      value: 
+      objectReference: {fileID: 76912684}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53e6e405e293ba745ba0e1a9979c8143, type: 2}
   m_IsPrefabParent: 0
---- !u!21 &105274330
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Explosion
-  m_Shader: {fileID: 4800000, guid: 1ffd39b3e33a04094a482b549da5c0f7, type: 3}
-  m_ShaderKeywords: OCTAVES_4 QUALITY_HIGH SCATTERING_ON
-  m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 4648634f8231b4bf0860b6a2b4f6fadc, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _RampTex
-        second:
-          m_Texture: {fileID: 2800000, guid: d787fa6620639944881fe35807b05ed1, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _3DNoise
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _NoiseTex
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-    m_Floats:
-      data:
-        first:
-          name: _Radius
-        second: -0.52216744
-      data:
-        first:
-          name: _Heat
-        second: 1
-      data:
-        first:
-          name: _Frequency
-        second: 1
-      data:
-        first:
-          name: _ScrollSpeed
-        second: 1
-      data:
-        first:
-          name: _Alpha
-        second: 1
-    m_Colors:
-      data:
-        first:
-          name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _SpherePos
-        second: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &76912684 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 133758, guid: 53e6e405e293ba745ba0e1a9979c8143, type: 2}
+  m_PrefabInternal: {fileID: 76912683}
 --- !u!1 &124141229
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +358,7 @@ Prefab:
     - target: {fileID: 2381192, guid: 638954828ac33b14795c3190321da629, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 105274330}
+      objectReference: {fileID: 2120063671}
     - target: {fileID: 11420218, guid: 638954828ac33b14795c3190321da629, type: 2}
       propertyPath: bulletPrefab
       value: 
@@ -553,6 +488,15 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1846670213}
+    - target: {fileID: 11431990, guid: fbdd6a000b324cb418032e3e0d53ab10, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ea096d5eba903fa40af8a8d87bed8814,
+        type: 3}
+    - target: {fileID: 136334, guid: fbdd6a000b324cb418032e3e0d53ab10, type: 2}
+      propertyPath: m_Name
+      value: green
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbdd6a000b324cb418032e3e0d53ab10, type: 2}
   m_IsPrefabParent: 0
@@ -926,9 +870,17 @@ Prefab:
       propertyPath: noteText
       value: 
       objectReference: {fileID: 829934350}
+    - target: {fileID: 11487136, guid: e7cefbdf5e83b9e438b3b7f8ca89e325, type: 2}
+      propertyPath: power_fx
+      value: 
+      objectReference: {fileID: 1185432789}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7cefbdf5e83b9e438b3b7f8ca89e325, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1185432789 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 157576, guid: e7cefbdf5e83b9e438b3b7f8ca89e325, type: 2}
+  m_PrefabInternal: {fileID: 1185432788}
 --- !u!4 &1401303404 stripped
 Transform:
   m_PrefabParentObject: {fileID: 414744, guid: b96d660a07292c84a9b3e7309125f1f6, type: 2}
@@ -1164,6 +1116,109 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 11403652, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
+      propertyPath: Special
+      value: 
+      objectReference: {fileID: 2117038529}
+    - target: {fileID: 11403652, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
+      propertyPath: passCountNote
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11403652, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
+      propertyPath: passCountInvincibility
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 11403652, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
+      propertyPath: passCountHeart
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 11403652, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
+      propertyPath: passCountPower
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11403652, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
+      propertyPath: passCountSpecial
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc933a20b22dfb54da69e05f27f1431d, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2117038529 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11479186, guid: cc933a20b22dfb54da69e05f27f1431d,
+    type: 2}
+  m_PrefabInternal: {fileID: 2117038528}
+  m_Script: {fileID: 11500000, guid: cd210b30e1a3b7a4db2c9ecd688adaa5, type: 3}
+--- !u!21 &2120063671
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Explosion
+  m_Shader: {fileID: 4800000, guid: 1ffd39b3e33a04094a482b549da5c0f7, type: 3}
+  m_ShaderKeywords: OCTAVES_4 QUALITY_HIGH SCATTERING_ON
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 4648634f8231b4bf0860b6a2b4f6fadc, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RampTex
+        second:
+          m_Texture: {fileID: 2800000, guid: d787fa6620639944881fe35807b05ed1, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _3DNoise
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NoiseTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Radius
+        second: -0.52216744
+      data:
+        first:
+          name: _Heat
+        second: 1
+      data:
+        first:
+          name: _Frequency
+        second: 1
+      data:
+        first:
+          name: _ScrollSpeed
+        second: 1
+      data:
+        first:
+          name: _Alpha
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpherePos
+        second: {r: 0, g: 0, b: 0, a: 0}
