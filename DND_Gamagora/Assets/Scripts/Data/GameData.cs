@@ -66,7 +66,8 @@
         Note,
         Tornado,
         Countdown,
-        Go
+        Go,
+        GameOver
     }
 
     public class Data
