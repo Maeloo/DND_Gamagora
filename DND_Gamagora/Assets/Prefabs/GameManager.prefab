@@ -40,7 +40,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioProcess: {fileID: 0}
-  am: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

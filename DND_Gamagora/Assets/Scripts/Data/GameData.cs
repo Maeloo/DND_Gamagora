@@ -73,7 +73,8 @@
         Smash,
         Death,
         ExplosionMeteor,
-        Impact
+        Impact,
+        Checkpoint
     }
 
     public class Data
