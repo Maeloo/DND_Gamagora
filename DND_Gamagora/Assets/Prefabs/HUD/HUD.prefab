@@ -406,7 +406,6 @@ GameObject:
   - 222: {fileID: 22248914}
   - 114: {fileID: 11436128}
   - 95: {fileID: 9547452}
-  - 225: {fileID: 22502688}
   - 114: {fileID: 11470316}
   m_Layer: 5
   m_Name: PanelVol
@@ -5359,17 +5358,6 @@ RectTransform:
   m_AnchoredPosition: {x: 47, y: 0}
   m_SizeDelta: {x: -50, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!225 &22502688
-CanvasGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 132386}
-  m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!225 &22553762
 CanvasGroup:
   m_ObjectHideFlags: 1
