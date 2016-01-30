@@ -14,6 +14,10 @@ public class PowerUp : MonoBehaviour {
             Instantiate(FX, transform.position, Quaternion.identity);
             player.setUnlimiedStamina();
             GetComponentInParent<Bonus>().Release();
+
+            Hashtable param = new Hashtable();
+            param.Add("pitch", .7f);
+            SceneAudioManager.Instance.playAudio(Game.Audio_Type.Bonus, param);
         }
     }
 }

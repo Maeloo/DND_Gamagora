@@ -358,7 +358,7 @@ Prefab:
     - target: {fileID: 2381192, guid: 638954828ac33b14795c3190321da629, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1953477867}
+      objectReference: {fileID: 2073248090}
     - target: {fileID: 11420218, guid: 638954828ac33b14795c3190321da629, type: 2}
       propertyPath: bulletPrefab
       value: 
@@ -901,51 +901,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 598382458}
   m_Script: {fileID: 11500000, guid: 6fc660b913e51ea4aa7e7a60f1428555, type: 3}
---- !u!1 &1521015933
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 150552, guid: b83b6970aa60c724cbe1cbaa803dcd5d, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1521015934}
-  - 114: {fileID: 1521015935}
-  m_Layer: 0
-  m_Name: GameOver
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1521015934
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 488708, guid: b83b6970aa60c724cbe1cbaa803dcd5d, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1521015933}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1779349165}
-  m_RootOrder: 19
---- !u!114 &1521015935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11451884, guid: b83b6970aa60c724cbe1cbaa803dcd5d,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1521015933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57ae74083ff494842a0f7a31ee3fa13d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioClips:
-  - {fileID: 8300000, guid: cda4a296b05d8e4408dc65116000f522, type: 3}
-  defaultMixerGroup: {fileID: 24301876, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
-  type: 11
-  playRandom: 0
 --- !u!1001 &1621900006
 Prefab:
   m_ObjectHideFlags: 0
@@ -1080,10 +1035,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b83b6970aa60c724cbe1cbaa803dcd5d, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1779349165 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 479556, guid: b83b6970aa60c724cbe1cbaa803dcd5d, type: 2}
-  m_PrefabInternal: {fileID: 1779349164}
 --- !u!20 &1846670213 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2004804, guid: 2b87baa550aec8a48bd2cc2616e8fbf7,
@@ -1116,7 +1067,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!21 &1953477867
+--- !u!4 &1958668157 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 430488, guid: 02ac1ca13e658da419df9720595e9a39, type: 2}
+  m_PrefabInternal: {fileID: 257221622}
+--- !u!114 &1958668160 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11490254, guid: 02ac1ca13e658da419df9720595e9a39,
+    type: 2}
+  m_PrefabInternal: {fileID: 257221622}
+  m_Script: {fileID: 11500000, guid: 6fc660b913e51ea4aa7e7a60f1428555, type: 3}
+--- !u!21 &2073248090
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1189,16 +1150,6 @@ Material:
         first:
           name: _SpherePos
         second: {r: 0, g: 0, b: 0, a: 0}
---- !u!4 &1958668157 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 430488, guid: 02ac1ca13e658da419df9720595e9a39, type: 2}
-  m_PrefabInternal: {fileID: 257221622}
---- !u!114 &1958668160 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11490254, guid: 02ac1ca13e658da419df9720595e9a39,
-    type: 2}
-  m_PrefabInternal: {fileID: 257221622}
-  m_Script: {fileID: 11500000, guid: 6fc660b913e51ea4aa7e7a60f1428555, type: 3}
 --- !u!1001 &2117038528
 Prefab:
   m_ObjectHideFlags: 0
