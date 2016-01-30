@@ -68,6 +68,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &114128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 442186}
+  - 114: {fileID: 11430644}
+  m_Layer: 0
+  m_Name: GameOver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &120188
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +178,7 @@ GameObject:
   - 4: {fileID: 488708}
   - 114: {fileID: 11451884}
   m_Layer: 0
-  m_Name: Go
+  m_Name: Bonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,6 +247,22 @@ GameObject:
   - 114: {fileID: 11413642}
   m_Layer: 0
   m_Name: Tornado
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &156680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 493862}
+  - 114: {fileID: 11484266}
+  m_Layer: 0
+  m_Name: Go
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -434,6 +466,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 479556}
   m_RootOrder: 9
+--- !u!4 &442186
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 479556}
+  m_RootOrder: 19
 --- !u!4 &447186
 Transform:
   m_ObjectHideFlags: 1
@@ -546,6 +590,8 @@ Transform:
   - {fileID: 474238}
   - {fileID: 497564}
   - {fileID: 418864}
+  - {fileID: 493862}
+  - {fileID: 442186}
   - {fileID: 488708}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -572,7 +618,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 479556}
-  m_RootOrder: 18
+  m_RootOrder: 20
 --- !u!4 &489310
 Transform:
   m_ObjectHideFlags: 1
@@ -585,6 +631,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 479556}
   m_RootOrder: 0
+--- !u!4 &493862
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156680}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 479556}
+  m_RootOrder: 18
 --- !u!4 &497564
 Transform:
   m_ObjectHideFlags: 1
@@ -1066,6 +1124,22 @@ MonoBehaviour:
   defaultMixerGroup: {fileID: 24301876, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
   type: 5
   playRandom: 0
+--- !u!114 &11430644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ae74083ff494842a0f7a31ee3fa13d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClips:
+  - {fileID: 8300000, guid: cda4a296b05d8e4408dc65116000f522, type: 3}
+  defaultMixerGroup: {fileID: 24301876, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
+  type: 11
+  playRandom: 0
 --- !u!114 &11431030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1094,9 +1168,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioClips:
-  - {fileID: 8300000, guid: 3c0ff8479f440fe44bcc2e0cedb6b406, type: 3}
+  - {fileID: 8300000, guid: 772080ea742999945865b0319fc16b5e, type: 3}
   defaultMixerGroup: {fileID: 24301876, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
-  type: 10
+  type: 12
   playRandom: 0
 --- !u!114 &11461024
 MonoBehaviour:
@@ -1165,6 +1239,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ca9c1f45932d2a543b0c65502821d27a, type: 3}
   defaultMixerGroup: {fileID: 24301876, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
   type: 3
+  playRandom: 0
+--- !u!114 &11484266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ae74083ff494842a0f7a31ee3fa13d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClips:
+  - {fileID: 8300000, guid: 3c0ff8479f440fe44bcc2e0cedb6b406, type: 3}
+  defaultMixerGroup: {fileID: 24301876, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
+  type: 10
   playRandom: 0
 --- !u!114 &11497850
 MonoBehaviour:

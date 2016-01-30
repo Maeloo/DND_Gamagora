@@ -15,18 +15,22 @@ public class BonusManager : Singleton<BonusManager>
     Bonus Heart;
     [SerializeField]
     Bonus Power;
+    [SerializeField]
+    Bonus Special;
 
     protected BonusManager() {}
 
     private int countNote;
     private int countHeart;
     private int countPower;
+    private int countSpecial;
     private int countInvincibility = 0;
 
     public int passCountNote = 10;
     public int passCountHeart = 5;
     public int passCountInvincibility = 10;
     public int passCountPower = 15;
+    public int passCountSpecial = 15;
 
     private Vector3 lastBonusPos;
     private Vector3 DELTA_BONUS_CHARACTER = new Vector3(10f, 0f, 0f);
@@ -42,6 +46,7 @@ public class BonusManager : Singleton<BonusManager>
         countNote = 0;
         countHeart = 0;
         countPower = 0;
+        countSpecial = 0;
         pools = new Dictionary<Type_Bonus, Pool<Bonus>>();
 
         Pool<Bonus> notePool = new Pool<Bonus>(Note, 8, 16);
@@ -57,8 +62,12 @@ public class BonusManager : Singleton<BonusManager>
         pools.Add(Type_Bonus.Heart, heartsPool);
 
         Pool<Bonus> powerPool = new Pool<Bonus>(Power, 8, 16);
-        heartsPool.automaticReuseUnavailables = true;
+        powerPool.automaticReuseUnavailables = true;
         pools.Add(Type_Bonus.Power, powerPool);
+
+        Pool<Bonus> specialPool = new Pool<Bonus>(Special, 8, 16);
+        specialPool.automaticReuseUnavailables = true;
+        pools.Add(Type_Bonus.Special, specialPool);
     }
 	
     public void SpawnBonus(Type_Bonus type)
@@ -119,6 +128,19 @@ public class BonusManager : Singleton<BonusManager>
                 }
             }
         }
+
+        if (type == Type_Bonus.Special)
+        {
+            ++countSpecial;
+            if (passCountSpecial <= countSpecial)
+            {
+                if (pools[type].GetAvailable(false, out bonus))
+                {
+                    countSpecial = 0;
+                    bonus.SetPosition(player.transform.position + DELTA_BONUS_CHARACTER);
+                }
+            }
+        }
     }
 
     public void Respawn()
@@ -161,6 +183,16 @@ public class BonusManager : Singleton<BonusManager>
         {
             pools[Type_Bonus.Power].unusedObjects[i].gameObject.SetActive(false);
             pools[Type_Bonus.Power].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
+        }
+
+        for (int i = pools[Type_Bonus.Special].usedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Bonus.Special].usedObjects[i].Release();
+        }
+        for (int i = pools[Type_Bonus.Special].unusedObjects.Count - 1; i >= 0; i--)
+        {
+            pools[Type_Bonus.Special].unusedObjects[i].gameObject.SetActive(false);
+            pools[Type_Bonus.Special].unusedObjects[i].transform.position = new Vector3(-1000f, -1000f, -1000f);
         }
     }
 }

@@ -21,7 +21,8 @@
         Note,
         Invincibility,
         Heart,
-        Power
+        Power,
+        Special
     }
 
     public enum Type_Bullet
@@ -65,7 +66,9 @@
         Note,
         Tornado,
         Countdown,
-        Go
+        Go,
+        GameOver,
+        Bonus
     }
 
     public class Data

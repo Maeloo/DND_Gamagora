@@ -16,6 +16,9 @@ public class Heart : MonoBehaviour {
                 Instantiate(FX, transform.position, Quaternion.identity);
                 player.AddLife();
                 GetComponentInParent<Bonus>().Release();
+
+                Hashtable param = new Hashtable();
+                SceneAudioManager.Instance.playAudio(Audio_Type.Bonus, param);
             }
         }
     }

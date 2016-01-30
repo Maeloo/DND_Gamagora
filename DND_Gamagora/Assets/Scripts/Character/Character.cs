@@ -316,7 +316,15 @@ public class Character : MonoBehaviour
             _noStamina = false;
         }
 
-        special = special < _baseSpecial ? special + .1f : _baseStamina;
+        special = special < _baseSpecial ? special + .1f : _baseSpecial;
+        HUDManager.Instance.setSpecial(special / _baseSpecial);
+    }
+
+
+    public void addSpcial(float value)
+    {
+        special += value;
+        special = special <= _baseSpecial ? special : _baseSpecial;
         HUDManager.Instance.setSpecial(special / _baseSpecial);
     }
 
@@ -480,11 +488,11 @@ public class Character : MonoBehaviour
         StartCoroutine(startInvulnerability());
     }
 
-
     bool dead;
     void GameOver()
     {
         dead = true;
+        SceneAudioManager.Instance.playAudio(Audio_Type.GameOver);
         GameManager.Instance.SetPause(true);
         HUDManager.Instance.showGameOver();
         GameManager.Instance.Init();
@@ -539,8 +547,6 @@ public class Character : MonoBehaviour
         isInvincible = true;
 
         shield.SetActive(activeShield);
-
-        
 
         Collider2D[] cs = GetComponents<Collider2D>();
 

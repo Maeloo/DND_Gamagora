@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PowerUp : MonoBehaviour {
+public class SpecialUp : MonoBehaviour {
 
     [SerializeField]
     GameObject FX;
@@ -12,11 +12,11 @@ public class PowerUp : MonoBehaviour {
         if (player != null)
         {
             Instantiate(FX, transform.position, Quaternion.identity);
-            player.setUnlimiedStamina();
+            player.addSpcial(20.0f + 15.0f * Random.value);
             GetComponentInParent<Bonus>().Release();
 
             Hashtable param = new Hashtable();
-            param.Add("pitch", .7f);
+            param.Add("pitch", 1.3f);
             SceneAudioManager.Instance.playAudio(Game.Audio_Type.Bonus, param);
         }
     }

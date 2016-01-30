@@ -109,7 +109,9 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         {
             if (TerrainManager.Instance.makeCurrentClassicPlatformFall())
                 countTimeBeatLow1 = 0;
-        }       
+        }
+
+        BonusManager.Instance.SpawnBonus(Type_Bonus.Special);
     }
 
     protected float _lastShoot;
