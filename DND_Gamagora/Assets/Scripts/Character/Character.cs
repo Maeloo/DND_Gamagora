@@ -529,7 +529,7 @@ public class Character : MonoBehaviour
         GameManager.Instance.SetPause(true);
         HUDManager.Instance.showGameOver();
         GameManager.Instance.Init();
-        Init();
+        //Init();
     }
 
     void End()
