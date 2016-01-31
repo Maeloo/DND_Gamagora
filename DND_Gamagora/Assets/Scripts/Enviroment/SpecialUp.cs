@@ -12,7 +12,7 @@ public class SpecialUp : MonoBehaviour {
         if (player != null)
         {
             Instantiate(FX, transform.position, Quaternion.identity);
-            player.addSpcial(20.0f + 15.0f * Random.value);
+            player.addSpecial(20.0f + 15.0f * Random.value);
             GetComponentInParent<Bonus>().Release();
 
             Hashtable param = new Hashtable();

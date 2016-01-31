@@ -30,6 +30,15 @@ public class ScoreManager : Singleton<ScoreManager>
         }
     }
 
+    public void ResetPoints(int points)
+    {
+        Game.Data.CURRENT_SCORE = points;
+        if (scoreText != null)
+        {
+            scoreText.text = "Score " + Game.Data.CURRENT_SCORE.ToString();
+        }
+    }
+
     public int [] GetClassement()
     {
         int[] res = new int[SIZE_CLASSEMENT];

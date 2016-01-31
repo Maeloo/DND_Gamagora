@@ -82,8 +82,10 @@ public class Character : MonoBehaviour
     private float _baseSpecial;
 
     private bool _noStamina;
-
     private bool _unlimitedStamina;
+
+    private int score_at_checkpoint;
+    private int notes_at_checkpoint;
 
     private Vector3 start_pos;
     private static int jinjo_sound = -1;
@@ -333,7 +335,7 @@ public class Character : MonoBehaviour
     }
 
 
-    public void addSpcial(float value)
+    public void addSpecial(float value)
     {
         special += value;
         special = special <= _baseSpecial ? special : _baseSpecial;
@@ -421,6 +423,11 @@ public class Character : MonoBehaviour
 
     private void MoveToLastCheckPoint()
     {
+        Game.Data.CURRENT_SCORE = score_at_checkpoint;
+        noteCount = notes_at_checkpoint;
+        noteText.text = " x " + noteCount;
+        ScoreManager.Instance.ResetPoints(Game.Data.CURRENT_SCORE);
+
         GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
         anim.SetBool("Fall", false);
@@ -454,9 +461,12 @@ public class Character : MonoBehaviour
             SceneAudioManager.Instance.stop(checkpoint_sound);
 
         checkpoint_sound = SceneAudioManager.Instance.playAudio(Audio_Type.Checkpoint, param);
-
+        
         lastCheckpointPos = checkpoint_pos;   
         lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
+
+        score_at_checkpoint = Game.Data.CURRENT_SCORE;
+        notes_at_checkpoint = noteCount;
     }
 
     public void SetJinjo(Jinjo jinjo)
