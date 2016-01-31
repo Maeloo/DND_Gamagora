@@ -38,7 +38,6 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
     private AudioProcessor processor;
     private EnemyManager enemiesSpawner;
     private TerrainManager platformSpawn;
-    private Vector3 currentPos;
 
     void Awake()
     {
@@ -47,7 +46,6 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
 
         enemiesSpawner = EnemyManager.Instance;
         platformSpawn = TerrainManager.Instance;
-        currentPos = Camera.main.transform.position;
 
         player = LoadCharacter.Instance.GetCharacter().transform;
 
