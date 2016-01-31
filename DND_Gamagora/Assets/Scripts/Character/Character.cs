@@ -527,6 +527,24 @@ public class Character : MonoBehaviour
         Init();
     }
 
+    void End()
+    {
+        dead = true;
+        SceneAudioManager.Instance.playAudio(Audio_Type.Victory);
+        GameManager.Instance.SetPause(true);
+        HUDManager.Instance.showEnd();
+        GameManager.Instance.Init();
+        //Init();
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(!dead && col.CompareTag("End"))
+        {
+            End();
+        }
+    }
+
     public void AddNote()
     {
         Hashtable param = new Hashtable();

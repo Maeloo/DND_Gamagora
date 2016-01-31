@@ -11,6 +11,7 @@ TagManager:
   - Column
   - TextScore
   - MusicControlHUD
+  - End
   layers:
   - Default
   - TransparentFX

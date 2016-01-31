@@ -35,9 +35,16 @@ public class TerrainManager : Singleton<TerrainManager> {
     private GameObject jinjo_to_delete;
     private Dictionary<string, ParticleSystem> jinjo_particles;
     private EnemyManager enemyManager;
+    private bool _end;
+
+    [SerializeField]
+    private GameObject endFlag;
 
     void Awake()
     {
+        _end = false;
+        endFlag.transform.position = new Vector3(654.0f, 5641.0f, 645.0f);
+
         Player = LoadCharacter.Instance.GetCharacter();
         CheckPointScript = Checkpoint.GetComponent<Checkpoint>();
         Checkpoint.transform.position = new Vector3(-1000, -1000, -1000);
@@ -143,10 +150,16 @@ public class TerrainManager : Singleton<TerrainManager> {
                 _lastSpawn = Time.time;
                 if (platformCount > platformCountBeforeCheckpoint)
                 {
-                    Checkpoint.transform.position = _lastPos + new Vector3(0f, offsetYCheckpoint, 0f);
+                    Checkpoint.transform.position = _lastPos + new Vector3(0f, offsetYCheckpoint, 3.0f);
                     CheckPointScript.Init();
                     platformCount = 0;
                 }
+            }
+
+            if(!_end  && AudioProcessor.Instance.GetMusicCurrentTime() / AudioProcessor.Instance.GetMusicLength() > .99f)
+            {
+                _end = true;
+                endFlag.transform.position = _lastPlatform.transform.position;
             }
         }
     }
@@ -199,6 +212,7 @@ public class TerrainManager : Singleton<TerrainManager> {
         return false;
     }
 
+    private Platform _lastPlatform;
     internal void SpawnPlatform(Type_Platform type)
     {
         Platform pf;
@@ -209,6 +223,8 @@ public class TerrainManager : Singleton<TerrainManager> {
             pos.x += classic_width;
 
             pf.SetPosition(pos);
+
+            _lastPlatform = pf;
 
             _lastPos = pos;
         }
