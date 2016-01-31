@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd1e08b932bdbd469fcf4eacc377a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxLife: 15
+  MaxLife: 10
   life: 15
   stamina: 100
   special: 100

@@ -52,6 +52,9 @@ public class HUDManager : Singleton<HUDManager>
         if (key == Type_HUD.GameOver)
             element.displayGroup(false, .0f, false, false);
 
+        if (key == Type_HUD.End)
+            element.displayGroup(false, .0f, false, false);
+
         if (key == Type_HUD.MusicControl)
             element.initMusicControl(mixer_groups);
     }
@@ -65,6 +68,18 @@ public class HUDManager : Singleton<HUDManager>
         }
         else
             elements[Type_HUD.GameOver].displayGroup(false, 0.0f, false, false);
+    }
+
+
+    public void showEnd(bool show = true)
+    {
+        if (show)
+        {
+            pause(false);
+            elements[Type_HUD.End].displayGroup(true, 1.0f, true, true);
+        }
+        else
+            elements[Type_HUD.End].displayGroup(false, 0.0f, false, false);
     }
 
 

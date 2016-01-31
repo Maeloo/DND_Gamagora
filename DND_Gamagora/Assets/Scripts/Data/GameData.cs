@@ -16,6 +16,7 @@
         Tnt
     }
 
+
     public enum Type_Bonus
     {
         Note,
@@ -25,12 +26,14 @@
         Special
     }
 
+
     public enum Type_Bullet
     {
         Enemy,
         Player,
         Special
     }
+
 
     public enum Type_HUD
     {
@@ -52,8 +55,10 @@
         GameOver,
         Cooldown,
         Pause,
-        MusicControl
+        MusicControl,
+        End
     }
+
 
     public enum Audio_Type
     {
@@ -77,8 +82,10 @@
         Checkpoint,
         MenuMusic,
         Pause,
-        PauseSoundsControl
+        PauseSoundsControl,
+        Victory
     }
+
 
     public class Data
     {

@@ -711,6 +711,7 @@ MonoBehaviour:
   base_jinjo: {fileID: 165142, guid: d733ca0ff41ba9f42b3190a35359785a, type: 2}
   firstPlatform: {fileID: 480546}
   spawnTime: 0.2
+  endFlag: {fileID: 0}
 --- !u!114 &11468248
 MonoBehaviour:
   m_ObjectHideFlags: 1

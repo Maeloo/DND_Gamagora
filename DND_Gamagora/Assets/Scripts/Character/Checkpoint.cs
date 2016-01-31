@@ -27,6 +27,7 @@ public class Checkpoint : MonoBehaviour
             
         if (checkpoint_particles != null)
         {
+            //checkpoint_particles.gameObject.SetActive(true);
             checkpoint_particles.time = 0f;
             checkpoint_particles.Play(true);
             checkpoint_particles.transform.position = transform.position;
@@ -37,7 +38,10 @@ public class Checkpoint : MonoBehaviour
     {
         anim.SetBool("Check", true);
         if (checkpoint_particles != null)
+        {
+            //checkpoint_particles.gameObject.SetActive(false);
             checkpoint_particles.Stop(true);
+        }            
     }
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -57,7 +61,10 @@ public class Checkpoint : MonoBehaviour
                 }
 
                 if(checkpoint_particles != null)
+                {
+                    //checkpoint_particles.gameObject.SetActive(false);
                     checkpoint_particles.Stop(true);
+                }                    
             }      
         }
     }
