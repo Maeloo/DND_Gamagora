@@ -17,13 +17,16 @@ public class InputFieldGamepadController : MonoBehaviour {
 	
     private void AddCurrentLetter(int incr)
     {
-        char[] textCopy = text.text.ToCharArray();
-        textCopy[pos] = System.Convert.ToChar(System.Convert.ToInt32(textCopy[pos]) + incr);
-        if (textCopy[pos] > 'Z')
-            textCopy[pos] = 'A';
-        else if (textCopy[pos] < 'A')
-            textCopy[pos] = 'Z';
-        text.text = new string(textCopy);
+        if (pos < text.text.Length)
+        {
+            char[] textCopy = text.text.ToCharArray();
+            textCopy[pos] = System.Convert.ToChar(System.Convert.ToInt32(textCopy[pos]) + incr);
+            if (textCopy[pos] > 'Z')
+                textCopy[pos] = 'A';
+            else if (textCopy[pos] < 'A')
+                textCopy[pos] = 'Z';
+            text.text = new string(textCopy);
+        }
     }
     // Update is called once per frame
     void Update()
@@ -66,8 +69,16 @@ public class InputFieldGamepadController : MonoBehaviour {
         if (InputManager.Instance.IsCancel)
         {
 
+
             pos -= 1;
-            text.text = text.text.Substring(0, text.text.Length - 1);
+            if (text.text.Length > 1)
+                text.text = text.text.Substring(0, text.text.Length - 1);
+            else
+            {
+
+                text.text = "";
+                pos = 0;
+            }
         }
         if (InputManager.Instance.IsValidate)
         {

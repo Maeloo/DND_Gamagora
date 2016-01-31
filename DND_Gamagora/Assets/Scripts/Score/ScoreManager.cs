@@ -13,6 +13,7 @@ public class ScoreManager : Singleton<ScoreManager>
 	
     
 	public void init () {
+        PlayerPrefs.DeleteAll();
         Game.Data.CURRENT_SCORE = 0;
         GameObject UITextScore = GameObject.FindGameObjectWithTag("TextScore");
         if (UITextScore != null)
