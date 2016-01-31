@@ -56,7 +56,6 @@ public class HUDManager : Singleton<HUDManager>
             element.initMusicControl(mixer_groups);
     }
 
-
     public void showGameOver(bool show = true)
     {
         if(show)
@@ -166,12 +165,15 @@ public class HUDManager : Singleton<HUDManager>
         reset_MusicOptions();
 
         if(!pause)
+        {
             GameManager.Instance.StopMenuMusic();
+        }
 
         if(pause)
         {
             if (pause_sound != -1)
                 SceneAudioManager.Instance.stop(pause_sound);
+
             Hashtable param = new Hashtable();
             param.Add("starttime", 0.1f);
             pause_sound = SceneAudioManager.Instance.playAudio(Audio_Type.Pause, param);
@@ -197,6 +199,11 @@ public class HUDManager : Singleton<HUDManager>
         base_canvas.enabled = show;
     }
 
+    public void play_soundsControl()
+    {
+        SceneAudioManager.Instance.playAudio(Audio_Type.PauseSoundsControl);
+    }
+
     public void show_MusicOptions()
     {
         show_music_controls = !show_music_controls;
@@ -204,8 +211,10 @@ public class HUDManager : Singleton<HUDManager>
         if (show_music_controls)
             GameManager.Instance.PlayMenuMusic();
         else
+        {
             GameManager.Instance.PauseMenuMusic();
-
+        }
+   
         HUDElement elem;
 
         if (elements.TryGetValue(Type_HUD.MusicControl, out elem))

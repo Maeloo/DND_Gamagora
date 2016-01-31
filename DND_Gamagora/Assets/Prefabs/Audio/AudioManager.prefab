@@ -50,15 +50,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &108402
+--- !u!1 &109176
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 420086}
-  - 114: {fileID: 11433514}
+  - 4: {fileID: 423354}
+  - 114: {fileID: 11441370}
   m_Layer: 0
   m_Name: Pause
   m_TagString: Untagged
@@ -502,18 +502,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 479556}
   m_RootOrder: 17
---- !u!4 &420086
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 108402}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 479556}
-  m_RootOrder: 26
 --- !u!4 &422036
 Transform:
   m_ObjectHideFlags: 1
@@ -538,6 +526,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 479556}
   m_RootOrder: 4
+--- !u!4 &423354
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 479556}
+  m_RootOrder: 26
 --- !u!4 &427370
 Transform:
   m_ObjectHideFlags: 1
@@ -754,7 +754,7 @@ Transform:
   - {fileID: 439652}
   - {fileID: 488708}
   - {fileID: 422036}
-  - {fileID: 420086}
+  - {fileID: 423354}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &480288
@@ -1362,22 +1362,6 @@ MonoBehaviour:
   defaultMixerGroup: {fileID: 24301876, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
   type: 4
   playRandom: 0
---- !u!114 &11433514
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 108402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57ae74083ff494842a0f7a31ee3fa13d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioClips:
-  - {fileID: 8300000, guid: 431c6e3222bb06d438f49376ceb0b525, type: 3}
-  defaultMixerGroup: {fileID: 24301876, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
-  type: 19
-  playRandom: 0
 --- !u!114 &11435010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1393,6 +1377,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 936d340d9ee1e82459805c17ad5a32f8, type: 3}
   defaultMixerGroup: {fileID: 24301876, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
   type: 14
+  playRandom: 0
+--- !u!114 &11441370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ae74083ff494842a0f7a31ee3fa13d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClips:
+  - {fileID: 8300000, guid: 431c6e3222bb06d438f49376ceb0b525, type: 3}
+  defaultMixerGroup: {fileID: 24301876, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
+  type: 19
   playRandom: 0
 --- !u!114 &11451884
 MonoBehaviour:

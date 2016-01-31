@@ -76,7 +76,8 @@
         Impact,
         Checkpoint,
         MenuMusic,
-        Pause
+        Pause,
+        PauseSoundsControl
     }
 
     public class Data

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Audio;
+using Game;
 
 public class OptionsScript : Singleton<OptionsScript>
 {
@@ -19,7 +20,6 @@ public class OptionsScript : Singleton<OptionsScript>
 
     private int selected_track;
     private List<AudioClip> clips;
-    private List<Button> buttons_clip;
     private Image player_sumo_btn;
     private Image player_megaman_btn;
     private float amplitude;
@@ -36,7 +36,6 @@ public class OptionsScript : Singleton<OptionsScript>
     private Text amplitude_text;
     private Text variance_text;
     private Text c_text;
-    private Transform music_panel;
 
     private Slider master_slider;
     private Slider music_slider;
@@ -46,12 +45,13 @@ public class OptionsScript : Singleton<OptionsScript>
     private Text txtHP_Megaman;
     private Text txtSpeed_Megaman;
     private AudioProcessor audio_process;
-    private EventSystem event_sys;
     
     private AudioMixerGroup[] mixer_groups;
     private AudioMixerGroup master_mixer;
     private AudioMixerGroup music_mixer;
     private AudioMixerGroup sounds_mixer;
+
+    private Dropdown musics;
 
     void Awake()
     {
@@ -63,8 +63,8 @@ public class OptionsScript : Singleton<OptionsScript>
             Transform amplitude_btn = c.transform.FindChild("amplitude_button");
             Transform variance_btn = c.transform.FindChild("variance_button");
             Transform c_btn = c.transform.FindChild("c_button");
-            music_panel = c.transform.FindChild("music_button").FindChild("music_panel");
-
+            musics = c.transform.FindChild("music_button").FindChild("DropdownMusic").GetComponent<Dropdown>();
+            musics.options.Clear();
             amplitude_slider = amplitude_btn.FindChild("amplitude_slider").GetComponent<Slider>();
             variance_slider = variance_btn.FindChild("variance_slider").GetComponent<Slider>();
             c_slider = c_btn.FindChild("c_slider").GetComponent<Slider>();
@@ -124,26 +124,17 @@ public class OptionsScript : Singleton<OptionsScript>
         
         clips = GameManager.Instance.Tracks;
 
-        buttons_clip = new List<Button>(clips.Count);
-        buttons_clip.Add(music_panel.FindChild("Button1").GetComponent<Button>());
-        buttons_clip.Add(music_panel.FindChild("Button2").GetComponent<Button>());
-        buttons_clip.Add(music_panel.FindChild("Button3").GetComponent<Button>());
-        buttons_clip.Add(music_panel.FindChild("Button4").GetComponent<Button>());
-        
-        event_sys = FindObjectOfType<EventSystem>();
+        List<Dropdown.OptionData> datasound = new List<Dropdown.OptionData>();
 
         for(int i = 0; i < clips.Count; i++)
         {
-            if(clips[i].name.Equals(audio_process.GetTrackName()))
+            datasound.Add(new Dropdown.OptionData(clips[i].name));
+ 
+            if (clips[i].name.Equals(audio_process.GetTrackName()))
                 selected_track = i;
-
-            buttons_clip[i].GetComponentInChildren<Text>().text = clips[i].name;
         }
 
-        ColorBlock color = buttons_clip[selected_track].colors;
-        color.normalColor = new Color(0.1f, 0.8f, 0f);
-        buttons_clip[selected_track].colors = color;
-
+        musics.AddOptions(datasound);
 
         player_nb = Character.CharacterNb;
         if(player_nb == 0)
@@ -175,22 +166,9 @@ public class OptionsScript : Singleton<OptionsScript>
         }
     }
 
-    public void SetSelectedTrack(int nb)
+    public void SetSelectedTrack()
     {
-        if(nb != selected_track)
-        {
-            ColorBlock c = buttons_clip[selected_track].colors;
-            c.normalColor = Color.white;
-            buttons_clip[selected_track].colors = c;
-        }
-        if (nb >= 0 && nb < clips.Count)
-        {
-            selected_track = nb;
-            ColorBlock c = buttons_clip[nb].colors;
-            c.normalColor = new Color(0.1f, 0.8f, 0f);
-            buttons_clip[nb].colors = c;
-            event_sys.SetSelectedGameObject(buttons_clip[nb].gameObject);
-        }
+        selected_track = musics.value;
     }
 
     public void ChangeAmplitude()
@@ -262,5 +240,10 @@ public class OptionsScript : Singleton<OptionsScript>
     {
         Character.CharacterNb = player_nb;
         GameManager.Instance.SaveOptions(clips[selected_track], amplitude, variance, C);
+    }
+
+    public void play_soundsControl()
+    {
+        SceneAudioManager.Instance.playAudio(Audio_Type.PauseSoundsControl);
     }
 }

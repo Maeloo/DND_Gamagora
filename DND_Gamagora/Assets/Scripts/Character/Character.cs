@@ -91,6 +91,9 @@ public class Character : MonoBehaviour
 
     private static int checkpoint_sound = -1;
 
+    // For accessibility
+    private float gain;
+
     private void Awake()
     {
         life = MaxLife;
@@ -111,6 +114,8 @@ public class Character : MonoBehaviour
         audio_process = AudioProcessor.Instance;
         Enemy_manager = EnemyManager.Instance;
         Bonus_manager = BonusManager.Instance;
+
+
     }
 
     public void Init()
@@ -125,6 +130,10 @@ public class Character : MonoBehaviour
 
         if (Game.Data.ACCESSIBILITY_MODE)
             stamina *= 3.0f;
+
+        gain = 1.0f;
+        if (Game.Data.ACCESSIBILITY_MODE)
+            gain = 6.0f;
 
         lastCheckpointPos = start_pos;
         lastCheckpointMusicTime = audio_process.GetMusicCurrentTime();
@@ -311,10 +320,6 @@ public class Character : MonoBehaviour
 
     void Update()
     {
-        float gain = 1.0f;
-        if (Game.Data.ACCESSIBILITY_MODE)
-            gain = 6.0f;
-
         stamina = stamina < _baseStamina ? stamina + gain : _baseStamina;
         HUDManager.Instance.setStamina(stamina / _baseStamina);
 
