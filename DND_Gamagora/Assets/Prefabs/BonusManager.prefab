@@ -594,11 +594,11 @@ MonoBehaviour:
   Heart: {fileID: 11485728}
   Power: {fileID: 11414974}
   Special: {fileID: 11479186}
-  passCountNote: 50
-  passCountHeart: 100
-  passCountInvincibility: 66
-  passCountPower: 150
-  passCountSpecial: 50
+  passCountNote: 40
+  passCountHeart: 90
+  passCountInvincibility: 50
+  passCountPower: 130
+  passCountSpecial: 70
   distMinMin: 0.1
   distMinMax: 0.3
 --- !u!114 &11408798

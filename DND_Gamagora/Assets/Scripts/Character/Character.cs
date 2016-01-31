@@ -372,7 +372,7 @@ public class Character : MonoBehaviour
             if(kamehamehas.GetAvailable(false, out b))
             {
                 Hashtable param = new Hashtable();
-                param.Add("volume", .5f);
+                param.Add("volume", .3f);
                 param.Add("pitch", Random.Range(.9f, 1.2f));
                 SceneAudioManager.Instance.playAudio(Audio_Type.Kamehameha, param);
                 b.shoot(transform.position, direction);
