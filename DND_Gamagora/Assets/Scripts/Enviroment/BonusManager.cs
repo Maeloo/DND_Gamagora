@@ -77,83 +77,84 @@ public class BonusManager : Singleton<BonusManager>
     {
         Bonus bonus;
 
-        Vector3 newPos = player.transform.position + DELTA_BONUS_CHARACTER;
-        if (Vector3.Distance(lastBonusPos, newPos) > Random.Range(distMinMin, distMinMax))
+        if (type == Type_Bonus.Note)
         {
-            if (type == Type_Bonus.Note)
+            ++countNote;
+            if (passCountNote <= countNote)
             {
-                ++countNote;
-                if (passCountNote <= countNote)
+
+                if (pools[type].GetAvailable(false, out bonus))
                 {
-
-                    if (pools[type].GetAvailable(false, out bonus))
-                    {
-                        countNote = 0;
-                        bonus.SetPosition(player.transform.position + DELTA_BONUS_CHARACTER);
-                    }
+                    countNote = 0;
+                    bonus.SetPosition(player.transform.position + DELTA_BONUS_CHARACTER);
                 }
-
-                lastBonusPos = newPos;
             }
+        }
+        else
+        {
+            Vector3 newPos = player.transform.position + DELTA_BONUS_CHARACTER;
 
-            else if(type == Type_Bonus.Invincibility)
+            if (Mathf.Abs(lastBonusPos.x - newPos.x) > Random.Range(distMinMin, distMinMax))
             {
-                ++countInvincibility;
-                if (passCountInvincibility <= countInvincibility)
+                if (type == Type_Bonus.Invincibility)
                 {
-                    if (pools[type].GetAvailable(false, out bonus))
+                    ++countInvincibility;
+                    if (passCountInvincibility <= countInvincibility)
                     {
-                        countInvincibility = 0;
-                        bonus.SetPosition(lastBonusPos);
+                        if (pools[type].GetAvailable(false, out bonus))
+                        {
+                            countInvincibility = 0;
+                            bonus.SetPosition(lastBonusPos);
+                        }
                     }
+
+                    lastBonusPos = newPos;
                 }
 
-                lastBonusPos = newPos;
-            }
-
-            else if (type == Type_Bonus.Heart)
-            {
-                ++countHeart;
-                if (passCountHeart <= countHeart)
+                else if (type == Type_Bonus.Heart)
                 {
-                    if (pools[type].GetAvailable(false, out bonus))
+                    ++countHeart;
+                    if (passCountHeart <= countHeart)
                     {
-                        countHeart = 0;
-                        bonus.SetPosition(player.transform.position + DELTA_BONUS_CHARACTER);
+                        if (pools[type].GetAvailable(false, out bonus))
+                        {
+                            countHeart = 0;
+                            bonus.SetPosition(player.transform.position + DELTA_BONUS_CHARACTER);
+                        }
                     }
+
+                    lastBonusPos = newPos;
                 }
 
-                lastBonusPos = newPos;
-            }
-
-            else if(type == Type_Bonus.Power)
-            {
-                ++countPower;
-                if (passCountPower <= countPower)
+                else if (type == Type_Bonus.Power)
                 {
-                    if (pools[type].GetAvailable(false, out bonus))
+                    ++countPower;
+                    if (passCountPower <= countPower)
                     {
-                        countPower = 0;
-                        bonus.SetPosition(player.transform.position + DELTA_BONUS_CHARACTER);
+                        if (pools[type].GetAvailable(false, out bonus))
+                        {
+                            countPower = 0;
+                            bonus.SetPosition(player.transform.position + DELTA_BONUS_CHARACTER);
+                        }
                     }
+
+                    lastBonusPos = newPos;
                 }
 
-                lastBonusPos = newPos;
-            }
-
-            else if (type == Type_Bonus.Special)
-            {
-                ++countSpecial;
-                if (passCountSpecial <= countSpecial)
+                else if (type == Type_Bonus.Special)
                 {
-                    if (pools[type].GetAvailable(false, out bonus))
+                    ++countSpecial;
+                    if (passCountSpecial <= countSpecial)
                     {
-                        countSpecial = 0;
-                        bonus.SetPosition(player.transform.position + DELTA_BONUS_CHARACTER);
+                        if (pools[type].GetAvailable(false, out bonus))
+                        {
+                            countSpecial = 0;
+                            bonus.SetPosition(player.transform.position + DELTA_BONUS_CHARACTER);
+                        }
                     }
-                }
 
-                lastBonusPos = newPos;
+                    lastBonusPos = newPos;
+                }
             }
         }
     }

@@ -525,6 +525,7 @@ public class Character : MonoBehaviour
     void GameOver()
     {
         dead = true;
+        anim.SetFloat("Speed", 0f);
         SceneAudioManager.Instance.playAudio(Audio_Type.GameOver);
         GameManager.Instance.SetPause(true);
         HUDManager.Instance.showGameOver();
@@ -535,6 +536,7 @@ public class Character : MonoBehaviour
     void End()
     {
         dead = true;
+        anim.SetFloat("Speed", 0f);
         SceneAudioManager.Instance.playAudio(Audio_Type.Victory);
         GameManager.Instance.SetPause(true);
         HUDManager.Instance.showEnd();

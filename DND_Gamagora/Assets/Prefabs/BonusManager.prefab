@@ -595,11 +595,12 @@ MonoBehaviour:
   Power: {fileID: 11414974}
   Special: {fileID: 11479186}
   passCountNote: 50
-  passCountHeart: 150
+  passCountHeart: 100
   passCountInvincibility: 66
-  passCountPower: 200
+  passCountPower: 150
   passCountSpecial: 50
-  distMinInvulnerability: 20
+  distMinMin: 0.1
+  distMinMax: 0.3
 --- !u!114 &11408798
 MonoBehaviour:
   m_ObjectHideFlags: 1
