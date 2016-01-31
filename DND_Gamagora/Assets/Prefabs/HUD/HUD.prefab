@@ -1638,14 +1638,14 @@ MonoBehaviour:
   m_FillRect: {fileID: 22498278}
   m_HandleRect: {fileID: 22468258}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.01
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11422432}
         m_MethodName: ChangeMusicVolume
         m_Mode: 1
         m_Arguments:
@@ -2367,14 +2367,14 @@ MonoBehaviour:
   m_FillRect: {fileID: 22470480}
   m_HandleRect: {fileID: 22414766}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.01
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11422432}
         m_MethodName: ChangeSoundsVolume
         m_Mode: 1
         m_Arguments:
@@ -3278,15 +3278,15 @@ MonoBehaviour:
   m_FillRect: {fileID: 22473742}
   m_HandleRect: {fileID: 22488500}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.01
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 173524}
-        m_MethodName: 
+      - m_Target: {fileID: 11422432}
+        m_MethodName: ChangeMasterVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

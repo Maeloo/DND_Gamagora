@@ -32,12 +32,16 @@ public class SceneAudioManager : Singleton<SceneAudioManager>
     }
 
 
-    public void registerAudioData ( Audio_Type type, AudioData data ) {
+    public void registerAudioData ( Audio_Type type, AudioData data )
+    {
         //if (AudioDatas == null)
         //    AudioDatas = new Dictionary<Audio_Type, AudioData>();
 
         if (!AudioDatas.ContainsKey(type))
             AudioDatas.Add(type, data);
+
+        if (type == Audio_Type.MenuMusic)
+            GameManager.Instance.PlayMenuMusic();
     }
 
 
@@ -201,6 +205,15 @@ public class SceneAudioManager : Singleton<SceneAudioManager>
         AudioPSource source;
         if ( AudioPlaying.TryGetValue ( key, out source ) ) {
             source.audio_source.Pause ( );
+        }
+    }
+
+    public void play(int key)
+    {
+        AudioPSource source;
+        if (AudioPlaying.TryGetValue(key, out source))
+        {
+            source.audio_source.Play();
         }
     }
 

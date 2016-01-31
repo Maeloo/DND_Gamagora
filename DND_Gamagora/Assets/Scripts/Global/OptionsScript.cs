@@ -49,6 +49,9 @@ public class OptionsScript : Singleton<OptionsScript>
     private EventSystem event_sys;
     
     private AudioMixerGroup[] mixer_groups;
+    private AudioMixerGroup master_mixer;
+    private AudioMixerGroup music_mixer;
+    private AudioMixerGroup sounds_mixer;
 
     void Awake()
     {
@@ -103,13 +106,17 @@ public class OptionsScript : Singleton<OptionsScript>
             foreach(AudioMixerGroup g in mixer_groups)
             {
                 if (g.name.Equals("Master"))
-                    g.audioMixer.GetFloat("MasterVol", out master_vol);
+                    master_mixer = g;
                 else if(g.name.Equals("Music"))
-                    g.audioMixer.GetFloat("MusicVol", out music_vol);
+                    music_mixer = g;
                 else if (g.name.Equals("Sounds"))
-                    g.audioMixer.GetFloat("SoundsVol", out sounds_vol);
+                    sounds_mixer = g;
             }
-           
+
+            master_mixer.audioMixer.GetFloat("MasterVol", out master_vol);
+            music_mixer.audioMixer.GetFloat("MusicVol", out music_vol);
+            sounds_mixer.audioMixer.GetFloat("SoundsVol", out sounds_vol);
+
             master_slider.value = Mathf.Pow(10, (master_vol / 20f)); // Db to [0, 1]
             music_slider.value = Mathf.Pow(10, (music_vol / 20f));
             sounds_slider.value = Mathf.Pow(10, (sounds_vol / 20f));
@@ -206,17 +213,17 @@ public class OptionsScript : Singleton<OptionsScript>
 
     public void ChangeMasterVolume()
     {
-        master_vol = master_slider.value;
+        master_mixer.audioMixer.SetFloat("MasterVol", 20 * Mathf.Log10(master_slider.value));
     }
 
     public void ChangeMusicVolume()
     {
-        music_vol = music_slider.value;
+        music_mixer.audioMixer.SetFloat("MusicVol", 20 * Mathf.Log10(music_slider.value));
     }
 
     public void ChangeSoundsVolume()
     {
-        sounds_vol = sounds_slider.value;
+        sounds_mixer.audioMixer.SetFloat("SoundsVol", 20 * Mathf.Log10(sounds_slider.value));
     }
 
     public void ShowSumoInfos()
@@ -243,23 +250,16 @@ public class OptionsScript : Singleton<OptionsScript>
         txtSpeed_Megaman.CrossFadeAlpha(0f, PlayerInfos_FadeOut, true);
     }
 
-    public void SaveMusicChanges()
+    public void CancelMusicChanges()
     {
-        foreach (AudioMixerGroup g in mixer_groups)
-        {
-            if (g.name.Equals("Master"))
-                g.audioMixer.SetFloat("MasterVol", 20 * Mathf.Log10(master_vol));
-            else if (g.name.Equals("Music"))
-                g.audioMixer.SetFloat("MusicVol", 20 * Mathf.Log10(music_vol));
-            else if (g.name.Equals("Sounds"))
-                g.audioMixer.SetFloat("SoundsVol", 20 * Mathf.Log10(sounds_vol));
-        }
+        master_mixer.audioMixer.SetFloat("MasterVol", master_vol);
+        music_mixer.audioMixer.SetFloat("MusicVol", music_vol);
+        sounds_mixer.audioMixer.SetFloat("SoundsVol", sounds_vol);
+        GameManager.Instance.LoadScene("Menu");
     }
 
     public void SaveChanges()
     {
-        SaveMusicChanges();
-
         Character.CharacterNb = player_nb;
         GameManager.Instance.SaveOptions(clips[selected_track], amplitude, variance, C);
     }

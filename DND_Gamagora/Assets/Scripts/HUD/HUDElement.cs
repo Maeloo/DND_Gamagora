@@ -18,7 +18,9 @@ public class HUDElement : MonoBehaviour
     private Slider master_slider;
     private Slider music_slider;
     private Slider sounds_slider;
-
+    private AudioMixerGroup master_mixer;
+    private AudioMixerGroup music_mixer;
+    private AudioMixerGroup sounds_mixer;
     public Type_HUD type;
 
     void Start ( )
@@ -107,40 +109,47 @@ public class HUDElement : MonoBehaviour
 
     public void showMusicControls(bool show)
     {
-        _animMusicControl.SetBool("ShowMusicOptions", show);
+        bool old_value = _animMusicControl.GetBool("ShowMusicOptions");
+
+        if(show != old_value)
+            _animMusicControl.SetBool("ShowMusicOptions", show);
     }
 
     public void initMusicControl(AudioMixerGroup[] mixer_groups)
     {
-        float master_vol = 0f, music_vol = 0f, sounds_vol = 0f;
+        float master_vol, music_vol, sounds_vol;
 
         foreach (AudioMixerGroup g in mixer_groups)
         {
             if (g.name.Equals("Master"))
-                g.audioMixer.GetFloat("MasterVol", out master_vol);
+                master_mixer = g;
             else if (g.name.Equals("Music"))
-                g.audioMixer.GetFloat("MusicVol", out music_vol);
+                music_mixer = g;
             else if (g.name.Equals("Sounds"))
-                g.audioMixer.GetFloat("SoundsVol", out sounds_vol);
+                sounds_mixer = g;
         }
-        
+
+        master_mixer.audioMixer.GetFloat("MasterVol", out master_vol);
+        music_mixer.audioMixer.GetFloat("MusicVol", out music_vol);
+        sounds_mixer.audioMixer.GetFloat("SoundsVol", out sounds_vol);
+
         master_slider.value = Mathf.Pow(10, (master_vol / 20f)); // Db to [0, 1]
         music_slider.value = Mathf.Pow(10, (music_vol / 20f));
         sounds_slider.value = Mathf.Pow(10, (sounds_vol / 20f));
     }
 
-    public float getMasterVol()
+    public void setMasterVol()
     {
-        return 20 * Mathf.Log10(master_slider.value);
+        master_mixer.audioMixer.SetFloat("MasterVol", 20 * Mathf.Log10(master_slider.value));
     }
 
-    public float getMusicVol()
+    public void setMusicVol()
     {
-        return 20 * Mathf.Log10(music_slider.value);
+        music_mixer.audioMixer.SetFloat("MusicVol", 20 * Mathf.Log10(music_slider.value));
     }
 
-    public float getSoundsVol()
+    public void setSoundsVol()
     {
-        return 20 * Mathf.Log10(sounds_slider.value);
+        sounds_mixer.audioMixer.SetFloat("SoundsVol", 20 * Mathf.Log10(sounds_slider.value));
     }
 }

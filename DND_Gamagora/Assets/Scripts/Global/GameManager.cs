@@ -18,6 +18,8 @@ public class GameManager : Singleton<GameManager>
     private SceneAudioManager audio_manager;
     private AudioProcessor audio_process;
 
+    static private int key_menu_music = -1;
+
     // Use this for initialization
     void Awake ()
     { 
@@ -80,13 +82,41 @@ public class GameManager : Singleton<GameManager>
     public void StartGame()
     {
         Game.Data.ACCESSIBILITY_MODE = FindObjectOfType<Toggle>().isOn;
-
         LoadScene("scene");
+        StopMenuMusic();
     }
 
     public void LoadScene(string name)
     {
-        SceneManager.LoadSceneAsync(name);
+        SceneManager.LoadScene(name);
+
+        if (name.Equals("Menu") && key_menu_music == -1)
+            PlayMenuMusic();
+    }
+
+    public void PlayMenuMusic()
+    {
+        if (key_menu_music == -1)
+            key_menu_music = SceneAudioManager.Instance.playAudio(Game.Audio_Type.MenuMusic);
+        else
+            SceneAudioManager.Instance.play(key_menu_music);
+    }
+
+    public void StopMenuMusic()
+    {
+        if(key_menu_music != 1)
+        {
+            SceneAudioManager.Instance.stop(key_menu_music);
+            key_menu_music = -1;
+        }
+    }
+
+    public void PauseMenuMusic()
+    {
+        if (key_menu_music != 1)
+        {
+            SceneAudioManager.Instance.pause(key_menu_music);
+        }
     }
 
     public void SaveOptions(AudioClip new_track, float new_amplitude, float new_variance, float new_c)

@@ -60,6 +60,22 @@ GameObject:
   - 4: {fileID: 420086}
   - 114: {fileID: 11433514}
   m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &109958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 422036}
+  - 114: {fileID: 11463438}
+  m_Layer: 0
   m_Name: Checkpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +513,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 479556}
-  m_RootOrder: 24
+  m_RootOrder: 26
+--- !u!4 &422036
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 479556}
+  m_RootOrder: 25
 --- !u!4 &422750
 Transform:
   m_ObjectHideFlags: 1
@@ -725,6 +753,7 @@ Transform:
   - {fileID: 477452}
   - {fileID: 439652}
   - {fileID: 488708}
+  - {fileID: 422036}
   - {fileID: 420086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1345,9 +1374,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioClips:
-  - {fileID: 8300000, guid: cf1291c63fcf1fd42b575684a154485e, type: 3}
+  - {fileID: 8300000, guid: 431c6e3222bb06d438f49376ceb0b525, type: 3}
   defaultMixerGroup: {fileID: 24301876, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
-  type: 16
+  type: 19
   playRandom: 0
 --- !u!114 &11435010
 MonoBehaviour:
@@ -1412,6 +1441,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8b7097c4da302d94ea338a1cfc159bf6, type: 3}
   defaultMixerGroup: {fileID: 24301876, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
   type: 6
+  playRandom: 0
+--- !u!114 &11463438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ae74083ff494842a0f7a31ee3fa13d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClips:
+  - {fileID: 8300000, guid: cf1291c63fcf1fd42b575684a154485e, type: 3}
+  defaultMixerGroup: {fileID: 24301876, guid: 1a5514a70e702204eb32b01964e5fd70, type: 2}
+  type: 17
   playRandom: 0
 --- !u!114 &11470784
 MonoBehaviour:

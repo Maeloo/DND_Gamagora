@@ -74,7 +74,9 @@
         Death,
         ExplosionMeteor,
         Impact,
-        Checkpoint
+        Checkpoint,
+        MenuMusic,
+        Pause
     }
 
     public class Data

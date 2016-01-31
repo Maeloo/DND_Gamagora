@@ -21,6 +21,7 @@ public class HUDManager : Singleton<HUDManager>
     private bool show_music_controls;
     private bool music_controls_showed;
     private AudioMixerGroup[] mixer_groups;
+    private static int pause_sound = -1;
 
     void Awake()
     {
@@ -164,11 +165,18 @@ public class HUDManager : Singleton<HUDManager>
     {
         reset_MusicOptions();
 
-        if (!pause && music_controls_showed)
+        if(!pause)
+            GameManager.Instance.StopMenuMusic();
+
+        if(pause)
         {
-            saveMusicChanges();
+            if (pause_sound != -1)
+                SceneAudioManager.Instance.stop(pause_sound);
+            Hashtable param = new Hashtable();
+            param.Add("starttime", 0.1f);
+            pause_sound = SceneAudioManager.Instance.playAudio(Audio_Type.Pause, param);
         }
-        
+
         HUDElement elem;
 
         if (elements.TryGetValue(Type_HUD.Pause, out elem))
@@ -177,24 +185,6 @@ public class HUDManager : Singleton<HUDManager>
         }
 
         music_controls_showed = false;
-    }
-
-    private void saveMusicChanges()
-    {
-        HUDElement elem;
-
-        if (elements.TryGetValue(Type_HUD.MusicControl, out elem))
-        {
-            foreach (AudioMixerGroup g in mixer_groups)
-            {
-                if (g.name.Equals("Master"))
-                    g.audioMixer.SetFloat("MasterVol", elem.getMasterVol());
-                else if (g.name.Equals("Music"))
-                    g.audioMixer.SetFloat("MusicVol", elem.getMusicVol());
-                else if (g.name.Equals("Sounds"))
-                    g.audioMixer.SetFloat("SoundsVol", elem.getSoundsVol());
-            }
-        }
     }
 
     public void resumePause()
@@ -210,6 +200,12 @@ public class HUDManager : Singleton<HUDManager>
     public void show_MusicOptions()
     {
         show_music_controls = !show_music_controls;
+
+        if (show_music_controls)
+            GameManager.Instance.PlayMenuMusic();
+        else
+            GameManager.Instance.PauseMenuMusic();
+
         HUDElement elem;
 
         if (elements.TryGetValue(Type_HUD.MusicControl, out elem))
@@ -230,6 +226,36 @@ public class HUDManager : Singleton<HUDManager>
         if (elements.TryGetValue(Type_HUD.MusicControl, out elem))
         {
             elem.showMusicControls(false);
+        }
+    }
+
+    public void ChangeMasterVolume()
+    {
+        HUDElement elem;
+
+        if (elements.TryGetValue(Type_HUD.MusicControl, out elem))
+        {
+            elem.setMasterVol();
+        }
+    }
+
+    public void ChangeMusicVolume()
+    {
+        HUDElement elem;
+
+        if (elements.TryGetValue(Type_HUD.MusicControl, out elem))
+        {
+            elem.setMusicVol();
+        }
+    }
+
+    public void ChangeSoundsVolume()
+    {
+        HUDElement elem;
+
+        if (elements.TryGetValue(Type_HUD.MusicControl, out elem))
+        {
+            elem.setSoundsVol();
         }
     }
 }
