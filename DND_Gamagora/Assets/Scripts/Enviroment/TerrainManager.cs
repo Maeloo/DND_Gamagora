@@ -81,7 +81,7 @@ public class TerrainManager : Singleton<TerrainManager> {
 
     void InitJinjos()
     {
-        float delta = (GetTerrainSize() * 0.7f) / 6f;
+        float delta = (GetTerrainSize() * 0.8f) / 6f;
 
         Camera cam = Camera.main;
         float vertExtent = cam.orthographicSize * 2f;
