@@ -405,7 +405,7 @@ MonoBehaviour:
   SlideBox: {fileID: 6149956}
   SlideCircle: {fileID: 5828078}
   noteText: {fileID: 0}
-  invulnerabilityTimeBonus: 10
+  invulnerabilityTimeBonus: 8
   power_fx: {fileID: 157576}
   shield: {fileID: 131200}
 --- !u!198 &19831048
@@ -7952,7 +7952,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: invulnerabilityTimeBonus
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
