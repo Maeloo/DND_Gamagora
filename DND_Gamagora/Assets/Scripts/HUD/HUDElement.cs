@@ -103,7 +103,9 @@ public class HUDElement : MonoBehaviour
 
         _start.text = "";
         HUDManager.Instance.endCooldown();
-        SceneAudioManager.Instance.playAudio(Audio_Type.Go);
+        Hashtable param = new Hashtable();
+        param.Add("volume", 0.6f);
+        SceneAudioManager.Instance.playAudio(Audio_Type.Go, param);
     }
 
 
