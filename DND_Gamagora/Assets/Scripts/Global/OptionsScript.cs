@@ -125,16 +125,20 @@ public class OptionsScript : Singleton<OptionsScript>
         clips = GameManager.Instance.Tracks;
 
         List<Dropdown.OptionData> datasound = new List<Dropdown.OptionData>();
+        selected_track = 0;
 
-        for(int i = 0; i < clips.Count; i++)
+        for (int i = 0; i < clips.Count; i++)
         {
             datasound.Add(new Dropdown.OptionData(clips[i].name));
- 
+
             if (clips[i].name.Equals(audio_process.GetTrackName()))
+            {
                 selected_track = i;
+            }   
         }
 
         musics.AddOptions(datasound);
+        musics.value = selected_track;
 
         player_nb = Character.CharacterNb;
         if(player_nb == 0)

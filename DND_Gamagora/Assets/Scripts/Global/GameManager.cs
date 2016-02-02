@@ -87,6 +87,7 @@ public class GameManager : Singleton<GameManager>
     {
         Game.Data.ACCESSIBILITY_MODE = FindObjectOfType<Toggle>().isOn;
         audio_process.ResetMusic();
+        PauseHUD = false;
         LoadScene("scene");
         StopMenuMusic();
     }
