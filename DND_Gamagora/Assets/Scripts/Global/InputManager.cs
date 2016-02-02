@@ -28,7 +28,9 @@ public class InputManager : Singleton<InputManager>
         IsJumping = Input.GetButtonDown("Jump");
         IsSliding = Input.GetButton("Slide");
 
-        if(Input.GetButtonDown("Cancel") && GameManager.Instance.IsMainScene())
+        if(Input.GetButtonDown("Cancel") && GameManager.Instance.IsMainScene() &&
+            ((GameManager.Instance.Pause && GameManager.Instance.PauseHUD) || 
+            (!GameManager.Instance.Pause && !GameManager.Instance.PauseHUD)))
         {
             GameManager.Instance.SetPauseHUD(!GameManager.Instance.Pause);
         }

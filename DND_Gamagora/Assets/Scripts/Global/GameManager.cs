@@ -14,6 +14,7 @@ public class GameManager : Singleton<GameManager>
     private GameObject AudioProcess;
 
     public bool Pause { get; private set; }
+    public bool PauseHUD { get; private set; }
 
     private SceneAudioManager audio_manager;
     private AudioProcessor audio_process;
@@ -26,6 +27,7 @@ public class GameManager : Singleton<GameManager>
         audio_manager = SceneAudioManager.Instance;
         audio_process = AudioProcessor.Instance;
         Pause = false;
+        PauseHUD = false;
         Tracks = new List<AudioClip>(Resources.LoadAll<AudioClip>("Audio/"));
     }
 
@@ -52,12 +54,14 @@ public class GameManager : Singleton<GameManager>
     {
         if (pause)
         {
+            PauseHUD = true;
             HUDManager.Instance.pause(pause);
             SetPause(pause);
             Invoke("scaleTime0", 0.1f);
         }
         else
         {
+            PauseHUD = false;
             HUDManager.Instance.pause(pause);
             scaleTime1();
             SetPause(pause);
