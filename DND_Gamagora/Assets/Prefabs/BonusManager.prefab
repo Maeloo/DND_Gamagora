@@ -596,9 +596,9 @@ MonoBehaviour:
   Special: {fileID: 11479186}
   passCountNote: 40
   passCountHeart: 90
-  passCountInvincibility: 50
+  passCountInvincibility: 120
   passCountPower: 130
-  passCountSpecial: 70
+  passCountSpecial: 100
   distMinMin: 0.1
   distMinMax: 0.3
 --- !u!114 &11408798

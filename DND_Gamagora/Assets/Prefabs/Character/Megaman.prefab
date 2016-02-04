@@ -405,7 +405,7 @@ MonoBehaviour:
   SlideBox: {fileID: 6149956}
   SlideCircle: {fileID: 5828078}
   noteText: {fileID: 0}
-  invulnerabilityTimeBonus: 8
+  invulnerabilityTimeBonus: 6
   power_fx: {fileID: 157576}
   shield: {fileID: 131200}
 --- !u!198 &19831048

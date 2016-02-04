@@ -66,33 +66,33 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
     // This event will be called every frame while music is playing
     public void onData(float[] spectrum, float[] energy, float[] average_energy, float[] variance)
     {
-        for (int i = 0; i < spectrum.Length; ++i)
-        {
-            Vector3 start = new Vector3(i * 0.015f + 4f, 0f, 0);
-            Vector3 end = new Vector3(i * 0.015f + 4f, 20f * spectrum[i], 0);
-            Debug.DrawLine(start, end, Color.yellow);
-        }
+        //for (int i = 0; i < spectrum.Length; ++i)
+        //{
+        //    Vector3 start = new Vector3(i * 0.015f + 4f, 0f, 0);
+        //    Vector3 end = new Vector3(i * 0.015f + 4f, 20f * spectrum[i], 0);
+        //    Debug.DrawLine(start, end, Color.yellow);
+        //}
 
-        for (int i = 0; i < energy.Length; ++i)
-        {
-            Vector3 start = new Vector3(i * 0.065f - 10f, 0f, 0);
-            Vector3 end = new Vector3(i * 0.065f - 10f, 0.1f * energy[i], 0);
-            Debug.DrawLine(start, end, Color.red);
-        }
+        //for (int i = 0; i < energy.Length; ++i)
+        //{
+        //    Vector3 start = new Vector3(i * 0.065f - 10f, 0f, 0);
+        //    Vector3 end = new Vector3(i * 0.065f - 10f, 0.1f * energy[i], 0);
+        //    Debug.DrawLine(start, end, Color.red);
+        //}
 
-        for (int i = 0; i < average_energy.Length; ++i)
-        {
-            Vector3 start = new Vector3(i * 0.065f - 5f, 0f, 0);
-            Vector3 end = new Vector3(i * 0.065f - 5f, 0.1f * average_energy[i], 0);
-            Debug.DrawLine(start, end, Color.red);
-        }
+        //for (int i = 0; i < average_energy.Length; ++i)
+        //{
+        //    Vector3 start = new Vector3(i * 0.065f - 5f, 0f, 0);
+        //    Vector3 end = new Vector3(i * 0.065f - 5f, 0.1f * average_energy[i], 0);
+        //    Debug.DrawLine(start, end, Color.red);
+        //}
 
-        for (int i = 0; i < variance.Length; ++i)
-        {
-            Vector3 start = new Vector3(i * 0.065f, 0f, 0);
-            Vector3 end = new Vector3(i * 0.065f, 0.0005f * variance[i], 0);
-            Debug.DrawLine(start, end, Color.yellow);
-        }
+        //for (int i = 0; i < variance.Length; ++i)
+        //{
+        //    Vector3 start = new Vector3(i * 0.065f, 0f, 0);
+        //    Vector3 end = new Vector3(i * 0.065f, 0.0005f * variance[i], 0);
+        //    Debug.DrawLine(start, end, Color.yellow);
+        //}
     }
 
     protected int minSkipBeatLow1 = 20; // Reglage Higklight Tribe
@@ -118,6 +118,11 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         //box2.GetComponent<Renderer>().material.color = Color.yellow;
         //StartCoroutine(StopColor(box2));
 
+        ShootFireball(energy);
+    }
+
+    private void ShootFireball(float energy)
+    {
         bool shot = false;
         for (int i = 0; i < enemiesSpawner.fireballs.Count; i++)
         {
@@ -126,16 +131,19 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
                 continue;
             }
 
-            if (Time.time - _lastShoot > 1.0f) {
+            if (Time.time - _lastShoot > 1.0f)
+            {
                 enemiesSpawner.fireballs[i].shoot();
                 shot = true;
-            }                
+            }
 
             iTween.Stop(enemiesSpawner.fireballs[i].gameObject);
 
+            float scale = Mathf.Min(2.5f + energy * .004f, 6f);
+
             iTween.ScaleTo(enemiesSpawner.fireballs[i].gameObject, iTween.Hash(
                 "time", .1f,
-                "scale", new Vector3(2.0f + energy * .004f, 2.0f + energy * .004f, 2.0f + energy * .004f),
+                "scale", new Vector3(scale, scale, scale),
                 "easetype", iTween.EaseType.easeInOutExpo));
 
             iTween.ScaleTo(enemiesSpawner.fireballs[i].gameObject, iTween.Hash(
@@ -216,27 +224,91 @@ public class AudioManager : MonoBehaviour, AudioProcessor.AudioCallbacks
         BonusManager.Instance.SpawnBonus(Type_Bonus.Heart);
     }
 
+    protected int minSkipBeatMedium3 = 50;
+    protected int countTimeBeatMedium3 = 0;
     public void onBeatMedium3(float energy, float average_energy, float radiance, int frequency_size)
     {
-        //box7.GetComponent<Renderer>().material.color = Color.magenta;
-        //StartCoroutine(StopColor(box7));
+        float rand = UnityEngine.Random.Range(0f, 1f);
 
-        BonusManager.Instance.SpawnBonus(Type_Bonus.Power);
+        if (rand <= 0.3f)
+            BonusManager.Instance.SpawnBonus(Type_Bonus.Invincibility);
+        else if (rand <= 0.6f)
+            BonusManager.Instance.SpawnBonus(Type_Bonus.Power);
+
+        countTimeBeatMedium3++;
+        if (countTimeBeatMedium3 >= minSkipBeatMedium3)
+        {
+            float rand2 = UnityEngine.Random.Range(0f, 1f);
+            if (rand2 <= 0.1f)
+                TerrainManager.Instance.makeCurrentClassicPlatformFall();
+            else if (rand2 <= 0.3f)
+                ShootFireball(energy);
+
+            countTimeBeatMedium3 = 0;
+        }
     }
 
+    protected int minSkipBeatHigh1 = 50;
+    protected int countTimeBeatHigh1 = 0;
     public void onBeatHigh1(float energy, float average_energy, float radiance, int frequency_size)
     {
-        //box8.GetComponent<Renderer>().material.color = (Color.red + Color.green) * 0.5f;
-        //StartCoroutine(StopColor(box8));
+        float rand = UnityEngine.Random.Range(0f, 1f);
 
-        BonusManager.Instance.SpawnBonus(Type_Bonus.Invincibility);
+        if (rand <= 0.25f)
+            BonusManager.Instance.SpawnBonus(Type_Bonus.Special);
+        else if (rand <= 0.5f)
+            BonusManager.Instance.SpawnBonus(Type_Bonus.Invincibility);
+        else if (rand <= 0.75f)
+            BonusManager.Instance.SpawnBonus(Type_Bonus.Power);
+
+        countTimeBeatHigh1++;
+        if (countTimeBeatHigh1 >= minSkipBeatHigh1)
+        {
+            float rand2 = UnityEngine.Random.Range(0f, 1f);
+
+            if (rand2 <= 0.5f)
+            {
+                for (int i = 0; i < enemiesSpawner.Shooters.Count; i++)
+                {
+                    if (enemiesSpawner.Shooters[i] == null)
+                    {
+                        continue;
+                    }
+
+                    if (enemiesSpawner.Shooters[i].transform.position.x > player.position.x)
+                    {
+                        enemiesSpawner.Shooters[i].shoot();
+                    }
+                }
+            }
+
+            countTimeBeatHigh1 = 0;
+        }
     }
 
+    protected int minSkipBeatHigh2 = 50;
+    protected int countTimeBeatHigh2 = 0;
     public void onBeatHigh2(float energy, float average_energy, float radiance, int frequency_size)
     {
 
-        //box9.GetComponent<Renderer>().material.color = Color.white;
-        //StartCoroutine(StopColor(box9));
+        countTimeBeatHigh2++;
+        if (countTimeBeatHigh2 >= minSkipBeatHigh2)
+        {
+            float rand = UnityEngine.Random.Range(0f, 1f);
+            if (rand <= 0.4)
+            {
+                platformSpawn.SpawnPlatformHight(Type_Platform.Hight);
+            }
+            else if (rand <= 0.8)
+            {
+                platformSpawn.SpawnPlatformTnt(enemiesSpawner, player);
+            }
+            else
+            {
+                BonusManager.Instance.SpawnBonus(Type_Bonus.Invincibility);
+            }
+            countTimeBeatHigh2 = 0;
+        }
     }
 
     public IEnumerator StopColor(GameObject obj)
